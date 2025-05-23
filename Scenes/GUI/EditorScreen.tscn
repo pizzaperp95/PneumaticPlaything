@@ -1,10 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://oiehbor0dlqx"]
+[gd_scene load_steps=15 format=3 uid="uid://oiehbor0dlqx"]
 
 [ext_resource type="Script" uid="uid://dfiwoln8mdwm8" path="res://Scripts/EditorScreen.gd" id="1_sd512"]
 [ext_resource type="PackedScene" uid="uid://blg1c3v4o44of" path="res://Scenes/GUI/Controls/FlowSlider.tscn" id="2_jo1ms"]
-[ext_resource type="PackedScene" uid="uid://btre5j66mpchy" path="res://Scenes/Stages/HelenHouse.tscn" id="2_p1t5g"]
+[ext_resource type="PackedScene" uid="uid://btre5j66mpchy" path="res://Scenes/Stages/Helen House.tscn" id="2_p1t5g"]
+[ext_resource type="Texture2D" uid="uid://xllpr3qc064c" path="res://UI/Play.png" id="3_g6u4d"]
+[ext_resource type="Texture2D" uid="uid://dgacnkv2dc65s" path="res://UI/PlayBackwards.png" id="3_mr8sb"]
 [ext_resource type="ButtonGroup" uid="uid://bij2tonqeslpt" path="res://Scenes/GUI/FlyoutButtonGroup.tres" id="3_p1t5g"]
+[ext_resource type="Texture2D" uid="uid://dts4eh6hyt8p3" path="res://UI/SkipBackwards.png" id="3_r4ytj"]
+[ext_resource type="Texture2D" uid="uid://bwhgy4u37jmo1" path="res://UI/Pause.png" id="4_ba3jn"]
 [ext_resource type="PackedScene" uid="uid://cbf3x44mvo701" path="res://Scenes/GUI/Controls/IndicatorLight.tscn" id="4_wuj6m"]
+[ext_resource type="Texture2D" uid="uid://dhx2v2fd0egxd" path="res://UI/FastBackwards.png" id="4_wy7jo"]
+[ext_resource type="Texture2D" uid="uid://dsr03w7r667fw" path="res://UI/FastForward.png" id="8_v0ton"]
+[ext_resource type="Texture2D" uid="uid://bphwtliq2ahus" path="res://UI/SkipForward.png" id="9_20noo"]
+[ext_resource type="Texture2D" uid="uid://ckg2ihy105ttj" path="res://UI/Record.png" id="10_wy7jo"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_g6u4d"]
 viewport_path = NodePath("SubViewport")
@@ -20,14 +28,16 @@ script = ExtResource("1_sd512")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 size = Vector2i(1280, 720)
-size_2d_override = Vector2i(640, 360)
 
 [node name="HelenHouse" parent="SubViewport" instance=ExtResource("2_p1t5g")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.187176, 0.187176, 0.187176, 1)
 
 [node name="CameraPreview" type="TextureRect" parent="."]
@@ -37,7 +47,8 @@ offset_top = 48.0
 offset_right = 1276.0
 offset_bottom = 408.0
 texture = SubResource("ViewportTexture_g6u4d")
-expand_mode = 2
+expand_mode = 5
+stretch_mode = 6
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -48,20 +59,22 @@ offset_bottom = 408.0
 text = "Welcome to Pneumatic Plaything Animatronic Simulator!
 
 You can press the buttons to the side to 
-control the bot, or adjust its flows.
+control the bots manually, adjust their flows, 
+change the camera angle, or switch their cosmetics.
 
-Open the Controls menu to see all of the keybinds.
-
-More features will be coming in the future, so stay tuned!"
+Open the Controls menu to see all of the keybinds."
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MenuBar" type="Panel" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 1276.0
+offset_right = -4.0
 offset_bottom = 44.0
+grow_horizontal = 2
 
 [node name="Wordmark" type="Label" parent="MenuBar"]
 layout_mode = 0
@@ -73,12 +86,122 @@ text = "Pneumatic Plaything v0.2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="StageSelector" type="OptionButton" parent="MenuBar"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 260.0
+offset_bottom = 36.0
+selected = 0
+item_count = 1
+popup/item_0/text = "Helen House (Custom)"
+popup/item_0/id = 0
+
+[node name="LoadShowtapeButton" type="Button" parent="MenuBar"]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 4.0
+offset_right = 392.0
+offset_bottom = 36.0
+text = "Load Showtape"
+
+[node name="NewShowtapeButton" type="Button" parent="MenuBar"]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 4.0
+offset_right = 524.0
+offset_bottom = 36.0
+text = "New Showtape"
+
+[node name="SaveShowtapeButton" type="Button" parent="MenuBar"]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 4.0
+offset_right = 656.0
+offset_bottom = 36.0
+text = "Save Showtape"
+
+[node name="ControlsButton" type="Button" parent="MenuBar"]
+layout_mode = 0
+offset_left = 660.0
+offset_top = 4.0
+offset_right = 788.0
+offset_bottom = 36.0
+text = "Controls"
+
 [node name="SequencerPanel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 412.0
 offset_right = 1276.0
 offset_bottom = 716.0
+
+[node name="Buttons" type="Control" parent="SequencerPanel"]
+anchors_preset = 0
+
+[node name="SkipBackwardsButton" type="Button" parent="SequencerPanel/Buttons"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 4.0
+offset_right = 528.0
+offset_bottom = 44.0
+icon = ExtResource("3_r4ytj")
+
+[node name="FastBackwardsButton" type="Button" parent="SequencerPanel/Buttons"]
+layout_mode = 0
+offset_left = 532.0
+offset_top = 4.0
+offset_right = 572.0
+offset_bottom = 44.0
+icon = ExtResource("4_wy7jo")
+
+[node name="PlayBackwardsButton" type="Button" parent="SequencerPanel/Buttons"]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 4.0
+offset_right = 616.0
+offset_bottom = 44.0
+icon = ExtResource("3_mr8sb")
+
+[node name="PauseButton" type="Button" parent="SequencerPanel/Buttons"]
+layout_mode = 0
+offset_left = 620.0
+offset_top = 4.0
+offset_right = 660.0
+offset_bottom = 44.0
+icon = ExtResource("4_ba3jn")
+
+[node name="PlayButton" type="Button" parent="SequencerPanel/Buttons"]
+layout_mode = 0
+offset_left = 664.0
+offset_top = 4.0
+offset_right = 704.0
+offset_bottom = 44.0
+icon = ExtResource("3_g6u4d")
+
+[node name="FastForwardButton" type="Button" parent="SequencerPanel/Buttons"]
+layout_mode = 0
+offset_left = 708.0
+offset_top = 4.0
+offset_right = 748.0
+offset_bottom = 44.0
+icon = ExtResource("8_v0ton")
+
+[node name="SkipForwardButton" type="Button" parent="SequencerPanel/Buttons"]
+layout_mode = 0
+offset_left = 752.0
+offset_top = 4.0
+offset_right = 792.0
+offset_bottom = 44.0
+icon = ExtResource("9_20noo")
+
+[node name="RecordButton" type="Button" parent="SequencerPanel/Buttons"]
+layout_mode = 0
+offset_left = 1228.0
+offset_top = 4.0
+offset_right = 1268.0
+offset_bottom = 44.0
+icon = ExtResource("10_wy7jo")
 
 [node name="FlyoutButtons" type="Panel" parent="."]
 layout_mode = 0
@@ -116,6 +239,22 @@ offset_bottom = 108.0
 toggle_mode = true
 button_group = ExtResource("3_p1t5g")
 text = "Camera"
+
+[node name="CosmeticsFlyoutButton" type="Button" parent="FlyoutButtons"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 112.0
+offset_right = 132.0
+offset_bottom = 144.0
+text = "Cosmetics"
+
+[node name="StageFlyoutButton" type="Button" parent="FlyoutButtons"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 148.0
+offset_right = 132.0
+offset_bottom = 180.0
+text = "Stage"
 
 [node name="Movements" type="Panel" parent="."]
 visible = false
@@ -992,9 +1131,12 @@ vertical_alignment = 1
 
 [node name="CameraFullScreen" type="TextureRect" parent="."]
 visible = false
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = SubResource("ViewportTexture_g6u4d")
 expand_mode = 2
 

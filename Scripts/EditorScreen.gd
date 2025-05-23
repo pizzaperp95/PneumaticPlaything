@@ -9,6 +9,7 @@ func _ready() -> void:
 	movement_out.connect(animatronic._movement_out)
 	movement_in.connect(self._movement_in)
 	movement_out.connect(self._movement_out)
+	get_tree().get_root().size_changed.connect(_on_size_changed) 
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_editor_screen"):
@@ -26,6 +27,9 @@ func _movement_in(movement, rate):
 
 func _movement_out(movement, rate):
 	get_node("Movements/IndicatorLights/" + movement).turn_off();
+
+func _on_size_changed() -> void:
+	$SubViewport.size = $ColorRect.size
 
 
 func _on_mouth_button_down() -> void:
