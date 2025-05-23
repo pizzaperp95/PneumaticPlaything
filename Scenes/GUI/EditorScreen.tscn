@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://oiehbor0dlqx"]
+[gd_scene load_steps=27 format=3 uid="uid://oiehbor0dlqx"]
 
 [ext_resource type="Script" uid="uid://dfiwoln8mdwm8" path="res://Scripts/EditorScreen.gd" id="1_sd512"]
+[ext_resource type="Theme" uid="uid://dbgs4id7y5d1c" path="res://UI/Themes/Dark.tres" id="1_v0ton"]
 [ext_resource type="PackedScene" uid="uid://blg1c3v4o44of" path="res://Scenes/GUI/Controls/FlowSlider.tscn" id="2_jo1ms"]
 [ext_resource type="PackedScene" uid="uid://btre5j66mpchy" path="res://Scenes/Stages/Helen House.tscn" id="2_p1t5g"]
 [ext_resource type="Texture2D" uid="uid://xllpr3qc064c" path="res://UI/Play.png" id="3_g6u4d"]
@@ -17,6 +18,28 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_g6u4d"]
 viewport_path = NodePath("SubViewport")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wy7jo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v0ton"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_20noo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mch36"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxi2g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bdf35"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2w5p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bv2rw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gx718"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gu086"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_othvt"]
+
 [node name="EditorScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -24,6 +47,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_v0ton")
 script = ExtResource("1_sd512")
 
 [node name="SubViewport" type="SubViewport" parent="."]
@@ -143,6 +167,14 @@ offset_top = 4.0
 offset_right = 788.0
 offset_bottom = 36.0
 text = "Controls"
+
+[node name="CreditsButton" type="Button" parent="MenuBar"]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 4.0
+offset_right = 920.0
+offset_bottom = 36.0
+text = "Credits"
 
 [node name="SequencerPanel" type="Panel" parent="."]
 layout_mode = 1
@@ -1177,6 +1209,119 @@ text = "Body Lean"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ControlsScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InputEater" type="Button" parent="ControlsScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wy7jo")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_v0ton")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_20noo")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_mch36")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_fxi2g")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_bdf35")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j2w5p")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_bv2rw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gx718")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_gu086")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_othvt")
+
+[node name="DialogPanel" type="Panel" parent="ControlsScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.1
+anchor_right = 0.75
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ControlsScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Fullscreen camera view: ESC
+Play/Pause: Space
+Play Reverse: Shift + Space
+Fast Forward: Shift + Right Arrow
+Fast Reverse: Shift + Left
+Skip Forward: Right Arrow
+Skip Backward: Left Arrow
+Change Camera Angle: 1-9
+
+Click outside this window to dismiss."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsScreen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InputEater" type="Button" parent="CreditsScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wy7jo")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_v0ton")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_20noo")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_mch36")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_fxi2g")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_bdf35")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j2w5p")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_bv2rw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gx718")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_gu086")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_othvt")
+
+[node name="DialogPanel" type="Panel" parent="CreditsScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.1
+anchor_right = 0.75
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CreditsScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pneumatic Plaything Animatronic Simulator
+
+Interface Design: Persephone (KawaiiZenbo)
+Simulator Backend: Persephone
+3-Stage Helen Henny Model: Persephone
+
+This project is not associated with CEC Entertainment LLC. 
+or Creative Engineering Inc."
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CameraFullScreen" type="TextureRect" parent="."]
 visible = false
 layout_mode = 1
@@ -1188,6 +1333,8 @@ grow_vertical = 2
 texture = SubResource("ViewportTexture_g6u4d")
 expand_mode = 2
 
+[connection signal="pressed" from="MenuBar/ControlsButton" to="." method="_on_controls_button_pressed"]
+[connection signal="pressed" from="MenuBar/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="toggled" from="FlyoutButtons/MovementsFlyoutButton" to="." method="_on_movements_flyout_button_toggled"]
 [connection signal="toggled" from="FlyoutButtons/FlowsFlyoutButton" to="." method="_on_flows_flyout_button_toggled"]
 [connection signal="button_down" from="Movements/Buttons/Mouth" to="." method="_on_mouth_button_down"]
@@ -1228,3 +1375,5 @@ expand_mode = 2
 [connection signal="button_up" from="Movements/Buttons/BodyRight" to="." method="_on_body_right_button_up"]
 [connection signal="button_down" from="Movements/Buttons/BodyLean" to="." method="_on_body_lean_button_down"]
 [connection signal="button_up" from="Movements/Buttons/BodyLean" to="." method="_on_body_lean_button_up"]
+[connection signal="pressed" from="ControlsScreen/InputEater" to="." method="_on_controls_input_eater_pressed"]
+[connection signal="pressed" from="CreditsScreen/InputEater" to="." method="_on_credits_input_eater_pressed"]

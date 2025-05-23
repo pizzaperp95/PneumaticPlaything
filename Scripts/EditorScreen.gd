@@ -31,6 +31,18 @@ func _movement_out(movement, _rate):
 func _on_size_changed() -> void:
 	$SubViewport.size = $ColorRect.size
 
+func _on_controls_button_pressed() -> void:
+	$ControlsScreen.visible = true
+
+func _on_credits_button_pressed() -> void:
+	$CreditsScreen.visible = true
+
+func _on_controls_input_eater_pressed() -> void:
+	$ControlsScreen.visible = false
+
+func _on_credits_input_eater_pressed() -> void:
+	$CreditsScreen.visible = false
+
 
 func _on_mouth_button_down() -> void:
 	movement_in.emit("Mouth", $FlowControls/InFlows/MouthFlow.value)
