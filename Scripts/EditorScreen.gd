@@ -22,10 +22,10 @@ func _on_movements_flyout_button_toggled(toggled_on: bool) -> void:
 func _on_flows_flyout_button_toggled(toggled_on: bool) -> void:
 	$FlowControls.visible = toggled_on
 
-func _movement_in(movement, rate):
+func _movement_in(movement, _rate):
 	get_node("Movements/IndicatorLights/" + movement).turn_on();
 
-func _movement_out(movement, rate):
+func _movement_out(movement, _rate):
 	get_node("Movements/IndicatorLights/" + movement).turn_off();
 
 func _on_size_changed() -> void:
