@@ -397,7 +397,7 @@ Fast Forward: Shift + Right Arrow
 Fast Reverse: Shift + Left
 Skip Forward: Right Arrow
 Skip Backward: Left Arrow
-Change Camera Angle: 1-9"
+Change Camera Angle: Tab"
 horizontal_alignment = 1
 vertical_alignment = 1
 

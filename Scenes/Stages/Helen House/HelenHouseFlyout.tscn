@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dwhrame6udwbh"]
 
-[ext_resource type="Script" uid="uid://bh512bgpm0kj7" path="res://Scenes/HelenHouseFlyout.gd" id="1_82hqt"]
+[ext_resource type="Script" uid="uid://bh512bgpm0kj7" path="res://Scripts/HelenHouseFlyout.gd" id="1_82hqt"]
 [ext_resource type="ButtonGroup" uid="uid://bij2tonqeslpt" path="res://Scenes/GUI/FlyoutButtonGroup.tres" id="1_p77ya"]
 [ext_resource type="PackedScene" uid="uid://cbf3x44mvo701" path="res://Scenes/GUI/Controls/IndicatorLight.tscn" id="2_82hqt"]
 [ext_resource type="PackedScene" uid="uid://blg1c3v4o44of" path="res://Scenes/GUI/Controls/FlowSlider.tscn" id="3_petwi"]
