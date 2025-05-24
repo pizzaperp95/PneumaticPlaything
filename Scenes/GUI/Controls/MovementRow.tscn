@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtkqaw5533rxy"]
+[gd_scene load_steps=4 format=3 uid="uid://dtkqaw5533rxy"]
 
 [ext_resource type="StyleBox" uid="uid://d17amc25o63p1" path="res://UI/Themes/MovementsPanelOverride.tres" id="1_d1xev"]
 [ext_resource type="Script" uid="uid://tn3aaldu7mm2" path="res://Scripts/MovementRow.gd" id="1_rm5t0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rm5t0"]
+bg_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="Row" type="Panel"]
 anchors_preset = 10
@@ -9,6 +16,15 @@ anchor_right = 1.0
 offset_bottom = 40.0
 grow_horizontal = 2
 script = ExtResource("1_rm5t0")
+
+[node name="ActiveBG" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 260.0
+offset_bottom = 36.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rm5t0")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
