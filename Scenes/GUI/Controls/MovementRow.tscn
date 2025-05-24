@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtkqaw5533rxy"]
+
+[ext_resource type="StyleBox" uid="uid://d17amc25o63p1" path="res://UI/Themes/MovementsPanelOverride.tres" id="1_d1xev"]
+[ext_resource type="Script" uid="uid://tn3aaldu7mm2" path="res://Scripts/MovementRow.gd" id="1_rm5t0"]
+
+[node name="Row" type="Panel"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+script = ExtResource("1_rm5t0")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 260.0
+offset_bottom = 36.0
+text = "0 - Name (Unbound)"
+alignment = 0
+
+[node name="MovementsBG" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 264.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_d1xev")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

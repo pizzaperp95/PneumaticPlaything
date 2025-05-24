@@ -1,19 +1,18 @@
-[gd_scene load_steps=27 format=3 uid="uid://oiehbor0dlqx"]
+[gd_scene load_steps=26 format=3 uid="uid://oiehbor0dlqx"]
 
 [ext_resource type="Script" uid="uid://dfiwoln8mdwm8" path="res://Scripts/EditorScreen.gd" id="1_sd512"]
 [ext_resource type="Theme" uid="uid://dbgs4id7y5d1c" path="res://UI/Themes/Dark.tres" id="1_v0ton"]
-[ext_resource type="PackedScene" uid="uid://blg1c3v4o44of" path="res://Scenes/GUI/Controls/FlowSlider.tscn" id="2_jo1ms"]
-[ext_resource type="PackedScene" uid="uid://btre5j66mpchy" path="res://Scenes/Stages/Helen House.tscn" id="2_p1t5g"]
+[ext_resource type="PackedScene" uid="uid://btre5j66mpchy" path="res://Scenes/Stages/Helen House/HelenHouse.tscn" id="2_p1t5g"]
 [ext_resource type="Texture2D" uid="uid://xllpr3qc064c" path="res://UI/Play.png" id="3_g6u4d"]
 [ext_resource type="Texture2D" uid="uid://dgacnkv2dc65s" path="res://UI/PlayBackwards.png" id="3_mr8sb"]
-[ext_resource type="ButtonGroup" uid="uid://bij2tonqeslpt" path="res://Scenes/GUI/FlyoutButtonGroup.tres" id="3_p1t5g"]
 [ext_resource type="Texture2D" uid="uid://dts4eh6hyt8p3" path="res://UI/SkipBackwards.png" id="3_r4ytj"]
 [ext_resource type="Texture2D" uid="uid://bwhgy4u37jmo1" path="res://UI/Pause.png" id="4_ba3jn"]
-[ext_resource type="PackedScene" uid="uid://cbf3x44mvo701" path="res://Scenes/GUI/Controls/IndicatorLight.tscn" id="4_wuj6m"]
 [ext_resource type="Texture2D" uid="uid://dhx2v2fd0egxd" path="res://UI/FastBackwards.png" id="4_wy7jo"]
 [ext_resource type="Texture2D" uid="uid://dsr03w7r667fw" path="res://UI/FastForward.png" id="8_v0ton"]
 [ext_resource type="Texture2D" uid="uid://bphwtliq2ahus" path="res://UI/SkipForward.png" id="9_20noo"]
 [ext_resource type="Texture2D" uid="uid://ckg2ihy105ttj" path="res://UI/Record.png" id="10_wy7jo"]
+[ext_resource type="PackedScene" uid="uid://dyuhywnk8heav" path="res://Scenes/Stages/Helen House/HelenHouseMovementRows.tscn" id="12_20noo"]
+[ext_resource type="PackedScene" uid="uid://dwhrame6udwbh" path="res://Scenes/Stages/Helen House/HelenHouseFlyout.tscn" id="13_wy7jo"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_g6u4d"]
 viewport_path = NodePath("SubViewport")
@@ -189,14 +188,23 @@ offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Buttons" type="Control" parent="SequencerPanel"]
+[node name="TransportControls" type="Control" parent="SequencerPanel"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 48.0
 grow_horizontal = 2
 
-[node name="Centered" type="Control" parent="SequencerPanel/Buttons"]
+[node name="Label" type="Label" parent="SequencerPanel/TransportControls"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 196.0
+offset_bottom = 40.0
+text = "00:00:00:00 / 00:00:00:00"
+vertical_alignment = 1
+
+[node name="Centered" type="Control" parent="SequencerPanel/TransportControls"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -210,7 +218,7 @@ offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SkipBackwardsButton" type="Button" parent="SequencerPanel/Buttons/Centered"]
+[node name="SkipBackwardsButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 4.0
@@ -218,7 +226,7 @@ offset_right = 44.0
 offset_bottom = 44.0
 icon = ExtResource("3_r4ytj")
 
-[node name="FastBackwardsButton" type="Button" parent="SequencerPanel/Buttons/Centered"]
+[node name="FastBackwardsButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 4.0
@@ -226,7 +234,7 @@ offset_right = 88.0
 offset_bottom = 44.0
 icon = ExtResource("4_wy7jo")
 
-[node name="PlayBackwardsButton" type="Button" parent="SequencerPanel/Buttons/Centered"]
+[node name="PlayBackwardsButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
 layout_mode = 0
 offset_left = 92.0
 offset_top = 4.0
@@ -234,7 +242,7 @@ offset_right = 132.0
 offset_bottom = 44.0
 icon = ExtResource("3_mr8sb")
 
-[node name="PauseButton" type="Button" parent="SequencerPanel/Buttons/Centered"]
+[node name="PauseButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
 layout_mode = 0
 offset_left = 136.0
 offset_top = 4.0
@@ -242,7 +250,7 @@ offset_right = 176.0
 offset_bottom = 44.0
 icon = ExtResource("4_ba3jn")
 
-[node name="PlayButton" type="Button" parent="SequencerPanel/Buttons/Centered"]
+[node name="PlayButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
 layout_mode = 0
 offset_left = 180.0
 offset_top = 4.0
@@ -250,7 +258,7 @@ offset_right = 220.0
 offset_bottom = 44.0
 icon = ExtResource("3_g6u4d")
 
-[node name="FastForwardButton" type="Button" parent="SequencerPanel/Buttons/Centered"]
+[node name="FastForwardButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
 layout_mode = 0
 offset_left = 224.0
 offset_top = 4.0
@@ -258,7 +266,7 @@ offset_right = 264.0
 offset_bottom = 44.0
 icon = ExtResource("8_v0ton")
 
-[node name="SkipForwardButton" type="Button" parent="SequencerPanel/Buttons/Centered"]
+[node name="SkipForwardButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
 layout_mode = 0
 offset_left = 268.0
 offset_top = 4.0
@@ -266,7 +274,7 @@ offset_right = 308.0
 offset_bottom = 44.0
 icon = ExtResource("9_20noo")
 
-[node name="RecordButton" type="Button" parent="SequencerPanel/Buttons"]
+[node name="RecordButton" type="Button" parent="SequencerPanel/TransportControls"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -281,7 +289,54 @@ grow_horizontal = 0
 grow_vertical = 2
 icon = ExtResource("10_wy7jo")
 
-[node name="FlyoutButtons" type="Panel" parent="."]
+[node name="TimelinePanel" type="Panel" parent="SequencerPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 48.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VScrollBar" type="VScrollBar" parent="SequencerPanel/TimelinePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 12.0
+offset_bottom = -4.0
+grow_vertical = 2
+max_value = 18.0
+step = 1.0
+
+[node name="InvisibleMask" type="Control" parent="SequencerPanel/TimelinePanel"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RowsHandle" type="Control" parent="SequencerPanel/TimelinePanel/InvisibleMask"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HelenHouseMovementRows" parent="SequencerPanel/TimelinePanel/InvisibleMask/RowsHandle" instance=ExtResource("12_20noo")]
+layout_mode = 1
+
+[node name="HelenHouseFlyout" parent="." instance=ExtResource("13_wy7jo")]
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 0.5
@@ -289,925 +344,6 @@ offset_left = 4.0
 offset_top = 48.0
 offset_right = 140.0
 offset_bottom = 48.0
-
-[node name="MovementsFlyoutButton" type="Button" parent="FlyoutButtons"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 132.0
-offset_bottom = 36.0
-toggle_mode = true
-button_group = ExtResource("3_p1t5g")
-text = "Movements"
-
-[node name="FlowsFlyoutButton" type="Button" parent="FlyoutButtons"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 40.0
-offset_right = 132.0
-offset_bottom = 72.0
-toggle_mode = true
-button_group = ExtResource("3_p1t5g")
-text = "Flows"
-
-[node name="CameraFlyoutButton" type="Button" parent="FlyoutButtons"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 76.0
-offset_right = 132.0
-offset_bottom = 108.0
-toggle_mode = true
-button_group = ExtResource("3_p1t5g")
-text = "Camera"
-
-[node name="CosmeticsFlyoutButton" type="Button" parent="FlyoutButtons"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 112.0
-offset_right = 132.0
-offset_bottom = 144.0
-text = "Cosmetics"
-
-[node name="StageFlyoutButton" type="Button" parent="FlyoutButtons"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 148.0
-offset_right = 132.0
-offset_bottom = 180.0
-text = "Stage"
-
-[node name="Movements" type="Panel" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 144.0
-offset_top = 48.0
-offset_right = 484.0
-offset_bottom = 412.0
-
-[node name="Buttons" type="Control" parent="Movements"]
-anchors_preset = 0
-
-[node name="Mouth" type="Button" parent="Movements/Buttons"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 132.0
-offset_bottom = 36.0
-text = "Mouth"
-
-[node name="LeftEar" type="Button" parent="Movements/Buttons"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 40.0
-offset_right = 132.0
-offset_bottom = 72.0
-text = "Left Ear"
-
-[node name="RightEar" type="Button" parent="Movements/Buttons"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 76.0
-offset_right = 132.0
-offset_bottom = 108.0
-text = "Right Ear"
-
-[node name="LeftEyelid" type="Button" parent="Movements/Buttons"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 112.0
-offset_right = 132.0
-offset_bottom = 144.0
-text = "Left Eyelid"
-
-[node name="RightEyelid" type="Button" parent="Movements/Buttons"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 148.0
-offset_right = 132.0
-offset_bottom = 180.0
-text = "Right Eyelid"
-
-[node name="EyesLeft" type="Button" parent="Movements/Buttons"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 184.0
-offset_right = 132.0
-offset_bottom = 216.0
-text = "Eyes Left"
-
-[node name="EyesRight" type="Button" parent="Movements/Buttons"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 220.0
-offset_right = 132.0
-offset_bottom = 252.0
-text = "Eyes Right"
-
-[node name="HeadLeft" type="Button" parent="Movements/Buttons"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 256.0
-offset_right = 132.0
-offset_bottom = 288.0
-text = "Head Left"
-
-[node name="HeadRight" type="Button" parent="Movements/Buttons"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 292.0
-offset_right = 132.0
-offset_bottom = 324.0
-text = "Head Right"
-
-[node name="HeadUp" type="Button" parent="Movements/Buttons"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 328.0
-offset_right = 132.0
-offset_bottom = 360.0
-text = "Head Up"
-
-[node name="LeftArmUp" type="Button" parent="Movements/Buttons"]
-layout_mode = 0
-offset_left = 172.0
-offset_top = 4.0
-offset_right = 300.0
-offset_bottom = 36.0
-text = "Left Arm Up"
-
-[node name="LeftArmTwist" type="Button" parent="Movements/Buttons"]
-layout_mode = 0
-offset_left = 172.0
-offset_top = 40.0
-offset_right = 300.0
-offset_bottom = 72.0
-text = "Left Arm Twist"
-
-[node name="LeftElbow" type="Button" parent="Movements/Buttons"]
-layout_mode = 0
-offset_left = 172.0
-offset_top = 76.0
-offset_right = 300.0
-offset_bottom = 108.0
-text = "Left Elbow"
-
-[node name="RightArmUp" type="Button" parent="Movements/Buttons"]
-layout_mode = 0
-offset_left = 172.0
-offset_top = 112.0
-offset_right = 300.0
-offset_bottom = 144.0
-text = "Right Arm Up"
-
-[node name="RightArmTwist" type="Button" parent="Movements/Buttons"]
-layout_mode = 0
-offset_left = 172.0
-offset_top = 148.0
-offset_right = 300.0
-offset_bottom = 180.0
-text = "R. Arm Twist"
-
-[node name="RightElbow" type="Button" parent="Movements/Buttons"]
-layout_mode = 0
-offset_left = 172.0
-offset_top = 184.0
-offset_right = 300.0
-offset_bottom = 216.0
-text = "Right Elbow"
-
-[node name="BodyLeft" type="Button" parent="Movements/Buttons"]
-layout_mode = 0
-offset_left = 172.0
-offset_top = 220.0
-offset_right = 300.0
-offset_bottom = 252.0
-text = "Body Left"
-
-[node name="BodyRight" type="Button" parent="Movements/Buttons"]
-layout_mode = 0
-offset_left = 172.0
-offset_top = 256.0
-offset_right = 300.0
-offset_bottom = 288.0
-text = "Body Right"
-
-[node name="BodyLean" type="Button" parent="Movements/Buttons"]
-layout_mode = 0
-offset_left = 172.0
-offset_top = 292.0
-offset_right = 300.0
-offset_bottom = 324.0
-text = "Body Lean"
-
-[node name="IndicatorLights" type="Control" parent="Movements"]
-anchors_preset = 0
-
-[node name="Mouth" parent="Movements/IndicatorLights" instance=ExtResource("4_wuj6m")]
-layout_mode = 1
-offset_left = 136.0
-offset_top = 4.0
-offset_right = 136.0
-offset_bottom = 4.0
-
-[node name="Left Ear" parent="Movements/IndicatorLights" instance=ExtResource("4_wuj6m")]
-layout_mode = 1
-offset_left = 136.0
-offset_top = 40.0
-offset_right = 136.0
-offset_bottom = 40.0
-
-[node name="Right Ear" parent="Movements/IndicatorLights" instance=ExtResource("4_wuj6m")]
-layout_mode = 1
-offset_left = 136.0
-offset_top = 76.0
-offset_right = 136.0
-offset_bottom = 76.0
-
-[node name="Left Eyelid" parent="Movements/IndicatorLights" instance=ExtResource("4_wuj6m")]
-layout_mode = 1
-offset_left = 136.0
-offset_top = 112.0
-offset_right = 136.0
-offset_bottom = 112.0
-
-[node name="Right Eyelid" parent="Movements/IndicatorLights" instance=ExtResource("4_wuj6m")]
-layout_mode = 1
-offset_left = 136.0
-offset_top = 148.0
-offset_right = 136.0
-offset_bottom = 148.0
-
-[node name="Eyes Left" parent="Movements/IndicatorLights" instance=ExtResource("4_wuj6m")]
-layout_mode = 1
-offset_left = 136.0
-offset_top = 184.0
-offset_right = 136.0
-offset_bottom = 184.0
-
-[node name="Eyes Right" parent="Movements/IndicatorLights" instance=ExtResource("4_wuj6m")]
-layout_mode = 1
-offset_left = 136.0
-offset_top = 220.0
-offset_right = 136.0
-offset_bottom = 220.0
-
-[node name="Head Left" parent="Movements/IndicatorLights" instance=ExtResource("4_wuj6m")]
-layout_mode = 1
-offset_left = 136.0
-offset_top = 256.0
-offset_right = 136.0
-offset_bottom = 256.0
-
-[node name="Head Right" parent="Movements/IndicatorLights" instance=ExtResource("4_wuj6m")]
-layout_mode = 1
-offset_left = 136.0
-offset_top = 292.0
-offset_right = 136.0
-offset_bottom = 292.0
-
-[node name="Head Up" parent="Movements/IndicatorLights" instance=ExtResource("4_wuj6m")]
-layout_mode = 1
-offset_left = 136.0
-offset_top = 328.0
-offset_right = 136.0
-offset_bottom = 328.0
-
-[node name="Left Arm Up" parent="Movements/IndicatorLights" instance=ExtResource("4_wuj6m")]
-layout_mode = 1
-offset_left = 304.0
-offset_top = 4.0
-offset_right = 304.0
-offset_bottom = 4.0
-
-[node name="Left Arm Twist" parent="Movements/IndicatorLights" instance=ExtResource("4_wuj6m")]
-layout_mode = 1
-offset_left = 304.0
-offset_top = 40.0
-offset_right = 304.0
-offset_bottom = 40.0
-
-[node name="Left Elbow" parent="Movements/IndicatorLights" instance=ExtResource("4_wuj6m")]
-layout_mode = 1
-offset_left = 304.0
-offset_top = 76.0
-offset_right = 304.0
-offset_bottom = 76.0
-
-[node name="Right Arm Up" parent="Movements/IndicatorLights" instance=ExtResource("4_wuj6m")]
-layout_mode = 1
-offset_left = 304.0
-offset_top = 112.0
-offset_right = 304.0
-offset_bottom = 112.0
-
-[node name="Right Arm Twist" parent="Movements/IndicatorLights" instance=ExtResource("4_wuj6m")]
-layout_mode = 1
-offset_left = 304.0
-offset_top = 148.0
-offset_right = 304.0
-offset_bottom = 148.0
-
-[node name="Right Elbow" parent="Movements/IndicatorLights" instance=ExtResource("4_wuj6m")]
-layout_mode = 1
-offset_left = 304.0
-offset_top = 184.0
-offset_right = 304.0
-offset_bottom = 184.0
-
-[node name="Body Left" parent="Movements/IndicatorLights" instance=ExtResource("4_wuj6m")]
-layout_mode = 1
-offset_left = 304.0
-offset_top = 220.0
-offset_right = 304.0
-offset_bottom = 220.0
-
-[node name="Body Right" parent="Movements/IndicatorLights" instance=ExtResource("4_wuj6m")]
-layout_mode = 1
-offset_left = 304.0
-offset_top = 256.0
-offset_right = 304.0
-offset_bottom = 256.0
-
-[node name="Body Lean" parent="Movements/IndicatorLights" instance=ExtResource("4_wuj6m")]
-layout_mode = 1
-offset_left = 304.0
-offset_top = 292.0
-offset_right = 304.0
-offset_bottom = 292.0
-
-[node name="FlowControls" type="Panel" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 144.0
-offset_top = 48.0
-offset_right = 812.0
-offset_bottom = 440.0
-
-[node name="Labels" type="Control" parent="FlowControls"]
-anchors_preset = 0
-offset_top = -40.0
-offset_bottom = -40.0
-
-[node name="MovementsLabel1" type="Label" parent="FlowControls/Labels"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 40.0
-offset_right = 132.0
-offset_bottom = 72.0
-text = "Movement"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="MovementsLabel2" type="Label" parent="FlowControls/Labels"]
-layout_mode = 0
-offset_left = 336.0
-offset_top = 40.0
-offset_right = 464.0
-offset_bottom = 72.0
-text = "Movement"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="InFlowsLabel1" type="Label" parent="FlowControls/Labels"]
-layout_mode = 0
-offset_left = 136.0
-offset_top = 40.0
-offset_right = 232.0
-offset_bottom = 72.0
-text = "In Flow"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="InFlowsLabel2" type="Label" parent="FlowControls/Labels"]
-layout_mode = 0
-offset_left = 468.0
-offset_top = 40.0
-offset_right = 564.0
-offset_bottom = 72.0
-text = "In Flow"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="OutFlowsLabel1" type="Label" parent="FlowControls/Labels"]
-layout_mode = 0
-offset_left = 236.0
-offset_top = 40.0
-offset_right = 332.0
-offset_bottom = 72.0
-text = "Out Flow"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="OutFlowsLabel2" type="Label" parent="FlowControls/Labels"]
-layout_mode = 0
-offset_left = 568.0
-offset_top = 40.0
-offset_right = 664.0
-offset_bottom = 72.0
-text = "Out Flow"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="InFlows" type="Control" parent="FlowControls"]
-anchors_preset = 0
-offset_top = -40.0
-offset_bottom = -40.0
-
-[node name="MouthFlow" parent="FlowControls/InFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 135.5
-offset_top = 72.0
-offset_right = 135.5
-offset_bottom = 72.0
-value = 3.0
-
-[node name="LeftEarFlow" parent="FlowControls/InFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 135.5
-offset_top = 108.0
-offset_right = 135.5
-offset_bottom = 108.0
-value = 3.5
-
-[node name="RightEarFlow" parent="FlowControls/InFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 135.5
-offset_top = 144.0
-offset_right = 135.5
-offset_bottom = 144.0
-value = 3.5
-
-[node name="LeftEyelidFlow" parent="FlowControls/InFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 135.5
-offset_top = 180.0
-offset_right = 135.5
-offset_bottom = 180.0
-value = 1.5
-
-[node name="RightEyelidFlow" parent="FlowControls/InFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 135.5
-offset_top = 216.0
-offset_right = 135.5
-offset_bottom = 216.0
-value = 1.5
-
-[node name="EyesLeftFlow" parent="FlowControls/InFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 135.5
-offset_top = 252.0
-offset_right = 135.5
-offset_bottom = 252.0
-value = 2.0
-
-[node name="EyesRightFlow" parent="FlowControls/InFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 135.5
-offset_top = 288.0
-offset_right = 135.5
-offset_bottom = 288.0
-value = 2.0
-
-[node name="HeadLeftFlow" parent="FlowControls/InFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 135.5
-offset_top = 324.0
-offset_right = 135.5
-offset_bottom = 324.0
-value = 1.5
-
-[node name="HeadRightFlow" parent="FlowControls/InFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 135.5
-offset_top = 360.0
-offset_right = 135.5
-offset_bottom = 360.0
-value = 1.5
-
-[node name="HeadUpFlow" parent="FlowControls/InFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 135.5
-offset_top = 396.0
-offset_right = 135.5
-offset_bottom = 396.0
-
-[node name="LeftArmUpFlow" parent="FlowControls/InFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 467.5
-offset_top = 72.0
-offset_right = 467.5
-offset_bottom = 72.0
-value = 0.8
-
-[node name="LeftArmTwistFlow" parent="FlowControls/InFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 467.5
-offset_top = 108.0
-offset_right = 467.5
-offset_bottom = 108.0
-value = 0.8
-
-[node name="LeftElbowFlow" parent="FlowControls/InFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 467.5
-offset_top = 144.0
-offset_right = 467.5
-offset_bottom = 144.0
-
-[node name="RightArmUpFlow" parent="FlowControls/InFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 467.5
-offset_top = 180.0
-offset_right = 467.5
-offset_bottom = 180.0
-value = 0.8
-
-[node name="RightArmTwistFlow" parent="FlowControls/InFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 467.5
-offset_top = 216.0
-offset_right = 467.5
-offset_bottom = 216.0
-value = 0.8
-
-[node name="RightElbowFlow" parent="FlowControls/InFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 467.5
-offset_top = 252.0
-offset_right = 467.5
-offset_bottom = 252.0
-
-[node name="BodyLeftFlow" parent="FlowControls/InFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 467.5
-offset_top = 288.0
-offset_right = 467.5
-offset_bottom = 288.0
-value = 0.7
-
-[node name="BodyRightFlow" parent="FlowControls/InFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 467.5
-offset_top = 324.0
-offset_right = 467.5
-offset_bottom = 324.0
-value = 0.7
-
-[node name="BodyLeanFlow" parent="FlowControls/InFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 467.5
-offset_top = 360.0
-offset_right = 467.5
-offset_bottom = 360.0
-
-[node name="OutFlows" type="Control" parent="FlowControls"]
-anchors_preset = 0
-offset_top = -40.0
-offset_bottom = -40.0
-
-[node name="MouthFlow" parent="FlowControls/OutFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 235.5
-offset_top = 72.0
-offset_right = 235.5
-offset_bottom = 72.0
-value = 2.0
-
-[node name="LeftEarFlow" parent="FlowControls/OutFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 235.5
-offset_top = 108.0
-offset_right = 235.5
-offset_bottom = 108.0
-value = 1.5
-
-[node name="RightEarFlow" parent="FlowControls/OutFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 235.5
-offset_top = 144.0
-offset_right = 235.5
-offset_bottom = 144.0
-value = 1.5
-
-[node name="LeftEyelidFlow" parent="FlowControls/OutFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 235.5
-offset_top = 180.0
-offset_right = 235.5
-offset_bottom = 180.0
-value = 2.0
-
-[node name="RightEyelidFlow" parent="FlowControls/OutFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 235.5
-offset_top = 216.0
-offset_right = 235.5
-offset_bottom = 216.0
-value = 2.0
-
-[node name="EyesLeftFlow" parent="FlowControls/OutFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 235.5
-offset_top = 252.0
-offset_right = 235.5
-offset_bottom = 252.0
-value = 2.0
-
-[node name="EyesRightFlow" parent="FlowControls/OutFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 235.5
-offset_top = 288.0
-offset_right = 235.5
-offset_bottom = 288.0
-value = 2.0
-
-[node name="HeadLeftFlow" parent="FlowControls/OutFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 235.5
-offset_top = 324.0
-offset_right = 235.5
-offset_bottom = 324.0
-value = 1.5
-
-[node name="HeadRightFlow" parent="FlowControls/OutFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 235.5
-offset_top = 360.0
-offset_right = 235.5
-offset_bottom = 360.0
-value = 1.5
-
-[node name="HeadUpFlow" parent="FlowControls/OutFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 235.5
-offset_top = 396.0
-offset_right = 235.5
-offset_bottom = 396.0
-
-[node name="LeftArmUpFlow" parent="FlowControls/OutFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 567.5
-offset_top = 72.0
-offset_right = 567.5
-offset_bottom = 72.0
-value = 0.6
-
-[node name="LeftArmTwistFlow" parent="FlowControls/OutFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 567.5
-offset_top = 108.0
-offset_right = 567.5
-offset_bottom = 108.0
-value = 0.8
-
-[node name="LeftElbowFlow" parent="FlowControls/OutFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 567.5
-offset_top = 144.0
-offset_right = 567.5
-offset_bottom = 144.0
-
-[node name="RightArmUpFlow" parent="FlowControls/OutFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 567.5
-offset_top = 180.0
-offset_right = 567.5
-offset_bottom = 180.0
-value = 0.6
-
-[node name="RightArmTwistFlow" parent="FlowControls/OutFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 567.5
-offset_top = 216.0
-offset_right = 567.5
-offset_bottom = 216.0
-value = 0.8
-
-[node name="RightElbowFlow" parent="FlowControls/OutFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 567.5
-offset_top = 252.0
-offset_right = 567.5
-offset_bottom = 252.0
-
-[node name="BodyLeftFlow" parent="FlowControls/OutFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 567.5
-offset_top = 288.0
-offset_right = 567.5
-offset_bottom = 288.0
-value = 0.7
-
-[node name="BodyRightFlow" parent="FlowControls/OutFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 567.5
-offset_top = 324.0
-offset_right = 567.5
-offset_bottom = 324.0
-value = 0.7
-
-[node name="BodyLeanFlow" parent="FlowControls/OutFlows" instance=ExtResource("2_jo1ms")]
-layout_mode = 1
-offset_left = 567.5
-offset_top = 360.0
-offset_right = 567.5
-offset_bottom = 360.0
-value = 0.8
-
-[node name="MovementLabels" type="Control" parent="FlowControls"]
-layout_mode = 3
-anchors_preset = 0
-
-[node name="Mouth" type="Label" parent="FlowControls/MovementLabels"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 32.0
-offset_right = 132.0
-offset_bottom = 64.0
-text = "Mouth"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LeftEar" type="Label" parent="FlowControls/MovementLabels"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 68.0
-offset_right = 132.0
-offset_bottom = 100.0
-text = "Left Ear"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RightEar" type="Label" parent="FlowControls/MovementLabels"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 104.0
-offset_right = 132.0
-offset_bottom = 136.0
-text = "Right Ear"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LeftEyelid" type="Label" parent="FlowControls/MovementLabels"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 140.0
-offset_right = 132.0
-offset_bottom = 172.0
-text = "Left Eyelid"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RightEyelid" type="Label" parent="FlowControls/MovementLabels"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 176.0
-offset_right = 132.0
-offset_bottom = 208.0
-text = "Right Eyelid"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="EyesLeft" type="Label" parent="FlowControls/MovementLabels"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 212.0
-offset_right = 132.0
-offset_bottom = 244.0
-text = "Eyes Left"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="EyesRight" type="Label" parent="FlowControls/MovementLabels"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 248.0
-offset_right = 132.0
-offset_bottom = 280.0
-text = "Eyes Right"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HeadLeft" type="Label" parent="FlowControls/MovementLabels"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 284.0
-offset_right = 132.0
-offset_bottom = 316.0
-text = "Head Left"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HeadRight" type="Label" parent="FlowControls/MovementLabels"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 320.0
-offset_right = 132.0
-offset_bottom = 352.0
-text = "Head Right"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HeadUp" type="Label" parent="FlowControls/MovementLabels"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 356.0
-offset_right = 132.0
-offset_bottom = 388.0
-text = "Head Up"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LeftArmUp" type="Label" parent="FlowControls/MovementLabels"]
-layout_mode = 0
-offset_left = 336.0
-offset_top = 32.0
-offset_right = 464.0
-offset_bottom = 64.0
-text = "Left Arm Up"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LeftArmTwist" type="Label" parent="FlowControls/MovementLabels"]
-layout_mode = 0
-offset_left = 336.0
-offset_top = 68.0
-offset_right = 464.0
-offset_bottom = 100.0
-text = "Left Arm Twist"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LeftElbow" type="Label" parent="FlowControls/MovementLabels"]
-layout_mode = 0
-offset_left = 336.0
-offset_top = 104.0
-offset_right = 464.0
-offset_bottom = 136.0
-text = "Left Elbow"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RightArmUp" type="Label" parent="FlowControls/MovementLabels"]
-layout_mode = 0
-offset_left = 336.0
-offset_top = 140.0
-offset_right = 464.0
-offset_bottom = 172.0
-text = "Right Arm Up"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RightArmTwist" type="Label" parent="FlowControls/MovementLabels"]
-layout_mode = 0
-offset_left = 336.0
-offset_top = 176.0
-offset_right = 464.0
-offset_bottom = 208.0
-text = "R. Arm Twist"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RightElbow" type="Label" parent="FlowControls/MovementLabels"]
-layout_mode = 0
-offset_left = 336.0
-offset_top = 212.0
-offset_right = 464.0
-offset_bottom = 244.0
-text = "Right Elbow"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="BodyLeft" type="Label" parent="FlowControls/MovementLabels"]
-layout_mode = 0
-offset_left = 336.0
-offset_top = 248.0
-offset_right = 464.0
-offset_bottom = 280.0
-text = "Body Left"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="BodyRight" type="Label" parent="FlowControls/MovementLabels"]
-layout_mode = 0
-offset_left = 336.0
-offset_top = 284.0
-offset_right = 464.0
-offset_bottom = 316.0
-text = "Body Right"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="BodyLean" type="Label" parent="FlowControls/MovementLabels"]
-layout_mode = 0
-offset_left = 336.0
-offset_top = 320.0
-offset_right = 464.0
-offset_bottom = 352.0
-text = "Body Lean"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="ControlsScreen" type="Control" parent="."]
 visible = false
@@ -1240,10 +376,10 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_othvt")
 [node name="DialogPanel" type="Panel" parent="ControlsScreen"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.25
-anchor_top = 0.1
-anchor_right = 0.75
-anchor_bottom = 0.9
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.7
+anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -1261,13 +397,12 @@ Fast Forward: Shift + Right Arrow
 Fast Reverse: Shift + Left
 Skip Forward: Right Arrow
 Skip Backward: Left Arrow
-Change Camera Angle: 1-9
-
-Click outside this window to dismiss."
+Change Camera Angle: 1-9"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CreditsScreen" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1297,10 +432,10 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_othvt")
 [node name="DialogPanel" type="Panel" parent="CreditsScreen"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.25
-anchor_top = 0.1
-anchor_right = 0.75
-anchor_bottom = 0.9
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.7
+anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -1313,7 +448,9 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Pneumatic Plaything Animatronic Simulator
 
-Interface Design: Persephone (KawaiiZenbo)
+Project Oversight: Persephone (KawaiiZenbo)
+
+Interface Design: Persephone
 Simulator Backend: Persephone
 3-Stage Helen Henny Model: Persephone
 
@@ -1335,45 +472,6 @@ expand_mode = 2
 
 [connection signal="pressed" from="MenuBar/ControlsButton" to="." method="_on_controls_button_pressed"]
 [connection signal="pressed" from="MenuBar/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="toggled" from="FlyoutButtons/MovementsFlyoutButton" to="." method="_on_movements_flyout_button_toggled"]
-[connection signal="toggled" from="FlyoutButtons/FlowsFlyoutButton" to="." method="_on_flows_flyout_button_toggled"]
-[connection signal="button_down" from="Movements/Buttons/Mouth" to="." method="_on_mouth_button_down"]
-[connection signal="button_up" from="Movements/Buttons/Mouth" to="." method="_on_mouth_button_up"]
-[connection signal="button_down" from="Movements/Buttons/LeftEar" to="." method="_on_left_ear_button_down"]
-[connection signal="button_up" from="Movements/Buttons/LeftEar" to="." method="_on_left_ear_button_up"]
-[connection signal="button_down" from="Movements/Buttons/RightEar" to="." method="_on_right_ear_button_down"]
-[connection signal="button_up" from="Movements/Buttons/RightEar" to="." method="_on_right_ear_button_up"]
-[connection signal="button_down" from="Movements/Buttons/LeftEyelid" to="." method="_on_left_eyelid_button_down"]
-[connection signal="button_up" from="Movements/Buttons/LeftEyelid" to="." method="_on_left_eyelid_button_up"]
-[connection signal="button_down" from="Movements/Buttons/RightEyelid" to="." method="_on_right_eyelid_button_down"]
-[connection signal="button_up" from="Movements/Buttons/RightEyelid" to="." method="_on_right_eyelid_button_up"]
-[connection signal="button_down" from="Movements/Buttons/EyesLeft" to="." method="_on_eyes_left_button_down"]
-[connection signal="button_up" from="Movements/Buttons/EyesLeft" to="." method="_on_eyes_left_button_up"]
-[connection signal="button_down" from="Movements/Buttons/EyesRight" to="." method="_on_eyes_right_button_down"]
-[connection signal="button_up" from="Movements/Buttons/EyesRight" to="." method="_on_eyes_right_button_up"]
-[connection signal="button_down" from="Movements/Buttons/HeadLeft" to="." method="_on_head_left_button_down"]
-[connection signal="button_up" from="Movements/Buttons/HeadLeft" to="." method="_on_head_left_button_up"]
-[connection signal="button_down" from="Movements/Buttons/HeadRight" to="." method="_on_head_right_button_down"]
-[connection signal="button_up" from="Movements/Buttons/HeadRight" to="." method="_on_head_right_button_up"]
-[connection signal="button_down" from="Movements/Buttons/HeadUp" to="." method="_on_head_up_button_down"]
-[connection signal="button_up" from="Movements/Buttons/HeadUp" to="." method="_on_head_up_button_up"]
-[connection signal="button_down" from="Movements/Buttons/LeftArmUp" to="." method="_on_left_arm_up_button_down"]
-[connection signal="button_up" from="Movements/Buttons/LeftArmUp" to="." method="_on_left_arm_up_button_up"]
-[connection signal="button_down" from="Movements/Buttons/LeftArmTwist" to="." method="_on_left_arm_twist_button_down"]
-[connection signal="button_up" from="Movements/Buttons/LeftArmTwist" to="." method="_on_left_arm_twist_button_up"]
-[connection signal="button_down" from="Movements/Buttons/LeftElbow" to="." method="_on_left_elbow_button_down"]
-[connection signal="button_up" from="Movements/Buttons/LeftElbow" to="." method="_on_left_elbow_button_up"]
-[connection signal="button_down" from="Movements/Buttons/RightArmUp" to="." method="_on_right_arm_up_button_down"]
-[connection signal="button_up" from="Movements/Buttons/RightArmUp" to="." method="_on_right_arm_up_button_up"]
-[connection signal="button_down" from="Movements/Buttons/RightArmTwist" to="." method="_on_right_arm_twist_button_down"]
-[connection signal="button_up" from="Movements/Buttons/RightArmTwist" to="." method="_on_right_arm_twist_button_up"]
-[connection signal="button_down" from="Movements/Buttons/RightElbow" to="." method="_on_right_elbow_button_down"]
-[connection signal="button_up" from="Movements/Buttons/RightElbow" to="." method="_on_right_elbow_button_up"]
-[connection signal="button_down" from="Movements/Buttons/BodyLeft" to="." method="_on_body_left_button_down"]
-[connection signal="button_up" from="Movements/Buttons/BodyLeft" to="." method="_on_body_left_button_up"]
-[connection signal="button_down" from="Movements/Buttons/BodyRight" to="." method="_on_body_right_button_down"]
-[connection signal="button_up" from="Movements/Buttons/BodyRight" to="." method="_on_body_right_button_up"]
-[connection signal="button_down" from="Movements/Buttons/BodyLean" to="." method="_on_body_lean_button_down"]
-[connection signal="button_up" from="Movements/Buttons/BodyLean" to="." method="_on_body_lean_button_up"]
+[connection signal="value_changed" from="SequencerPanel/TimelinePanel/VScrollBar" to="." method="_on_v_scroll_bar_value_changed"]
 [connection signal="pressed" from="ControlsScreen/InputEater" to="." method="_on_controls_input_eater_pressed"]
 [connection signal="pressed" from="CreditsScreen/InputEater" to="." method="_on_credits_input_eater_pressed"]
