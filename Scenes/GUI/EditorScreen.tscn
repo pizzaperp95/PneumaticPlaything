@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://oiehbor0dlqx"]
+[gd_scene load_steps=27 format=3 uid="uid://oiehbor0dlqx"]
 
 [ext_resource type="Script" uid="uid://dfiwoln8mdwm8" path="res://Scripts/EditorScreen.gd" id="1_sd512"]
 [ext_resource type="Theme" uid="uid://dbgs4id7y5d1c" path="res://UI/Themes/Dark.tres" id="1_v0ton"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dts4eh6hyt8p3" path="res://UI/SkipBackwards.png" id="3_r4ytj"]
 [ext_resource type="Texture2D" uid="uid://bwhgy4u37jmo1" path="res://UI/Pause.png" id="4_ba3jn"]
 [ext_resource type="Texture2D" uid="uid://dhx2v2fd0egxd" path="res://UI/FastBackwards.png" id="4_wy7jo"]
+[ext_resource type="Texture2D" uid="uid://cttgtbu1xllwq" path="res://UI/Stop.png" id="8_20noo"]
 [ext_resource type="Texture2D" uid="uid://dsr03w7r667fw" path="res://UI/FastForward.png" id="8_v0ton"]
 [ext_resource type="Texture2D" uid="uid://bphwtliq2ahus" path="res://UI/SkipForward.png" id="9_20noo"]
 [ext_resource type="Texture2D" uid="uid://ckg2ihy105ttj" path="res://UI/Record.png" id="10_wy7jo"]
@@ -195,13 +196,13 @@ anchor_right = 1.0
 offset_bottom = 48.0
 grow_horizontal = 2
 
-[node name="Label" type="Label" parent="SequencerPanel/TransportControls"]
+[node name="TimeLabel" type="Label" parent="SequencerPanel/TransportControls"]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 196.0
 offset_bottom = 40.0
-text = "00:00:00:00 / 00:00:00:00"
+text = "0:00:00:00"
 vertical_alignment = 1
 
 [node name="Centered" type="Control" parent="SequencerPanel/TransportControls"]
@@ -211,19 +212,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -156.0
+offset_left = -178.0
 offset_top = -24.0
-offset_right = 156.0
+offset_right = 178.0
 offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SkipBackwardsButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
+[node name="StepBackwardsButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 44.0
 offset_bottom = 44.0
+tooltip_text = "Step backward 1 frame"
 icon = ExtResource("3_r4ytj")
 
 [node name="FastBackwardsButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
@@ -232,6 +234,7 @@ offset_left = 48.0
 offset_top = 4.0
 offset_right = 88.0
 offset_bottom = 44.0
+tooltip_text = "Play backwards at 2x speed"
 icon = ExtResource("4_wy7jo")
 
 [node name="PlayBackwardsButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
@@ -240,6 +243,7 @@ offset_left = 92.0
 offset_top = 4.0
 offset_right = 132.0
 offset_bottom = 44.0
+tooltip_text = "Play backwards"
 icon = ExtResource("3_mr8sb")
 
 [node name="PauseButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
@@ -248,30 +252,43 @@ offset_left = 136.0
 offset_top = 4.0
 offset_right = 176.0
 offset_bottom = 44.0
+tooltip_text = "Pause"
 icon = ExtResource("4_ba3jn")
 
-[node name="PlayButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
+[node name="StopButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
 layout_mode = 0
 offset_left = 180.0
 offset_top = 4.0
 offset_right = 220.0
 offset_bottom = 44.0
-icon = ExtResource("3_g6u4d")
+tooltip_text = "Stop playback and return to frame 0"
+icon = ExtResource("8_20noo")
 
-[node name="FastForwardButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
+[node name="PlayButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
 layout_mode = 0
 offset_left = 224.0
 offset_top = 4.0
 offset_right = 264.0
 offset_bottom = 44.0
-icon = ExtResource("8_v0ton")
+tooltip_text = "Play"
+icon = ExtResource("3_g6u4d")
 
-[node name="SkipForwardButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
+[node name="FastForwardButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
 layout_mode = 0
 offset_left = 268.0
 offset_top = 4.0
 offset_right = 308.0
 offset_bottom = 44.0
+tooltip_text = "Play at 2x speed"
+icon = ExtResource("8_v0ton")
+
+[node name="StepForwardButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 4.0
+offset_right = 352.0
+offset_bottom = 44.0
+tooltip_text = "Step forward 1 frame"
 icon = ExtResource("9_20noo")
 
 [node name="RecordButton" type="Button" parent="SequencerPanel/TransportControls"]
@@ -287,6 +304,7 @@ offset_right = -4.0
 offset_bottom = 20.0
 grow_horizontal = 0
 grow_vertical = 2
+tooltip_text = "Start recording"
 icon = ExtResource("10_wy7jo")
 
 [node name="TimelinePanel" type="Panel" parent="SequencerPanel"]
@@ -335,6 +353,14 @@ grow_vertical = 2
 
 [node name="HelenHouseMovementRows" parent="SequencerPanel/TimelinePanel/InvisibleMask/RowsHandle" instance=ExtResource("12_20noo")]
 layout_mode = 1
+
+[node name="VSeparator" type="VSeparator" parent="SequencerPanel/TimelinePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_left = 398.0
+offset_right = 4.0
+grow_vertical = 2
 
 [node name="HelenHouseFlyout" parent="." instance=ExtResource("13_wy7jo")]
 layout_mode = 1
@@ -395,8 +421,9 @@ Play/Pause: Space
 Play Reverse: Shift + Space
 Fast Forward: Shift + Right Arrow
 Fast Reverse: Shift + Left
-Skip Forward: Right Arrow
-Skip Backward: Left Arrow
+Step Forward: Right Arrow
+Step Backward: Left Arrow
+Go to start of showtape: Home
 Change Camera Angle: Tab"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -472,6 +499,15 @@ expand_mode = 2
 
 [connection signal="pressed" from="MenuBar/ControlsButton" to="." method="_on_controls_button_pressed"]
 [connection signal="pressed" from="MenuBar/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="SequencerPanel/TransportControls/Centered/StepBackwardsButton" to="." method="_on_step_backwards_button_pressed"]
+[connection signal="pressed" from="SequencerPanel/TransportControls/Centered/FastBackwardsButton" to="." method="_on_fast_backwards_button_pressed"]
+[connection signal="pressed" from="SequencerPanel/TransportControls/Centered/PlayBackwardsButton" to="." method="_on_play_backwards_button_pressed"]
+[connection signal="pressed" from="SequencerPanel/TransportControls/Centered/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="SequencerPanel/TransportControls/Centered/StopButton" to="." method="_on_stop_button_pressed"]
+[connection signal="pressed" from="SequencerPanel/TransportControls/Centered/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="SequencerPanel/TransportControls/Centered/FastForwardButton" to="." method="_on_fast_forward_button_pressed"]
+[connection signal="pressed" from="SequencerPanel/TransportControls/Centered/StepForwardButton" to="." method="_on_step_forward_button_pressed"]
+[connection signal="pressed" from="SequencerPanel/TransportControls/RecordButton" to="." method="_on_record_button_pressed"]
 [connection signal="value_changed" from="SequencerPanel/TimelinePanel/VScrollBar" to="." method="_on_v_scroll_bar_value_changed"]
 [connection signal="pressed" from="ControlsScreen/InputEater" to="." method="_on_controls_input_eater_pressed"]
 [connection signal="pressed" from="CreditsScreen/InputEater" to="." method="_on_credits_input_eater_pressed"]
