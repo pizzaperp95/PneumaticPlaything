@@ -20,8 +20,12 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 [node name="Stage" parent="." instance=ExtResource("5_afett")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 1.31601e-08, -1.50421e-07, 0, 0.996195, 0.0871557, 1.50996e-07, 0.0871557, -0.996195, 0, 1.5, -3)
+[node name="Camera 1" type="Camera3D" parent="."]
+transform = Transform3D(-1, 1.31602e-08, -1.50421e-07, 0, 0.996195, 0.0871557, 1.50996e-07, 0.0871557, -0.996195, 0, 1.5, -3)
+fov = 60.0
+
+[node name="Camera 2" type="Camera3D" parent="."]
+transform = Transform3D(-1, 1.31602e-08, -1.50421e-07, 0, 0.996195, 0.0871557, 1.50996e-07, 0.0871557, -0.996195, 0, 1.5, -1)
 fov = 60.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

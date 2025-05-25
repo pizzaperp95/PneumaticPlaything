@@ -137,6 +137,7 @@ popup/item_0/text = "Helen House (Custom)"
 popup/item_0/id = 0
 
 [node name="LoadShowtapeButton" type="Button" parent="MenuBar"]
+visible = false
 layout_mode = 0
 offset_left = 264.0
 offset_top = 4.0
@@ -145,6 +146,7 @@ offset_bottom = 36.0
 text = "Load Showtape"
 
 [node name="NewShowtapeButton" type="Button" parent="MenuBar"]
+visible = false
 layout_mode = 0
 offset_left = 396.0
 offset_top = 4.0
@@ -153,6 +155,7 @@ offset_bottom = 36.0
 text = "New Showtape"
 
 [node name="SaveShowtapeButton" type="Button" parent="MenuBar"]
+visible = false
 layout_mode = 0
 offset_left = 528.0
 offset_top = 4.0
@@ -162,17 +165,17 @@ text = "Save Showtape"
 
 [node name="ControlsButton" type="Button" parent="MenuBar"]
 layout_mode = 0
-offset_left = 660.0
+offset_left = 264.0
 offset_top = 4.0
-offset_right = 788.0
+offset_right = 392.0
 offset_bottom = 36.0
 text = "Controls"
 
 [node name="CreditsButton" type="Button" parent="MenuBar"]
 layout_mode = 0
-offset_left = 792.0
+offset_left = 396.0
 offset_top = 4.0
-offset_right = 920.0
+offset_right = 524.0
 offset_bottom = 36.0
 text = "Credits"
 

@@ -25,6 +25,21 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_editor_screen"):
 		$CameraPreview.visible = !$CameraPreview.visible;
 		$CameraFullScreen.visible = !$CameraFullScreen.visible;
+	elif event.is_action_pressed("sequencer_play_pause"):
+		if (playing): _on_pause_button_pressed()
+		else: _on_play_button_pressed()
+	elif event.is_action_pressed("sequencer_play_reverse"):
+		_on_play_backwards_button_pressed()
+	elif event.is_action_pressed("sequencer_fast_reverse"):
+		_on_fast_backwards_button_pressed()
+	elif event.is_action_pressed("sequencer_fast_forward"):
+		_on_fast_forward_button_pressed()
+	elif event.is_action_pressed("sequencer_step_backward"):
+		_on_step_backwards_button_pressed()
+	elif event.is_action_pressed("sequencer_step_forward"):
+		_on_step_forward_button_pressed()
+	elif event.is_action_pressed("sequencer_home"):
+		_on_stop_button_pressed()
 
 func _physics_process(_delta: float) -> void:
 	if (playing || recording):
@@ -79,8 +94,9 @@ func _on_step_backwards_button_pressed() -> void:
 	playing = false
 	recording = false
 	end_recording.emit()
-	step.emit(-1)
-	if (index != 0): index -= 1
+	if (index != 0): 
+		step.emit(-1)
+		index -= 1
 	update_time_label()
 
 func _on_fast_forward_button_pressed() -> void:

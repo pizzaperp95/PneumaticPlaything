@@ -3,12 +3,19 @@ extends Control
 signal movement_in(movement, rate)
 signal movement_out(movement, rate)
 
+var cam_index : int = 0
+
 func _ready() -> void:
 	var animatronic = get_node("../SubViewport/HelenHouse/3stHelen")
 	movement_in.connect(animatronic._movement_in)
 	movement_out.connect(animatronic._movement_out)
 	movement_in.connect(self._movement_in)
 	movement_out.connect(self._movement_out)
+
+func _input(event: InputEvent) -> void:
+	if (event.is_action_pressed("cycle_camera_angle")):
+		cam_index += 1
+		get_node("../SubViewport/HelenHouse/Camera " + str((cam_index % 2)+1)).current = true
 
 func _movement_in(movement, _rate):
 	get_node("Movements/IndicatorLights/" + movement).turn_on();
@@ -21,6 +28,21 @@ func _on_movements_flyout_button_toggled(toggled_on: bool) -> void:
 
 func _on_flows_flyout_button_toggled(toggled_on: bool) -> void:
 	$FlowControls.visible = toggled_on
+
+func _on_camera_flyout_button_toggled(toggled_on: bool) -> void:
+	$Camera.visible = toggled_on
+
+func _on_cosmetics_flyout_button_toggled(toggled_on: bool) -> void:
+	$Cosmetics.visible = toggled_on
+
+func _on_stage_flyout_button_toggled(toggled_on: bool) -> void:
+	$Stage.visible = toggled_on
+
+func _on_angle_1_button_pressed() -> void:
+	get_node("../SubViewport/HelenHouse/Camera 1").current = true
+
+func _on_angle_2_button_pressed() -> void:
+	get_node("../SubViewport/HelenHouse/Camera 2").current = true
 
 
 func _on_mouth_button_down() -> void:

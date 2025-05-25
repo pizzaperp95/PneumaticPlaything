@@ -941,8 +941,66 @@ text = "Body Lean"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Camera" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 140.0
+offset_right = 276.0
+offset_bottom = 76.0
+
+[node name="Angle1Button" type="Button" parent="Camera"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 132.0
+offset_bottom = 36.0
+text = "Angle 1"
+
+[node name="Angle2Button" type="Button" parent="Camera"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 40.0
+offset_right = 132.0
+offset_bottom = 72.0
+text = "Angle 2"
+
+[node name="Cosmetics" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 140.0
+offset_right = 396.0
+offset_bottom = 64.0
+
+[node name="Label" type="Label" parent="Cosmetics"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 228.0
+offset_bottom = 36.0
+text = "No options for this stage :("
+vertical_alignment = 1
+
+[node name="Stage" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 140.0
+offset_right = 396.0
+offset_bottom = 64.0
+
+[node name="Label" type="Label" parent="Stage"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 228.0
+offset_bottom = 36.0
+text = "No options for this stage :("
+vertical_alignment = 1
+
 [connection signal="toggled" from="FlyoutButtons/MovementsFlyoutButton" to="." method="_on_movements_flyout_button_toggled"]
 [connection signal="toggled" from="FlyoutButtons/FlowsFlyoutButton" to="." method="_on_flows_flyout_button_toggled"]
+[connection signal="toggled" from="FlyoutButtons/CameraFlyoutButton" to="." method="_on_camera_flyout_button_toggled"]
+[connection signal="toggled" from="FlyoutButtons/CosmeticsFlyoutButton" to="." method="_on_cosmetics_flyout_button_toggled"]
+[connection signal="toggled" from="FlyoutButtons/StageFlyoutButton" to="." method="_on_stage_flyout_button_toggled"]
 [connection signal="button_down" from="Movements/Buttons/Mouth" to="." method="_on_mouth_button_down"]
 [connection signal="button_up" from="Movements/Buttons/Mouth" to="." method="_on_mouth_button_up"]
 [connection signal="button_down" from="Movements/Buttons/LeftEar" to="." method="_on_left_ear_button_down"]
@@ -981,3 +1039,5 @@ vertical_alignment = 1
 [connection signal="button_up" from="Movements/Buttons/BodyRight" to="." method="_on_body_right_button_up"]
 [connection signal="button_down" from="Movements/Buttons/BodyLean" to="." method="_on_body_lean_button_down"]
 [connection signal="button_up" from="Movements/Buttons/BodyLean" to="." method="_on_body_lean_button_up"]
+[connection signal="pressed" from="Camera/Angle1Button" to="." method="_on_angle_1_button_pressed"]
+[connection signal="pressed" from="Camera/Angle2Button" to="." method="_on_angle_2_button_pressed"]
