@@ -43,7 +43,7 @@ func check_at_current() -> bool:
 	if (out == null): return false
 	return out
 
-func _step_forward():
+func _step(amount: int):
 	if (recording && etching): set_at_current()
 	elif (recording && !etching): unset_at_current()
 	if (playing):
@@ -55,17 +55,13 @@ func _step_forward():
 			if (playback_held_on_previous_frame):
 				movement_out.emit(movement_name, out_flow)
 				playback_held_on_previous_frame = false;
-	current_index += 1
-	$MovementsBG/InvisibleMask/MovementsHandle.position.x -= 2
-
-func _step_backward():
-	if (current_index == 0): return
-	current_index -= 1
-	$MovementsBG/InvisibleMask/MovementsHandle.position.x += 2
+	current_index += amount
+	$MovementsBG/InvisibleMask/MovementsHandle.position.x += -2*amount
 
 func _return_to_zero():
 	current_index = 0
 	$MovementsBG/InvisibleMask/MovementsHandle.position.x = 120
+	movement_out.emit(movement_name, out_flow)
 
 func _start_recording():
 	recording = true
@@ -102,8 +98,7 @@ func _ready() -> void:
 	movement_in.connect(self._movement_in)
 	movement_out.connect(self._movement_out)
 	var editor = get_node("../../../../../../")
-	editor.step_forward.connect(_step_forward)
-	editor.step_backward.connect(_step_backward)
+	editor.step.connect(_step)
 	editor.start_recording.connect(_start_recording)
 	editor.end_recording.connect(_end_recording)
 	editor.return_to_zero.connect(_return_to_zero)

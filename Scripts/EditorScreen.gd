@@ -5,8 +5,7 @@ var recording : bool = false
 var index : int = 0
 var playback_rate : int = 1
 
-signal step_forward()
-signal step_backward()
+signal step(amount: int)
 signal start_recording()
 signal end_recording()
 signal return_to_zero()
@@ -29,8 +28,9 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(_delta: float) -> void:
 	if (playing || recording):
-		step_forward.emit()
-		index += 1
+		step.emit(playback_rate)
+		index += playback_rate
+		if (index <= 0): _on_stop_button_pressed()
 		update_time_label()
 
 func _on_size_changed() -> void:
@@ -79,7 +79,7 @@ func _on_step_backwards_button_pressed() -> void:
 	playing = false
 	recording = false
 	end_recording.emit()
-	step_backward.emit()
+	step.emit(-1)
 	if (index != 0): index -= 1
 	update_time_label()
 
@@ -93,7 +93,7 @@ func _on_step_forward_button_pressed() -> void:
 	playing = false
 	recording = false
 	end_recording.emit()
-	step_forward.emit()
+	step.emit(1)
 	index += 1
 	update_time_label()
 
