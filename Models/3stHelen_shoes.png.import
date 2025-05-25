@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cm8h5o5urcvym"
 path.s3tc="res://.godot/imported/3stHelen_shoes.png-97c060c3fc3442bff6f75c94bc90506a.s3tc.ctex"
+path.etc2="res://.godot/imported/3stHelen_shoes.png-97c060c3fc3442bff6f75c94bc90506a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Models/3stHelen_shoes.png"
-dest_files=["res://.godot/imported/3stHelen_shoes.png-97c060c3fc3442bff6f75c94bc90506a.s3tc.ctex"]
+dest_files=["res://.godot/imported/3stHelen_shoes.png-97c060c3fc3442bff6f75c94bc90506a.s3tc.ctex", "res://.godot/imported/3stHelen_shoes.png-97c060c3fc3442bff6f75c94bc90506a.etc2.ctex"]
 
 [params]
 

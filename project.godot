@@ -15,7 +15,7 @@ config/version="v0.2"
 run/main_scene="uid://oiehbor0dlqx"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/show_image=false
-config/icon="uid://dhjuhhilgmxq3"
+config/icon="uid://bm61nhm3rs043"
 
 [display]
 
@@ -83,3 +83,4 @@ sequencer_home={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
