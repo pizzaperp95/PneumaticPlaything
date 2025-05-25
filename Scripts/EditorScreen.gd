@@ -85,13 +85,9 @@ func _on_v_scroll_bar_value_changed(value: float) -> void:
 func _on_play_button_pressed() -> void:
 	playback_rate = 1
 	playing = true
-	recording = false
-	end_recording.emit()
 
 func _on_pause_button_pressed() -> void:
 	playing = false
-	recording = false
-	end_recording.emit()
 
 func _on_play_backwards_button_pressed() -> void:
 	playback_rate = -1
@@ -128,11 +124,10 @@ func _on_step_forward_button_pressed() -> void:
 	index += 1
 	update_time_label()
 
-func _on_record_button_pressed() -> void:
-	playback_rate = 1
-	playing = false
-	recording = true
-	start_recording.emit()
+func _on_record_button_toggled(toggled_on: bool) -> void:
+	recording = toggled_on
+	if (toggled_on): start_recording.emit()
+	else: end_recording.emit()
 
 func _on_stop_button_pressed() -> void:
 	playing = false

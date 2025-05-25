@@ -314,6 +314,7 @@ grow_horizontal = 0
 grow_vertical = 2
 tooltip_text = "Start recording"
 disabled = true
+toggle_mode = true
 icon = ExtResource("10_wy7jo")
 
 [node name="TimelinePanel" type="Panel" parent="SequencerPanel"]
@@ -516,7 +517,7 @@ expand_mode = 2
 [connection signal="pressed" from="SequencerPanel/TransportControls/Centered/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="SequencerPanel/TransportControls/Centered/FastForwardButton" to="." method="_on_fast_forward_button_pressed"]
 [connection signal="pressed" from="SequencerPanel/TransportControls/Centered/StepForwardButton" to="." method="_on_step_forward_button_pressed"]
-[connection signal="pressed" from="SequencerPanel/TransportControls/RecordButton" to="." method="_on_record_button_pressed"]
+[connection signal="toggled" from="SequencerPanel/TransportControls/RecordButton" to="." method="_on_record_button_toggled"]
 [connection signal="value_changed" from="SequencerPanel/TimelinePanel/VScrollBar" to="." method="_on_v_scroll_bar_value_changed"]
 [connection signal="pressed" from="ControlsScreen/InputEater" to="." method="_on_controls_input_eater_pressed"]
 [connection signal="pressed" from="CreditsScreen/InputEater" to="." method="_on_credits_input_eater_pressed"]
