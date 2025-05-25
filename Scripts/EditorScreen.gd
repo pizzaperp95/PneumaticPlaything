@@ -57,7 +57,7 @@ func _input(event: InputEvent) -> void:
 			_on_stop_button_pressed()
 
 func _physics_process(_delta: float) -> void:
-	if (playing || recording):
+	if (playing):
 		step.emit(playback_rate)
 		index += playback_rate
 		if (index <= 0): _on_stop_button_pressed()
@@ -84,23 +84,29 @@ func _on_v_scroll_bar_value_changed(value: float) -> void:
 
 func _on_play_button_pressed() -> void:
 	playback_rate = 1
+	$AudioStreamPlayer.pitch_scale = 1
+	$AudioStreamPlayer.play(float(index)/60.0)
 	playing = true
 
 func _on_pause_button_pressed() -> void:
+	$AudioStreamPlayer.stop()
 	playing = false
 
 func _on_play_backwards_button_pressed() -> void:
 	playback_rate = -1
+	$AudioStreamPlayer.stop() # cant play backwards :(
 	playing = true
 	$SequencerPanel/TransportControls/RecordButton.button_pressed = false 
 
 func _on_fast_backwards_button_pressed() -> void:
 	playback_rate = -2
+	$AudioStreamPlayer.stop() # cant play backwards :(
 	playing = true
 	$SequencerPanel/TransportControls/RecordButton.button_pressed = false
 
 func _on_step_backwards_button_pressed() -> void:
 	playing = false
+	$AudioStreamPlayer.stop()
 	$SequencerPanel/TransportControls/RecordButton.button_pressed = false
 	if (index != 0): 
 		step.emit(-1)
@@ -109,11 +115,14 @@ func _on_step_backwards_button_pressed() -> void:
 
 func _on_fast_forward_button_pressed() -> void:
 	playback_rate = 2
+	$AudioStreamPlayer.pitch_scale = 2
+	$AudioStreamPlayer.play(float(index)/60.0)
 	playing = true
 	$SequencerPanel/TransportControls/RecordButton.button_pressed = false
 
 func _on_step_forward_button_pressed() -> void:
 	playing = false
+	$AudioStreamPlayer.stop()
 	$SequencerPanel/TransportControls/RecordButton.button_pressed = false
 	step.emit(1)
 	index += 1
@@ -126,6 +135,8 @@ func _on_record_button_toggled(toggled_on: bool) -> void:
 
 func _on_stop_button_pressed() -> void:
 	playing = false
+	$AudioStreamPlayer.stop()
+	$AudioStreamPlayer.seek(0)
 	$SequencerPanel/TransportControls/RecordButton.button_pressed = false
 	index = 0
 	return_to_zero.emit()

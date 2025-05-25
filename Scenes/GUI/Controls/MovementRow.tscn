@@ -43,6 +43,7 @@ offset_left = 244.0
 offset_top = 4.0
 offset_right = 260.0
 offset_bottom = 20.0
+tooltip_text = "Clear this row"
 icon = ExtResource("2_e7anl")
 
 [node name="MovementsBG" type="Panel" parent="."]
