@@ -13,8 +13,8 @@ signal return_to_zero()
 func update_time_label() -> void:
 	var frames = index % 60
 	var seconds = floori(index/60) % 60
-	var minutes = floori(index/360) % 60
-	var hours = floori(index/7200)
+	var minutes = floori(index/3600) % 60
+	var hours = floori(index/216000)
 	$SequencerPanel/TransportControls/TimeLabel.text = "%d:%02d:%02d:%02d" % [hours, minutes, seconds, frames] 
 	#$SequencerPanel/TransportControls/TimeLabel.text = str(index)
 

@@ -17,6 +17,7 @@ var playback_held_on_previous_frame : bool = false
 var etching: bool = false
 var recording : bool = false
 var playing : bool = true
+var current_block_indicator
 
 signal movement_in(movement, rate)
 signal movement_out(movement, rate)
@@ -24,18 +25,20 @@ signal movement_out(movement, rate)
 func set_at_current() -> void:
 	if (current_index > self.movements.size()-1): self.movements.append(true)
 	else: self.movements.set(current_index, true)
-	var indicator = load("res://Scenes/GUI/Controls/MovementFrameIndicatorOn.tscn")
-	var instance = indicator.instantiate()
-	instance.x_offset = current_index * 2
-	$MovementsBG/InvisibleMask/MovementsHandle.add_child(instance)
+	if (check_at_index(current_index-1)): current_block_indicator.get_node("ColorRect").size.x += 2
+	else:
+		current_block_indicator = load("res://Scenes/GUI/Controls/MovementFrameIndicatorOn.tscn").instantiate()
+		current_block_indicator.position.x = current_index * 2
+		$MovementsBG/InvisibleMask/MovementsHandle.add_child(current_block_indicator)
 
 func unset_at_current() -> void:
 	if (current_index > self.movements.size()-1): self.movements.append(false)
 	else: self.movements.set(current_index, false)
-	var indicator = load("res://Scenes/GUI/Controls/MovementFrameIndicatorOff.tscn")
-	var instance = indicator.instantiate()
-	instance.x_offset = current_index * 2
-	$MovementsBG/InvisibleMask/MovementsHandle.add_child(instance)
+	if (!check_at_index(current_index-1)): current_block_indicator.get_node("ColorRect").size.x += 2
+	else:
+		current_block_indicator = load("res://Scenes/GUI/Controls/MovementFrameIndicatorOff.tscn").instantiate()
+		current_block_indicator.position.x = current_index * 2
+		$MovementsBG/InvisibleMask/MovementsHandle.add_child(current_block_indicator)
 
 func check_at_current() -> bool:
 	if (current_index > self.movements.size()-1): return false
@@ -43,9 +46,17 @@ func check_at_current() -> bool:
 	if (out == null): return false
 	return out
 
+func check_at_index(cindex: int) -> bool:
+	if (cindex > self.movements.size()-1): return false
+	if (cindex < 0): return false
+	var out = self.movements.get(cindex)
+	if (out == null): return false
+	return out
+
 func _step(amount: int):
-	if (recording && etching): set_at_current()
-	elif (recording && !etching): unset_at_current()
+	if (recording): 
+		if (etching): set_at_current()
+		else: unset_at_current()
 	if (playing):
 		if (check_at_current()):
 			if (!playback_held_on_previous_frame):
@@ -102,6 +113,7 @@ func _ready() -> void:
 	editor.start_recording.connect(_start_recording)
 	editor.end_recording.connect(_end_recording)
 	editor.return_to_zero.connect(_return_to_zero)
+	current_block_indicator = load("res://Scenes/GUI/Controls/MovementFrameIndicatorOff.tscn").instantiate()
 	update_text()
 
 func _process(_delta: float) -> void:
