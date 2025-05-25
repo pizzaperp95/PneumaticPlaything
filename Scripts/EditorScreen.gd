@@ -4,6 +4,7 @@ var playing : bool = false
 var recording : bool = false
 var index : int = 0
 var playback_rate : int = 1
+var transport_enabled : bool = false
 
 signal step(amount: int)
 signal start_recording()
@@ -18,28 +19,42 @@ func update_time_label() -> void:
 	$SequencerPanel/TransportControls/TimeLabel.text = "%d:%02d:%02d:%02d" % [hours, minutes, seconds, frames] 
 	#$SequencerPanel/TransportControls/TimeLabel.text = str(index)
 
+func set_transport_enabled(enabled: bool):
+	$SequencerPanel/TransportControls/Centered/StepBackwardsButton.disabled = !enabled
+	$SequencerPanel/TransportControls/Centered/FastBackwardsButton.disabled = !enabled
+	$SequencerPanel/TransportControls/Centered/PlayBackwardsButton.disabled = !enabled
+	$SequencerPanel/TransportControls/Centered/PauseButton.disabled = !enabled
+	$SequencerPanel/TransportControls/Centered/StopButton.disabled = !enabled
+	$SequencerPanel/TransportControls/Centered/PlayButton.disabled = !enabled
+	$SequencerPanel/TransportControls/Centered/FastForwardButton.disabled = !enabled
+	$SequencerPanel/TransportControls/Centered/StepForwardButton.disabled = !enabled
+	$SequencerPanel/TransportControls/RecordButton.disabled = !enabled
+	transport_enabled = enabled
+
 func _ready() -> void:
 	get_tree().get_root().size_changed.connect(_on_size_changed) 
+	set_transport_enabled(true)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_editor_screen"):
 		$CameraPreview.visible = !$CameraPreview.visible;
 		$CameraFullScreen.visible = !$CameraFullScreen.visible;
-	elif event.is_action_pressed("sequencer_play_pause"):
-		if (playing): _on_pause_button_pressed()
-		else: _on_play_button_pressed()
-	elif event.is_action_pressed("sequencer_play_reverse"):
-		_on_play_backwards_button_pressed()
-	elif event.is_action_pressed("sequencer_fast_reverse"):
-		_on_fast_backwards_button_pressed()
-	elif event.is_action_pressed("sequencer_fast_forward"):
-		_on_fast_forward_button_pressed()
-	elif event.is_action_pressed("sequencer_step_backward"):
-		_on_step_backwards_button_pressed()
-	elif event.is_action_pressed("sequencer_step_forward"):
-		_on_step_forward_button_pressed()
-	elif event.is_action_pressed("sequencer_home"):
-		_on_stop_button_pressed()
+	if (transport_enabled):
+		if event.is_action_pressed("sequencer_play_pause"):
+			if (playing): _on_pause_button_pressed()
+			else: _on_play_button_pressed()
+		elif event.is_action_pressed("sequencer_play_reverse"):
+			_on_play_backwards_button_pressed()
+		elif event.is_action_pressed("sequencer_fast_reverse"):
+			_on_fast_backwards_button_pressed()
+		elif event.is_action_pressed("sequencer_fast_forward"):
+			_on_fast_forward_button_pressed()
+		elif event.is_action_pressed("sequencer_step_backward"):
+			_on_step_backwards_button_pressed()
+		elif event.is_action_pressed("sequencer_step_forward"):
+			_on_step_forward_button_pressed()
+		elif event.is_action_pressed("sequencer_home"):
+			_on_stop_button_pressed()
 
 func _physics_process(_delta: float) -> void:
 	if (playing || recording):

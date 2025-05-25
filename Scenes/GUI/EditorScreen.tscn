@@ -121,7 +121,7 @@ offset_right = -4.0
 offset_bottom = 16.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "Pneumatic Plaything v0.2"
+text = "Pneumatic Plaything v0.3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -137,7 +137,6 @@ popup/item_0/text = "Helen House (Custom)"
 popup/item_0/id = 0
 
 [node name="LoadShowtapeButton" type="Button" parent="MenuBar"]
-visible = false
 layout_mode = 0
 offset_left = 264.0
 offset_top = 4.0
@@ -146,7 +145,6 @@ offset_bottom = 36.0
 text = "Load Showtape"
 
 [node name="NewShowtapeButton" type="Button" parent="MenuBar"]
-visible = false
 layout_mode = 0
 offset_left = 396.0
 offset_top = 4.0
@@ -155,7 +153,6 @@ offset_bottom = 36.0
 text = "New Showtape"
 
 [node name="SaveShowtapeButton" type="Button" parent="MenuBar"]
-visible = false
 layout_mode = 0
 offset_left = 528.0
 offset_top = 4.0
@@ -165,17 +162,17 @@ text = "Save Showtape"
 
 [node name="ControlsButton" type="Button" parent="MenuBar"]
 layout_mode = 0
-offset_left = 264.0
+offset_left = 660.0
 offset_top = 4.0
-offset_right = 392.0
+offset_right = 788.0
 offset_bottom = 36.0
 text = "Controls"
 
 [node name="CreditsButton" type="Button" parent="MenuBar"]
 layout_mode = 0
-offset_left = 396.0
+offset_left = 792.0
 offset_top = 4.0
-offset_right = 524.0
+offset_right = 920.0
 offset_bottom = 36.0
 text = "Credits"
 
@@ -229,6 +226,7 @@ offset_top = 4.0
 offset_right = 44.0
 offset_bottom = 44.0
 tooltip_text = "Step backward 1 frame"
+disabled = true
 icon = ExtResource("3_r4ytj")
 
 [node name="FastBackwardsButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
@@ -238,6 +236,7 @@ offset_top = 4.0
 offset_right = 88.0
 offset_bottom = 44.0
 tooltip_text = "Play backwards at 2x speed"
+disabled = true
 icon = ExtResource("4_wy7jo")
 
 [node name="PlayBackwardsButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
@@ -247,6 +246,7 @@ offset_top = 4.0
 offset_right = 132.0
 offset_bottom = 44.0
 tooltip_text = "Play backwards"
+disabled = true
 icon = ExtResource("3_mr8sb")
 
 [node name="PauseButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
@@ -256,6 +256,7 @@ offset_top = 4.0
 offset_right = 176.0
 offset_bottom = 44.0
 tooltip_text = "Pause"
+disabled = true
 icon = ExtResource("4_ba3jn")
 
 [node name="StopButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
@@ -265,6 +266,7 @@ offset_top = 4.0
 offset_right = 220.0
 offset_bottom = 44.0
 tooltip_text = "Stop playback and return to frame 0"
+disabled = true
 icon = ExtResource("8_20noo")
 
 [node name="PlayButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
@@ -274,6 +276,7 @@ offset_top = 4.0
 offset_right = 264.0
 offset_bottom = 44.0
 tooltip_text = "Play"
+disabled = true
 icon = ExtResource("3_g6u4d")
 
 [node name="FastForwardButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
@@ -283,6 +286,7 @@ offset_top = 4.0
 offset_right = 308.0
 offset_bottom = 44.0
 tooltip_text = "Play at 2x speed"
+disabled = true
 icon = ExtResource("8_v0ton")
 
 [node name="StepForwardButton" type="Button" parent="SequencerPanel/TransportControls/Centered"]
@@ -292,6 +296,7 @@ offset_top = 4.0
 offset_right = 352.0
 offset_bottom = 44.0
 tooltip_text = "Step forward 1 frame"
+disabled = true
 icon = ExtResource("9_20noo")
 
 [node name="RecordButton" type="Button" parent="SequencerPanel/TransportControls"]
@@ -308,6 +313,7 @@ offset_bottom = 20.0
 grow_horizontal = 0
 grow_vertical = 2
 tooltip_text = "Start recording"
+disabled = true
 icon = ExtResource("10_wy7jo")
 
 [node name="TimelinePanel" type="Panel" parent="SequencerPanel"]

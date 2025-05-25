@@ -154,3 +154,9 @@ func _input(event: InputEvent) -> void:
 		binding = false
 		update_text()
 		return
+
+
+func _on_clear_button_pressed() -> void:
+	movements = []
+	for indicator in $MovementsBG/InvisibleMask/MovementsHandle.get_children():
+		indicator.queue_free()
