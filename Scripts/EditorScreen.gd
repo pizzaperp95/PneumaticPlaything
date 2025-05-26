@@ -311,7 +311,6 @@ func plot_data(data: String):
 		for i in range(stages_info[current_stage][1]):
 			var er = false
 			if ((frame_byte & int(pow(2, i))) >> i == 1): 
-				print("match at %d on frame %d" % [i, frame_byte])
 				er = true
 			$SequencerPanel/TimelinePanel/InvisibleMask/RowsHandle.get_child(0).get_child(i).etching = er
 		step.emit(1)
