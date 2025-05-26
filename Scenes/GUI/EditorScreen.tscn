@@ -792,6 +792,15 @@ offset_bottom = 145.0
 tooltip_text = "Browse for a file."
 text = "Browse"
 
+[node name="ShowWaitMessage" type="Label" parent="ShowtapeLoadScreen/DialogPanel"]
+offset_left = 8.0
+offset_top = 148.0
+offset_right = 374.0
+offset_bottom = 197.0
+text = "If shows are taking a long time to load, 
+consider compressing the audio to MP3 or OGG"
+vertical_alignment = 1
+
 [node name="CancelButton" type="Button" parent="ShowtapeLoadScreen/DialogPanel"]
 layout_mode = 0
 offset_left = 309.0
