@@ -123,7 +123,7 @@ func _ready() -> void:
 	update_text()
 
 func _process(_delta: float) -> void:
-	if (binding): return
+	if (binding || key_binding.keycode == 0): return
 	if (Input.is_key_pressed(key_binding.keycode)):
 		if (!held_on_previous_frame):
 			movement_in.emit(movement_name, in_flow)
