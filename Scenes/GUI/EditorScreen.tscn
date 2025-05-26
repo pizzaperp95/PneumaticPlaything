@@ -793,6 +793,7 @@ tooltip_text = "Browse for a file."
 text = "Browse"
 
 [node name="ShowWaitMessage" type="Label" parent="ShowtapeLoadScreen/DialogPanel"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 148.0
 offset_right = 374.0

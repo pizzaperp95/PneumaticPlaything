@@ -47,6 +47,7 @@ func _ready() -> void:
 	get_tree().get_root().size_changed.connect(_on_size_changed) 
 	erase_all.connect(_erase_all)
 	$MenuBar/MenuButton.get_popup().id_pressed.connect(_showtape_menu_button_pressed)
+	OS.request_permissions()
 
 func _showtape_menu_button_pressed(id: int) -> void:
 	match (id):
