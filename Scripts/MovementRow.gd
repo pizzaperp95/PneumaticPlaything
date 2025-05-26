@@ -5,6 +5,7 @@ extends Panel
 @export var flow_path : String = "../../../../../../HelenHouseFlyout/FlowControls/"
 @export var animatronic_path : String = "../../../../../../SubViewport/HelenHouse/3stHelen"
 @export var movements : Array[bool]
+@export var etching: bool = false
 
 var in_flow : float = 1.0
 var out_flow : float = 1.0
@@ -14,7 +15,6 @@ var current_index : int = 0
 var binding : bool = false
 var held_on_previous_frame : bool = false
 var playback_held_on_previous_frame : bool = false
-var etching: bool = false
 var recording : bool = false
 var playing : bool = true
 var current_block_indicator
@@ -74,6 +74,10 @@ func _return_to_zero():
 	$MovementsBG/InvisibleMask/MovementsHandle.position.x = 120
 	movement_out.emit(movement_name, out_flow)
 
+func _erase_all() -> void:
+	_return_to_zero()
+	_on_clear_button_pressed()
+
 func _start_recording():
 	recording = true
 
@@ -96,7 +100,6 @@ func _update_out_flow(new_value: float) -> void:
 	out_flow = new_value
 
 func _ready() -> void:
-	var animatronic = get_node(animatronic_path)
 	if (flow_path != "None"):
 		var if_node = get_node(flow_path + "InFlows/" + movement_name.replace(" ", "") + "Flow")
 		var of_node = get_node(flow_path + "OutFlows/" + movement_name.replace(" ", "") + "Flow")
@@ -104,8 +107,10 @@ func _ready() -> void:
 		of_node.value_updated.connect(self._update_out_flow)
 		in_flow = if_node.value
 		out_flow = of_node.value
-	movement_in.connect(animatronic._movement_in)
-	movement_out.connect(animatronic._movement_out)
+	if (animatronic_path != "None"):
+		var animatronic = get_node(animatronic_path)
+		movement_in.connect(animatronic._movement_in)
+		movement_out.connect(animatronic._movement_out)
 	movement_in.connect(self._movement_in)
 	movement_out.connect(self._movement_out)
 	var editor = get_node("../../../../../../")
@@ -113,6 +118,7 @@ func _ready() -> void:
 	editor.start_recording.connect(_start_recording)
 	editor.end_recording.connect(_end_recording)
 	editor.return_to_zero.connect(_return_to_zero)
+	editor.erase_all.connect(_erase_all)
 	current_block_indicator = load("res://Scenes/GUI/Controls/MovementFrameIndicatorOff.tscn").instantiate()
 	update_text()
 
@@ -160,3 +166,4 @@ func _on_clear_button_pressed() -> void:
 	movements = []
 	for indicator in $MovementsBG/InvisibleMask/MovementsHandle.get_children():
 		indicator.queue_free()
+	current_block_indicator = load("res://Scenes/GUI/Controls/MovementFrameIndicatorOff.tscn").instantiate()

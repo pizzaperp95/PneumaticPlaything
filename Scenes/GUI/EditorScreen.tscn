@@ -1,9 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://oiehbor0dlqx"]
+[gd_scene load_steps=27 format=3 uid="uid://oiehbor0dlqx"]
 
 [ext_resource type="Script" uid="uid://dfiwoln8mdwm8" path="res://Scripts/EditorScreen.gd" id="1_sd512"]
 [ext_resource type="Theme" uid="uid://dbgs4id7y5d1c" path="res://UI/Themes/Dark.tres" id="1_v0ton"]
 [ext_resource type="PackedScene" uid="uid://btre5j66mpchy" path="res://Scenes/Stages/Helen House/HelenHouse.tscn" id="2_p1t5g"]
-[ext_resource type="AudioStream" uid="uid://c1hjkaatw2koh" path="res://UI/placeholder_delete_this_file_later_please_its_so_large.wav" id="3_20noo"]
 [ext_resource type="Texture2D" uid="uid://xllpr3qc064c" path="res://UI/Play.png" id="3_g6u4d"]
 [ext_resource type="Texture2D" uid="uid://dgacnkv2dc65s" path="res://UI/PlayBackwards.png" id="3_mr8sb"]
 [ext_resource type="Texture2D" uid="uid://dts4eh6hyt8p3" path="res://UI/SkipBackwards.png" id="3_r4ytj"]
@@ -51,8 +50,67 @@ grow_vertical = 2
 theme = ExtResource("1_v0ton")
 script = ExtResource("1_sd512")
 
+[node name="OpenAudioFileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+initial_position = 2
+ok_button_text = "Open"
+dialog_hide_on_ok = true
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.wav", "*.mp3", "*.ogg")
+
+[node name="OpenShowtapeFileDialog" type="FileDialog" parent="."]
+auto_translate_mode = 1
+title = "Open a File"
+initial_position = 2
+ok_button_text = "Open"
+dialog_hide_on_ok = true
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.ust")
+
+[node name="SaveShowtapeFileDialog" type="FileDialog" parent="."]
+auto_translate_mode = 1
+initial_position = 2
+dialog_hide_on_ok = true
+access = 2
+filters = PackedStringArray("*.ust")
+
+[node name="NewOverwriteConfirmationDialog" type="ConfirmationDialog" parent="."]
+initial_position = 2
+size = Vector2i(472, 100)
+ok_button_text = "Proceed"
+dialog_text = "You have unsaved data! Are you sure you want to proceed?"
+cancel_button_text = "Do Not"
+
+[node name="LoadOverwriteConfirmationDialog" type="ConfirmationDialog" parent="."]
+auto_translate_mode = 1
+initial_position = 2
+size = Vector2i(472, 100)
+ok_button_text = "Proceed"
+dialog_text = "You have unsaved data! Are you sure you want to proceed?"
+cancel_button_text = "Do Not"
+
+[node name="FileDoesntExistDialog" type="AcceptDialog" parent="."]
+initial_position = 2
+dialog_text = "The specified file does not exist."
+
+[node name="EmptyStringDialog" type="AcceptDialog" parent="."]
+auto_translate_mode = 1
+initial_position = 2
+dialog_text = "String cannot be blank."
+
+[node name="NoShowtapeLoadedDialog" type="AcceptDialog" parent="."]
+auto_translate_mode = 1
+initial_position = 2
+dialog_text = "There is no showtape currently loaded."
+
+[node name="IncorrectShowtapeDialog" type="AcceptDialog" parent="."]
+auto_translate_mode = 1
+initial_position = 2
+dialog_text = "This showtape is not compatible with the currently selected stage."
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_20noo")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 size = Vector2i(1280, 720)
@@ -112,23 +170,6 @@ offset_right = -4.0
 offset_bottom = 44.0
 grow_horizontal = 2
 
-[node name="Wordmark" type="Label" parent="MenuBar"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -228.0
-offset_top = -16.0
-offset_right = -4.0
-offset_bottom = 16.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Pneumatic Plaything v0.3"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="StageSelector" type="OptionButton" parent="MenuBar"]
 layout_mode = 0
 offset_left = 4.0
@@ -140,45 +181,63 @@ item_count = 1
 popup/item_0/text = "Helen House (Custom)"
 popup/item_0/id = 0
 
-[node name="LoadShowtapeButton" type="Button" parent="MenuBar"]
+[node name="MenuButton" type="MenuButton" parent="MenuBar"]
 layout_mode = 0
 offset_left = 264.0
 offset_top = 4.0
 offset_right = 392.0
 offset_bottom = 36.0
-text = "Load Showtape"
+text = "Showtape"
+flat = false
+item_count = 3
+popup/item_0/text = "New"
+popup/item_0/id = 0
+popup/item_1/text = "Load"
+popup/item_1/id = 1
+popup/item_2/text = "Save"
+popup/item_2/id = 2
 
-[node name="NewShowtapeButton" type="Button" parent="MenuBar"]
+[node name="ControlsButton" type="Button" parent="MenuBar"]
 layout_mode = 0
 offset_left = 396.0
 offset_top = 4.0
 offset_right = 524.0
 offset_bottom = 36.0
-text = "New Showtape"
+text = "Controls"
 
-[node name="SaveShowtapeButton" type="Button" parent="MenuBar"]
+[node name="CreditsButton" type="Button" parent="MenuBar"]
 layout_mode = 0
 offset_left = 528.0
 offset_top = 4.0
 offset_right = 656.0
 offset_bottom = 36.0
-text = "Save Showtape"
+text = "Credits"
 
-[node name="ControlsButton" type="Button" parent="MenuBar"]
+[node name="Wordmark" type="Label" parent="MenuBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -16.0
+offset_right = -8.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Pneumatic Plaything v0.3"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="EditingLabel" type="Label" parent="MenuBar"]
 layout_mode = 0
 offset_left = 660.0
 offset_top = 4.0
-offset_right = 788.0
+offset_right = 899.0
 offset_bottom = 36.0
-text = "Controls"
-
-[node name="CreditsButton" type="Button" parent="MenuBar"]
-layout_mode = 0
-offset_left = 792.0
-offset_top = 4.0
-offset_right = 920.0
-offset_bottom = 36.0
-text = "Credits"
+text = "No showtape loaded."
+vertical_alignment = 1
 
 [node name="SequencerPanel" type="Panel" parent="."]
 layout_mode = 1
@@ -342,7 +401,7 @@ offset_top = 4.0
 offset_right = 12.0
 offset_bottom = -4.0
 grow_vertical = 2
-max_value = 18.0
+max_value = 31.0
 step = 1.0
 
 [node name="InvisibleMask" type="Control" parent="SequencerPanel/TimelinePanel"]
@@ -416,10 +475,14 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_othvt")
 [node name="DialogPanel" type="Panel" parent="ControlsScreen"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.3
-anchor_top = 0.2
-anchor_right = 0.7
-anchor_bottom = 0.8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -192.0
+offset_right = 256.0
+offset_bottom = 192.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -437,7 +500,7 @@ Fast Forward: Shift + Right Arrow
 Fast Reverse: Shift + Left
 Step Forward: Right Arrow
 Step Backward: Left Arrow
-Go to start of showtape: Home
+Stop: Home
 Change Camera Angle: Tab"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -473,10 +536,14 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_othvt")
 [node name="DialogPanel" type="Panel" parent="CreditsScreen"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.3
-anchor_top = 0.2
-anchor_right = 0.7
-anchor_bottom = 0.8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -192.0
+offset_right = 256.0
+offset_bottom = 192.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -500,6 +567,351 @@ or Creative Engineering Inc."
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ShowtapeNewScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InputEater" type="Button" parent="ShowtapeNewScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wy7jo")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_v0ton")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_20noo")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_mch36")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_fxi2g")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_bdf35")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j2w5p")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_bv2rw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gx718")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_gu086")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_othvt")
+
+[node name="DialogPanel" type="Panel" parent="ShowtapeNewScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -128.0
+offset_right = 256.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogLabel" type="Label" parent="ShowtapeNewScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 36.0
+grow_horizontal = 2
+text = "Create New Showtape"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioTypeLabel" type="Label" parent="ShowtapeNewScreen/DialogPanel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 40.0
+offset_right = 264.0
+offset_bottom = 72.0
+text = "Audio File (WAV, MP3, or OGG)"
+vertical_alignment = 1
+
+[node name="AudioFilePath" type="TextEdit" parent="ShowtapeNewScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 76.0
+offset_right = -104.0
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "File Path"
+
+[node name="AudioBrowseButton" type="Button" parent="ShowtapeNewScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_top = 76.0
+offset_right = -4.0
+offset_bottom = 112.0
+tooltip_text = "Browse for a file."
+text = "Browse"
+
+[node name="ShowNameLabel" type="Label" parent="ShowtapeNewScreen/DialogPanel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 116.0
+offset_right = 264.0
+offset_bottom = 148.0
+text = "Showtape Name"
+vertical_alignment = 1
+
+[node name="ShowNameTextBox" type="TextEdit" parent="ShowtapeNewScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 152.0
+offset_right = -4.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Show Name"
+
+[node name="StageTypeLabel" type="Label" parent="ShowtapeNewScreen/DialogPanel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 192.0
+offset_right = 264.0
+offset_bottom = 224.0
+text = "Creating for Helen House"
+vertical_alignment = 1
+
+[node name="CancelButton" type="Button" parent="ShowtapeNewScreen/DialogPanel"]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 216.0
+offset_right = 405.0
+offset_bottom = 248.0
+text = "Cancel
+"
+
+[node name="CreateButton" type="Button" parent="ShowtapeNewScreen/DialogPanel"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 216.0
+offset_right = 504.0
+offset_bottom = 248.0
+text = "Create"
+
+[node name="ShowtapeLoadScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InputEater" type="Button" parent="ShowtapeLoadScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wy7jo")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_v0ton")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_20noo")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_mch36")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_fxi2g")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_bdf35")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j2w5p")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_bv2rw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gx718")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_gu086")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_othvt")
+
+[node name="DialogPanel" type="Panel" parent="ShowtapeLoadScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -128.0
+offset_right = 256.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogLabel" type="Label" parent="ShowtapeLoadScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 36.0
+grow_horizontal = 2
+text = "Load Showtape"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InFileLabel" type="Label" parent="ShowtapeLoadScreen/DialogPanel"]
+offset_left = 8.0
+offset_top = 73.0
+offset_right = 264.0
+offset_bottom = 105.0
+text = "File to load"
+vertical_alignment = 1
+
+[node name="InFilePath" type="TextEdit" parent="ShowtapeLoadScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 109.0
+offset_right = -104.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "File Path"
+
+[node name="InBrowseButton" type="Button" parent="ShowtapeLoadScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_top = 109.0
+offset_right = -4.0
+offset_bottom = 145.0
+tooltip_text = "Browse for a file."
+text = "Browse"
+
+[node name="CancelButton" type="Button" parent="ShowtapeLoadScreen/DialogPanel"]
+offset_left = 309.0
+offset_top = 216.0
+offset_right = 405.0
+offset_bottom = 248.0
+text = "Cancel
+"
+
+[node name="OpenButton" type="Button" parent="ShowtapeLoadScreen/DialogPanel"]
+offset_left = 408.0
+offset_top = 216.0
+offset_right = 504.0
+offset_bottom = 248.0
+text = "Open"
+
+[node name="ShowtapeSaveScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InputEater" type="Button" parent="ShowtapeSaveScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wy7jo")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_v0ton")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_20noo")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_mch36")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_fxi2g")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_bdf35")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j2w5p")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_bv2rw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gx718")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_gu086")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_othvt")
+
+[node name="DialogPanel" type="Panel" parent="ShowtapeSaveScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -128.0
+offset_right = 256.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogLabel" type="Label" parent="ShowtapeSaveScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 36.0
+grow_horizontal = 2
+text = "Save Showtape"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OutFileLabel" type="Label" parent="ShowtapeSaveScreen/DialogPanel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 73.0
+offset_right = 264.0
+offset_bottom = 105.0
+text = "File to save as"
+vertical_alignment = 1
+
+[node name="OutFilePath" type="TextEdit" parent="ShowtapeSaveScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 109.0
+offset_right = -104.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "File Path"
+
+[node name="OutBrowseButton" type="Button" parent="ShowtapeSaveScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_top = 109.0
+offset_right = -4.0
+offset_bottom = 145.0
+tooltip_text = "Browse for a file."
+text = "Browse"
+
+[node name="CancelButton" type="Button" parent="ShowtapeSaveScreen/DialogPanel"]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 216.0
+offset_right = 405.0
+offset_bottom = 248.0
+text = "Cancel
+"
+
+[node name="CreateButton" type="Button" parent="ShowtapeSaveScreen/DialogPanel"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 216.0
+offset_right = 504.0
+offset_bottom = 248.0
+text = "Save"
+
 [node name="CameraFullScreen" type="TextureRect" parent="."]
 visible = false
 layout_mode = 1
@@ -511,6 +923,11 @@ grow_vertical = 2
 texture = SubResource("ViewportTexture_g6u4d")
 expand_mode = 2
 
+[connection signal="file_selected" from="OpenAudioFileDialog" to="." method="_on_open_audio_file_dialog_file_selected"]
+[connection signal="file_selected" from="OpenShowtapeFileDialog" to="." method="_on_open_showtape_file_dialog_file_selected"]
+[connection signal="file_selected" from="SaveShowtapeFileDialog" to="." method="_on_save_showtape_file_dialog_file_selected"]
+[connection signal="confirmed" from="NewOverwriteConfirmationDialog" to="." method="_on_new_overwrite_confirmation_dialog_confirmed"]
+[connection signal="confirmed" from="LoadOverwriteConfirmationDialog" to="." method="_on_load_overwrite_confirmation_dialog_confirmed"]
 [connection signal="pressed" from="MenuBar/ControlsButton" to="." method="_on_controls_button_pressed"]
 [connection signal="pressed" from="MenuBar/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="SequencerPanel/TransportControls/Centered/StepBackwardsButton" to="." method="_on_step_backwards_button_pressed"]
@@ -523,5 +940,17 @@ expand_mode = 2
 [connection signal="pressed" from="SequencerPanel/TransportControls/Centered/StepForwardButton" to="." method="_on_step_forward_button_pressed"]
 [connection signal="toggled" from="SequencerPanel/TransportControls/RecordButton" to="." method="_on_record_button_toggled"]
 [connection signal="value_changed" from="SequencerPanel/TimelinePanel/VScrollBar" to="." method="_on_v_scroll_bar_value_changed"]
-[connection signal="pressed" from="ControlsScreen/InputEater" to="." method="_on_controls_input_eater_pressed"]
-[connection signal="pressed" from="CreditsScreen/InputEater" to="." method="_on_credits_input_eater_pressed"]
+[connection signal="pressed" from="ControlsScreen/InputEater" to="." method="_on_input_eater_pressed"]
+[connection signal="pressed" from="CreditsScreen/InputEater" to="." method="_on_input_eater_pressed"]
+[connection signal="pressed" from="ShowtapeNewScreen/InputEater" to="." method="_on_input_eater_pressed"]
+[connection signal="pressed" from="ShowtapeNewScreen/DialogPanel/AudioBrowseButton" to="." method="_on_showtape_new_audio_browse_button_pressed"]
+[connection signal="pressed" from="ShowtapeNewScreen/DialogPanel/CancelButton" to="." method="_on_showtape_new_cancel_button_pressed"]
+[connection signal="pressed" from="ShowtapeNewScreen/DialogPanel/CreateButton" to="." method="_on_showtape_new_create_button_pressed"]
+[connection signal="pressed" from="ShowtapeLoadScreen/InputEater" to="." method="_on_input_eater_pressed"]
+[connection signal="pressed" from="ShowtapeLoadScreen/DialogPanel/InBrowseButton" to="." method="_on_showtape_load_in_browse_button_pressed"]
+[connection signal="pressed" from="ShowtapeLoadScreen/DialogPanel/CancelButton" to="." method="_on_showtape_load_cancel_button_pressed"]
+[connection signal="pressed" from="ShowtapeLoadScreen/DialogPanel/OpenButton" to="." method="_on_showtape_load_open_button_pressed"]
+[connection signal="pressed" from="ShowtapeSaveScreen/InputEater" to="." method="_on_input_eater_pressed"]
+[connection signal="pressed" from="ShowtapeSaveScreen/DialogPanel/OutBrowseButton" to="." method="_on_showtape_save_out_browse_button_pressed"]
+[connection signal="pressed" from="ShowtapeSaveScreen/DialogPanel/CancelButton" to="." method="_on_showtape_save_cancel_button_pressed"]
+[connection signal="pressed" from="ShowtapeSaveScreen/DialogPanel/CreateButton" to="." method="_on_showtape_save_create_button_pressed"]
