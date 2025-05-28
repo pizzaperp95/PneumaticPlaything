@@ -1,30 +1,30 @@
 [gd_scene load_steps=6 format=3 uid="uid://btre5j66mpchy"]
 
-[ext_resource type="PackedScene" uid="uid://f0fkcs7erhop" path="res://Models/3stHelen.glb" id="2_e7oou"]
-[ext_resource type="Script" uid="uid://bu68w4jnh0n2b" path="res://Scripts/HelenController.gd" id="3_e2vvs"]
-[ext_resource type="PackedScene" uid="uid://bhoeqcsdb0fx2" path="res://Models/Room.glb" id="4_pv43k"]
-[ext_resource type="PackedScene" uid="uid://btvomf1ayoypu" path="res://Models/Stage.glb" id="5_afett"]
+[ext_resource type="PackedScene" uid="uid://f0fkcs7erhop" path="res://Models/3stHelen.glb" id="1_s1mol"]
+[ext_resource type="Script" uid="uid://bu68w4jnh0n2b" path="res://Scripts/AnimatronicController.gd" id="2_odcb6"]
+[ext_resource type="PackedScene" uid="uid://bhoeqcsdb0fx2" path="res://Models/HelenHouse-Room.glb" id="3_e7oou"]
+[ext_resource type="PackedScene" uid="uid://btvomf1ayoypu" path="res://Models/HelenHouse-Stage.glb" id="4_e2vvs"]
 
 [sub_resource type="Environment" id="Environment_axk5g"]
 ambient_light_source = 1
 
 [node name="HelenHouse" type="Node3D"]
 
-[node name="3stHelen" parent="." instance=ExtResource("2_e7oou")]
+[node name="Helen" parent="." instance=ExtResource("1_s1mol")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.25, 0)
-script = ExtResource("3_e2vvs")
+script = ExtResource("2_odcb6")
 
-[node name="Room" parent="." instance=ExtResource("4_pv43k")]
+[node name="Room" parent="." instance=ExtResource("3_e7oou")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 
-[node name="Stage" parent="." instance=ExtResource("5_afett")]
+[node name="Stage" parent="." instance=ExtResource("4_e2vvs")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 
-[node name="Camera 1" type="Camera3D" parent="."]
+[node name="Angle 1" type="Camera3D" parent="."]
 transform = Transform3D(-1, 1.31602e-08, -1.50421e-07, 0, 0.996195, 0.0871557, 1.50996e-07, 0.0871557, -0.996195, 0, 1.5, -3)
 fov = 60.0
 
-[node name="Camera 2" type="Camera3D" parent="."]
+[node name="Angle 2" type="Camera3D" parent="."]
 transform = Transform3D(-1, 1.31602e-08, -1.50421e-07, 0, 0.996195, 0.0871557, 1.50996e-07, 0.0871557, -0.996195, 0, 1.5, -1)
 fov = 60.0
 

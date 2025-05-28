@@ -1,19 +1,18 @@
-[gd_scene load_steps=27 format=3 uid="uid://oiehbor0dlqx"]
+[gd_scene load_steps=26 format=3 uid="uid://oiehbor0dlqx"]
 
 [ext_resource type="Script" uid="uid://dfiwoln8mdwm8" path="res://Scripts/EditorScreen.gd" id="1_sd512"]
 [ext_resource type="Theme" uid="uid://dbgs4id7y5d1c" path="res://UI/Themes/Dark.tres" id="1_v0ton"]
-[ext_resource type="PackedScene" uid="uid://btre5j66mpchy" path="res://Scenes/Stages/Helen House/HelenHouse.tscn" id="2_p1t5g"]
 [ext_resource type="Texture2D" uid="uid://xllpr3qc064c" path="res://UI/Play.png" id="3_g6u4d"]
 [ext_resource type="Texture2D" uid="uid://dgacnkv2dc65s" path="res://UI/PlayBackwards.png" id="3_mr8sb"]
 [ext_resource type="Texture2D" uid="uid://dts4eh6hyt8p3" path="res://UI/SkipBackwards.png" id="3_r4ytj"]
 [ext_resource type="Texture2D" uid="uid://bwhgy4u37jmo1" path="res://UI/Pause.png" id="4_ba3jn"]
+[ext_resource type="Texture2D" uid="uid://s3yr2wasxv03" path="res://UI/BlankCam.png" id="4_v0ton"]
 [ext_resource type="Texture2D" uid="uid://dhx2v2fd0egxd" path="res://UI/FastBackwards.png" id="4_wy7jo"]
 [ext_resource type="Texture2D" uid="uid://cttgtbu1xllwq" path="res://UI/Stop.png" id="8_20noo"]
 [ext_resource type="Texture2D" uid="uid://dsr03w7r667fw" path="res://UI/FastForward.png" id="8_v0ton"]
 [ext_resource type="Texture2D" uid="uid://bphwtliq2ahus" path="res://UI/SkipForward.png" id="9_20noo"]
 [ext_resource type="Texture2D" uid="uid://ckg2ihy105ttj" path="res://UI/Record.png" id="10_wy7jo"]
-[ext_resource type="PackedScene" uid="uid://dyuhywnk8heav" path="res://Scenes/Stages/Helen House/HelenHouseMovementRows.tscn" id="12_20noo"]
-[ext_resource type="PackedScene" uid="uid://dwhrame6udwbh" path="res://Scenes/Stages/Helen House/HelenHouseFlyout.tscn" id="13_wy7jo"]
+[ext_resource type="ButtonGroup" uid="uid://bij2tonqeslpt" path="res://Scenes/GUI/FlyoutButtonGroup.tres" id="13_wy7jo"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_g6u4d"]
 viewport_path = NodePath("SubViewport")
@@ -115,8 +114,6 @@ dialog_text = "This showtape is not compatible with the currently selected stage
 [node name="SubViewport" type="SubViewport" parent="."]
 size = Vector2i(1280, 720)
 
-[node name="HelenHouse" parent="SubViewport" instance=ExtResource("2_p1t5g")]
-
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -126,7 +123,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.187176, 0.187176, 0.187176, 1)
 
+[node name="CameraPlaceholder" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+offset_left = -4.0
+offset_top = 48.0
+offset_right = -4.0
+offset_bottom = 408.0
+grow_horizontal = 0
+texture = ExtResource("4_v0ton")
+expand_mode = 5
+stretch_mode = 6
+
 [node name="CameraPreview" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -178,7 +190,7 @@ offset_right = 260.0
 offset_bottom = 36.0
 selected = 0
 item_count = 1
-popup/item_0/text = "Helen House (Custom)"
+popup/item_0/text = "Helen House"
 popup/item_0/id = 0
 
 [node name="MenuButton" type="MenuButton" parent="MenuBar"]
@@ -226,7 +238,7 @@ offset_right = -8.0
 offset_bottom = 16.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "Pneumatic Plaything v0.3"
+text = "Pneumatic Plaything v0.4"
 horizontal_alignment = 2
 vertical_alignment = 1
 
@@ -394,14 +406,14 @@ grow_vertical = 2
 
 [node name="VScrollBar" type="VScrollBar" parent="SequencerPanel/TimelinePanel"]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 9
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 12.0
 offset_bottom = -4.0
 grow_vertical = 2
-max_value = 31.0
+max_value = 0.0
 step = 1.0
 
 [node name="InvisibleMask" type="Control" parent="SequencerPanel/TimelinePanel"]
@@ -417,32 +429,180 @@ offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RowsHandle" type="Control" parent="SequencerPanel/TimelinePanel/InvisibleMask"]
+[node name="MovementRowsContainer" type="Control" parent="SequencerPanel/TimelinePanel/InvisibleMask"]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HelenHouseMovementRows" parent="SequencerPanel/TimelinePanel/InvisibleMask/RowsHandle" instance=ExtResource("12_20noo")]
+[node name="Playhead" type="VSeparator" parent="SequencerPanel/TimelinePanel/InvisibleMask"]
 layout_mode = 1
-
-[node name="VSeparator" type="VSeparator" parent="SequencerPanel/TimelinePanel"]
-layout_mode = 1
-anchors_preset = -1
+anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = 398.0
-offset_right = 4.0
+offset_left = 388.0
+offset_right = 392.0
 grow_vertical = 2
 
-[node name="HelenHouseFlyout" parent="." instance=ExtResource("13_wy7jo")]
+[node name="FlyoutPanel" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = -1
 anchor_bottom = 0.5
 offset_left = 4.0
 offset_top = 48.0
 offset_right = 140.0
 offset_bottom = 48.0
+grow_vertical = 2
+
+[node name="FlyoutButtons" type="Panel" parent="FlyoutPanel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 136.0
+grow_vertical = 2
+
+[node name="MovementsFlyoutButton" type="Button" parent="FlyoutPanel/FlyoutButtons"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 132.0
+offset_bottom = 36.0
+toggle_mode = true
+button_group = ExtResource("13_wy7jo")
+text = "Movements"
+
+[node name="FlowsFlyoutButton" type="Button" parent="FlyoutPanel/FlyoutButtons"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 40.0
+offset_right = 132.0
+offset_bottom = 72.0
+toggle_mode = true
+button_group = ExtResource("13_wy7jo")
+text = "Flows"
+
+[node name="CameraFlyoutButton" type="Button" parent="FlyoutPanel/FlyoutButtons"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 76.0
+offset_right = 132.0
+offset_bottom = 108.0
+toggle_mode = true
+button_group = ExtResource("13_wy7jo")
+text = "Camera"
+
+[node name="CosmeticsFlyoutButton" type="Button" parent="FlyoutPanel/FlyoutButtons"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 112.0
+offset_right = 132.0
+offset_bottom = 144.0
+toggle_mode = true
+button_group = ExtResource("13_wy7jo")
+text = "Cosmetics"
+
+[node name="StageFlyoutButton" type="Button" parent="FlyoutPanel/FlyoutButtons"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 148.0
+offset_right = 132.0
+offset_bottom = 180.0
+toggle_mode = true
+button_group = ExtResource("13_wy7jo")
+text = "Stage"
+
+[node name="Movements" type="Panel" parent="FlyoutPanel"]
+visible = false
+layout_mode = 0
+offset_left = 140.0
+offset_right = 416.0
+offset_bottom = 392.0
+
+[node name="InvisibleMask" type="Control" parent="FlyoutPanel/Movements"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 260.0
+offset_bottom = 388.0
+
+[node name="MovementHandle" type="Control" parent="FlyoutPanel/Movements/InvisibleMask"]
+anchors_preset = 0
+
+[node name="VScrollBar" type="VScrollBar" parent="FlyoutPanel/Movements"]
+offset_left = 264.0
+offset_top = 4.0
+offset_right = 272.0
+offset_bottom = 388.0
+max_value = 0.0
+step = 1.0
+
+[node name="FlowControls" type="Panel" parent="FlyoutPanel"]
+visible = false
+layout_mode = 0
+offset_left = 140.0
+offset_right = 672.0
+offset_bottom = 392.0
+
+[node name="InvisibleMask" type="Control" parent="FlyoutPanel/FlowControls"]
+clip_contents = true
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 516.0
+offset_bottom = 388.0
+
+[node name="FlowHandle" type="Control" parent="FlyoutPanel/FlowControls/InvisibleMask"]
+anchors_preset = 0
+
+[node name="VScrollBar" type="VScrollBar" parent="FlyoutPanel/FlowControls"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 4.0
+offset_right = 528.0
+offset_bottom = 388.0
+max_value = 0.0
+step = 1.0
+
+[node name="Camera" type="Panel" parent="FlyoutPanel"]
+visible = false
+layout_mode = 0
+offset_left = 140.0
+offset_right = 276.0
+offset_bottom = 4.0
+
+[node name="Cosmetics" type="Panel" parent="FlyoutPanel"]
+visible = false
+layout_mode = 0
+offset_left = 140.0
+offset_right = 396.0
+offset_bottom = 64.0
+
+[node name="Label" type="Label" parent="FlyoutPanel/Cosmetics"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 228.0
+offset_bottom = 36.0
+text = "No options for this stage :("
+vertical_alignment = 1
+
+[node name="Stage" type="Panel" parent="FlyoutPanel"]
+visible = false
+layout_mode = 0
+offset_left = 140.0
+offset_right = 396.0
+offset_bottom = 64.0
+
+[node name="Label" type="Label" parent="FlyoutPanel/Stage"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 228.0
+offset_bottom = 36.0
+text = "No options for this stage :("
+vertical_alignment = 1
 
 [node name="ControlsScreen" type="Control" parent="."]
 visible = false
@@ -941,6 +1101,7 @@ expand_mode = 2
 [connection signal="file_selected" from="SaveShowtapeFileDialog" to="." method="_on_save_showtape_file_dialog_file_selected"]
 [connection signal="confirmed" from="NewOverwriteConfirmationDialog" to="." method="_on_new_overwrite_confirmation_dialog_confirmed"]
 [connection signal="confirmed" from="LoadOverwriteConfirmationDialog" to="." method="_on_load_overwrite_confirmation_dialog_confirmed"]
+[connection signal="item_selected" from="MenuBar/StageSelector" to="." method="_on_stage_selector_item_selected"]
 [connection signal="pressed" from="MenuBar/ControlsButton" to="." method="_on_controls_button_pressed"]
 [connection signal="pressed" from="MenuBar/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="SequencerPanel/TransportControls/Centered/StepBackwardsButton" to="." method="_on_step_backwards_button_pressed"]
@@ -953,6 +1114,13 @@ expand_mode = 2
 [connection signal="pressed" from="SequencerPanel/TransportControls/Centered/StepForwardButton" to="." method="_on_step_forward_button_pressed"]
 [connection signal="toggled" from="SequencerPanel/TransportControls/RecordButton" to="." method="_on_record_button_toggled"]
 [connection signal="value_changed" from="SequencerPanel/TimelinePanel/VScrollBar" to="." method="_on_v_scroll_bar_value_changed"]
+[connection signal="toggled" from="FlyoutPanel/FlyoutButtons/MovementsFlyoutButton" to="." method="_on_movements_flyout_button_toggled"]
+[connection signal="toggled" from="FlyoutPanel/FlyoutButtons/FlowsFlyoutButton" to="." method="_on_flows_flyout_button_toggled"]
+[connection signal="toggled" from="FlyoutPanel/FlyoutButtons/CameraFlyoutButton" to="." method="_on_camera_flyout_button_toggled"]
+[connection signal="toggled" from="FlyoutPanel/FlyoutButtons/CosmeticsFlyoutButton" to="." method="_on_cosmetics_flyout_button_toggled"]
+[connection signal="toggled" from="FlyoutPanel/FlyoutButtons/StageFlyoutButton" to="." method="_on_stage_flyout_button_toggled"]
+[connection signal="value_changed" from="FlyoutPanel/Movements/VScrollBar" to="." method="_on_movement_v_scroll_bar_value_changed"]
+[connection signal="value_changed" from="FlyoutPanel/FlowControls/VScrollBar" to="." method="_on_flow_v_scroll_bar_value_changed"]
 [connection signal="pressed" from="ControlsScreen/InputEater" to="." method="_on_input_eater_pressed"]
 [connection signal="pressed" from="CreditsScreen/InputEater" to="." method="_on_input_eater_pressed"]
 [connection signal="pressed" from="ShowtapeNewScreen/InputEater" to="." method="_on_input_eater_pressed"]

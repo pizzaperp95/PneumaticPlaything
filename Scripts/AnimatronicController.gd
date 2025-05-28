@@ -4,27 +4,7 @@ var animation_player : AnimationPlayer
 var animation_tree : AnimationTree
 var blend_tree : AnimationNodeBlendTree
 
-var movement_states = {
-	"Mouth": [false, 0.0, 0.0, 0.0],
-	"Left Ear": [false, 0.0, 0.0, 0.0],
-	"Right Ear": [false, 0.0, 0.0, 0.0],
-	"Left Eyelid": [false, 0.0, 0.0, 0.0],
-	"Right Eyelid": [false, 0.0, 0.0, 0.0],
-	"Eyes Left": [false, 0.0, 0.0, 0.0],
-	"Eyes Right": [false, 0.0, 0.0, 0.0],
-	"Head Left": [false, 0.0, 0.0, 0.0],
-	"Head Right": [false, 0.0, 0.0, 0.0],
-	"Head Up": [false, 0.0, 0.0, 0.0],
-	"Left Arm Up": [false, 0.0, 0.0, 0.0],
-	"Left Arm Twist": [false, 0.0, 0.0, 0.0],
-	"Left Elbow": [false, 0.0, 0.0, 0.0],
-	"Right Arm Up": [false, 0.0, 0.0, 0.0],
-	"Right Arm Twist": [false, 0.0, 0.0, 0.0],
-	"Right Elbow": [false, 0.0, 0.0, 0.0],
-	"Body Left": [false, 0.0, 0.0, 0.0],
-	"Body Right": [false, 0.0, 0.0, 0.0],
-	"Body Lean": [false, 0.0, 0.0, 0.0],
-}
+var movement_states : Dictionary
 
 func _ready():
 	animation_player = $AnimationPlayer
@@ -37,9 +17,12 @@ func _ready():
 	animation_tree.active = true
 	blend_tree = animation_tree.tree_root as AnimationNodeBlendTree
 	
-	#animation_player.speed_scale = 0
+	animation_player.speed_scale = 0
 	
 	var animations = animation_player.get_animation_list()
+	
+	for animation in animations:
+		movement_states[animation] = [false, 0.0, 0.0, 0.0]
 	
 	var prev_name = "Anim_" + animations[0]
 	var old_time_name = "Time_" + animations[0]
@@ -78,8 +61,8 @@ func _ready():
 		var add_node := AnimationNodeAdd2.new()
 		blend_tree.add_node(add_name, add_node)
 		
-		blend_tree.connect_node(time_name,0,anim_name)
-		blend_tree.connect_node(seek_name,0,time_name)
+		blend_tree.connect_node(time_name, 0, anim_name)
+		blend_tree.connect_node(seek_name, 0, time_name)
 		blend_tree.connect_node(add_name, 0, prev_name)
 		blend_tree.connect_node(add_name, 1, seek_name)
 		prev_name = add_name

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtkqaw5533rxy"]
+[gd_scene load_steps=6 format=3 uid="uid://dtkqaw5533rxy"]
 
 [ext_resource type="StyleBox" uid="uid://d17amc25o63p1" path="res://UI/Themes/MovementsPanelOverride.tres" id="1_d1xev"]
 [ext_resource type="Script" uid="uid://tn3aaldu7mm2" path="res://Scripts/MovementRow.gd" id="1_rm5t0"]
 [ext_resource type="Texture2D" uid="uid://cn5xdrxdv622h" path="res://UI/SmallX.png" id="2_e7anl"]
+[ext_resource type="Texture2D" uid="uid://d007317123e27" path="res://UI/SmallLock.png" id="3_ldhn8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rm5t0"]
 bg_color = Color(0, 1, 0, 1)
@@ -36,6 +37,8 @@ offset_bottom = 36.0
 tooltip_text = "Click to bind a key to this movement"
 text = "0 - Name (Unbound)"
 alignment = 0
+text_overrun_behavior = 3
+clip_text = true
 
 [node name="ClearButton" type="Button" parent="."]
 layout_mode = 0
@@ -45,6 +48,16 @@ offset_right = 260.0
 offset_bottom = 20.0
 tooltip_text = "Clear this row"
 icon = ExtResource("2_e7anl")
+
+[node name="LockButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 20.0
+offset_right = 260.0
+offset_bottom = 36.0
+tooltip_text = "Prevent recording over"
+toggle_mode = true
+icon = ExtResource("3_ldhn8")
 
 [node name="MovementsBG" type="Panel" parent="."]
 layout_mode = 1

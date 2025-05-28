@@ -6,15 +6,66 @@ var index : int = 0
 var playback_rate : int = 1
 var transport_enabled : bool = false
 var erase_validated : bool = false
+var cam_index : int = 0
 
 var showtape_loaded : bool = false
 var show_name : String
 
-var current_stage : String = "Helen House"
+var current_stage : String
 
 var stages_info = {
-	# stage name, custom (bool), bits, flyout path, movement row table path, base scene path, ust character flag, ust stage flag
-	"Helen House": [true, 32, "res://Scenes/Stages/Helen House/HelenHouseFlyout.tscn", "res://Scenes/Stages/Helen House/HelenHouseMovementRows.tscn", "res://Scenes/Stages/Helen House/HelenHouse.tscn", "Mitzi/Helen", "Rockafire Explosion/3-Stage (Single Character)"]
+	"Helen House": 
+	{
+		"bits": 32, 
+		"scene": "res://Scenes/Stages/HelenHouse.tscn", 
+		"scene_ref_base": "SubViewport/HelenHouse/",
+		"camera_count": 2,
+		
+		"ust_character": "Mitzi/Helen", 
+		"ust_stage": "Rockafire Explosion/3-Stage (Single Character)",
+		
+		"bit_mapping":
+		{
+			"Helen":
+			{
+				"Mouth": [3.0, 2.0],
+				"Left Ear": [3.5, 1.5],
+				"Right Ear": [3.5, 1.5],
+				"Left Eyelid": [1.5, 2.0],
+				"Right Eyelid": [1.5, 2.0],
+				"Eyes Left": [3.5, 1.5],
+				"Eyes Right": [3.5, 1.5],
+				"Head Left": [1.5, 1.5],
+				"Head Right": [1.5, 1.5],
+				"Head Up": [1.0, 1.0],
+				"Left Arm Up": [0.8, 0.6],
+				"Left Arm Twist": [0.8, 0.8],
+				"Left Elbow": [1.0, 1.0],
+				"Right Arm Up": [0.8, 0.6],
+				"Right Arm Twist": [0.8, 0.8],
+				"Right Elbow": [1.0, 1.0],
+				"Body Left": [0.7, 0.7],
+				"Body Right": [0.7, 0.7],
+				"Body Lean": [1.0, 0.8],
+			},
+			"None":
+			{
+				"Unused 20": ["None"],
+				"Unused 21": ["None"],
+				"Unused 22": ["None"],
+				"Unused 23": ["None"],
+				"Unused 24": ["None"],
+				"Unused 25": ["None"],
+				"Unused 26": ["None"],
+				"Unused 27": ["None"],
+				"Unused 28": ["None"],
+				"Unused 29": ["None"],
+				"Unused 30": ["None"],
+				"Unused 31": ["None"],
+				"Unused 32": ["None"],
+			}
+		}
+	}
 }
 
 signal step(amount: int)
@@ -23,13 +74,74 @@ signal end_recording()
 signal return_to_zero()
 signal erase_all()
 
+func reload_stage(stage_previously_loaded: bool) -> void:
+	$SequencerPanel/TimelinePanel/VScrollBar.value = 0
+	if (stage_previously_loaded):
+		$CameraPreview.visible = false
+		for row in $SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_children():
+			row.queue_free()
+		for row in $FlyoutPanel/FlowControls/InvisibleMask.get_children():
+			row.queue_free()
+		$SubViewport.get_child(0).queue_free()
+	var stage = load(stages_info[current_stage]["scene"]).instantiate()
+	$SubViewport.add_child(stage)
+	var cam_offset = 4
+	for i in range(1, stages_info[current_stage]["camera_count"]+1):
+		var camera_button = load("res://Scenes/GUI/Controls/CameraButton.tscn").instantiate()
+		camera_button.camera = "Angle " + str(i)
+		camera_button.base_scene_path = "../../../" + stages_info[current_stage]["scene_ref_base"]
+		camera_button.position.y = cam_offset
+		cam_offset += 36
+		$FlyoutPanel/Camera.add_child(camera_button)
+	$FlyoutPanel/Camera.size.y = cam_offset
+	var rows_offset = 0
+	var flows_offset = 0
+	var bit_idx = 1
+	var flow_count = 0
+	for bot in stages_info[current_stage]["bit_mapping"]:
+		for movement in stages_info[current_stage]["bit_mapping"][bot]:
+			
+			var movement_flows = stages_info[current_stage]["bit_mapping"][bot][movement]
+			if (movement_flows[0] is not String):
+				var flow_control = load("res://Scenes/GUI/Controls/FlowControl.tscn").instantiate()
+				flow_control.position.y = flows_offset
+				flow_control.name = bot + " " + movement
+				flow_control.in_value = movement_flows[0]
+				flow_control.out_value = movement_flows[1]
+				$FlyoutPanel/FlowControls/InvisibleMask/FlowHandle.add_child(flow_control)
+				flows_offset += 44
+				flow_count += 1
+				
+			var row = load("res://Scenes/GUI/Controls/MovementRow.tscn").instantiate()
+			row.position.y = rows_offset
+			row.base_scene_path = "../../../../../" + stages_info[current_stage]["scene_ref_base"]
+			row.animatronic = bot
+			if (movement_flows[0] is String): row.flow_path = "None"
+			row.movement_bit = bit_idx
+			row.movement_name = movement
+			$SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.add_child(row)
+			
+			var movement_button = load("res://Scenes/GUI/Controls/MovementButton.tscn").instantiate()
+			movement_button.position.y = rows_offset
+			movement_button.base_scene_path = "../../../../../" + stages_info[current_stage]["scene_ref_base"]
+			movement_button.animatronic = bot
+			if (movement_flows[0] is String): movement_button.flow_path = "None"
+			movement_button.movement_name = movement
+			$FlyoutPanel/Movements/InvisibleMask/MovementHandle.add_child(movement_button)
+			
+			rows_offset += 44
+			bit_idx += 1
+	$SequencerPanel/TimelinePanel/VScrollBar.max_value = stages_info[current_stage]["bits"] - 1
+	$FlyoutPanel/Movements/VScrollBar.max_value = stages_info[current_stage]["bits"] - 1
+	$FlyoutPanel/FlowControls/VScrollBar.max_value = flow_count - 1
+	$CameraPreview.visible = true
+
 func update_time_label() -> void:
 	var frames = index % 60
 	var seconds = floori(index/60) % 60
 	var minutes = floori(index/3600) % 60
 	var hours = floori(index/216000)
 	$SequencerPanel/TransportControls/TimeLabel.text = "%d:%02d:%02d:%02d" % [hours, minutes, seconds, frames] 
-	#$SequencerPanel/TransportControls/TimeLabel.text = str(index)
 
 func set_transport_enabled(enabled: bool):
 	$SequencerPanel/TransportControls/Centered/StepBackwardsButton.disabled = !enabled
@@ -48,6 +160,12 @@ func _ready() -> void:
 	erase_all.connect(_erase_all)
 	$MenuBar/MenuButton.get_popup().id_pressed.connect(_showtape_menu_button_pressed)
 	OS.request_permissions()
+	current_stage = $MenuBar/StageSelector.get_item_text($MenuBar/StageSelector.selected)
+	reload_stage(false)
+
+func _on_stage_selector_item_selected(_index: int) -> void:
+	current_stage = $MenuBar/StageSelector.get_item_text($MenuBar/StageSelector.selected)
+	reload_stage(true)
 
 func _showtape_menu_button_pressed(id: int) -> void:
 	match (id):
@@ -110,7 +228,7 @@ func _on_showtape_load_open_button_pressed() -> void:
 	var file = FileAccess.open($ShowtapeLoadScreen/DialogPanel/InFilePath.text.strip_edges(), FileAccess.READ)
 	var content = file.get_as_text()
 	var header = content.split(";")[0].split(",")
-	if ((int(header[3]) != stages_info[current_stage][1]) || (header[4] != stages_info[current_stage][6])|| (header[5] != stages_info[current_stage][5])):
+	if ((int(header[3]) != stages_info[current_stage]["bits"]) || (header[4] != stages_info[current_stage]["ust_stage"])|| (header[5] != stages_info[current_stage]["ust_character"])):
 		$IncorrectShowtapeDialog.dialog_text = "This showtape is not compatible with the currently selected stage.\nShowtape stage type: %s\nShowtape character(s): %s" % [header[4], header[5]]
 		$IncorrectShowtapeDialog.show()
 		return
@@ -151,6 +269,9 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_editor_screen"):
 		$CameraPreview.visible = !$CameraPreview.visible;
 		$CameraFullScreen.visible = !$CameraFullScreen.visible;
+	if (event.is_action_pressed("cycle_camera_angle")):
+		cam_index += 1
+		get_node("SubViewport/HelenHouse/Angle " + str((cam_index % stages_info[current_stage]["camera_count"])+1)).current = true
 	if (transport_enabled):
 		if event.is_action_pressed("sequencer_play_pause"):
 			if (playing): _on_pause_button_pressed()
@@ -214,7 +335,13 @@ func _on_input_eater_pressed() -> void:
 	$ShowtapeSaveScreen.visible = false
 
 func _on_v_scroll_bar_value_changed(value: float) -> void:
-	$SequencerPanel/TimelinePanel/InvisibleMask/RowsHandle.position.y = value * -44
+	$SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.position.y = value * -44
+
+func _on_flow_v_scroll_bar_value_changed(value: float) -> void:
+	$FlyoutPanel/FlowControls/InvisibleMask/FlowHandle.position.y = value * -44
+
+func _on_movement_v_scroll_bar_value_changed(value: float) -> void:
+	$FlyoutPanel/Movements/InvisibleMask/MovementHandle.position.y = value * -44
 
 func _erase_all() -> void:
 	playing = false
@@ -228,6 +355,21 @@ func _erase_all() -> void:
 	set_transport_enabled(false)
 	showtape_loaded = false
 	$MenuBar/EditingLabel.text = "No showtape loaded."
+
+func _on_movements_flyout_button_toggled(toggled_on: bool) -> void:
+	$FlyoutPanel/Movements.visible = toggled_on
+
+func _on_flows_flyout_button_toggled(toggled_on: bool) -> void:
+	$FlyoutPanel/FlowControls.visible = toggled_on
+
+func _on_camera_flyout_button_toggled(toggled_on: bool) -> void:
+	$FlyoutPanel/Camera.visible = toggled_on
+
+func _on_cosmetics_flyout_button_toggled(toggled_on: bool) -> void:
+	$FlyoutPanel/Cosmetics.visible = toggled_on
+
+func _on_stage_flyout_button_toggled(toggled_on: bool) -> void:
+	$FlyoutPanel/Stage.visible = toggled_on
 
 
 func _on_play_button_pressed() -> void:
@@ -294,14 +436,14 @@ func save_data() -> String:
 	var write_out : String = ""
 	var temp_data = []
 	var longest_channel = 0
-	for movement_row in $SequencerPanel/TimelinePanel/InvisibleMask/RowsHandle.get_child(0).get_children():
+	for movement_row in $SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_children():
 		temp_data.append(movement_row.movements)
 		if (movement_row.movements.size() > longest_channel): longest_channel = movement_row.movements.size()
 	for i in range(longest_channel+1):
 		var frame_byte = 0
-		for j in range(stages_info[current_stage][1]):
+		for j in range(stages_info[current_stage]["bits"]):
 			if (index_get_safe(i, temp_data[j])): frame_byte += 1 << j;
-		write_out += ("%0"+str(stages_info[current_stage][1]/4)+"X,") % frame_byte
+		write_out += ("%0"+str(stages_info[current_stage]["bits"]/4)+"X,") % frame_byte
 	return write_out
 
 func plot_data(data: String):
@@ -309,13 +451,13 @@ func plot_data(data: String):
 	for frame_string in data.split(","):
 		if (frame_string == ""): continue
 		var frame_byte = frame_string.hex_to_int()
-		for i in range(stages_info[current_stage][1]):
+		for i in range(stages_info[current_stage]["bits"]):
 			var er = false
 			if ((frame_byte & int(pow(2, i))) >> i == 1): 
 				er = true
-			$SequencerPanel/TimelinePanel/InvisibleMask/RowsHandle.get_child(0).get_child(i).etching = er
+			$SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_child(i).etching = er
 		step.emit(1)
-	for movement_row in $SequencerPanel/TimelinePanel/InvisibleMask/RowsHandle.get_child(0).get_children():
+	for movement_row in $SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_children():
 		movement_row.etching = false
 	end_recording.emit()
 	return_to_zero.emit()

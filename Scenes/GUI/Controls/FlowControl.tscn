@@ -1,0 +1,87 @@
+[gd_scene load_steps=3 format=3 uid="uid://blg1c3v4o44of"]
+
+[ext_resource type="Script" uid="uid://blhv0kms1sleu" path="res://Scripts/FlowControl.gd" id="1_6sy3t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6sy3t"]
+border_width_left = 1
+border_color = Color(0.0941176, 0.0941176, 0.0941176, 1)
+
+[node name="FlowControl" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 512.0
+offset_bottom = 40.0
+script = ExtResource("1_6sy3t")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 167.0
+offset_bottom = 36.0
+text = "Movement"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="InSlider" type="HSlider" parent="Panel"]
+layout_mode = 2
+offset_left = 171.0
+offset_top = 4.0
+offset_right = 235.0
+offset_bottom = 36.0
+size_flags_vertical = 1
+max_value = 5.0
+step = 0.1
+value = 1.0
+
+[node name="InStepper" type="SpinBox" parent="Panel"]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 4.0
+offset_right = 335.0
+offset_bottom = 36.0
+max_value = 5.0
+step = 0.1
+value = 1.0
+prefix = "In:"
+
+[node name="OutSlider" type="HSlider" parent="Panel"]
+layout_mode = 2
+offset_left = 344.0
+offset_top = 4.0
+offset_right = 408.0
+offset_bottom = 36.0
+size_flags_vertical = 1
+max_value = 5.0
+step = 0.1
+value = 1.0
+
+[node name="OutStepper" type="SpinBox" parent="Panel"]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 4.0
+offset_right = 508.0
+offset_bottom = 36.0
+max_value = 5.0
+step = 0.1
+value = 1.0
+prefix = "Out:"
+
+[node name="VSeparator" type="VSeparator" parent="Panel"]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 4.0
+offset_right = 341.0
+offset_bottom = 36.0
+theme_override_styles/separator = SubResource("StyleBoxFlat_6sy3t")
+
+[connection signal="value_changed" from="Panel/InSlider" to="." method="_on_in_slider_value_changed"]
+[connection signal="value_changed" from="Panel/InStepper" to="." method="_on_in_stepper_value_changed"]
+[connection signal="value_changed" from="Panel/OutSlider" to="." method="_on_out_slider_value_changed"]
+[connection signal="value_changed" from="Panel/OutStepper" to="." method="_on_out_stepper_value_changed"]

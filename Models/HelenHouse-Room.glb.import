@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bhoeqcsdb0fx2"
-path="res://.godot/imported/Room.glb-057b6820edeabb93a1fe769eeffdac34.scn"
+path="res://.godot/imported/HelenHouse-Room.glb-d94c54c0b353197dae218f85f4b80b38.scn"
 
 [deps]
 
-source_file="res://Models/Room.glb"
-dest_files=["res://.godot/imported/Room.glb-057b6820edeabb93a1fe769eeffdac34.scn"]
+source_file="res://Models/HelenHouse-Room.glb"
+dest_files=["res://.godot/imported/HelenHouse-Room.glb-d94c54c0b353197dae218f85f4b80b38.scn"]
 
 [params]
 

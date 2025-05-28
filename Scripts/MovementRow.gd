@@ -2,8 +2,9 @@ extends Panel
 
 @export var movement_bit : int = 0
 @export var movement_name : String = "Name"
-@export var flow_path : String = "../../../../../../HelenHouseFlyout/FlowControls/"
-@export var animatronic_path : String = "../../../../../../SubViewport/HelenHouse/3stHelen"
+@export var flow_path : String = "../../../../../FlyoutPanel/FlowControls/InvisibleMask/FlowHandle/"
+@export var base_scene_path : String
+@export var animatronic : String
 @export var movements : Array[bool]
 @export var etching: bool = false
 
@@ -54,7 +55,7 @@ func check_at_index(cindex: int) -> bool:
 	return out
 
 func _step(amount: int):
-	if (recording): 
+	if (recording && !$LockButton.button_pressed): 
 		if (etching): set_at_current()
 		else: unset_at_current()
 	if (playing):
@@ -91,7 +92,8 @@ func _end_playback():
 	playing = false
 
 func update_text() -> void:
-	$Button.text = "%d - %s (%s)" % [movement_bit, movement_name, key_binding.as_text() if key_binding.keycode != 0 else "Unbound"]
+	if (animatronic == "None"): $Button.text = "%d - Unused (%s)" % [movement_bit, key_binding.as_text() if key_binding.keycode != 0 else "Unbound"]
+	else: $Button.text = "%d - %s %s (%s)" % [movement_bit, animatronic, movement_name, key_binding.as_text() if key_binding.keycode != 0 else "Unbound"]
 
 func _update_in_flow(new_value: float) -> void:
 	in_flow = new_value
@@ -101,19 +103,18 @@ func _update_out_flow(new_value: float) -> void:
 
 func _ready() -> void:
 	if (flow_path != "None"):
-		var if_node = get_node(flow_path + "InFlows/" + movement_name.replace(" ", "") + "Flow")
-		var of_node = get_node(flow_path + "OutFlows/" + movement_name.replace(" ", "") + "Flow")
-		if_node.value_updated.connect(self._update_in_flow)
-		of_node.value_updated.connect(self._update_out_flow)
-		in_flow = if_node.value
-		out_flow = of_node.value
-	if (animatronic_path != "None"):
-		var animatronic = get_node(animatronic_path)
-		movement_in.connect(animatronic._movement_in)
-		movement_out.connect(animatronic._movement_out)
+		var flow_control = get_node(flow_path + animatronic + " " + movement_name)
+		flow_control.in_value_updated.connect(self._update_in_flow)
+		flow_control.out_value_updated.connect(self._update_out_flow)
+		in_flow = flow_control.in_value
+		out_flow = flow_control.out_value
+	if (animatronic != "None"):
+		var animatronic_node = get_node(base_scene_path + animatronic)
+		movement_in.connect(animatronic_node._movement_in)
+		movement_out.connect(animatronic_node._movement_out)
 	movement_in.connect(self._movement_in)
 	movement_out.connect(self._movement_out)
-	var editor = get_node("../../../../../../")
+	var editor = get_node("../../../../../")
 	editor.step.connect(_step)
 	editor.start_recording.connect(_start_recording)
 	editor.end_recording.connect(_end_recording)
