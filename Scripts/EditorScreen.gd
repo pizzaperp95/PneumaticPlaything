@@ -7,6 +7,7 @@ var playback_rate : int = 1
 var transport_enabled : bool = false
 var erase_validated : bool = false
 var cam_index : int = 0
+var fullscreen : bool = false
 
 var showtape_loaded : bool = false
 var show_name : String
@@ -80,9 +81,14 @@ func reload_stage(stage_previously_loaded: bool) -> void:
 		$CameraPreview.visible = false
 		for row in $SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_children():
 			row.queue_free()
-		for row in $FlyoutPanel/FlowControls/InvisibleMask.get_children():
-			row.queue_free()
+		for flow in $FlyoutPanel/FlowControls/InvisibleMask/FlowHandle.get_children():
+			flow.queue_free()
+		for movement in $FlyoutPanel/Movements/InvisibleMask/MovementHandle.get_children():
+			movement.queue_free()
+		for camera in $FlyoutPanel/Camera.get_children():
+			camera.queue_free()
 		$SubViewport.get_child(0).queue_free()
+		cam_index = 0
 	var stage = load(stages_info[current_stage]["scene"]).instantiate()
 	$SubViewport.add_child(stage)
 	var cam_offset = 4
@@ -269,6 +275,13 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_editor_screen"):
 		$CameraPreview.visible = !$CameraPreview.visible;
 		$CameraFullScreen.visible = !$CameraFullScreen.visible;
+	if event.is_action_pressed("fullscreen"):
+		if (!fullscreen):
+			fullscreen = true
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		else:
+			fullscreen = false
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	if (event.is_action_pressed("cycle_camera_angle")):
 		cam_index += 1
 		get_node("SubViewport/HelenHouse/Angle " + str((cam_index % stages_info[current_stage]["camera_count"])+1)).current = true

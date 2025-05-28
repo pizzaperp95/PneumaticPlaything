@@ -654,6 +654,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Fullscreen camera view: ESC
+Fullscreen program: F11 or Alt+Enter
 Play/Pause: Space
 Play Reverse: Shift + Space
 Fast Forward: Shift + Right Arrow
