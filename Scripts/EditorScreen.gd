@@ -76,8 +76,10 @@ signal return_to_zero()
 signal erase_all()
 
 func reload_stage(stage_previously_loaded: bool) -> void:
-	$SequencerPanel/TimelinePanel/VScrollBar.value = 0
 	if (stage_previously_loaded):
+		$SequencerPanel/TimelinePanel/VScrollBar.value = 0
+		$FlyoutPanel/Movements/VScrollBar.value = 0
+		$FlyoutPanel/FlowControls/VScrollBar.value = 0
 		$CameraPreview.visible = false
 		for row in $SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_children():
 			row.queue_free()
@@ -142,6 +144,10 @@ func reload_stage(stage_previously_loaded: bool) -> void:
 	$FlyoutPanel/FlowControls/VScrollBar.max_value = flow_count - 1
 	$CameraPreview.visible = true
 
+func _on_stage_change_overwrite_confirmation_dialog_confirmed() -> void:
+	current_stage = $MenuBar/StageSelector.get_item_text($MenuBar/StageSelector.selected)
+	reload_stage(true)
+
 func update_time_label() -> void:
 	var frames = index % 60
 	var seconds = floori(index/60) % 60
@@ -170,8 +176,10 @@ func _ready() -> void:
 	reload_stage(false)
 
 func _on_stage_selector_item_selected(_index: int) -> void:
-	current_stage = $MenuBar/StageSelector.get_item_text($MenuBar/StageSelector.selected)
-	reload_stage(true)
+	if (showtape_loaded): $StageChangeOverwriteConfirmationDialog.show()
+	else:
+		current_stage = $MenuBar/StageSelector.get_item_text($MenuBar/StageSelector.selected)
+		reload_stage(true)
 
 func _showtape_menu_button_pressed(id: int) -> void:
 	match (id):
