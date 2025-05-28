@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://btvomf1ayoypu"
-path="res://.godot/imported/HelenHouse-Stage.glb-cec5fe70b1f2a888ac5fe9fa252e083f.scn"
+uid="uid://bhoeqcsdb0fx2"
+path="res://.godot/imported/HelenHouse-Room.glb-d039721f5e781fffec7d16cd58395499.scn"
 
 [deps]
 
-source_file="res://Models/HelenHouse-Stage.glb"
-dest_files=["res://.godot/imported/HelenHouse-Stage.glb-cec5fe70b1f2a888ac5fe9fa252e083f.scn"]
+source_file="res://Models/HelenHouse/HelenHouse-Room.glb"
+dest_files=["res://.godot/imported/HelenHouse-Room.glb-d039721f5e781fffec7d16cd58395499.scn"]
 
 [params]
 

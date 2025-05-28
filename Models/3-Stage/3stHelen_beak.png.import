@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm8h5o5urcvym"
-path.s3tc="res://.godot/imported/3stHelen_shoes.png-97c060c3fc3442bff6f75c94bc90506a.s3tc.ctex"
-path.etc2="res://.godot/imported/3stHelen_shoes.png-97c060c3fc3442bff6f75c94bc90506a.etc2.ctex"
+uid="uid://bprmuf7jpffy3"
+path.s3tc="res://.godot/imported/3stHelen_beak.png-093e64b7512180691d5a4d9b4796c163.s3tc.ctex"
+path.etc2="res://.godot/imported/3stHelen_beak.png-093e64b7512180691d5a4d9b4796c163.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "239e23627ba253afcd70dc24f1087fb1"
+"md5": "e62a49cd7edd0e5c4fe2d3d2bc6a61b9"
 }
 
 [deps]
 
-source_file="res://Models/3stHelen_shoes.png"
-dest_files=["res://.godot/imported/3stHelen_shoes.png-97c060c3fc3442bff6f75c94bc90506a.s3tc.ctex", "res://.godot/imported/3stHelen_shoes.png-97c060c3fc3442bff6f75c94bc90506a.etc2.ctex"]
+source_file="res://Models/3-Stage/3stHelen_beak.png"
+dest_files=["res://.godot/imported/3stHelen_beak.png-093e64b7512180691d5a4d9b4796c163.s3tc.ctex", "res://.godot/imported/3stHelen_beak.png-093e64b7512180691d5a4d9b4796c163.etc2.ctex"]
 
 [params]
 
