@@ -197,9 +197,11 @@ offset_top = 4.0
 offset_right = 260.0
 offset_bottom = 36.0
 selected = 0
-item_count = 1
+item_count = 2
 popup/item_0/text = "Helen House"
 popup/item_0/id = 0
+popup/item_1/text = "Chuck E's Corner"
+popup/item_1/id = 1
 
 [node name="MenuButton" type="MenuButton" parent="MenuBar"]
 layout_mode = 0
@@ -539,6 +541,7 @@ offset_bottom = 388.0
 anchors_preset = 0
 
 [node name="VScrollBar" type="VScrollBar" parent="FlyoutPanel/Movements"]
+layout_mode = 0
 offset_left = 264.0
 offset_top = 4.0
 offset_right = 272.0
@@ -729,7 +732,9 @@ Project Oversight: Persephone (KawaiiZenbo)
 
 Interface Design: Persephone
 Simulator Backend: Persephone
-3-Stage Helen Henny Model: Persephone
+3-Stage Models: Persephone
+PTT Cybers Models: Persephone
+Chuck E's Corner Stage: Luigigamin212
 
 This project is not associated with CEC Entertainment LLC. 
 or Creative Engineering Inc."

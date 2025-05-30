@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw3eplmapm5gc"]
+
+[ext_resource type="PackedScene" uid="uid://bb70mexwmq1ta" path="res://Models/Cyberamics/PTTChuck.glb" id="1_m77pm"]
+[ext_resource type="Script" uid="uid://bu68w4jnh0n2b" path="res://Scripts/AnimatronicController.gd" id="2_8qvk7"]
+
+[sub_resource type="Environment" id="Environment_4uxdq"]
+ambient_light_source = 1
+
+[node name="ChuckEsCorner" type="Node3D"]
+
+[node name="Chuck" parent="." instance=ExtResource("1_m77pm")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("2_8qvk7")
+
+[node name="Angle 1" type="Camera3D" parent="."]
+transform = Transform3D(-1, 1.31602e-08, -1.50421e-07, 0, 0.996195, 0.0871557, 1.50996e-07, 0.0871557, -0.996195, 0, 1.5, -3)
+fov = 60.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4uxdq")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.972974, -0.0597654, 0.223048, 2.26267e-08, 0.965926, 0.258819, -0.230916, 0.251824, -0.939821, 0.217544, 1.51501, -1.04223)
+light_color = Color(1, 0.9625, 0.85, 1)
+light_energy = 2.0
+spot_range = 1.3068
+spot_angle = 27.449
+spot_angle_attenuation = 0.1
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.5, -3)
+light_color = Color(1, 0.960784, 0.85098, 1)
+light_energy = 0.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.5, -3)
+light_color = Color(1, 0.960784, 0.85098, 1)
+light_energy = 0.5

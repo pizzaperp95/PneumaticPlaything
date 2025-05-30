@@ -66,6 +66,31 @@ var stages_info = {
 				"Unused 32": ["None"],
 			}
 		}
+	},
+	"Chuck E's Corner": 
+	{
+		"bits": 8, 
+		"scene": "res://Scenes/Stages/ChuckEsCorner.tscn", 
+		"scene_ref_base": "SubViewport/ChuckEsCorner/",
+		"camera_count": 1,
+		
+		"ust_character": "Chuck E.", 
+		"ust_stage": "Cyberamics (Single Character)",
+		
+		"bit_mapping":
+		{
+			"Chuck":
+			{
+				"Mouth": [7.5, 6.0],
+				"Head Left": [0.8, 1.0],
+				"Head Right": [1.0, 1.0],
+				"Head Up": [2.0, 1.0],
+				"Eyes Left": [4.0, 3.0],
+				"Eyes Right": [4.0, 3.0],
+				"Eyelids": [7.5, 5.0],
+				"Right Arm": [2.0, 1.0],
+			}
+		}
 	}
 }
 
@@ -145,6 +170,7 @@ func reload_stage(stage_previously_loaded: bool) -> void:
 	$CameraPreview.visible = true
 
 func _on_stage_change_overwrite_confirmation_dialog_confirmed() -> void:
+	erase_all.emit()
 	current_stage = $MenuBar/StageSelector.get_item_text($MenuBar/StageSelector.selected)
 	reload_stage(true)
 
@@ -292,7 +318,7 @@ func _input(event: InputEvent) -> void:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	if (event.is_action_pressed("cycle_camera_angle")):
 		cam_index += 1
-		get_node("SubViewport/HelenHouse/Angle " + str((cam_index % stages_info[current_stage]["camera_count"])+1)).current = true
+		get_node(stages_info[current_stage]["scene_ref_base"] + "Angle " + str((cam_index % stages_info[current_stage]["camera_count"])+1)).current = true
 	if (transport_enabled):
 		if event.is_action_pressed("sequencer_play_pause"):
 			if (playing): _on_pause_button_pressed()
