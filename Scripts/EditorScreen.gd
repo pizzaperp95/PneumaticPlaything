@@ -72,7 +72,7 @@ var stages_info = {
 		"bits": 8, 
 		"scene": "res://Scenes/Stages/ChuckEsCorner.tscn", 
 		"scene_ref_base": "SubViewport/ChuckEsCorner/",
-		"camera_count": 1,
+		"camera_count": 3,
 		
 		"ust_character": "Chuck E.", 
 		"ust_stage": "Cyberamics (Single Character)",

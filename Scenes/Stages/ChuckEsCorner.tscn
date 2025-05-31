@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw3eplmapm5gc"]
+[gd_scene load_steps=6 format=3 uid="uid://dw3eplmapm5gc"]
 
 [ext_resource type="PackedScene" uid="uid://bb70mexwmq1ta" path="res://Models/Cyberamics/PTTChuck.glb" id="1_m77pm"]
 [ext_resource type="Script" uid="uid://bu68w4jnh0n2b" path="res://Scripts/AnimatronicController.gd" id="2_8qvk7"]
+[ext_resource type="PackedScene" uid="uid://bv66hlbvtekho" path="res://Models/ChuckEsCorner/ChuckEsCornerStage.glb" id="3_8qvk7"]
+[ext_resource type="PackedScene" uid="uid://dmh5upwts8y11" path="res://Models/Cyberamics/Warblettes.glb" id="3_t27ru"]
 
 [sub_resource type="Environment" id="Environment_4uxdq"]
 ambient_light_source = 1
@@ -9,30 +11,53 @@ ambient_light_source = 1
 [node name="ChuckEsCorner" type="Node3D"]
 
 [node name="Chuck" parent="." instance=ExtResource("1_m77pm")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, 2, 0.5)
 script = ExtResource("2_8qvk7")
 
+[node name="Warblettes" parent="." instance=ExtResource("3_t27ru")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.25, 4, 0.5)
+
 [node name="Angle 1" type="Camera3D" parent="."]
-transform = Transform3D(-1, 1.31602e-08, -1.50421e-07, 0, 0.996195, 0.0871557, 1.50996e-07, 0.0871557, -0.996195, 0, 1.5, -3)
+transform = Transform3D(-0.984613, -0.00554269, 0.174664, 0.0289131, 0.980555, 0.194105, -0.172344, 0.196168, -0.965306, -0.658302, 4.68552, -4)
+current = true
+fov = 50.0
+
+[node name="Angle 2" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, 3, -1.5)
+fov = 60.0
+
+[node name="Angle 3" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.25, 4.77684, -1.29774)
 fov = 60.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4uxdq")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(-0.972974, -0.0597654, 0.223048, 2.26267e-08, 0.965926, 0.258819, -0.230916, 0.251824, -0.939821, 0.217544, 1.51501, -1.04223)
+[node name="Chuck Spotlight" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.972974, -0.0597654, 0.223048, 2.26267e-08, 0.965926, 0.258819, -0.230916, 0.251824, -0.939821, -1.782, 3.73541, -0.75)
 light_color = Color(1, 0.9625, 0.85, 1)
 light_energy = 2.0
-spot_range = 1.3068
-spot_angle = 27.449
+spot_range = 1.59812
+spot_angle = 32.2181
+spot_angle_attenuation = 0.1
+
+[node name="Chuck Spotlight2" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.963761, 0.0690445, -0.257677, 1.9697e-08, 0.965926, 0.258819, 0.266767, 0.24944, -0.930922, -0.186226, 5.29432, -0.75)
+light_color = Color(1, 0.9625, 0.85, 1)
+light_energy = 2.0
+spot_range = 2.26541
+spot_angle = 28.9054
 spot_angle_attenuation = 0.1
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.5, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.5, -2)
 light_color = Color(1, 0.960784, 0.85098, 1)
 light_energy = 0.5
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.5, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3.5, -2)
 light_color = Color(1, 0.960784, 0.85098, 1)
 light_energy = 0.5
+
+[node name="ChuckEsCornerStage" parent="." instance=ExtResource("3_8qvk7")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 1)
