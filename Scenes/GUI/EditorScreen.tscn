@@ -851,15 +851,6 @@ grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "Show Name"
 
-[node name="StageTypeLabel" type="Label" parent="ShowtapeNewScreen/DialogPanel"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 192.0
-offset_right = 264.0
-offset_bottom = 224.0
-text = "Creating for Helen House"
-vertical_alignment = 1
-
 [node name="CancelButton" type="Button" parent="ShowtapeNewScreen/DialogPanel"]
 layout_mode = 0
 offset_left = 309.0

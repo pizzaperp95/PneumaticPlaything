@@ -290,7 +290,7 @@ func _on_showtape_save_out_browse_button_pressed() -> void:
 	$SaveShowtapeFileDialog.show()
 
 func _on_showtape_save_create_button_pressed() -> void:
-	var header = "UST,1,"+show_name.replace(",", "_").replace(";", "_")+","+str(stages_info[current_stage][1])+","+stages_info[current_stage][6]+","+stages_info[current_stage][5]+";"
+	var header = "UST,1,"+show_name.replace(",", "_").replace(";", "_")+","+str(stages_info[current_stage]["bits"])+","+stages_info[current_stage]["ust_stage"]+","+stages_info[current_stage]["ust_character"]+";"
 	var data_out_string = save_data()
 	var file = FileAccess.open($ShowtapeSaveScreen/DialogPanel/OutFilePath.text, FileAccess.WRITE)
 	file.store_string(header+data_out_string+";"+Marshalls.raw_to_base64($AudioStreamPlayer.stream.data))
