@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtkqaw5533rxy"]
+[gd_scene load_steps=7 format=3 uid="uid://dtkqaw5533rxy"]
 
 [ext_resource type="StyleBox" uid="uid://d17amc25o63p1" path="res://UI/Themes/MovementsPanelOverride.tres" id="1_d1xev"]
 [ext_resource type="Script" uid="uid://tn3aaldu7mm2" path="res://Scripts/MovementRow.gd" id="1_rm5t0"]
@@ -11,6 +11,17 @@ corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldhn8"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 0.752941, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [node name="Row" type="Panel"]
 anchors_preset = 10
@@ -56,6 +67,7 @@ offset_top = 20.0
 offset_right = 260.0
 offset_bottom = 36.0
 tooltip_text = "Prevent recording over"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ldhn8")
 toggle_mode = true
 icon = ExtResource("3_ldhn8")
 
