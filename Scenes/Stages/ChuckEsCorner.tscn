@@ -16,6 +16,7 @@ script = ExtResource("2_8qvk7")
 
 [node name="Warblettes" parent="." instance=ExtResource("3_t27ru")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 4, 0.5)
+script = ExtResource("2_8qvk7")
 
 [node name="Angle 1" type="Camera3D" parent="."]
 transform = Transform3D(-0.984612, -0.00554278, 0.174664, 0.0289131, 0.980555, 0.194105, -0.172344, 0.196168, -0.965306, -0.658302, 4.93729, -4)
@@ -41,7 +42,7 @@ spot_range = 6.53799
 spot_angle = 30.5982
 spot_angle_attenuation = 0.1
 
-[node name="Chuck Spotlight2" type="SpotLight3D" parent="."]
+[node name="Warblettes Spotlight" type="SpotLight3D" parent="."]
 transform = Transform3D(-0.963761, 0.0690445, -0.257677, 1.9697e-08, 0.965926, 0.258819, 0.266767, 0.24944, -0.930922, -0.309492, 5.86862, -0.75)
 light_color = Color(1, 0.9625, 0.85, 1)
 light_energy = 2.0

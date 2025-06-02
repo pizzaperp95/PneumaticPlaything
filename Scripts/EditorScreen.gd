@@ -17,79 +17,57 @@ var current_stage : String
 var stages_info = {
 	"Helen House": 
 	{
-		"bits": 32, 
+		"bits": 19, 
 		"scene": "res://Scenes/Stages/HelenHouse.tscn", 
 		"scene_ref_base": "SubViewport/HelenHouse/",
 		"camera_count": 2,
 		
-		"ust_character": "Mitzi/Helen", 
-		"ust_stage": "Rockafire Explosion/3-Stage (Single Character)",
+		"ust_type": "Rockafire Explosion/3-Stage",
 		
 		"bit_mapping":
 		{
-			"Helen":
-			{
-				"Mouth": [3.0, 2.0],
-				"Left Ear": [3.5, 1.5],
-				"Right Ear": [3.5, 1.5],
-				"Left Eyelid": [1.5, 2.0],
-				"Right Eyelid": [1.5, 2.0],
-				"Eyes Left": [3.5, 1.5],
-				"Eyes Right": [3.5, 1.5],
-				"Head Left": [1.5, 1.5],
-				"Head Right": [1.5, 1.5],
-				"Head Up": [1.0, 1.0],
-				"Left Arm Up": [0.8, 0.6],
-				"Left Arm Twist": [0.8, 0.8],
-				"Left Elbow": [1.0, 1.0],
-				"Right Arm Up": [0.8, 0.6],
-				"Right Arm Twist": [0.8, 0.8],
-				"Right Elbow": [1.0, 1.0],
-				"Body Left": [0.7, 0.7],
-				"Body Right": [0.7, 0.7],
-				"Body Lean": [1.0, 0.8],
-			},
-			"None":
-			{
-				"Unused 20": ["None"],
-				"Unused 21": ["None"],
-				"Unused 22": ["None"],
-				"Unused 23": ["None"],
-				"Unused 24": ["None"],
-				"Unused 25": ["None"],
-				"Unused 26": ["None"],
-				"Unused 27": ["None"],
-				"Unused 28": ["None"],
-				"Unused 29": ["None"],
-				"Unused 30": ["None"],
-				"Unused 31": ["None"],
-				"Unused 32": ["None"],
-			}
+			23: { "bot": "Helen", "movement": "Mouth", "flow_in": 3.0, "flow_out": 2.0 },
+			24: { "bot": "Helen", "movement": "Left Ear", "flow_in": 3.5, "flow_out": 1.5 },
+			25: { "bot": "Helen", "movement": "Right Ear", "flow_in": 3.5, "flow_out": 1.5 },
+			26: { "bot": "Helen", "movement": "Left Eyelid", "flow_in": 1.5, "flow_out": 2.0 },
+			27: { "bot": "Helen", "movement": "Right Eyelid", "flow_in": 1.5, "flow_out": 2.0 },
+			28: { "bot": "Helen", "movement": "Eyes Left", "flow_in": 3.5, "flow_out": 1.5 },
+			29: { "bot": "Helen", "movement": "Eyes Right", "flow_in": 3.5, "flow_out": 1.5 },
+			30: { "bot": "Helen", "movement": "Head Left", "flow_in": 1.5, "flow_out": 1.5 },
+			31: { "bot": "Helen", "movement": "Head Right", "flow_in": 1.5, "flow_out": 1.5 },
+			32: { "bot": "Helen", "movement": "Head Up", "flow_in": 1.0, "flow_out": 1.0 },
+			33: { "bot": "Helen", "movement": "Left Arm Up", "flow_in": 0.8, "flow_out": 0.6 },
+			34: { "bot": "Helen", "movement": "Left Arm Twist", "flow_in": 0.8, "flow_out": 0.8 },
+			35: { "bot": "Helen", "movement": "Left Elbow", "flow_in": 1.0, "flow_out": 1.0 },
+			36: { "bot": "Helen", "movement": "Right Arm Up", "flow_in": 0.8, "flow_out": 0.6 },
+			37: { "bot": "Helen", "movement": "Right Arm Twist", "flow_in": 0.8, "flow_out": 0.8 },
+			38: { "bot": "Helen", "movement": "Right Elbow", "flow_in": 1.0, "flow_out": 1.0 },
+			39: { "bot": "Helen", "movement": "Body Left", "flow_in": 0.7, "flow_out": 0.7 },
+			40: { "bot": "Helen", "movement": "Body Right", "flow_in": 0.7, "flow_out": 0.7 },
+			41: { "bot": "Helen", "movement": "Body Lean", "flow_in": 1.0, "flow_out": 0.8 },
 		}
 	},
 	"Chuck E's Corner": 
 	{
-		"bits": 8, 
+		"bits": 10, 
 		"scene": "res://Scenes/Stages/ChuckEsCorner.tscn", 
 		"scene_ref_base": "SubViewport/ChuckEsCorner/",
 		"camera_count": 3,
 		
-		"ust_character": "Chuck E.", 
-		"ust_stage": "Cyberamics (Single Character)",
+		"ust_type": "Cyberamics",
 		
 		"bit_mapping":
 		{
-			"Chuck":
-			{
-				"Mouth": [7.5, 6.0],
-				"Head Left": [0.8, 1.0],
-				"Head Right": [1.0, 1.0],
-				"Head Up": [2.0, 1.0],
-				"Eyes Left": [4.0, 3.0],
-				"Eyes Right": [4.0, 3.0],
-				"Eyelids": [7.5, 5.0],
-				"Right Arm": [2.0, 1.0],
-			}
+			1: { "bot": "Chuck", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+			2: { "bot": "Chuck", "movement": "Head Left", "flow_in": 0.8, "flow_out": 1.0 },
+			3: { "bot": "Chuck", "movement": "Head Right", "flow_in": 1.0, "flow_out": 1.0 },
+			4: { "bot": "Chuck", "movement": "Head Up", "flow_in": 2.0, "flow_out": 1.0 },
+			5: { "bot": "Chuck", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+			6: { "bot": "Chuck", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+			7: { "bot": "Chuck", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+			8: { "bot": "Chuck", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
+			41: { "bot": "Warblettes", "movement": "Mouth", "flow_in": 4.0, "flow_out": 3.0 },
+			44: { "bot": "Warblettes", "movement": "Body Rock", "flow_in": 1.0, "flow_out": 1.0 },
 		}
 	}
 }
@@ -129,41 +107,41 @@ func reload_stage(stage_previously_loaded: bool) -> void:
 	$FlyoutPanel/Camera.size.y = cam_offset
 	var rows_offset = 0
 	var flows_offset = 0
-	var bit_idx = 1
 	var flow_count = 0
-	for bot in stages_info[current_stage]["bit_mapping"]:
-		for movement in stages_info[current_stage]["bit_mapping"][bot]:
-			
-			var movement_flows = stages_info[current_stage]["bit_mapping"][bot][movement]
-			if (movement_flows[0] is not String):
-				var flow_control = load("res://Scenes/GUI/Controls/FlowControl.tscn").instantiate()
-				flow_control.position.y = flows_offset
-				flow_control.name = bot + " " + movement
-				flow_control.in_value = movement_flows[0]
-				flow_control.out_value = movement_flows[1]
-				$FlyoutPanel/FlowControls/InvisibleMask/FlowHandle.add_child(flow_control)
-				flows_offset += 44
-				flow_count += 1
+	for bit_number in stages_info[current_stage]["bit_mapping"]:
+		var bot = stages_info[current_stage]["bit_mapping"][bit_number]["bot"]
+		var movement = stages_info[current_stage]["bit_mapping"][bit_number]["movement"]
+		
+		var in_flow = stages_info[current_stage]["bit_mapping"][bit_number]["flow_in"]
+		var out_flow = stages_info[current_stage]["bit_mapping"][bit_number]["flow_out"]
+		if (in_flow is not String):
+			var flow_control = load("res://Scenes/GUI/Controls/FlowControl.tscn").instantiate()
+			flow_control.position.y = flows_offset
+			flow_control.name = bot + " " + movement
+			flow_control.in_value = in_flow
+			flow_control.out_value = out_flow
+			$FlyoutPanel/FlowControls/InvisibleMask/FlowHandle.add_child(flow_control)
+			flows_offset += 44
+			flow_count += 1
 				
-			var row = load("res://Scenes/GUI/Controls/MovementRow.tscn").instantiate()
-			row.position.y = rows_offset
-			row.base_scene_path = "../../../../../" + stages_info[current_stage]["scene_ref_base"]
-			row.animatronic = bot
-			if (movement_flows[0] is String): row.flow_path = "None"
-			row.movement_bit = bit_idx
-			row.movement_name = movement
-			$SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.add_child(row)
+		var row = load("res://Scenes/GUI/Controls/MovementRow.tscn").instantiate()
+		row.name = str(bit_number) + " Bit"
+		row.position.y = rows_offset
+		row.base_scene_path = "../../../../../" + stages_info[current_stage]["scene_ref_base"]
+		row.animatronic = bot
+		if (in_flow is String): row.flow_path = "None"
+		row.movement_bit = bit_number
+		row.movement_name = movement
+		$SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.add_child(row, true)
 			
-			var movement_button = load("res://Scenes/GUI/Controls/MovementButton.tscn").instantiate()
-			movement_button.position.y = rows_offset
-			movement_button.base_scene_path = "../../../../../" + stages_info[current_stage]["scene_ref_base"]
-			movement_button.animatronic = bot
-			if (movement_flows[0] is String): movement_button.flow_path = "None"
-			movement_button.movement_name = movement
-			$FlyoutPanel/Movements/InvisibleMask/MovementHandle.add_child(movement_button)
-			
-			rows_offset += 44
-			bit_idx += 1
+		var movement_button = load("res://Scenes/GUI/Controls/MovementButton.tscn").instantiate()
+		movement_button.position.y = rows_offset
+		movement_button.base_scene_path = "../../../../../" + stages_info[current_stage]["scene_ref_base"]
+		movement_button.animatronic = bot
+		if (in_flow is String): movement_button.flow_path = "None"
+		movement_button.movement_name = movement
+		$FlyoutPanel/Movements/InvisibleMask/MovementHandle.add_child(movement_button)
+		rows_offset += 44
 	$SequencerPanel/TimelinePanel/VScrollBar.max_value = stages_info[current_stage]["bits"] - 1
 	$FlyoutPanel/Movements/VScrollBar.max_value = stages_info[current_stage]["bits"] - 1
 	$FlyoutPanel/FlowControls/VScrollBar.max_value = flow_count - 1
@@ -268,8 +246,12 @@ func _on_showtape_load_open_button_pressed() -> void:
 	var file = FileAccess.open($ShowtapeLoadScreen/DialogPanel/InFilePath.text.strip_edges(), FileAccess.READ)
 	var content = file.get_as_text()
 	var header = content.split(";")[0].split(",")
-	if ((int(header[3]) != stages_info[current_stage]["bits"]) || (header[4] != stages_info[current_stage]["ust_stage"])|| (header[5] != stages_info[current_stage]["ust_character"])):
-		$IncorrectShowtapeDialog.dialog_text = "This showtape is not compatible with the currently selected stage.\nShowtape stage type: %s\nShowtape character(s): %s" % [header[4], header[5]]
+	if (header[1] != "2"):
+		$IncorrectShowtapeDialog.dialog_text = "This showtape is not the correct version!"
+		$IncorrectShowtapeDialog.show()
+		return
+	if (header[3] != stages_info[current_stage]["ust_type"]):
+		$IncorrectShowtapeDialog.dialog_text = "This showtape is not compatible with the currently selected stage.\nShowtape stage type: " + header[4]
 		$IncorrectShowtapeDialog.show()
 		return
 	show_name = header[2]
@@ -290,7 +272,7 @@ func _on_showtape_save_out_browse_button_pressed() -> void:
 	$SaveShowtapeFileDialog.show()
 
 func _on_showtape_save_create_button_pressed() -> void:
-	var header = "UST,1,"+show_name.replace(",", "_").replace(";", "_")+","+str(stages_info[current_stage]["bits"])+","+stages_info[current_stage]["ust_stage"]+","+stages_info[current_stage]["ust_character"]+";"
+	var header = "UST,2,"+show_name.replace(",", "_").replace(";", "_")+","+stages_info[current_stage]["ust_type"]+";"
 	var data_out_string = save_data()
 	var file = FileAccess.open($ShowtapeSaveScreen/DialogPanel/OutFilePath.text, FileAccess.WRITE)
 	file.store_string(header+data_out_string+";"+Marshalls.raw_to_base64($AudioStreamPlayer.stream.data))
@@ -481,28 +463,56 @@ func _on_stop_button_pressed() -> void:
 
 func save_data() -> String:
 	var write_out : String = ""
-	var temp_data = []
+	var temp_data = {}
 	var longest_channel = 0
 	for movement_row in $SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_children():
-		temp_data.append(movement_row.movements)
+		temp_data[int(movement_row.name.split(" ")[0])] = movement_row.movements
 		if (movement_row.movements.size() > longest_channel): longest_channel = movement_row.movements.size()
 	for i in range(longest_channel+1):
-		var frame_byte = 0
-		for j in range(stages_info[current_stage]["bits"]):
-			if (index_get_safe(i, temp_data[j])): frame_byte += 1 << j;
-		write_out += ("%0"+str(stages_info[current_stage]["bits"]/4)+"X,") % frame_byte
+		var frame_long_1 = 0
+		var frame_long_2 = 0
+		var frame_long_3 = 0
+		var frame_long_4 = 0
+		for j in temp_data:
+			if (index_get_safe(i, temp_data[j])): 
+				if (j <= 64):
+					frame_long_1 += 1 << j-1;
+				elif (j <= 128):
+					frame_long_2 += 1 << (j&64)-1;
+				elif (j <= 192):
+					frame_long_3 += 1 << (j&64)-1;
+				else:
+					frame_long_4 += 1 << (j&64)-1;
+		write_out += (("%016X%016X%016X%016X,") % [frame_long_4, frame_long_3, frame_long_2, frame_long_1])
 	return write_out
 
 func plot_data(data: String):
 	start_recording.emit()
+	var evil_glass = []
+	for movement_row in $SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_children():
+		evil_glass.append(movement_row.movement_bit)
 	for frame_string in data.split(","):
 		if (frame_string == ""): continue
-		var frame_byte = frame_string.hex_to_int()
-		for i in range(stages_info[current_stage]["bits"]):
+		var frame_long_4 = frame_string.substr(0, 16).hex_to_int()
+		var frame_long_3 = frame_string.substr(17, 16).hex_to_int()
+		var frame_long_2 = frame_string.substr(33, 16).hex_to_int()
+		var frame_long_1 = frame_string.substr(49, 16).hex_to_int()
+		for i in stages_info[current_stage]["bit_mapping"]:
 			var er = false
-			if ((frame_byte & int(pow(2, i))) >> i == 1): 
-				er = true
-			$SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_child(i).etching = er
+			var check_i = (i % 64) - 1
+			if (i <= 64):
+				if ((frame_long_1 & int(pow(2, check_i))) >> check_i == 1): 
+					er = true
+			elif (i <= 128):
+				if ((frame_long_2 & int(pow(2, check_i))) >> check_i == 1): 
+					er = true
+			elif (i <= 192):
+				if ((frame_long_3 & int(pow(2, check_i))) >> check_i == 1): 
+					er = true
+			else:
+				if ((frame_long_4 & int(pow(2, check_i))) >> check_i == 1): 
+					er = true
+			$SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_child(evil_glass.find(i)).etching = er
 		step.emit(1)
 	for movement_row in $SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_children():
 		movement_row.etching = false
