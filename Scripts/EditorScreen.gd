@@ -251,7 +251,7 @@ func _on_showtape_load_open_button_pressed() -> void:
 		$IncorrectShowtapeDialog.show()
 		return
 	if (header[3] != stages_info[current_stage]["ust_type"]):
-		$IncorrectShowtapeDialog.dialog_text = "This showtape is not compatible with the currently selected stage.\nShowtape stage type: " + header[4]
+		$IncorrectShowtapeDialog.dialog_text = "This showtape is not compatible with the currently selected stage.\nShowtape stage type: " + header[3]
 		$IncorrectShowtapeDialog.show()
 		return
 	show_name = header[2]
