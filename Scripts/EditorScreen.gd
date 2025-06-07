@@ -473,17 +473,29 @@ func save_data() -> String:
 		var frame_long_2 = 0
 		var frame_long_3 = 0
 		var frame_long_4 = 0
+		var frame_long_5 = 0
+		var frame_long_6 = 0
+		var frame_long_7 = 0
+		var frame_long_8 = 0
 		for j in temp_data:
 			if (index_get_safe(i, temp_data[j])): 
-				if (j <= 64):
-					frame_long_1 += 1 << j-1;
+				if (j <= 32):
+					frame_long_1 += 1 << (j&64)-1
+				elif (j <= 64):
+					frame_long_2 += 1 << (j&64)-1
+				elif (j <= 96):
+					frame_long_3 += 1 << (j&64)-1
 				elif (j <= 128):
-					frame_long_2 += 1 << (j&64)-1;
+					frame_long_4 += 1 << (j&64)-1
+				elif (j <= 160):
+					frame_long_5 += 1 << (j&64)-1
 				elif (j <= 192):
-					frame_long_3 += 1 << (j&64)-1;
-				else:
-					frame_long_4 += 1 << (j&64)-1;
-		write_out += (("%016X%016X%016X%016X,") % [frame_long_4, frame_long_3, frame_long_2, frame_long_1])
+					frame_long_6 += 1 << (j&64)-1
+				elif (j <= 224):
+					frame_long_7 += 1 << (j&64)-1
+				elif (j <= 256):
+					frame_long_8 += 1 << (j&64)-1
+		write_out += (("%08X%08X%08X%08X%08X%08X%08X%08X,") % [frame_long_8, frame_long_7, frame_long_6, frame_long_5, frame_long_4, frame_long_3, frame_long_2, frame_long_1])
 	return write_out
 
 func plot_data(data: String):
@@ -493,24 +505,35 @@ func plot_data(data: String):
 		evil_glass.append(movement_row.movement_bit)
 	for frame_string in data.split(","):
 		if (frame_string == ""): continue
-		var frame_long_4 = frame_string.substr(0, 16).hex_to_int()
-		var frame_long_3 = frame_string.substr(17, 16).hex_to_int()
-		var frame_long_2 = frame_string.substr(33, 16).hex_to_int()
-		var frame_long_1 = frame_string.substr(49, 16).hex_to_int()
+		var frame_long_8 = frame_string.substr(0, 8).hex_to_int()
+		var frame_long_7 = frame_string.substr(9, 8).hex_to_int()
+		var frame_long_6 = frame_string.substr(17, 8).hex_to_int()
+		var frame_long_5 = frame_string.substr(25, 8).hex_to_int()
+		var frame_long_4 = frame_string.substr(33, 8).hex_to_int()
+		var frame_long_3 = frame_string.substr(41, 8).hex_to_int()
+		var frame_long_2 = frame_string.substr(49, 8).hex_to_int()
+		var frame_long_1 = frame_string.substr(57, 8).hex_to_int()
 		for i in stages_info[current_stage]["bit_mapping"]:
 			var er = false
-			var check_i = (i % 64) - 1
-			if (i <= 64):
-				if ((frame_long_1 & int(pow(2, check_i))) >> check_i == 1): 
-					er = true
+			var check_i = (i % 32) - 1
+			var check_frame_segment = frame_long_1
+			if (i <= 32):
+				check_frame_segment = frame_long_1
+			elif (i <= 64):
+				check_frame_segment = frame_long_2
+			elif (i <= 96):
+				check_frame_segment = frame_long_3
 			elif (i <= 128):
-				if ((frame_long_2 & int(pow(2, check_i))) >> check_i == 1): 
-					er = true
+				check_frame_segment = frame_long_4
+			elif (i <= 160):
+				check_frame_segment = frame_long_5
 			elif (i <= 192):
-				if ((frame_long_3 & int(pow(2, check_i))) >> check_i == 1): 
-					er = true
-			else:
-				if ((frame_long_4 & int(pow(2, check_i))) >> check_i == 1): 
+				check_frame_segment = frame_long_6
+			elif (i <= 224):
+				check_frame_segment = frame_long_7
+			elif (i <= 256):
+				check_frame_segment = frame_long_8
+			if ((check_frame_segment & int(pow(2, check_i))) >> check_i == 1): 
 					er = true
 			$SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_child(evil_glass.find(i)).etching = er
 		step.emit(1)
