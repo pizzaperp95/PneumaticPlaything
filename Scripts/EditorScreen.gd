@@ -154,9 +154,9 @@ func _on_stage_change_overwrite_confirmation_dialog_confirmed() -> void:
 
 func update_time_label() -> void:
 	var frames = index % 60
-	var seconds = floori(index/60) % 60
-	var minutes = floori(index/3600) % 60
-	var hours = floori(index/216000)
+	var seconds = floori(index/60.0) % 60
+	var minutes = floori(index/3600.0) % 60
+	var hours = floori(index/216000.0)
 	$SequencerPanel/TransportControls/TimeLabel.text = "%d:%02d:%02d:%02d" % [hours, minutes, seconds, frames] 
 
 func set_transport_enabled(enabled: bool):
