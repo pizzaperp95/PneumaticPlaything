@@ -573,6 +573,7 @@ offset_right = 276.0
 offset_bottom = 4.0
 
 [node name="Cosmetics" type="Panel" parent="FlyoutPanel"]
+visible = false
 offset_left = 140.0
 offset_right = 544.0
 offset_bottom = 392.0
