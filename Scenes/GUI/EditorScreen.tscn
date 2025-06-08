@@ -510,16 +510,6 @@ toggle_mode = true
 button_group = ExtResource("13_wy7jo")
 text = "Cosmetics"
 
-[node name="StageFlyoutButton" type="Button" parent="FlyoutPanel/FlyoutButtons"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 148.0
-offset_right = 132.0
-offset_bottom = 180.0
-toggle_mode = true
-button_group = ExtResource("13_wy7jo")
-text = "Stage"
-
 [node name="Movements" type="Panel" parent="FlyoutPanel"]
 visible = false
 layout_mode = 0
@@ -583,36 +573,29 @@ offset_right = 276.0
 offset_bottom = 4.0
 
 [node name="Cosmetics" type="Panel" parent="FlyoutPanel"]
-visible = false
-layout_mode = 0
 offset_left = 140.0
-offset_right = 396.0
-offset_bottom = 64.0
+offset_right = 544.0
+offset_bottom = 392.0
 
-[node name="Label" type="Label" parent="FlyoutPanel/Cosmetics"]
-layout_mode = 0
+[node name="InvisibleMask" type="Control" parent="FlyoutPanel/Cosmetics"]
+clip_contents = true
+anchors_preset = 0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 228.0
-offset_bottom = 36.0
-text = "No options for this stage :("
-vertical_alignment = 1
+offset_right = 388.0
+offset_bottom = 388.0
 
-[node name="Stage" type="Panel" parent="FlyoutPanel"]
-visible = false
-layout_mode = 0
-offset_left = 140.0
-offset_right = 396.0
-offset_bottom = 64.0
+[node name="CosmeticsHandle" type="Control" parent="FlyoutPanel/Cosmetics/InvisibleMask"]
+anchors_preset = 0
 
-[node name="Label" type="Label" parent="FlyoutPanel/Stage"]
+[node name="VScrollBar" type="VScrollBar" parent="FlyoutPanel/Cosmetics"]
 layout_mode = 0
-offset_left = 4.0
+offset_left = 392.0
 offset_top = 4.0
-offset_right = 228.0
-offset_bottom = 36.0
-text = "No options for this stage :("
-vertical_alignment = 1
+offset_right = 400.0
+offset_bottom = 388.0
+max_value = 0.0
+step = 1.0
 
 [node name="ControlsScreen" type="Control" parent="."]
 visible = false
@@ -1123,9 +1106,9 @@ expand_mode = 2
 [connection signal="toggled" from="FlyoutPanel/FlyoutButtons/FlowsFlyoutButton" to="." method="_on_flows_flyout_button_toggled"]
 [connection signal="toggled" from="FlyoutPanel/FlyoutButtons/CameraFlyoutButton" to="." method="_on_camera_flyout_button_toggled"]
 [connection signal="toggled" from="FlyoutPanel/FlyoutButtons/CosmeticsFlyoutButton" to="." method="_on_cosmetics_flyout_button_toggled"]
-[connection signal="toggled" from="FlyoutPanel/FlyoutButtons/StageFlyoutButton" to="." method="_on_stage_flyout_button_toggled"]
 [connection signal="value_changed" from="FlyoutPanel/Movements/VScrollBar" to="." method="_on_movement_v_scroll_bar_value_changed"]
 [connection signal="value_changed" from="FlyoutPanel/FlowControls/VScrollBar" to="." method="_on_flow_v_scroll_bar_value_changed"]
+[connection signal="value_changed" from="FlyoutPanel/Cosmetics/VScrollBar" to="." method="_on_cosmetics_v_scroll_bar_value_changed"]
 [connection signal="pressed" from="ControlsScreen/InputEater" to="." method="_on_input_eater_pressed"]
 [connection signal="pressed" from="CreditsScreen/InputEater" to="." method="_on_input_eater_pressed"]
 [connection signal="pressed" from="ShowtapeNewScreen/InputEater" to="." method="_on_input_eater_pressed"]

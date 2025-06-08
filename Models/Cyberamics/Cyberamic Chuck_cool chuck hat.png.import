@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc7oo4g6bmvox"
-path.s3tc="res://.godot/imported/PTTChuck_eyes.png-ff741c1c04a93aecb441194472e5555c.s3tc.ctex"
-path.etc2="res://.godot/imported/PTTChuck_eyes.png-ff741c1c04a93aecb441194472e5555c.etc2.ctex"
+uid="uid://bgfogdr7mgqrn"
+path.s3tc="res://.godot/imported/Cyberamic Chuck_cool chuck hat.png-92e57bd583b5fddebeb2b5a26a27b65f.s3tc.ctex"
+path.etc2="res://.godot/imported/Cyberamic Chuck_cool chuck hat.png-92e57bd583b5fddebeb2b5a26a27b65f.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "de6b71a0b6b2ef973e666c75df9734be"
+"md5": "30dda0ec4550d8b59629241b11fcb967"
 }
 
 [deps]
 
-source_file="res://Models/Cyberamics/PTTChuck_eyes.png"
-dest_files=["res://.godot/imported/PTTChuck_eyes.png-ff741c1c04a93aecb441194472e5555c.s3tc.ctex", "res://.godot/imported/PTTChuck_eyes.png-ff741c1c04a93aecb441194472e5555c.etc2.ctex"]
+source_file="res://Models/Cyberamics/Cyberamic Chuck_cool chuck hat.png"
+dest_files=["res://.godot/imported/Cyberamic Chuck_cool chuck hat.png-92e57bd583b5fddebeb2b5a26a27b65f.s3tc.ctex", "res://.godot/imported/Cyberamic Chuck_cool chuck hat.png-92e57bd583b5fddebeb2b5a26a27b65f.etc2.ctex"]
 
 [params]
 

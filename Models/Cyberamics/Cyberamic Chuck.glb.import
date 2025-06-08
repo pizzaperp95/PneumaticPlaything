@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bb70mexwmq1ta"
-path="res://.godot/imported/PTTChuck.glb-39fa71e50819b763a0b914d99f7b7ecc.scn"
+uid="uid://c2j62syov3skq"
+path="res://.godot/imported/Cyberamic Chuck.glb-7640bcf570eaf553eddfec5de3e96502.scn"
 
 [deps]
 
-source_file="res://Models/Cyberamics/PTTChuck.glb"
-dest_files=["res://.godot/imported/PTTChuck.glb-39fa71e50819b763a0b914d99f7b7ecc.scn"]
+source_file="res://Models/Cyberamics/Cyberamic Chuck.glb"
+dest_files=["res://.godot/imported/Cyberamic Chuck.glb-7640bcf570eaf553eddfec5de3e96502.scn"]
 
 [params]
 
@@ -32,12 +32,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"nodes": {
-"PATH:PTT Chuck/Skeleton3D/Yellow Checker Vest": {
-"import/skip_import": true
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

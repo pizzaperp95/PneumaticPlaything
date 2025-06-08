@@ -45,7 +45,9 @@ var stages_info = {
 			39: { "bot": "Helen", "movement": "Body Left", "flow_in": 0.7, "flow_out": 0.7 },
 			40: { "bot": "Helen", "movement": "Body Right", "flow_in": 0.7, "flow_out": 0.7 },
 			41: { "bot": "Helen", "movement": "Body Lean", "flow_in": 1.0, "flow_out": 0.8 },
-		}
+		},
+		
+		"cosmetics": { }
 	},
 	"Chuck E's Corner": 
 	{
@@ -68,6 +70,121 @@ var stages_info = {
 			8: { "bot": "Chuck", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
 			41: { "bot": "Warblettes", "movement": "Mouth", "flow_in": 4.0, "flow_out": 3.0 },
 			44: { "bot": "Warblettes", "movement": "Body Rock", "flow_in": 1.0, "flow_out": 1.0 },
+		},
+		
+		"cosmetics":
+		{
+			"Chuck E. Hat":
+			{
+				"Derby":
+				{
+					"Chuck/Chuck/Skeleton3D/Avenger Hat": false,
+					"Chuck/Chuck/Skeleton3D/Cool Chuck Hat": false,
+					"Chuck/Chuck/Skeleton3D/Derby": true,
+				},
+				"Cool Chuck":
+				{
+					"Chuck/Chuck/Skeleton3D/Avenger Hat": false,
+					"Chuck/Chuck/Skeleton3D/Cool Chuck Hat": true,
+					"Chuck/Chuck/Skeleton3D/Derby": false,
+				},
+				"Avenger":
+				{
+					"Chuck/Chuck/Skeleton3D/Avenger Hat": true,
+					"Chuck/Chuck/Skeleton3D/Cool Chuck Hat": false,
+					"Chuck/Chuck/Skeleton3D/Derby": false,
+				},
+				"None":
+				{
+					"Chuck/Chuck/Skeleton3D/Avenger Hat": false,
+					"Chuck/Chuck/Skeleton3D/Cool Chuck Hat": false,
+					"Chuck/Chuck/Skeleton3D/Derby": false,
+				}
+			},
+			
+			"Chuck E. Shirt":
+			{
+				"Red Vest":
+				{
+					"Chuck/Chuck/Skeleton3D/Avenger Shirt": false,
+					"Chuck/Chuck/Skeleton3D/Cool Chuck Shirt": false,
+					"Chuck/Chuck/Skeleton3D/Black Bowtie": true,
+					"Chuck/Chuck/Skeleton3D/Buttons": true,
+					"Chuck/Chuck/Skeleton3D/Vest Trim": true,
+					"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": false,
+					"Chuck/Chuck/Skeleton3D/Rocker Vest": true,
+				},
+				"Yellow Checker Vest":
+				{
+					"Chuck/Chuck/Skeleton3D/Avenger Shirt": false,
+					"Chuck/Chuck/Skeleton3D/Cool Chuck Shirt": false,
+					"Chuck/Chuck/Skeleton3D/Black Bowtie": true,
+					"Chuck/Chuck/Skeleton3D/Buttons": true,
+					"Chuck/Chuck/Skeleton3D/Vest Trim": true,
+					"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": true,
+					"Chuck/Chuck/Skeleton3D/Rocker Vest": false,
+				},
+				"Cool Chuck Shirt":
+				{
+					"Chuck/Chuck/Skeleton3D/Avenger Shirt": false,
+					"Chuck/Chuck/Skeleton3D/Cool Chuck Shirt": true,
+					"Chuck/Chuck/Skeleton3D/Black Bowtie": false,
+					"Chuck/Chuck/Skeleton3D/Buttons": false,
+					"Chuck/Chuck/Skeleton3D/Vest Trim": false,
+					"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": false,
+					"Chuck/Chuck/Skeleton3D/Rocker Vest": false,
+				},
+				"Avenger Shirt":
+				{
+					"Chuck/Chuck/Skeleton3D/Avenger Shirt": true,
+					"Chuck/Chuck/Skeleton3D/Cool Chuck Shirt": false,
+					"Chuck/Chuck/Skeleton3D/Black Bowtie": false,
+					"Chuck/Chuck/Skeleton3D/Buttons": false,
+					"Chuck/Chuck/Skeleton3D/Vest Trim": false,
+					"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": false,
+					"Chuck/Chuck/Skeleton3D/Rocker Vest": false,
+				}
+			},
+			
+			"Chuck E. Mask":
+			{
+				"PTT":
+				{
+					"Chuck/Chuck/Skeleton3D/PTT Ears": true,
+					"Chuck/Chuck/Skeleton3D/PTT Ears Inside": true,
+					"Chuck/Chuck/Skeleton3D/PTT Jaw": true,
+					"Chuck/Chuck/Skeleton3D/PTT Muzzle": true,
+					"Chuck/Chuck/Skeleton3D/Modern Ears": false,
+					"Chuck/Chuck/Skeleton3D/Modern Ears Inside": false,
+					"Chuck/Chuck/Skeleton3D/Modern Jaw": false,
+					"Chuck/Chuck/Skeleton3D/Modern Muzzle": false,
+				},
+				"Modern":
+				{
+					"Chuck/Chuck/Skeleton3D/PTT Ears": false,
+					"Chuck/Chuck/Skeleton3D/PTT Ears Inside": false,
+					"Chuck/Chuck/Skeleton3D/PTT Jaw": false,
+					"Chuck/Chuck/Skeleton3D/PTT Muzzle": false,
+					"Chuck/Chuck/Skeleton3D/Modern Ears": true,
+					"Chuck/Chuck/Skeleton3D/Modern Ears Inside": true,
+					"Chuck/Chuck/Skeleton3D/Modern Jaw": true,
+					"Chuck/Chuck/Skeleton3D/Modern Muzzle": true,
+				},
+			},
+			
+			"Chuck E. Eyelids":
+			{
+				"Blue":
+				{
+					"Chuck/Chuck/Skeleton3D/Blue Eyelids": true,
+					"Chuck/Chuck/Skeleton3D/Grey Eyelids": false,
+				},
+				"Grey":
+				{
+					"Chuck/Chuck/Skeleton3D/Blue Eyelids": false,
+					"Chuck/Chuck/Skeleton3D/Grey Eyelids": true,
+				},
+			}
 		}
 	}
 }
@@ -92,10 +209,13 @@ func reload_stage(stage_previously_loaded: bool) -> void:
 			movement.queue_free()
 		for camera in $FlyoutPanel/Camera.get_children():
 			camera.queue_free()
+		for cosmetic_adjustment in $FlyoutPanel/Cosmetics/InvisibleMask/CosmeticsHandle.get_children():
+			cosmetic_adjustment.queue_free()
 		$SubViewport.get_child(0).queue_free()
 		cam_index = 0
 	var stage = load(stages_info[current_stage]["scene"]).instantiate()
 	$SubViewport.add_child(stage)
+	
 	var cam_offset = 4
 	for i in range(1, stages_info[current_stage]["camera_count"]+1):
 		var camera_button = load("res://Scenes/GUI/Controls/CameraButton.tscn").instantiate()
@@ -105,6 +225,20 @@ func reload_stage(stage_previously_loaded: bool) -> void:
 		cam_offset += 36
 		$FlyoutPanel/Camera.add_child(camera_button)
 	$FlyoutPanel/Camera.size.y = cam_offset
+	
+	var cosmetics_offset = 0
+	var cosmetics_count = -1
+	for cosmetic in stages_info[current_stage]["cosmetics"]:
+		var cosmetic_adjustment = load("res://Scenes/GUI/Controls/CosmeticAdjustment.tscn").instantiate()
+		cosmetic_adjustment.vis_name = cosmetic
+		cosmetic_adjustment.options = stages_info[current_stage]["cosmetics"][cosmetic]
+		cosmetic_adjustment.scene_handle = "../../../../../" + stages_info[current_stage]["scene_ref_base"]
+		cosmetic_adjustment.position.y = cosmetics_offset
+		cosmetics_offset += 44
+		cosmetics_count += 1
+		$FlyoutPanel/Cosmetics/InvisibleMask/CosmeticsHandle.add_child(cosmetic_adjustment)
+	$FlyoutPanel/Cosmetics/VScrollBar.max_value = cosmetics_count
+	
 	var rows_offset = 0
 	var flows_offset = 0
 	var flow_count = 0
@@ -372,6 +506,9 @@ func _on_flow_v_scroll_bar_value_changed(value: float) -> void:
 func _on_movement_v_scroll_bar_value_changed(value: float) -> void:
 	$FlyoutPanel/Movements/InvisibleMask/MovementHandle.position.y = value * -44
 
+func _on_cosmetics_v_scroll_bar_value_changed(value: float) -> void:
+	$FlyoutPanel/Cosmetics/InvisibleMask/CosmeticsHandle.position.y = value * -44
+
 func _erase_all() -> void:
 	playing = false
 	$AudioStreamPlayer.stop()
@@ -396,9 +533,6 @@ func _on_camera_flyout_button_toggled(toggled_on: bool) -> void:
 
 func _on_cosmetics_flyout_button_toggled(toggled_on: bool) -> void:
 	$FlyoutPanel/Cosmetics.visible = toggled_on
-
-func _on_stage_flyout_button_toggled(toggled_on: bool) -> void:
-	$FlyoutPanel/Stage.visible = toggled_on
 
 
 func _on_play_button_pressed() -> void:

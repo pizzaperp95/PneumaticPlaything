@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfll7xwkb2mbi"]
+
+[ext_resource type="Script" uid="uid://1f7v3ohsgx0g" path="res://Scripts/CosmeticAdjustment.gd" id="1_fg0vw"]
+
+[node name="FlowControl" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 384.0
+offset_bottom = 40.0
+script = ExtResource("1_fg0vw")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 184.0
+offset_bottom = 36.0
+text = "Cosmetic Adustment"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="OptionButton" type="OptionButton" parent="Panel"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 4.0
+offset_right = 380.0
+offset_bottom = 36.0
+
+[connection signal="item_selected" from="Panel/OptionButton" to="." method="_on_option_button_item_selected"]

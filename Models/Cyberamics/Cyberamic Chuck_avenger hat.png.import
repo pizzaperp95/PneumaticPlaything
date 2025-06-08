@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp4qcevx2sygg"
-path.s3tc="res://.godot/imported/PTTChuck_vest.png-7ff42f3db3c4ebd4116df04aa6baa4f7.s3tc.ctex"
-path.etc2="res://.godot/imported/PTTChuck_vest.png-7ff42f3db3c4ebd4116df04aa6baa4f7.etc2.ctex"
+uid="uid://im1r1enoj4l3"
+path.s3tc="res://.godot/imported/Cyberamic Chuck_avenger hat.png-29377b5e8b656b2b533aeba9277b6de7.s3tc.ctex"
+path.etc2="res://.godot/imported/Cyberamic Chuck_avenger hat.png-29377b5e8b656b2b533aeba9277b6de7.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "cdfb9781f38ce700fb6a6329107289e5"
+"md5": "eda0a6f93a90b3b6fa865784593fcd9f"
 }
 
 [deps]
 
-source_file="res://Models/Cyberamics/PTTChuck_vest.png"
-dest_files=["res://.godot/imported/PTTChuck_vest.png-7ff42f3db3c4ebd4116df04aa6baa4f7.s3tc.ctex", "res://.godot/imported/PTTChuck_vest.png-7ff42f3db3c4ebd4116df04aa6baa4f7.etc2.ctex"]
+source_file="res://Models/Cyberamics/Cyberamic Chuck_avenger hat.png"
+dest_files=["res://.godot/imported/Cyberamic Chuck_avenger hat.png-29377b5e8b656b2b533aeba9277b6de7.s3tc.ctex", "res://.godot/imported/Cyberamic Chuck_avenger hat.png-29377b5e8b656b2b533aeba9277b6de7.etc2.ctex"]
 
 [params]
 
