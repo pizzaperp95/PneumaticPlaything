@@ -640,13 +640,13 @@ func plot_data(data: String):
 	for frame_string in data.split(","):
 		if (frame_string == ""): continue
 		var frame_long_8 = frame_string.substr(0, 8).hex_to_int()
-		var frame_long_7 = frame_string.substr(9, 8).hex_to_int()
-		var frame_long_6 = frame_string.substr(17, 8).hex_to_int()
-		var frame_long_5 = frame_string.substr(25, 8).hex_to_int()
-		var frame_long_4 = frame_string.substr(33, 8).hex_to_int()
-		var frame_long_3 = frame_string.substr(41, 8).hex_to_int()
-		var frame_long_2 = frame_string.substr(49, 8).hex_to_int()
-		var frame_long_1 = frame_string.substr(57, 8).hex_to_int()
+		var frame_long_7 = frame_string.substr(8, 8).hex_to_int()
+		var frame_long_6 = frame_string.substr(16, 8).hex_to_int()
+		var frame_long_5 = frame_string.substr(24, 8).hex_to_int()
+		var frame_long_4 = frame_string.substr(32, 8).hex_to_int()
+		var frame_long_3 = frame_string.substr(40, 8).hex_to_int()
+		var frame_long_2 = frame_string.substr(48, 8).hex_to_int()
+		var frame_long_1 = frame_string.substr(56, 8).hex_to_int()
 		for i in stages_info[current_stage]["bit_mapping"]:
 			var er = false
 			var check_i = (i % 32) - 1
