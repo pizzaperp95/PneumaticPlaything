@@ -17,7 +17,7 @@ var current_stage : String
 var stages_info = {
 	"Helen House": 
 	{
-		"bits": 19, 
+		"bits": 20, 
 		"scene": "res://Scenes/Stages/HelenHouse.tscn", 
 		"scene_ref_base": "SubViewport/HelenHouse/",
 		"camera_count": 2,
@@ -45,13 +45,46 @@ var stages_info = {
 			39: { "bot": "Helen", "movement": "Body Left", "flow_in": 0.7, "flow_out": 0.7 },
 			40: { "bot": "Helen", "movement": "Body Right", "flow_in": 0.7, "flow_out": 0.7 },
 			41: { "bot": "Helen", "movement": "Body Lean", "flow_in": 1.0, "flow_out": 0.8 },
+			125: { "bot": "Spots", "movement": "Helen", "flow_in": "None", "flow_out": "None" },
 		},
 		
-		"cosmetics": { }
+		"cosmetics": 
+		{ 
+			"Helen Hair":
+			{
+				"Black and White":
+				{
+					"Helen/Helen/Skeleton3D/BWHair": true,
+					"Helen/Helen/Skeleton3D/YellowHair": false,
+				},
+				"Yellow":
+				{
+					"Helen/Helen/Skeleton3D/BWHair": false,
+					"Helen/Helen/Skeleton3D/YellowHair": true,
+				},
+			},
+			"Helen Dress":
+			{
+				"Tux":
+				{
+					"Helen/Helen/Skeleton3D/Collar": true,
+					"Helen/Helen/Skeleton3D/Torso": true,
+					"Helen/Helen/Skeleton3D/Skirt": true,
+					"Helen/Helen/Skeleton3D/CheerDress": false,
+				},
+				"Cheerleader":
+				{
+					"Helen/Helen/Skeleton3D/Collar": false,
+					"Helen/Helen/Skeleton3D/Torso": false,
+					"Helen/Helen/Skeleton3D/Skirt": false,
+					"Helen/Helen/Skeleton3D/CheerDress": true,
+				}
+			}
+		}
 	},
 	"Chuck E's Corner": 
 	{
-		"bits": 10, 
+		"bits": 12, 
 		"scene": "res://Scenes/Stages/ChuckEsCorner.tscn", 
 		"scene_ref_base": "SubViewport/ChuckEsCorner/",
 		"camera_count": 3,
@@ -70,6 +103,8 @@ var stages_info = {
 			8: { "bot": "Chuck", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
 			41: { "bot": "Warblettes", "movement": "Mouth", "flow_in": 4.0, "flow_out": 3.0 },
 			44: { "bot": "Warblettes", "movement": "Body Rock", "flow_in": 1.0, "flow_out": 1.0 },
+			50: { "bot": "Spots", "movement": "Chuck", "flow_in": "None", "flow_out": "None" },
+			56: { "bot": "Spots", "movement": "Warblettes", "flow_in": "None", "flow_out": "None" },
 		},
 		
 		"cosmetics":
