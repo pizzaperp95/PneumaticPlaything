@@ -621,9 +621,14 @@ func _on_step_forward_button_pressed() -> void:
 	update_time_label()
 
 func _on_record_button_toggled(toggled_on: bool) -> void:
+	var later_flag = false
+	if (playing): 
+		_on_pause_button_pressed()
+		later_flag = true
 	recording = toggled_on
 	if (toggled_on): start_recording.emit()
 	else: end_recording.emit()
+	if (later_flag): _on_play_button_pressed()
 
 func _on_stop_button_pressed() -> void:
 	playing = false
