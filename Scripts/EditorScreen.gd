@@ -84,7 +84,7 @@ var stages_info = {
 	},
 	"Chuck E's Corner": 
 	{
-		"bits": 12, 
+		"bits": 16, 
 		"scene": "res://Scenes/Stages/ChuckEsCorner.tscn", 
 		"scene_ref_base": "SubViewport/ChuckEsCorner/",
 		"camera_count": 3,
@@ -105,6 +105,10 @@ var stages_info = {
 			44: { "bot": "Warblettes", "movement": "Body Rock", "flow_in": 1.0, "flow_out": 1.0 },
 			50: { "bot": "Spots", "movement": "Chuck", "flow_in": "None", "flow_out": "None" },
 			56: { "bot": "Spots", "movement": "Warblettes", "flow_in": "None", "flow_out": "None" },
+			65: { "bot": "Floods", "movement": "Red", "flow_in": "None", "flow_out": "None" },
+			66: { "bot": "Floods", "movement": "Green", "flow_in": "None", "flow_out": "None" },
+			67: { "bot": "Floods", "movement": "Blue", "flow_in": "None", "flow_out": "None" },
+			79: { "bot": "Color Spots", "movement": "Chuck", "flow_in": "None", "flow_out": "None" },
 		},
 		
 		"cosmetics":

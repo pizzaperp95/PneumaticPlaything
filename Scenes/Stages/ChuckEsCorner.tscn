@@ -40,6 +40,45 @@ spot_range = 12.8142
 spot_angle = 28.4779
 spot_angle_attenuation = 0.1
 
+[node name="Floods" type="Node3D" parent="."]
+script = ExtResource("4_8suoo")
+
+[node name="Red" type="SpotLight3D" parent="Floods"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.8, 0.9)
+visible = false
+light_color = Color(1, 0, 0, 1)
+light_energy = 15.0
+spot_attenuation = 2.0
+spot_angle_attenuation = 0.15
+
+[node name="Green" type="SpotLight3D" parent="Floods"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2, 1.8, 0.9)
+visible = false
+light_color = Color(0, 1, 0, 1)
+light_energy = 15.0
+spot_attenuation = 2.0
+spot_angle_attenuation = 0.15
+
+[node name="Blue" type="SpotLight3D" parent="Floods"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -4, 1.8, 0.9)
+visible = false
+light_color = Color(0, 0, 1, 1)
+light_energy = 15.0
+spot_attenuation = 2.0
+spot_angle_attenuation = 0.15
+
+[node name="Color Spots" type="Node3D" parent="."]
+script = ExtResource("4_8suoo")
+
+[node name="Chuck" type="SpotLight3D" parent="Color Spots"]
+transform = Transform3D(-0.972974, -0.0597654, 0.223048, 2.26267e-08, 0.965926, 0.258819, -0.230916, 0.251824, -0.939821, -1.57812, 4.57895, -1.25599)
+visible = false
+light_color = Color(0, 0.538333, 0.85, 1)
+light_energy = 3.0
+spot_range = 6.53799
+spot_angle = 30.5982
+spot_angle_attenuation = 0.1
+
 [node name="Angle 1" type="Camera3D" parent="."]
 transform = Transform3D(-0.984612, -0.00554278, 0.174664, 0.0289131, 0.980555, 0.194105, -0.172344, 0.196168, -0.965306, -0.658302, 4.93729, -4)
 current = true
