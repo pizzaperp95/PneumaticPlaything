@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dw3eplmapm5gc"]
+[gd_scene load_steps=7 format=3 uid="uid://dw3eplmapm5gc"]
 
 [ext_resource type="PackedScene" uid="uid://c2j62syov3skq" path="res://Models/Cyberamics/Cyberamic Chuck.glb" id="1_t27ru"]
 [ext_resource type="Script" uid="uid://bu68w4jnh0n2b" path="res://Scripts/AnimatronicController.gd" id="2_8qvk7"]
 [ext_resource type="PackedScene" uid="uid://bv66hlbvtekho" path="res://Models/ChuckEsCorner/ChuckEsCornerStage.glb" id="3_8qvk7"]
 [ext_resource type="PackedScene" uid="uid://dmh5upwts8y11" path="res://Models/Cyberamics/Warblettes.glb" id="3_t27ru"]
+[ext_resource type="Script" uid="uid://d1p4ite8ts2wi" path="res://Scripts/LightController.gd" id="4_8suoo"]
 
 [sub_resource type="Environment" id="Environment_4uxdq"]
 ambient_light_source = 1
@@ -28,6 +29,7 @@ light_energy = 2.0
 spot_range = 6.53799
 spot_angle = 30.5982
 spot_angle_attenuation = 0.1
+script = ExtResource("4_8suoo")
 
 [node name="Warblettes" type="SpotLight3D" parent="Spots"]
 transform = Transform3D(-0.963761, 0.0690445, -0.257677, 1.9697e-08, 0.965926, 0.258819, 0.266767, 0.24944, -0.930922, -0.309492, 5.86862, -0.75)
@@ -37,6 +39,7 @@ light_energy = 2.0
 spot_range = 12.8142
 spot_angle = 28.4779
 spot_angle_attenuation = 0.1
+script = ExtResource("4_8suoo")
 
 [node name="Angle 1" type="Camera3D" parent="."]
 transform = Transform3D(-0.984612, -0.00554278, 0.174664, 0.0289131, 0.980555, 0.194105, -0.172344, 0.196168, -0.965306, -0.658302, 4.93729, -4)
