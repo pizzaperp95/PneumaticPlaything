@@ -7,6 +7,7 @@ extends Panel
 @export var animatronic : String
 @export var movements : Array[bool]
 @export var etching: bool = false
+@export var forced_etchable: bool = false
 
 var in_flow : float = 1.0
 var out_flow : float = 1.0
@@ -54,8 +55,12 @@ func check_at_index(cindex: int) -> bool:
 	if (out == null): return false
 	return out
 
+func check_if_erasing() -> bool:
+	if (forced_etchable): return true
+	return (!$LockButton.button_pressed) && key_binding.keycode != 0
+
 func _step(amount: int):
-	if (recording && !$LockButton.button_pressed): 
+	if (recording && check_if_erasing()): 
 		if (etching): set_at_current()
 		else: unset_at_current()
 	if (playing):
@@ -77,7 +82,6 @@ func _return_to_zero():
 
 func _erase_all() -> void:
 	_return_to_zero()
-	$LockButton.button_pressed = false
 	_on_clear_button_pressed()
 
 func _start_recording():
@@ -163,8 +167,8 @@ func _input(event: InputEvent) -> void:
 		update_text()
 		return
 
-
 func _on_clear_button_pressed() -> void:
+	if ($LockButton.button_pressed): return
 	movements = []
 	for indicator in $MovementsBG/InvisibleMask/MovementsHandle.get_children():
 		indicator.queue_free()

@@ -621,14 +621,12 @@ func _on_step_forward_button_pressed() -> void:
 	update_time_label()
 
 func _on_record_button_toggled(toggled_on: bool) -> void:
-	var later_flag = false
 	if (playing): 
-		_on_pause_button_pressed()
-		later_flag = true
+		# starting recording while playing causes issues
+		_on_stop_button_pressed()
 	recording = toggled_on
 	if (toggled_on): start_recording.emit()
 	else: end_recording.emit()
-	if (later_flag): _on_play_button_pressed()
 
 func _on_stop_button_pressed() -> void:
 	playing = false
@@ -658,21 +656,21 @@ func save_data() -> String:
 		for j in temp_data:
 			if (index_get_safe(i, temp_data[j])): 
 				if (j <= 32):
-					frame_long_1 += 1 << (j&64)-1
+					frame_long_1 += 1 << (j&32)-1
 				elif (j <= 64):
-					frame_long_2 += 1 << (j&64)-1
+					frame_long_2 += 1 << (j&32)-1
 				elif (j <= 96):
-					frame_long_3 += 1 << (j&64)-1
+					frame_long_3 += 1 << (j&32)-1
 				elif (j <= 128):
-					frame_long_4 += 1 << (j&64)-1
+					frame_long_4 += 1 << (j&32)-1
 				elif (j <= 160):
-					frame_long_5 += 1 << (j&64)-1
+					frame_long_5 += 1 << (j&32)-1
 				elif (j <= 192):
-					frame_long_6 += 1 << (j&64)-1
+					frame_long_6 += 1 << (j&32)-1
 				elif (j <= 224):
-					frame_long_7 += 1 << (j&64)-1
+					frame_long_7 += 1 << (j&32)-1
 				elif (j <= 256):
-					frame_long_8 += 1 << (j&64)-1
+					frame_long_8 += 1 << (j&32)-1
 		write_out += (("%08X%08X%08X%08X%08X%08X%08X%08X,") % [frame_long_8, frame_long_7, frame_long_6, frame_long_5, frame_long_4, frame_long_3, frame_long_2, frame_long_1])
 	return write_out
 
@@ -713,9 +711,11 @@ func plot_data(data: String):
 				check_frame_segment = frame_long_8
 			if ((check_frame_segment & int(pow(2, check_i))) >> check_i == 1): 
 					er = true
+			$SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_child(evil_glass.find(i)).forced_etchable = true
 			$SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_child(evil_glass.find(i)).etching = er
 		step.emit(1)
 	for movement_row in $SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_children():
+		movement_row.forced_etchable = false
 		movement_row.etching = false
 	end_recording.emit()
 	return_to_zero.emit()
