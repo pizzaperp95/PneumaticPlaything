@@ -77,6 +77,7 @@ func _return_to_zero():
 
 func _erase_all() -> void:
 	_return_to_zero()
+	$LockButton.button_pressed = false
 	_on_clear_button_pressed()
 
 func _start_recording():
