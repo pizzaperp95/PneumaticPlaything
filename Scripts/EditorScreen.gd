@@ -105,9 +105,9 @@ var stages_info = {
 			44: { "bot": "Warblettes", "movement": "Body Rock", "flow_in": 1.0, "flow_out": 1.0 },
 			50: { "bot": "Spots", "movement": "Chuck", "flow_in": "None", "flow_out": "None" },
 			56: { "bot": "Spots", "movement": "Warblettes", "flow_in": "None", "flow_out": "None" },
-			65: { "bot": "Floods", "movement": "Red", "flow_in": "None", "flow_out": "None" },
-			66: { "bot": "Floods", "movement": "Green", "flow_in": "None", "flow_out": "None" },
-			67: { "bot": "Floods", "movement": "Blue", "flow_in": "None", "flow_out": "None" },
+			71: { "bot": "Floods", "movement": "Red", "flow_in": "None", "flow_out": "None" },
+			72: { "bot": "Floods", "movement": "Green", "flow_in": "None", "flow_out": "None" },
+			73: { "bot": "Floods", "movement": "Blue", "flow_in": "None", "flow_out": "None" },
 			79: { "bot": "Color Spots", "movement": "Chuck", "flow_in": "None", "flow_out": "None" },
 		},
 		
