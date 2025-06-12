@@ -1,10 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://oiehbor0dlqx"]
+[gd_scene load_steps=27 format=3 uid="uid://oiehbor0dlqx"]
 
 [ext_resource type="Script" uid="uid://dfiwoln8mdwm8" path="res://Scripts/EditorScreen.gd" id="1_sd512"]
 [ext_resource type="Theme" uid="uid://dbgs4id7y5d1c" path="res://UI/Themes/Dark.tres" id="1_v0ton"]
 [ext_resource type="Texture2D" uid="uid://xllpr3qc064c" path="res://UI/Play.png" id="3_g6u4d"]
 [ext_resource type="Texture2D" uid="uid://dgacnkv2dc65s" path="res://UI/PlayBackwards.png" id="3_mr8sb"]
 [ext_resource type="Texture2D" uid="uid://dts4eh6hyt8p3" path="res://UI/SkipBackwards.png" id="3_r4ytj"]
+[ext_resource type="Texture2D" uid="uid://bpb3xn54kpxoe" path="res://UI/icon-32px.png" id="4_20noo"]
 [ext_resource type="Texture2D" uid="uid://bwhgy4u37jmo1" path="res://UI/Pause.png" id="4_ba3jn"]
 [ext_resource type="Texture2D" uid="uid://s3yr2wasxv03" path="res://UI/BlankCam.png" id="4_v0ton"]
 [ext_resource type="Texture2D" uid="uid://dhx2v2fd0egxd" path="res://UI/FastBackwards.png" id="4_wy7jo"]
@@ -131,33 +132,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.187176, 0.187176, 0.187176, 1)
 
-[node name="CameraPlaceholder" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 1.0
-offset_left = -4.0
-offset_top = 48.0
-offset_right = -4.0
-offset_bottom = 408.0
-grow_horizontal = 0
-texture = ExtResource("4_v0ton")
-expand_mode = 1
-
-[node name="CameraPreview" type="TextureRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 1.0
-offset_left = -4.0
-offset_top = 48.0
-offset_right = -4.0
-grow_horizontal = 0
-texture = SubResource("ViewportTexture_g6u4d")
-expand_mode = 5
-stretch_mode = 6
-
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -178,6 +152,35 @@ change the camera angle, or switch their cosmetics.
 Open the Controls menu to see all of the keybinds."
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CameraPlaceholder" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = 48.0
+offset_right = -4.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_v0ton")
+expand_mode = 1
+
+[node name="CameraPreview" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+offset_left = -4.0
+offset_top = 48.0
+offset_right = -4.0
+grow_horizontal = 0
+texture = SubResource("ViewportTexture_g6u4d")
+expand_mode = 5
+stretch_mode = 6
 
 [node name="MenuBar" type="Panel" parent="."]
 layout_mode = 1
@@ -241,13 +244,13 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -232.0
+offset_left = -264.0
 offset_top = -16.0
-offset_right = -8.0
+offset_right = -40.0
 offset_bottom = 16.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "Pneumatic Plaything v0.5.1"
+text = "Pneumatic Plaything v0.6"
 horizontal_alignment = 2
 vertical_alignment = 1
 
@@ -259,6 +262,18 @@ offset_right = 899.0
 offset_bottom = 36.0
 text = "No showtape loaded."
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MenuBar"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -36.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 36.0
+grow_horizontal = 0
+texture = ExtResource("4_20noo")
 
 [node name="SequencerPanel" type="Panel" parent="."]
 layout_mode = 1

@@ -11,11 +11,11 @@ config_version=5
 [application]
 
 config/name="Pneumatic Plaything"
-config/version="v0.5.1"
+config/version="v0.6"
 run/main_scene="uid://oiehbor0dlqx"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/show_image=false
-config/icon="uid://bm61nhm3rs043"
+config/icon="uid://cnvfrr028730a"
 
 [display]
 
