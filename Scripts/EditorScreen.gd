@@ -645,14 +645,14 @@ func save_data() -> String:
 		temp_data[int(movement_row.name.split(" ")[0])] = movement_row.movements
 		if (movement_row.movements.size() > longest_channel): longest_channel = movement_row.movements.size()
 	for i in range(longest_channel+1):
-		var frame_long_1 = 0
-		var frame_long_2 = 0
-		var frame_long_3 = 0
-		var frame_long_4 = 0
-		var frame_long_5 = 0
-		var frame_long_6 = 0
-		var frame_long_7 = 0
 		var frame_long_8 = 0
+		var frame_long_7 = 0
+		var frame_long_6 = 0
+		var frame_long_5 = 0
+		var frame_long_4 = 0
+		var frame_long_3 = 0
+		var frame_long_2 = 0
+		var frame_long_1 = 0
 		for j in temp_data:
 			if (index_get_safe(i, temp_data[j])): 
 				if (j <= 32):
