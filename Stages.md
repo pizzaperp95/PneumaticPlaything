@@ -2,8 +2,8 @@
 
 ## Currently in game
 
- - Helen House (not a real stage)
- - Chuck E's Corner (not a real stage)
+ - Helen House (homemade stage)
+ - Chuck E's Corner (homemade stage)
  
 ## In Development
 
