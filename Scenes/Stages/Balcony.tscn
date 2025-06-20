@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2g6chunc572s"]
+
+[ext_resource type="PackedScene" uid="uid://d34xfaignny8j" path="res://Models/Cyberamics/Cyber Helen.glb" id="1_w3m2i"]
+[ext_resource type="Script" uid="uid://bu68w4jnh0n2b" path="res://Scripts/AnimatronicController.gd" id="2_t4ere"]
+[ext_resource type="PackedScene" uid="uid://c2j62syov3skq" path="res://Models/Cyberamics/Cyberamic Chuck.glb" id="3_45mf1"]
+[ext_resource type="PackedScene" uid="uid://ba7i8p8olef2s" path="res://Models/Cyberamics/Cyber Jasper.glb" id="4_t4ere"]
+
+[sub_resource type="Environment" id="Environment_w3m2i"]
+ambient_light_source = 1
+
+[node name="Balcony" type="Node3D"]
+
+[node name="Jasper" parent="." instance=ExtResource("4_t4ere")]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -2, 0, 0)
+script = ExtResource("2_t4ere")
+
+[node name="Chuck" parent="." instance=ExtResource("3_45mf1")]
+script = ExtResource("2_t4ere")
+
+[node name="Helen" parent="." instance=ExtResource("1_w3m2i")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 2, 0, 0)
+script = ExtResource("2_t4ere")
+
+[node name="Angle 1" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.97377, 0.227535, 0, -0.227535, 0.97377, 0, 1.81733, 3)
+fov = 60.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_w3m2i")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, 2)
+light_color = Color(1, 0.960784, 0.85098, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.5, 2)
+light_color = Color(1, 0.960784, 0.85098, 1)

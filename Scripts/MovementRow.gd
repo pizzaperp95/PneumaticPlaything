@@ -4,6 +4,7 @@ extends Panel
 @export var movement_name : String = "Name"
 @export var flow_path : String = "../../../../../FlyoutPanel/FlowControls/InvisibleMask/FlowHandle/"
 @export var base_scene_path : String
+@export var current_stage : String
 @export var animatronic : String
 @export var movements : Array[bool]
 @export var etching: bool = false
@@ -108,7 +109,7 @@ func _update_out_flow(new_value: float) -> void:
 
 func _ready() -> void:
 	if (flow_path != "None"):
-		var flow_control = get_node(flow_path + animatronic + " " + movement_name)
+		var flow_control = get_node(flow_path + str(movement_bit) + animatronic + movement_name + current_stage)
 		flow_control.in_value_updated.connect(self._update_in_flow)
 		flow_control.out_value_updated.connect(self._update_out_flow)
 		in_flow = flow_control.in_value

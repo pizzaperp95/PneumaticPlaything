@@ -4,6 +4,8 @@ signal movement_in(movement, rate)
 signal movement_out(movement, rate)
 
 @export var animatronic : String
+@export var movement_bit : int
+@export var current_stage : String
 @export var base_scene_path : String
 @export var flow_path : String = "../../../../../FlyoutPanel/FlowControls/InvisibleMask/FlowHandle/"
 @export var movement_name : String
@@ -18,7 +20,7 @@ func _ready() -> void:
 		movement_in.connect(animatronic_node._movement_in)
 		movement_out.connect(animatronic_node._movement_out)
 	if (flow_path != "None"):
-		var flow_control = get_node(flow_path + animatronic + " " + movement_name)
+		var flow_control = get_node(flow_path + str(movement_bit) + animatronic + movement_name + current_stage)
 		flow_control.in_value_updated.connect(self._update_in_flow)
 		flow_control.out_value_updated.connect(self._update_out_flow)
 		in_flow = flow_control.in_value

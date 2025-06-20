@@ -104,11 +104,11 @@ var stages_info = {
 			41: { "bot": "Warblettes", "movement": "Mouth", "flow_in": 4.0, "flow_out": 3.0 },
 			44: { "bot": "Warblettes", "movement": "Body Rock", "flow_in": 1.0, "flow_out": 1.0 },
 			50: { "bot": "Spots", "movement": "Chuck", "flow_in": "None", "flow_out": "None" },
-			56: { "bot": "Spots", "movement": "Warblettes", "flow_in": "None", "flow_out": "None" },
 			71: { "bot": "Floods", "movement": "Red", "flow_in": "None", "flow_out": "None" },
 			72: { "bot": "Floods", "movement": "Green", "flow_in": "None", "flow_out": "None" },
 			73: { "bot": "Floods", "movement": "Blue", "flow_in": "None", "flow_out": "None" },
 			79: { "bot": "Color Spots", "movement": "Chuck", "flow_in": "None", "flow_out": "None" },
+			111: { "bot": "Spots", "movement": "Warblettes", "flow_in": "None", "flow_out": "None" },
 		},
 		
 		"cosmetics":
@@ -225,6 +225,226 @@ var stages_info = {
 				},
 			}
 		}
+	},
+	"Balcony Stage": 
+	{
+		"bits": 24, 
+		"scene": "res://Scenes/Stages/Balcony.tscn", 
+		"scene_ref_base": "SubViewport/Balcony/",
+		"camera_count": 1,
+		
+		"ust_type": "Cyberamics",
+		
+		"bit_mapping":
+		{
+			1: { "bot": "Chuck", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+			2: { "bot": "Chuck", "movement": "Head Left", "flow_in": 0.8, "flow_out": 1.0 },
+			3: { "bot": "Chuck", "movement": "Head Right", "flow_in": 1.0, "flow_out": 1.0 },
+			4: { "bot": "Chuck", "movement": "Head Up", "flow_in": 2.0, "flow_out": 1.0 },
+			5: { "bot": "Chuck", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+			6: { "bot": "Chuck", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+			7: { "bot": "Chuck", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+			8: { "bot": "Chuck", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
+			9: { "bot": "Helen", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+			10: { "bot": "Helen", "movement": "Head Left", "flow_in": 0.8, "flow_out": 1.0 },
+			11: { "bot": "Helen", "movement": "Head Right", "flow_in": 1.0, "flow_out": 1.0 },
+			12: { "bot": "Helen", "movement": "Head Up", "flow_in": 2.0, "flow_out": 1.0 },
+			13: { "bot": "Helen", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+			14: { "bot": "Helen", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+			15: { "bot": "Helen", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+			16: { "bot": "Helen", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
+			25: { "bot": "Jasper", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+			26: { "bot": "Jasper", "movement": "Head Left", "flow_in": 1.0, "flow_out": 1.0 },
+			27: { "bot": "Jasper", "movement": "Head Right", "flow_in": 1.0, "flow_out": 1.0 },
+			28: { "bot": "Jasper", "movement": "Head Up", "flow_in": 2.0, "flow_out": 1.0 },
+			29: { "bot": "Jasper", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+			30: { "bot": "Jasper", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+			31: { "bot": "Jasper", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+			32: { "bot": "Jasper", "movement": "Strum", "flow_in": 2.0, "flow_out": 1.0 },
+		},
+		
+		"cosmetics":
+		{
+			"Chuck E. Hat":
+			{
+				"Derby":
+				{
+					"Chuck/Chuck/Skeleton3D/Avenger Hat": false,
+					"Chuck/Chuck/Skeleton3D/Cool Chuck Hat": false,
+					"Chuck/Chuck/Skeleton3D/Derby": true,
+				},
+				"Cool Chuck":
+				{
+					"Chuck/Chuck/Skeleton3D/Avenger Hat": false,
+					"Chuck/Chuck/Skeleton3D/Cool Chuck Hat": true,
+					"Chuck/Chuck/Skeleton3D/Derby": false,
+				},
+				"Avenger":
+				{
+					"Chuck/Chuck/Skeleton3D/Avenger Hat": true,
+					"Chuck/Chuck/Skeleton3D/Cool Chuck Hat": false,
+					"Chuck/Chuck/Skeleton3D/Derby": false,
+				},
+				"None":
+				{
+					"Chuck/Chuck/Skeleton3D/Avenger Hat": false,
+					"Chuck/Chuck/Skeleton3D/Cool Chuck Hat": false,
+					"Chuck/Chuck/Skeleton3D/Derby": false,
+				}
+			},
+			
+			"Chuck E. Shirt":
+			{
+				"Yellow Checker Vest":
+				{
+					"Chuck/Chuck/Skeleton3D/Avenger Shirt": false,
+					"Chuck/Chuck/Skeleton3D/Cool Chuck Shirt": false,
+					"Chuck/Chuck/Skeleton3D/Black Bowtie": true,
+					"Chuck/Chuck/Skeleton3D/Buttons": true,
+					"Chuck/Chuck/Skeleton3D/Vest Trim": true,
+					"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": true,
+					"Chuck/Chuck/Skeleton3D/Rocker Vest": false,
+				},
+				"Red Vest":
+				{
+					"Chuck/Chuck/Skeleton3D/Avenger Shirt": false,
+					"Chuck/Chuck/Skeleton3D/Cool Chuck Shirt": false,
+					"Chuck/Chuck/Skeleton3D/Black Bowtie": true,
+					"Chuck/Chuck/Skeleton3D/Buttons": true,
+					"Chuck/Chuck/Skeleton3D/Vest Trim": true,
+					"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": false,
+					"Chuck/Chuck/Skeleton3D/Rocker Vest": true,
+				},
+				"Cool Chuck Shirt":
+				{
+					"Chuck/Chuck/Skeleton3D/Avenger Shirt": false,
+					"Chuck/Chuck/Skeleton3D/Cool Chuck Shirt": true,
+					"Chuck/Chuck/Skeleton3D/Black Bowtie": false,
+					"Chuck/Chuck/Skeleton3D/Buttons": false,
+					"Chuck/Chuck/Skeleton3D/Vest Trim": false,
+					"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": false,
+					"Chuck/Chuck/Skeleton3D/Rocker Vest": false,
+				},
+				"Avenger Shirt":
+				{
+					"Chuck/Chuck/Skeleton3D/Avenger Shirt": true,
+					"Chuck/Chuck/Skeleton3D/Cool Chuck Shirt": false,
+					"Chuck/Chuck/Skeleton3D/Black Bowtie": false,
+					"Chuck/Chuck/Skeleton3D/Buttons": false,
+					"Chuck/Chuck/Skeleton3D/Vest Trim": false,
+					"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": false,
+					"Chuck/Chuck/Skeleton3D/Rocker Vest": false,
+				}
+			},
+			
+			"Chuck E. Mask":
+			{
+				"PTT":
+				{
+					"Chuck/Chuck/Skeleton3D/PTT Ears": true,
+					"Chuck/Chuck/Skeleton3D/PTT Ears Inside": true,
+					"Chuck/Chuck/Skeleton3D/PTT Jaw": true,
+					"Chuck/Chuck/Skeleton3D/PTT Muzzle": true,
+					"Chuck/Chuck/Skeleton3D/Modern Ears": false,
+					"Chuck/Chuck/Skeleton3D/Modern Ears Inside": false,
+					"Chuck/Chuck/Skeleton3D/Modern Jaw": false,
+					"Chuck/Chuck/Skeleton3D/Modern Muzzle": false,
+				},
+				"Modern":
+				{
+					"Chuck/Chuck/Skeleton3D/PTT Ears": false,
+					"Chuck/Chuck/Skeleton3D/PTT Ears Inside": false,
+					"Chuck/Chuck/Skeleton3D/PTT Jaw": false,
+					"Chuck/Chuck/Skeleton3D/PTT Muzzle": false,
+					"Chuck/Chuck/Skeleton3D/Modern Ears": true,
+					"Chuck/Chuck/Skeleton3D/Modern Ears Inside": true,
+					"Chuck/Chuck/Skeleton3D/Modern Jaw": true,
+					"Chuck/Chuck/Skeleton3D/Modern Muzzle": true,
+				},
+			},
+			
+			"Chuck E. Eyelids":
+			{
+				"Blue":
+				{
+					"Chuck/Chuck/Skeleton3D/Blue Eyelids": true,
+					"Chuck/Chuck/Skeleton3D/Grey Eyelids": false,
+				},
+				"Grey":
+				{
+					"Chuck/Chuck/Skeleton3D/Blue Eyelids": false,
+					"Chuck/Chuck/Skeleton3D/Grey Eyelids": true,
+				},
+			},
+			
+			"Helen Eyelids":
+			{
+				"Blue":
+				{
+					"Helen/Helen/Skeleton3D/Blue Eyelids": true,
+					"Helen/Helen/Skeleton3D/Pink Eyelids": false,
+				},
+				"Pink":
+				{
+					"Helen/Helen/Skeleton3D/Blue Eyelids": false,
+					"Helen/Helen/Skeleton3D/Pink Eyelids": true,
+				},
+			},
+			
+			"Helen Dress":
+			{
+				"Half Body CU":
+				{
+					"Helen/Helen/Skeleton3D/Half Body Skirt": true,
+					"Helen/Helen/Skeleton3D/Skirt": false,
+					"Helen/Helen/Skeleton3D/Black Shirt": true,
+					"Helen/Helen/Skeleton3D/Collar": true,
+				},
+				"Full Body CU":
+				{
+					"Helen/Helen/Skeleton3D/Half Body Skirt": false,
+					"Helen/Helen/Skeleton3D/Skirt": true,
+					"Helen/Helen/Skeleton3D/Black Shirt": true,
+					"Helen/Helen/Skeleton3D/Collar": true,
+				},
+			},
+			
+			"Helen Hair":
+			{
+				"Large CU":
+				{
+					"Helen/Helen/Skeleton3D/BWHair Large": true,
+					"Helen/Helen/Skeleton3D/BWHair": false,
+				},
+				"Normal CU":
+				{
+					"Helen/Helen/Skeleton3D/BWHair Large": false,
+					"Helen/Helen/Skeleton3D/BWHair": true,
+				},
+			},
+			
+			"Helen Mask":
+			{
+				"Road Stage":
+				{
+					"Helen/Helen/Skeleton3D/Modern Head": true,
+					"Helen/Helen/Skeleton3D/Modern Mask": true,
+					"Helen/Helen/Skeleton3D/Road Stage Jaw": true,
+					"Helen/Helen/Skeleton3D/Road Stage Beak": true,
+					"Helen/Helen/Skeleton3D/Modern Jaw": false,
+					"Helen/Helen/Skeleton3D/Modern Beak": false,
+				},
+				"Modern":
+				{
+					"Helen/Helen/Skeleton3D/Modern Head": true,
+					"Helen/Helen/Skeleton3D/Modern Mask": true,
+					"Helen/Helen/Skeleton3D/Road Stage Jaw": false,
+					"Helen/Helen/Skeleton3D/Road Stage Beak": false,
+					"Helen/Helen/Skeleton3D/Modern Jaw": true,
+					"Helen/Helen/Skeleton3D/Modern Beak": true,
+				},
+			},
+		}
 	}
 }
 
@@ -235,23 +455,23 @@ signal return_to_zero()
 signal erase_all()
 
 func reload_stage(stage_previously_loaded: bool) -> void:
-	if (stage_previously_loaded):
-		$SequencerPanel/TimelinePanel/VScrollBar.value = 0
-		$FlyoutPanel/Movements/VScrollBar.value = 0
-		$FlyoutPanel/FlowControls/VScrollBar.value = 0
-		$CameraPreview.visible = false
-		for row in $SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_children():
-			row.queue_free()
-		for flow in $FlyoutPanel/FlowControls/InvisibleMask/FlowHandle.get_children():
-			flow.queue_free()
-		for movement in $FlyoutPanel/Movements/InvisibleMask/MovementHandle.get_children():
-			movement.queue_free()
-		for camera in $FlyoutPanel/Camera.get_children():
-			camera.queue_free()
-		for cosmetic_adjustment in $FlyoutPanel/Cosmetics/InvisibleMask/CosmeticsHandle.get_children():
-			cosmetic_adjustment.queue_free()
+	$SequencerPanel/TimelinePanel/VScrollBar.value = 0
+	$FlyoutPanel/Movements/VScrollBar.value = 0
+	$FlyoutPanel/FlowControls/VScrollBar.value = 0
+	$CameraPreview.visible = false
+	for row in $SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_children():
+		row.queue_free()
+	for flow in $FlyoutPanel/FlowControls/InvisibleMask/FlowHandle.get_children():
+		flow.queue_free()
+	for movement in $FlyoutPanel/Movements/InvisibleMask/MovementHandle.get_children():
+		movement.queue_free()
+	for camera in $FlyoutPanel/Camera.get_children():
+		camera.queue_free()
+	for cosmetic_adjustment in $FlyoutPanel/Cosmetics/InvisibleMask/CosmeticsHandle.get_children():
+		cosmetic_adjustment.queue_free()
+	if ($SubViewport.get_child_count() > 0):
 		$SubViewport.get_child(0).queue_free()
-		cam_index = 0
+	cam_index = 0
 	var stage = load(stages_info[current_stage]["scene"]).instantiate()
 	$SubViewport.add_child(stage)
 	
@@ -290,7 +510,8 @@ func reload_stage(stage_previously_loaded: bool) -> void:
 		if (in_flow is not String):
 			var flow_control = load("res://Scenes/GUI/Controls/FlowControl.tscn").instantiate()
 			flow_control.position.y = flows_offset
-			flow_control.name = bot + " " + movement
+			flow_control.name = str(bit_number) + bot + movement + current_stage
+			flow_control.vis_name = bot + " " + movement
 			flow_control.in_value = in_flow
 			flow_control.out_value = out_flow
 			$FlyoutPanel/FlowControls/InvisibleMask/FlowHandle.add_child(flow_control)
@@ -302,6 +523,7 @@ func reload_stage(stage_previously_loaded: bool) -> void:
 		row.position.y = rows_offset
 		row.base_scene_path = "../../../../../" + stages_info[current_stage]["scene_ref_base"]
 		row.animatronic = bot
+		row.current_stage = current_stage
 		if (in_flow is String): row.flow_path = "None"
 		row.movement_bit = bit_number
 		row.movement_name = movement
@@ -311,6 +533,8 @@ func reload_stage(stage_previously_loaded: bool) -> void:
 		movement_button.position.y = rows_offset
 		movement_button.base_scene_path = "../../../../../" + stages_info[current_stage]["scene_ref_base"]
 		movement_button.animatronic = bot
+		movement_button.movement_bit = bit_number
+		movement_button.current_stage = current_stage
 		if (in_flow is String): movement_button.flow_path = "None"
 		movement_button.movement_name = movement
 		$FlyoutPanel/Movements/InvisibleMask/MovementHandle.add_child(movement_button)

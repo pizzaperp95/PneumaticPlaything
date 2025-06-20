@@ -2,12 +2,13 @@ extends Control
 
 @export var in_value : float = 1.0
 @export var out_value : float = 1.0
+@export var vis_name : String = ""
 
 signal in_value_updated(new_value: float)
 signal out_value_updated(new_value: float)
 
 func _ready() -> void:
-	$Panel/Label.text = self.name
+	$Panel/Label.text = self.vis_name
 	$Panel/InStepper.value = self.in_value
 	$Panel/OutStepper.value = self.out_value
 
