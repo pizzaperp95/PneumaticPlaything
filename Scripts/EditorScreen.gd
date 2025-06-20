@@ -425,15 +425,6 @@ var stages_info = {
 			
 			"Helen Mask":
 			{
-				"Road Stage":
-				{
-					"Helen/Helen/Skeleton3D/Modern Head": true,
-					"Helen/Helen/Skeleton3D/Modern Mask": true,
-					"Helen/Helen/Skeleton3D/Road Stage Jaw": true,
-					"Helen/Helen/Skeleton3D/Road Stage Beak": true,
-					"Helen/Helen/Skeleton3D/Modern Jaw": false,
-					"Helen/Helen/Skeleton3D/Modern Beak": false,
-				},
 				"Modern":
 				{
 					"Helen/Helen/Skeleton3D/Modern Head": true,
@@ -442,6 +433,15 @@ var stages_info = {
 					"Helen/Helen/Skeleton3D/Road Stage Beak": false,
 					"Helen/Helen/Skeleton3D/Modern Jaw": true,
 					"Helen/Helen/Skeleton3D/Modern Beak": true,
+				},
+				"Road Stage":
+				{
+					"Helen/Helen/Skeleton3D/Modern Head": true,
+					"Helen/Helen/Skeleton3D/Modern Mask": true,
+					"Helen/Helen/Skeleton3D/Road Stage Jaw": true,
+					"Helen/Helen/Skeleton3D/Road Stage Beak": true,
+					"Helen/Helen/Skeleton3D/Modern Jaw": false,
+					"Helen/Helen/Skeleton3D/Modern Beak": false,
 				},
 			},
 		}
