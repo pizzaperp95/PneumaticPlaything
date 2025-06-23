@@ -895,36 +895,19 @@ func save_data() -> String:
 	var temp_data = {}
 	var longest_channel = 0
 	for movement_row in $SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_children():
-		temp_data[int(movement_row.name.split(" ")[0])] = movement_row.movements
+		temp_data[movement_row.movement_bit] = movement_row.movements
 		if (movement_row.movements.size() > longest_channel): longest_channel = movement_row.movements.size()
 	for i in range(longest_channel+1):
-		var frame_long_8 = 0
-		var frame_long_7 = 0
-		var frame_long_6 = 0
-		var frame_long_5 = 0
-		var frame_long_4 = 0
-		var frame_long_3 = 0
-		var frame_long_2 = 0
-		var frame_long_1 = 0
-		for j in temp_data:
-			if (index_get_safe(i, temp_data[j])): 
-				if (j <= 32):
-					frame_long_1 += 1 << (j&32)-1
-				elif (j <= 64):
-					frame_long_2 += 1 << (j&32)-1
-				elif (j <= 96):
-					frame_long_3 += 1 << (j&32)-1
-				elif (j <= 128):
-					frame_long_4 += 1 << (j&32)-1
-				elif (j <= 160):
-					frame_long_5 += 1 << (j&32)-1
-				elif (j <= 192):
-					frame_long_6 += 1 << (j&32)-1
-				elif (j <= 224):
-					frame_long_7 += 1 << (j&32)-1
-				elif (j <= 256):
-					frame_long_8 += 1 << (j&32)-1
-		write_out += (("%08X%08X%08X%08X%08X%08X%08X%08X,") % [frame_long_8, frame_long_7, frame_long_6, frame_long_5, frame_long_4, frame_long_3, frame_long_2, frame_long_1])
+		var total_frame_index = 1
+		var fstring = ""
+		for j in range(64):
+			var f_quartet = 0
+			for k in range(4):
+				if (index_get_safe(i, index_s_get_safe(total_frame_index, temp_data))):
+					f_quartet += int(pow(2, k))
+				total_frame_index += 1
+			fstring = ("%01X" % f_quartet) + fstring
+		write_out += fstring + ","
 	return write_out
 
 func plot_data(data: String):
@@ -954,4 +937,11 @@ func index_get_safe(cindex: int, data: Array[bool]) -> bool:
 	if (cindex < 0): return false
 	var out = data.get(cindex)
 	if (out == null): return false
+	return out
+
+func index_s_get_safe(cindex: int, data: Dictionary) -> Array[bool]:
+	if (cindex > data.size()-1): return [ false ]
+	if (cindex < 0): return [ false ]
+	var out = data.get(cindex)
+	if (out == null): return [ false ]
 	return out
