@@ -2,7 +2,13 @@
 
 ## Currently in game
 
- - Helen House (not a real stage)
+ - Helen House (homemade stage)
+ - Chuck E's Corner (homemade stage)
+ 
+## In Development
+
+ - Balcony Stage
+ - Prototype Road Stage
 
 ## Planned
 
@@ -10,7 +16,6 @@
 
  - Portrait Stage
  - Shelf Stage (Portrait stage with Balcony mechs)
- - Balcony Stage
  - C Stage
  - Rocker Stage
  - Road Stage
