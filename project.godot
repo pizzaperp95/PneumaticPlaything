@@ -24,6 +24,10 @@ config/windows_native_icon="res://UI/icon.ico"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 ui_accept={
@@ -394,3 +398,5 @@ fullscreen={
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+limits/opengl/max_renderable_lights=128
+limits/opengl/max_lights_per_object=128

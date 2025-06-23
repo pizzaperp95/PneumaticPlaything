@@ -107,8 +107,8 @@ var stages_info = {
 			71: { "bot": "Floods", "movement": "Red", "flow_in": "None", "flow_out": "None" },
 			72: { "bot": "Floods", "movement": "Green", "flow_in": "None", "flow_out": "None" },
 			73: { "bot": "Floods", "movement": "Blue", "flow_in": "None", "flow_out": "None" },
+			78: { "bot": "Spots", "movement": "Warblettes", "flow_in": "None", "flow_out": "None" },
 			79: { "bot": "Color Spots", "movement": "Chuck", "flow_in": "None", "flow_out": "None" },
-			111: { "bot": "Spots", "movement": "Warblettes", "flow_in": "None", "flow_out": "None" },
 		},
 		
 		"cosmetics":
@@ -228,10 +228,10 @@ var stages_info = {
 	},
 	"Balcony Stage": 
 	{
-		"bits": 24, 
+		"bits": 53, 
 		"scene": "res://Scenes/Stages/Balcony.tscn", 
 		"scene_ref_base": "SubViewport/Balcony/",
-		"camera_count": 1,
+		"camera_count": 6,
 		
 		"ust_type": "Cyberamics",
 		
@@ -261,6 +261,35 @@ var stages_info = {
 			30: { "bot": "Jasper", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
 			31: { "bot": "Jasper", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
 			32: { "bot": "Jasper", "movement": "Strum", "flow_in": 2.0, "flow_out": 1.0 },
+			41: { "bot": "Warblettes", "movement": "Mouth", "flow_in": 4.0, "flow_out": 3.0 },
+			44: { "bot": "Warblettes", "movement": "Body Rock", "flow_in": 1.0, "flow_out": 1.0 },
+			50: { "bot": "Spots", "movement": "Chuck", "flow_in": "None", "flow_out": "None" },
+			51: { "bot": "Spots", "movement": "Helen", "flow_in": "None", "flow_out": "None" },
+			52: { "bot": "Spots", "movement": "Munch", "flow_in": "None", "flow_out": "None" },
+			53: { "bot": "Spots", "movement": "Jasper", "flow_in": "None", "flow_out": "None" },
+			54: { "bot": "Spots", "movement": "Pasqually", "flow_in": "None", "flow_out": "None" },
+			55: { "bot": "Backdrop", "movement": "C Blue", "flow_in": "None", "flow_out": "None" },
+			65: { "bot": "Backdrop", "movement": "L Blue", "flow_in": "None", "flow_out": "None" },
+			66: { "bot": "Valence", "movement": "R Center", "flow_in": "None", "flow_out": "None" },
+			68: { "bot": "Backdrop", "movement": "L Red", "flow_in": "None", "flow_out": "None" },
+			69: { "bot": "Valence", "movement": "R", "flow_in": "None", "flow_out": "None" },
+			70: { "bot": "Backdrop", "movement": "L Amber", "flow_in": "None", "flow_out": "None" },
+			71: { "bot": "Valence", "movement": "L Center", "flow_in": "None", "flow_out": "None" },
+			72: { "bot": "Valence", "movement": "L", "flow_in": "None", "flow_out": "None" },
+			73: { "bot": "Valence", "movement": "Center", "flow_in": "None", "flow_out": "None" },
+			74: { "bot": "Color Spots", "movement": "Warblettes", "flow_in": "None", "flow_out": "None" },
+			75: { "bot": "Color Spots", "movement": "Munch", "flow_in": "None", "flow_out": "None" },
+			76: { "bot": "Color Spots", "movement": "Helen", "flow_in": "None", "flow_out": "None" },
+			77: { "bot": "Color Spots", "movement": "Jasper", "flow_in": "None", "flow_out": "None" },
+			78: { "bot": "Spots", "movement": "Warblettes", "flow_in": "None", "flow_out": "None" },
+			79: { "bot": "Color Spots", "movement": "Chuck", "flow_in": "None", "flow_out": "None" },
+			80: { "bot": "Color Spots", "movement": "Chuck 2", "flow_in": "None", "flow_out": "None" },
+			81: { "bot": "Backdrop", "movement": "R Amber", "flow_in": "None", "flow_out": "None" },
+			82: { "bot": "Backdrop", "movement": "C Red", "flow_in": "None", "flow_out": "None" },
+			83: { "bot": "Backdrop", "movement": "R Blue", "flow_in": "None", "flow_out": "None" },
+			84: { "bot": "Color Spots", "movement": "Pasqually", "flow_in": "None", "flow_out": "None" },
+			85: { "bot": "Backdrop", "movement": "R Red", "flow_in": "None", "flow_out": "None" },
+			86: { "bot": "Backdrop", "movement": "C Amber", "flow_in": "None", "flow_out": "None" },
 		},
 		
 		"cosmetics":
@@ -425,15 +454,6 @@ var stages_info = {
 			
 			"Helen Mask":
 			{
-				"Road Stage":
-				{
-					"Helen/Helen/Skeleton3D/Modern Head": true,
-					"Helen/Helen/Skeleton3D/Modern Mask": true,
-					"Helen/Helen/Skeleton3D/Road Stage Jaw": true,
-					"Helen/Helen/Skeleton3D/Road Stage Beak": true,
-					"Helen/Helen/Skeleton3D/Modern Jaw": false,
-					"Helen/Helen/Skeleton3D/Modern Beak": false,
-				},
 				"Modern":
 				{
 					"Helen/Helen/Skeleton3D/Modern Head": true,
@@ -442,6 +462,15 @@ var stages_info = {
 					"Helen/Helen/Skeleton3D/Road Stage Beak": false,
 					"Helen/Helen/Skeleton3D/Modern Jaw": true,
 					"Helen/Helen/Skeleton3D/Modern Beak": true,
+				},
+				"Road Stage":
+				{
+					"Helen/Helen/Skeleton3D/Modern Head": true,
+					"Helen/Helen/Skeleton3D/Modern Mask": true,
+					"Helen/Helen/Skeleton3D/Road Stage Jaw": true,
+					"Helen/Helen/Skeleton3D/Road Stage Beak": true,
+					"Helen/Helen/Skeleton3D/Modern Jaw": false,
+					"Helen/Helen/Skeleton3D/Modern Beak": false,
 				},
 			},
 		}
@@ -454,7 +483,7 @@ signal end_recording()
 signal return_to_zero()
 signal erase_all()
 
-func reload_stage(stage_previously_loaded: bool) -> void:
+func reload_stage() -> void:
 	$SequencerPanel/TimelinePanel/VScrollBar.value = 0
 	$FlyoutPanel/Movements/VScrollBar.value = 0
 	$FlyoutPanel/FlowControls/VScrollBar.value = 0
@@ -547,7 +576,7 @@ func reload_stage(stage_previously_loaded: bool) -> void:
 func _on_stage_change_overwrite_confirmation_dialog_confirmed() -> void:
 	erase_all.emit()
 	current_stage = $MenuBar/StageSelector.get_item_text($MenuBar/StageSelector.selected)
-	reload_stage(true)
+	reload_stage()
 
 func update_time_label() -> void:
 	var frames = index % 60
@@ -574,13 +603,13 @@ func _ready() -> void:
 	$MenuBar/MenuButton.get_popup().id_pressed.connect(_showtape_menu_button_pressed)
 	OS.request_permissions()
 	current_stage = $MenuBar/StageSelector.get_item_text($MenuBar/StageSelector.selected)
-	reload_stage(false)
+	reload_stage()
 
 func _on_stage_selector_item_selected(_index: int) -> void:
 	if (showtape_loaded): $StageChangeOverwriteConfirmationDialog.show()
 	else:
 		current_stage = $MenuBar/StageSelector.get_item_text($MenuBar/StageSelector.selected)
-		reload_stage(true)
+		reload_stage()
 
 func _showtape_menu_button_pressed(id: int) -> void:
 	match (id):
@@ -905,36 +934,12 @@ func plot_data(data: String):
 		evil_glass.append(movement_row.movement_bit)
 	for frame_string in data.split(","):
 		if (frame_string == ""): continue
-		var frame_long_8 = frame_string.substr(0, 8).hex_to_int()
-		var frame_long_7 = frame_string.substr(8, 8).hex_to_int()
-		var frame_long_6 = frame_string.substr(16, 8).hex_to_int()
-		var frame_long_5 = frame_string.substr(24, 8).hex_to_int()
-		var frame_long_4 = frame_string.substr(32, 8).hex_to_int()
-		var frame_long_3 = frame_string.substr(40, 8).hex_to_int()
-		var frame_long_2 = frame_string.substr(48, 8).hex_to_int()
-		var frame_long_1 = frame_string.substr(56, 8).hex_to_int()
+		var check_frame_split = frame_string.split()
+		check_frame_split.reverse()
 		for i in stages_info[current_stage]["bit_mapping"]:
 			var er = false
-			var check_i = (i % 32) - 1
-			var check_frame_segment = frame_long_1
-			if (i <= 32):
-				check_frame_segment = frame_long_1
-			elif (i <= 64):
-				check_frame_segment = frame_long_2
-			elif (i <= 96):
-				check_frame_segment = frame_long_3
-			elif (i <= 128):
-				check_frame_segment = frame_long_4
-			elif (i <= 160):
-				check_frame_segment = frame_long_5
-			elif (i <= 192):
-				check_frame_segment = frame_long_6
-			elif (i <= 224):
-				check_frame_segment = frame_long_7
-			elif (i <= 256):
-				check_frame_segment = frame_long_8
-			if ((check_frame_segment & int(pow(2, check_i))) >> check_i == 1): 
-					er = true
+			if ((check_frame_split[(i - 1) / 4].hex_to_int() & int(pow(2, ((i - 1) % 4)))) == int(pow(2, ((i - 1) % 4)))): 
+				er = true
 			$SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_child(evil_glass.find(i)).forced_etchable = true
 			$SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_child(evil_glass.find(i)).etching = er
 		step.emit(1)
