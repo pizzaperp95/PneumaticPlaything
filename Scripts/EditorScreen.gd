@@ -104,11 +104,11 @@ var stages_info = {
 			41: { "bot": "Warblettes", "movement": "Mouth", "flow_in": 4.0, "flow_out": 3.0 },
 			44: { "bot": "Warblettes", "movement": "Body Rock", "flow_in": 1.0, "flow_out": 1.0 },
 			50: { "bot": "Spots", "movement": "Chuck", "flow_in": "None", "flow_out": "None" },
-			71: { "bot": "Floods", "movement": "Red", "flow_in": "None", "flow_out": "None" },
-			72: { "bot": "Floods", "movement": "Green", "flow_in": "None", "flow_out": "None" },
-			73: { "bot": "Floods", "movement": "Blue", "flow_in": "None", "flow_out": "None" },
+			55: { "bot": "Floods", "movement": "Blue", "flow_in": "None", "flow_out": "None" },
 			78: { "bot": "Spots", "movement": "Warblettes", "flow_in": "None", "flow_out": "None" },
 			79: { "bot": "Color Spots", "movement": "Chuck", "flow_in": "None", "flow_out": "None" },
+			82: { "bot": "Floods", "movement": "Red", "flow_in": "None", "flow_out": "None" },
+			86: { "bot": "Floods", "movement": "Green", "flow_in": "None", "flow_out": "None" },
 		},
 		
 		"cosmetics":
