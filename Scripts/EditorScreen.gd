@@ -474,6 +474,99 @@ var stages_info = {
 				},
 			},
 		}
+	},
+	"2-Stage": 
+	{
+		"bits": 8, 
+		"scene": "res://Scenes/Stages/2Stage.tscn", 
+		"scene_ref_base": "SubViewport/2Stage/",
+		"camera_count": 1,
+		
+		"ust_type": "Cyberamics",
+		
+		"bit_mapping":
+		{
+			9: { "bot": "Helen", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+			10: { "bot": "Helen", "movement": "Head Left", "flow_in": 0.8, "flow_out": 1.0 },
+			11: { "bot": "Helen", "movement": "Head Right", "flow_in": 1.0, "flow_out": 1.0 },
+			12: { "bot": "Helen", "movement": "Head Up", "flow_in": 2.0, "flow_out": 1.0 },
+			13: { "bot": "Helen", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+			14: { "bot": "Helen", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+			15: { "bot": "Helen", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+			16: { "bot": "Helen", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
+		},
+		
+		"cosmetics":
+		{
+			
+			"Helen Eyelids":
+			{
+				"Blue":
+				{
+					"Helen/Helen/Skeleton3D/Blue Eyelids": true,
+					"Helen/Helen/Skeleton3D/Pink Eyelids": false,
+				},
+				"Pink":
+				{
+					"Helen/Helen/Skeleton3D/Blue Eyelids": false,
+					"Helen/Helen/Skeleton3D/Pink Eyelids": true,
+				},
+			},
+			
+			"Helen Dress":
+			{
+				"Full Body CU":
+				{
+					"Helen/Helen/Skeleton3D/Half Body Skirt": false,
+					"Helen/Helen/Skeleton3D/Skirt": true,
+					"Helen/Helen/Skeleton3D/Black Shirt": true,
+					"Helen/Helen/Skeleton3D/Collar": true,
+				},
+				"Half Body CU":
+				{
+					"Helen/Helen/Skeleton3D/Half Body Skirt": true,
+					"Helen/Helen/Skeleton3D/Skirt": false,
+					"Helen/Helen/Skeleton3D/Black Shirt": true,
+					"Helen/Helen/Skeleton3D/Collar": true,
+				},
+			},
+			
+			"Helen Hair":
+			{
+				"Large CU":
+				{
+					"Helen/Helen/Skeleton3D/BWHair Large": true,
+					"Helen/Helen/Skeleton3D/BWHair": false,
+				},
+				"Normal CU":
+				{
+					"Helen/Helen/Skeleton3D/BWHair Large": false,
+					"Helen/Helen/Skeleton3D/BWHair": true,
+				},
+			},
+			
+			"Helen Mask":
+			{
+				"Modern":
+				{
+					"Helen/Helen/Skeleton3D/Modern Head": true,
+					"Helen/Helen/Skeleton3D/Modern Mask": true,
+					"Helen/Helen/Skeleton3D/Road Stage Jaw": false,
+					"Helen/Helen/Skeleton3D/Road Stage Beak": false,
+					"Helen/Helen/Skeleton3D/Modern Jaw": true,
+					"Helen/Helen/Skeleton3D/Modern Beak": true,
+				},
+				"Road Stage":
+				{
+					"Helen/Helen/Skeleton3D/Modern Head": true,
+					"Helen/Helen/Skeleton3D/Modern Mask": true,
+					"Helen/Helen/Skeleton3D/Road Stage Jaw": true,
+					"Helen/Helen/Skeleton3D/Road Stage Beak": true,
+					"Helen/Helen/Skeleton3D/Modern Jaw": false,
+					"Helen/Helen/Skeleton3D/Modern Beak": false,
+				},
+			},
+		}
 	}
 }
 

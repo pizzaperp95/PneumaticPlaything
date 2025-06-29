@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u6c8i8hmf55l"
-path.s3tc="res://.godot/imported/Cyber Helen_eyes.png-c8e727972f281835cc003dd052d0e371.s3tc.ctex"
-path.etc2="res://.godot/imported/Cyber Helen_eyes.png-c8e727972f281835cc003dd052d0e371.etc2.ctex"
+uid="uid://drq2k76cun0yu"
+path.s3tc="res://.godot/imported/Cyber Helen_shoes.png-3e5d76518bb1741e5d1632ddd8f286e8.s3tc.ctex"
+path.etc2="res://.godot/imported/Cyber Helen_shoes.png-3e5d76518bb1741e5d1632ddd8f286e8.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "078738967b35746cb1cd2f17a5bef364"
+"md5": "239e23627ba253afcd70dc24f1087fb1"
 }
 
 [deps]
 
-source_file="res://Models/Cyberamics/Cyber Helen_eyes.png"
-dest_files=["res://.godot/imported/Cyber Helen_eyes.png-c8e727972f281835cc003dd052d0e371.s3tc.ctex", "res://.godot/imported/Cyber Helen_eyes.png-c8e727972f281835cc003dd052d0e371.etc2.ctex"]
+source_file="res://Models/Cyberamics/Cyber Helen_shoes.png"
+dest_files=["res://.godot/imported/Cyber Helen_shoes.png-3e5d76518bb1741e5d1632ddd8f286e8.s3tc.ctex", "res://.godot/imported/Cyber Helen_shoes.png-3e5d76518bb1741e5d1632ddd8f286e8.etc2.ctex"]
 
 [params]
 
