@@ -14,6 +14,271 @@ var show_name : String
 
 var current_stage : String
 
+var ptt_default_cosmetics = {
+	"Chuck E. Hat":
+	{
+		"Derby":
+		{
+			"Chuck/Chuck/Skeleton3D/Avenger Hat": false,
+			"Chuck/Chuck/Skeleton3D/Cool Chuck Hat": false,
+			"Chuck/Chuck/Skeleton3D/Derby": true,
+		},
+		"Cool Chuck":
+		{
+			"Chuck/Chuck/Skeleton3D/Avenger Hat": false,
+			"Chuck/Chuck/Skeleton3D/Cool Chuck Hat": true,
+			"Chuck/Chuck/Skeleton3D/Derby": false,
+		},
+		"Avenger":
+		{
+			"Chuck/Chuck/Skeleton3D/Avenger Hat": true,
+			"Chuck/Chuck/Skeleton3D/Cool Chuck Hat": false,
+			"Chuck/Chuck/Skeleton3D/Derby": false,
+		},
+		"None":
+		{
+			"Chuck/Chuck/Skeleton3D/Avenger Hat": false,
+			"Chuck/Chuck/Skeleton3D/Cool Chuck Hat": false,
+			"Chuck/Chuck/Skeleton3D/Derby": false,
+		}
+	},
+	
+	"Chuck E. Shirt":
+	{
+		"Yellow Checker Vest":
+		{
+			"Chuck/Chuck/Skeleton3D/Rockstar Shirt": false,
+			"Chuck/Chuck/Skeleton3D/Avenger Shirt": false,
+			"Chuck/Chuck/Skeleton3D/Cool Chuck Shirt": false,
+			"Chuck/Chuck/Skeleton3D/Black Bowtie": true,
+			"Chuck/Chuck/Skeleton3D/Buttons": true,
+			"Chuck/Chuck/Skeleton3D/Vest Trim": true,
+			"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": true,
+			"Chuck/Chuck/Skeleton3D/Rocker Vest": false,
+		},
+		"Red Vest":
+		{
+			"Chuck/Chuck/Skeleton3D/Rockstar Shirt": false,
+			"Chuck/Chuck/Skeleton3D/Avenger Shirt": false,
+			"Chuck/Chuck/Skeleton3D/Cool Chuck Shirt": false,
+			"Chuck/Chuck/Skeleton3D/Black Bowtie": true,
+			"Chuck/Chuck/Skeleton3D/Buttons": true,
+			"Chuck/Chuck/Skeleton3D/Vest Trim": true,
+			"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": false,
+			"Chuck/Chuck/Skeleton3D/Rocker Vest": true,
+		},
+		"Cool Chuck Shirt":
+		{
+			"Chuck/Chuck/Skeleton3D/Rockstar Shirt": false,
+			"Chuck/Chuck/Skeleton3D/Avenger Shirt": false,
+			"Chuck/Chuck/Skeleton3D/Cool Chuck Shirt": true,
+			"Chuck/Chuck/Skeleton3D/Black Bowtie": false,
+			"Chuck/Chuck/Skeleton3D/Buttons": false,
+			"Chuck/Chuck/Skeleton3D/Vest Trim": false,
+			"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": false,
+			"Chuck/Chuck/Skeleton3D/Rocker Vest": false,
+		},
+		"Avenger Shirt":
+		{
+			"Chuck/Chuck/Skeleton3D/Rockstar Shirt": false,
+			"Chuck/Chuck/Skeleton3D/Avenger Shirt": true,
+			"Chuck/Chuck/Skeleton3D/Cool Chuck Shirt": false,
+			"Chuck/Chuck/Skeleton3D/Black Bowtie": false,
+			"Chuck/Chuck/Skeleton3D/Buttons": false,
+			"Chuck/Chuck/Skeleton3D/Vest Trim": false,
+			"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": false,
+			"Chuck/Chuck/Skeleton3D/Rocker Vest": false,
+		},
+		"Rockstar Shirt":
+		{
+			"Chuck/Chuck/Skeleton3D/Rockstar Shirt": true,
+			"Chuck/Chuck/Skeleton3D/Avenger Shirt": false,
+			"Chuck/Chuck/Skeleton3D/Cool Chuck Shirt": false,
+			"Chuck/Chuck/Skeleton3D/Black Bowtie": false,
+			"Chuck/Chuck/Skeleton3D/Buttons": false,
+			"Chuck/Chuck/Skeleton3D/Vest Trim": false,
+			"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": false,
+			"Chuck/Chuck/Skeleton3D/Rocker Vest": false,
+		}
+	},
+	
+	"Chuck E. Mask":
+	{
+		"PTT":
+		{
+			"Chuck/Chuck/Skeleton3D/PTT Ears": true,
+			"Chuck/Chuck/Skeleton3D/PTT Jaw": true,
+			"Chuck/Chuck/Skeleton3D/PTT Muzzle": true,
+			"Chuck/Chuck/Skeleton3D/Modern Ears": false,
+			"Chuck/Chuck/Skeleton3D/Modern Jaw": false,
+			"Chuck/Chuck/Skeleton3D/Modern Muzzle": false,
+			"Chuck/Chuck/Skeleton3D/Northridge Ears": false,
+		},
+		"Modern":
+		{
+			"Chuck/Chuck/Skeleton3D/PTT Ears": false,
+			"Chuck/Chuck/Skeleton3D/PTT Jaw": false,
+			"Chuck/Chuck/Skeleton3D/PTT Muzzle": false,
+			"Chuck/Chuck/Skeleton3D/Modern Ears": true,
+			"Chuck/Chuck/Skeleton3D/Modern Jaw": true,
+			"Chuck/Chuck/Skeleton3D/Modern Muzzle": true,
+			"Chuck/Chuck/Skeleton3D/Northridge Ears": false,
+		},
+		"Northridge":
+		{
+			"Chuck/Chuck/Skeleton3D/PTT Ears": false,
+			"Chuck/Chuck/Skeleton3D/PTT Jaw": false,
+			"Chuck/Chuck/Skeleton3D/PTT Muzzle": false,
+			"Chuck/Chuck/Skeleton3D/Modern Ears": false,
+			"Chuck/Chuck/Skeleton3D/Modern Jaw": true,
+			"Chuck/Chuck/Skeleton3D/Modern Muzzle": true,
+			"Chuck/Chuck/Skeleton3D/Northridge Ears": true,
+		},
+	},
+	
+	"Chuck E. Eyelids":
+	{
+		"Blue":
+		{
+			"Chuck/Chuck/Skeleton3D/Blue Eyelids": true,
+			"Chuck/Chuck/Skeleton3D/Grey Eyelids": false,
+		},
+		"Grey":
+		{
+			"Chuck/Chuck/Skeleton3D/Blue Eyelids": false,
+			"Chuck/Chuck/Skeleton3D/Grey Eyelids": true,
+		},
+	},
+	
+	"Chuck E. Legs":
+	{
+		"None":
+		{
+			"Chuck/Chuck/Stand": true,
+			"Chuck/Chuck/Skeleton3D/Legs": false,
+			"Chuck/Chuck/Skeleton3D/Feet": false,
+		},
+		"Normal":
+		{
+			"Chuck/Chuck/Stand": false,
+			"Chuck/Chuck/Skeleton3D/Legs": true,
+			"Chuck/Chuck/Skeleton3D/Feet": true,
+		}
+	},
+	
+	"Chuck E. Pants":
+	{
+		"None":
+		{
+			"Chuck/Chuck/Skeleton3D/Avenger Shorts": false,
+			"Chuck/Chuck/Skeleton3D/Cool Chuck Shorts": false,
+			"Chuck/Chuck/Skeleton3D/Rockstar Jeans": false,
+		},
+		"Cool Chuck Shorts":
+		{
+			"Chuck/Chuck/Skeleton3D/Avenger Shorts": false,
+			"Chuck/Chuck/Skeleton3D/Cool Chuck Shorts": true,
+			"Chuck/Chuck/Skeleton3D/Rockstar Jeans": false,
+		},
+		"Avenger Shorts":
+		{
+			"Chuck/Chuck/Skeleton3D/Avenger Shorts": true,
+			"Chuck/Chuck/Skeleton3D/Cool Chuck Shorts": false,
+			"Chuck/Chuck/Skeleton3D/Rockstar Jeans": false,
+		},
+		"Rockstar Jeans":
+		{
+			"Chuck/Chuck/Skeleton3D/Avenger Shorts": false,
+			"Chuck/Chuck/Skeleton3D/Cool Chuck Shorts": false,
+			"Chuck/Chuck/Skeleton3D/Rockstar Jeans": true,
+		}
+	},
+	
+	"Helen Eyelids":
+	{
+		"Blue":
+		{
+			"Helen/Helen/Skeleton3D/Blue Eyelids": true,
+			"Helen/Helen/Skeleton3D/Pink Eyelids": false,
+		},
+		"Pink":
+		{
+			"Helen/Helen/Skeleton3D/Blue Eyelids": false,
+			"Helen/Helen/Skeleton3D/Pink Eyelids": true,
+		},
+	},
+	
+	"Helen Dress":
+	{
+		"CU Half Body":
+		{
+			"Helen/Helen/Skeleton3D/Half Body Skirt": true,
+			"Helen/Helen/Skeleton3D/Skirt": false,
+			"Helen/Helen/Skeleton3D/Black Shirt": true,
+			"Helen/Helen/Skeleton3D/Collar": true,
+		},
+		"CU Full Body":
+		{
+			"Helen/Helen/Skeleton3D/Half Body Skirt": false,
+			"Helen/Helen/Skeleton3D/Skirt": true,
+			"Helen/Helen/Skeleton3D/Black Shirt": true,
+			"Helen/Helen/Skeleton3D/Collar": true,
+		},
+	},
+	
+	"Helen Hair":
+	{
+		"Large CU":
+		{
+			"Helen/Helen/Skeleton3D/BWHair Large": true,
+			"Helen/Helen/Skeleton3D/BWHair": false,
+		},
+		"Normal CU":
+		{
+			"Helen/Helen/Skeleton3D/BWHair Large": false,
+			"Helen/Helen/Skeleton3D/BWHair": true,
+		},
+	},
+	
+	"Helen Mask":
+	{
+		"CU Modern":
+		{
+			"Helen/Helen/Skeleton3D/Modern Head": true,
+			"Helen/Helen/Skeleton3D/Modern Mask": true,
+			"Helen/Helen/Skeleton3D/Road Stage Jaw": false,
+			"Helen/Helen/Skeleton3D/Road Stage Beak": false,
+			"Helen/Helen/Skeleton3D/Modern Jaw": true,
+			"Helen/Helen/Skeleton3D/Modern Beak": true,
+		},
+		"CU Road Stage":
+		{
+			"Helen/Helen/Skeleton3D/Modern Head": true,
+			"Helen/Helen/Skeleton3D/Modern Mask": true,
+			"Helen/Helen/Skeleton3D/Road Stage Jaw": true,
+			"Helen/Helen/Skeleton3D/Road Stage Beak": true,
+			"Helen/Helen/Skeleton3D/Modern Jaw": false,
+			"Helen/Helen/Skeleton3D/Modern Beak": false,
+		},
+	},
+	
+	"Helen Legs":
+	{
+		"None":
+		{
+			"Helen/Helen/Skeleton3D/Stand": true,
+			"Helen/Helen/Skeleton3D/Legs": false,
+			"Helen/Helen/Skeleton3D/Shoes": false,
+		},
+		"CU Standing":
+		{
+			"Helen/Helen/Skeleton3D/Stand": false,
+			"Helen/Helen/Skeleton3D/Legs": true,
+			"Helen/Helen/Skeleton3D/Shoes": true,
+		}
+	},
+}
+
 var stages_info = {
 	"Helen House": 
 	{
@@ -292,200 +557,27 @@ var stages_info = {
 			86: { "bot": "Backdrop", "movement": "C Amber", "flow_in": "None", "flow_out": "None" },
 		},
 		
-		"cosmetics":
-		{
-			"Chuck E. Hat":
-			{
-				"Derby":
-				{
-					"Chuck/Chuck/Skeleton3D/Avenger Hat": false,
-					"Chuck/Chuck/Skeleton3D/Cool Chuck Hat": false,
-					"Chuck/Chuck/Skeleton3D/Derby": true,
-				},
-				"Cool Chuck":
-				{
-					"Chuck/Chuck/Skeleton3D/Avenger Hat": false,
-					"Chuck/Chuck/Skeleton3D/Cool Chuck Hat": true,
-					"Chuck/Chuck/Skeleton3D/Derby": false,
-				},
-				"Avenger":
-				{
-					"Chuck/Chuck/Skeleton3D/Avenger Hat": true,
-					"Chuck/Chuck/Skeleton3D/Cool Chuck Hat": false,
-					"Chuck/Chuck/Skeleton3D/Derby": false,
-				},
-				"None":
-				{
-					"Chuck/Chuck/Skeleton3D/Avenger Hat": false,
-					"Chuck/Chuck/Skeleton3D/Cool Chuck Hat": false,
-					"Chuck/Chuck/Skeleton3D/Derby": false,
-				}
-			},
-			
-			"Chuck E. Shirt":
-			{
-				"Yellow Checker Vest":
-				{
-					"Chuck/Chuck/Skeleton3D/Avenger Shirt": false,
-					"Chuck/Chuck/Skeleton3D/Cool Chuck Shirt": false,
-					"Chuck/Chuck/Skeleton3D/Black Bowtie": true,
-					"Chuck/Chuck/Skeleton3D/Buttons": true,
-					"Chuck/Chuck/Skeleton3D/Vest Trim": true,
-					"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": true,
-					"Chuck/Chuck/Skeleton3D/Rocker Vest": false,
-				},
-				"Red Vest":
-				{
-					"Chuck/Chuck/Skeleton3D/Avenger Shirt": false,
-					"Chuck/Chuck/Skeleton3D/Cool Chuck Shirt": false,
-					"Chuck/Chuck/Skeleton3D/Black Bowtie": true,
-					"Chuck/Chuck/Skeleton3D/Buttons": true,
-					"Chuck/Chuck/Skeleton3D/Vest Trim": true,
-					"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": false,
-					"Chuck/Chuck/Skeleton3D/Rocker Vest": true,
-				},
-				"Cool Chuck Shirt":
-				{
-					"Chuck/Chuck/Skeleton3D/Avenger Shirt": false,
-					"Chuck/Chuck/Skeleton3D/Cool Chuck Shirt": true,
-					"Chuck/Chuck/Skeleton3D/Black Bowtie": false,
-					"Chuck/Chuck/Skeleton3D/Buttons": false,
-					"Chuck/Chuck/Skeleton3D/Vest Trim": false,
-					"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": false,
-					"Chuck/Chuck/Skeleton3D/Rocker Vest": false,
-				},
-				"Avenger Shirt":
-				{
-					"Chuck/Chuck/Skeleton3D/Avenger Shirt": true,
-					"Chuck/Chuck/Skeleton3D/Cool Chuck Shirt": false,
-					"Chuck/Chuck/Skeleton3D/Black Bowtie": false,
-					"Chuck/Chuck/Skeleton3D/Buttons": false,
-					"Chuck/Chuck/Skeleton3D/Vest Trim": false,
-					"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": false,
-					"Chuck/Chuck/Skeleton3D/Rocker Vest": false,
-				}
-			},
-			
-			"Chuck E. Mask":
-			{
-				"PTT":
-				{
-					"Chuck/Chuck/Skeleton3D/PTT Ears": true,
-					"Chuck/Chuck/Skeleton3D/PTT Ears Inside": true,
-					"Chuck/Chuck/Skeleton3D/PTT Jaw": true,
-					"Chuck/Chuck/Skeleton3D/PTT Muzzle": true,
-					"Chuck/Chuck/Skeleton3D/Modern Ears": false,
-					"Chuck/Chuck/Skeleton3D/Modern Ears Inside": false,
-					"Chuck/Chuck/Skeleton3D/Modern Jaw": false,
-					"Chuck/Chuck/Skeleton3D/Modern Muzzle": false,
-				},
-				"Modern":
-				{
-					"Chuck/Chuck/Skeleton3D/PTT Ears": false,
-					"Chuck/Chuck/Skeleton3D/PTT Ears Inside": false,
-					"Chuck/Chuck/Skeleton3D/PTT Jaw": false,
-					"Chuck/Chuck/Skeleton3D/PTT Muzzle": false,
-					"Chuck/Chuck/Skeleton3D/Modern Ears": true,
-					"Chuck/Chuck/Skeleton3D/Modern Ears Inside": true,
-					"Chuck/Chuck/Skeleton3D/Modern Jaw": true,
-					"Chuck/Chuck/Skeleton3D/Modern Muzzle": true,
-				},
-			},
-			
-			"Chuck E. Eyelids":
-			{
-				"Blue":
-				{
-					"Chuck/Chuck/Skeleton3D/Blue Eyelids": true,
-					"Chuck/Chuck/Skeleton3D/Grey Eyelids": false,
-				},
-				"Grey":
-				{
-					"Chuck/Chuck/Skeleton3D/Blue Eyelids": false,
-					"Chuck/Chuck/Skeleton3D/Grey Eyelids": true,
-				},
-			},
-			
-			"Helen Eyelids":
-			{
-				"Blue":
-				{
-					"Helen/Helen/Skeleton3D/Blue Eyelids": true,
-					"Helen/Helen/Skeleton3D/Pink Eyelids": false,
-				},
-				"Pink":
-				{
-					"Helen/Helen/Skeleton3D/Blue Eyelids": false,
-					"Helen/Helen/Skeleton3D/Pink Eyelids": true,
-				},
-			},
-			
-			"Helen Dress":
-			{
-				"Half Body CU":
-				{
-					"Helen/Helen/Skeleton3D/Half Body Skirt": true,
-					"Helen/Helen/Skeleton3D/Skirt": false,
-					"Helen/Helen/Skeleton3D/Black Shirt": true,
-					"Helen/Helen/Skeleton3D/Collar": true,
-				},
-				"Full Body CU":
-				{
-					"Helen/Helen/Skeleton3D/Half Body Skirt": false,
-					"Helen/Helen/Skeleton3D/Skirt": true,
-					"Helen/Helen/Skeleton3D/Black Shirt": true,
-					"Helen/Helen/Skeleton3D/Collar": true,
-				},
-			},
-			
-			"Helen Hair":
-			{
-				"Large CU":
-				{
-					"Helen/Helen/Skeleton3D/BWHair Large": true,
-					"Helen/Helen/Skeleton3D/BWHair": false,
-				},
-				"Normal CU":
-				{
-					"Helen/Helen/Skeleton3D/BWHair Large": false,
-					"Helen/Helen/Skeleton3D/BWHair": true,
-				},
-			},
-			
-			"Helen Mask":
-			{
-				"Modern":
-				{
-					"Helen/Helen/Skeleton3D/Modern Head": true,
-					"Helen/Helen/Skeleton3D/Modern Mask": true,
-					"Helen/Helen/Skeleton3D/Road Stage Jaw": false,
-					"Helen/Helen/Skeleton3D/Road Stage Beak": false,
-					"Helen/Helen/Skeleton3D/Modern Jaw": true,
-					"Helen/Helen/Skeleton3D/Modern Beak": true,
-				},
-				"Road Stage":
-				{
-					"Helen/Helen/Skeleton3D/Modern Head": true,
-					"Helen/Helen/Skeleton3D/Modern Mask": true,
-					"Helen/Helen/Skeleton3D/Road Stage Jaw": true,
-					"Helen/Helen/Skeleton3D/Road Stage Beak": true,
-					"Helen/Helen/Skeleton3D/Modern Jaw": false,
-					"Helen/Helen/Skeleton3D/Modern Beak": false,
-				},
-			},
-		}
+		"cosmetics": ptt_default_cosmetics
 	},
-	"2-Stage": 
+	"Cyber Test": 
 	{
-		"bits": 8, 
-		"scene": "res://Scenes/Stages/2Stage.tscn", 
-		"scene_ref_base": "SubViewport/2Stage/",
-		"camera_count": 1,
+		"bits": 16, 
+		"scene": "res://Scenes/Stages/CyberTest.tscn", 
+		"scene_ref_base": "SubViewport/CyberTest/",
+		"camera_count": 5,
 		
 		"ust_type": "Cyberamics",
 		
 		"bit_mapping":
 		{
+			1: { "bot": "Chuck", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+			2: { "bot": "Chuck", "movement": "Head Left", "flow_in": 0.8, "flow_out": 1.0 },
+			3: { "bot": "Chuck", "movement": "Head Right", "flow_in": 1.0, "flow_out": 1.0 },
+			4: { "bot": "Chuck", "movement": "Head Up", "flow_in": 2.0, "flow_out": 1.0 },
+			5: { "bot": "Chuck", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+			6: { "bot": "Chuck", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+			7: { "bot": "Chuck", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+			8: { "bot": "Chuck", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
 			9: { "bot": "Helen", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
 			10: { "bot": "Helen", "movement": "Head Left", "flow_in": 0.8, "flow_out": 1.0 },
 			11: { "bot": "Helen", "movement": "Head Right", "flow_in": 1.0, "flow_out": 1.0 },
@@ -496,77 +588,7 @@ var stages_info = {
 			16: { "bot": "Helen", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
 		},
 		
-		"cosmetics":
-		{
-			
-			"Helen Eyelids":
-			{
-				"Blue":
-				{
-					"Helen/Helen/Skeleton3D/Blue Eyelids": true,
-					"Helen/Helen/Skeleton3D/Pink Eyelids": false,
-				},
-				"Pink":
-				{
-					"Helen/Helen/Skeleton3D/Blue Eyelids": false,
-					"Helen/Helen/Skeleton3D/Pink Eyelids": true,
-				},
-			},
-			
-			"Helen Dress":
-			{
-				"Full Body CU":
-				{
-					"Helen/Helen/Skeleton3D/Half Body Skirt": false,
-					"Helen/Helen/Skeleton3D/Skirt": true,
-					"Helen/Helen/Skeleton3D/Black Shirt": true,
-					"Helen/Helen/Skeleton3D/Collar": true,
-				},
-				"Half Body CU":
-				{
-					"Helen/Helen/Skeleton3D/Half Body Skirt": true,
-					"Helen/Helen/Skeleton3D/Skirt": false,
-					"Helen/Helen/Skeleton3D/Black Shirt": true,
-					"Helen/Helen/Skeleton3D/Collar": true,
-				},
-			},
-			
-			"Helen Hair":
-			{
-				"Large CU":
-				{
-					"Helen/Helen/Skeleton3D/BWHair Large": true,
-					"Helen/Helen/Skeleton3D/BWHair": false,
-				},
-				"Normal CU":
-				{
-					"Helen/Helen/Skeleton3D/BWHair Large": false,
-					"Helen/Helen/Skeleton3D/BWHair": true,
-				},
-			},
-			
-			"Helen Mask":
-			{
-				"Modern":
-				{
-					"Helen/Helen/Skeleton3D/Modern Head": true,
-					"Helen/Helen/Skeleton3D/Modern Mask": true,
-					"Helen/Helen/Skeleton3D/Road Stage Jaw": false,
-					"Helen/Helen/Skeleton3D/Road Stage Beak": false,
-					"Helen/Helen/Skeleton3D/Modern Jaw": true,
-					"Helen/Helen/Skeleton3D/Modern Beak": true,
-				},
-				"Road Stage":
-				{
-					"Helen/Helen/Skeleton3D/Modern Head": true,
-					"Helen/Helen/Skeleton3D/Modern Mask": true,
-					"Helen/Helen/Skeleton3D/Road Stage Jaw": true,
-					"Helen/Helen/Skeleton3D/Road Stage Beak": true,
-					"Helen/Helen/Skeleton3D/Modern Jaw": false,
-					"Helen/Helen/Skeleton3D/Modern Beak": false,
-				},
-			},
-		}
+		"cosmetics": ptt_default_cosmetics
 	}
 }
 
