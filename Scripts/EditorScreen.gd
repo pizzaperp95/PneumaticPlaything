@@ -825,11 +825,11 @@ var stages_info = {
 		
 		"cosmetics": ptt_default_cosmetics
 	},
-	"Cyber Test": 
+	"C-Stage": 
 	{
-		"bits": 24, 
-		"scene": "res://Scenes/Stages/CyberTest.tscn", 
-		"scene_ref_base": "SubViewport/CyberTest/",
+		"bits": 57, 
+		"scene": "res://Scenes/Stages/CStage.tscn", 
+		"scene_ref_base": "SubViewport/CStage/",
 		"camera_count": 5,
 		
 		"ust_type": "Cyberamics",
@@ -860,10 +860,43 @@ var stages_info = {
 			22: { "bot": "Munch", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
 			23: { "bot": "Munch", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
 			24: { "bot": "Munch", "movement": "Left Arm", "flow_in": 2.0, "flow_out": 1.0 },
+			25: { "bot": "Jasper", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+			26: { "bot": "Jasper", "movement": "Head Left", "flow_in": 1.0, "flow_out": 1.0 },
+			27: { "bot": "Jasper", "movement": "Head Right", "flow_in": 1.0, "flow_out": 1.0 },
+			28: { "bot": "Jasper", "movement": "Head Up", "flow_in": 2.0, "flow_out": 1.0 },
+			29: { "bot": "Jasper", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+			30: { "bot": "Jasper", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+			31: { "bot": "Jasper", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+			32: { "bot": "Jasper", "movement": "Strum", "flow_in": 2.0, "flow_out": 1.0 },
+			50: { "bot": "Spots", "movement": "Chuck", "flow_in": "None", "flow_out": "None" },
+			51: { "bot": "Spots", "movement": "Helen", "flow_in": "None", "flow_out": "None" },
+			52: { "bot": "Spots", "movement": "Munch", "flow_in": "None", "flow_out": "None" },
+			53: { "bot": "Spots", "movement": "Jasper", "flow_in": "None", "flow_out": "None" },
+			54: { "bot": "Spots", "movement": "Pasqually", "flow_in": "None", "flow_out": "None" },
+			55: { "bot": "Backdrop", "movement": "C Blue", "flow_in": "None", "flow_out": "None" },
+			65: { "bot": "Backdrop", "movement": "L Blue", "flow_in": "None", "flow_out": "None" },
+			66: { "bot": "Valence", "movement": "R Center", "flow_in": "None", "flow_out": "None" },
+			68: { "bot": "Backdrop", "movement": "L Red", "flow_in": "None", "flow_out": "None" },
+			69: { "bot": "Valence", "movement": "R", "flow_in": "None", "flow_out": "None" },
+			70: { "bot": "Backdrop", "movement": "L Amber", "flow_in": "None", "flow_out": "None" },
+			71: { "bot": "Valence", "movement": "L Center", "flow_in": "None", "flow_out": "None" },
+			72: { "bot": "Valence", "movement": "L", "flow_in": "None", "flow_out": "None" },
+			73: { "bot": "Valence", "movement": "Center", "flow_in": "None", "flow_out": "None" },
+			75: { "bot": "Color Spots", "movement": "Munch", "flow_in": "None", "flow_out": "None" },
+			76: { "bot": "Color Spots", "movement": "Helen", "flow_in": "None", "flow_out": "None" },
+			77: { "bot": "Color Spots", "movement": "Jasper", "flow_in": "None", "flow_out": "None" },
+			79: { "bot": "Color Spots", "movement": "Chuck", "flow_in": "None", "flow_out": "None" },
+			80: { "bot": "Color Spots", "movement": "Chuck 2", "flow_in": "None", "flow_out": "None" },
+			81: { "bot": "Backdrop", "movement": "R Amber", "flow_in": "None", "flow_out": "None" },
+			82: { "bot": "Backdrop", "movement": "C Red", "flow_in": "None", "flow_out": "None" },
+			83: { "bot": "Backdrop", "movement": "R Blue", "flow_in": "None", "flow_out": "None" },
+			84: { "bot": "Color Spots", "movement": "Pasqually", "flow_in": "None", "flow_out": "None" },
+			85: { "bot": "Backdrop", "movement": "R Red", "flow_in": "None", "flow_out": "None" },
+			86: { "bot": "Backdrop", "movement": "C Amber", "flow_in": "None", "flow_out": "None" },
 		},
 		
 		"cosmetics": ptt_default_cosmetics
-	}
+	},
 }
 
 signal step(amount: int)

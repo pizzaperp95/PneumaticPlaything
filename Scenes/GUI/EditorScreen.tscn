@@ -205,15 +205,15 @@ popup/item_0/id = 4
 popup/item_0/separator = true
 popup/item_1/text = "Balcony Stage"
 popup/item_1/id = 0
-popup/item_2/text = "Custom Stages"
-popup/item_2/id = 3
-popup/item_2/separator = true
-popup/item_3/text = "Helen House"
-popup/item_3/id = 1
-popup/item_4/text = "Chuck E's Corner"
-popup/item_4/id = 2
-popup/item_5/text = "Cyber Test"
-popup/item_5/id = 5
+popup/item_2/text = "C-Stage"
+popup/item_2/id = 5
+popup/item_3/text = "Custom Stages"
+popup/item_3/id = 3
+popup/item_3/separator = true
+popup/item_4/text = "Helen House"
+popup/item_4/id = 1
+popup/item_5/text = "Chuck E's Corner"
+popup/item_5/id = 2
 
 [node name="MenuButton" type="MenuButton" parent="MenuBar"]
 layout_mode = 0
@@ -722,9 +722,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -256.0
-offset_top = -192.0
+offset_top = -256.0
 offset_right = 256.0
-offset_bottom = 192.0
+offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -741,8 +741,10 @@ Project Oversight: Persephone (KawaiiZenbo)
 
 Interface Design: Persephone
 Simulator Backend: Persephone
-3-Stage Models: Persephone
-PTT Cybers Models: Persephone
+3-Stage Bot Models: Persephone
+Cyberamic Bot Models: Persephone
+C-Stage Model: Persephone
+Iris Textures: Avery
 Chuck E's Corner Stage: Luigigamin212
 Balcony Stage Model: ToastHQ
 

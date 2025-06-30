@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nwgwmia0tqak"
-path.s3tc="res://.godot/imported/Cyber Jasper_eyes.png-3656e523e85be9bc7e5d4df443165869.s3tc.ctex"
-path.etc2="res://.godot/imported/Cyber Jasper_eyes.png-3656e523e85be9bc7e5d4df443165869.etc2.ctex"
+uid="uid://dysvpopundaib"
+path.s3tc="res://.godot/imported/CStage_roof.png-127c8bde4a33b76f9b131e0b0469d7cc.s3tc.ctex"
+path.etc2="res://.godot/imported/CStage_roof.png-127c8bde4a33b76f9b131e0b0469d7cc.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "d352812e727b8ffa0545e5665172abf1"
+"md5": "3b6f8234d775358eaa28281314dab001"
 }
 
 [deps]
 
-source_file="res://Models/Cyberamics/Cyber Jasper_eyes.png"
-dest_files=["res://.godot/imported/Cyber Jasper_eyes.png-3656e523e85be9bc7e5d4df443165869.s3tc.ctex", "res://.godot/imported/Cyber Jasper_eyes.png-3656e523e85be9bc7e5d4df443165869.etc2.ctex"]
+source_file="res://Models/CStage/CStage_roof.png"
+dest_files=["res://.godot/imported/CStage_roof.png-127c8bde4a33b76f9b131e0b0469d7cc.s3tc.ctex", "res://.godot/imported/CStage_roof.png-127c8bde4a33b76f9b131e0b0469d7cc.etc2.ctex"]
 
 [params]
 
