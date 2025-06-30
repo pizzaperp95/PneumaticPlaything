@@ -2,13 +2,21 @@
 
 ## Currently in game
 
+ - Balcony Stage
+ - C Stage
+
  - Helen House (homemade stage)
  - Chuck E's Corner (homemade stage)
  
 ## In Development
 
- - Balcony Stage
+ - Rocker Stage
  - Prototype Road Stage
+ - Road Stage
+ - 2-Stage
+ - 1-Stage
+ - Turntable 1-Stage
+ - Cyberamic 3-Stage
 
 ## Planned
 
@@ -16,13 +24,6 @@
 
  - Portrait Stage
  - Shelf Stage (Portrait stage with Balcony mechs)
- - C Stage
- - Rocker Stage
- - Road Stage
- - 2-Stage
- - 1-Stage
- - Turntable 1-Stage
- - Cyberamic 3-Stage
 
 
 ### 3-Stage
