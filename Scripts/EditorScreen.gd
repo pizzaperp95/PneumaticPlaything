@@ -491,21 +491,6 @@ var stages_info = {
 	
 	"Chuck E. Shirt":
 	{
-		"Yellow Checker Vest":
-		{
-			"Chuck/Chuck/Skeleton3D/Rockstar Shirt": false,
-			"Chuck/Chuck/Skeleton3D/Avenger Shirt": false,
-			"Chuck/Chuck/Skeleton3D/Cool Chuck Shirt": false,
-			"Chuck/Chuck/Skeleton3D/Black Bowtie": true,
-			"Chuck/Chuck/Skeleton3D/Buttons": true,
-			"Chuck/Chuck/Skeleton3D/Vest Trim": true,
-			"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": true,
-			"Chuck/Chuck/Skeleton3D/Rocker Vest": false,
-			"Chuck/Chuck/Skeleton3D/Red Bowtie": false,
-			"Chuck/Chuck/Skeleton3D/Tux Button": false,
-			"Chuck/Chuck/Skeleton3D/Lapel": false,
-			"Chuck/Chuck/Skeleton3D/Tux Base": false,
-		},
 		"Red Vest":
 		{
 			"Chuck/Chuck/Skeleton3D/Rockstar Shirt": false,
@@ -516,6 +501,21 @@ var stages_info = {
 			"Chuck/Chuck/Skeleton3D/Vest Trim": true,
 			"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": false,
 			"Chuck/Chuck/Skeleton3D/Rocker Vest": true,
+			"Chuck/Chuck/Skeleton3D/Red Bowtie": false,
+			"Chuck/Chuck/Skeleton3D/Tux Button": false,
+			"Chuck/Chuck/Skeleton3D/Lapel": false,
+			"Chuck/Chuck/Skeleton3D/Tux Base": false,
+		},
+		"Yellow Checker Vest":
+		{
+			"Chuck/Chuck/Skeleton3D/Rockstar Shirt": false,
+			"Chuck/Chuck/Skeleton3D/Avenger Shirt": false,
+			"Chuck/Chuck/Skeleton3D/Cool Chuck Shirt": false,
+			"Chuck/Chuck/Skeleton3D/Black Bowtie": true,
+			"Chuck/Chuck/Skeleton3D/Buttons": true,
+			"Chuck/Chuck/Skeleton3D/Vest Trim": true,
+			"Chuck/Chuck/Skeleton3D/Yellow Checker Vest": true,
+			"Chuck/Chuck/Skeleton3D/Rocker Vest": false,
 			"Chuck/Chuck/Skeleton3D/Red Bowtie": false,
 			"Chuck/Chuck/Skeleton3D/Tux Button": false,
 			"Chuck/Chuck/Skeleton3D/Lapel": false,
