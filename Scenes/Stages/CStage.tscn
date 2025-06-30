@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://jjd2nlorrml3"]
+[gd_scene load_steps=10 format=3 uid="uid://jjd2nlorrml3"]
 
 [ext_resource type="PackedScene" uid="uid://ba7i8p8olef2s" path="res://Models/Cyberamics/Cyber Jasper.glb" id="1_nkhpr"]
 [ext_resource type="Script" uid="uid://bu68w4jnh0n2b" path="res://Scripts/AnimatronicController.gd" id="2_bawsr"]
-[ext_resource type="PackedScene" uid="uid://c2j62syov3skq" path="res://Models/Cyberamics/Cyberamic Chuck.glb" id="3_8cbs4"]
+[ext_resource type="PackedScene" uid="uid://c5fgw7t45p7r6" path="res://Models/Cyberamics/Cyber Chuck.glb" id="4_nkhpr"]
 [ext_resource type="PackedScene" uid="uid://d34xfaignny8j" path="res://Models/Cyberamics/Cyber Helen.glb" id="4_vmyhs"]
 [ext_resource type="PackedScene" uid="uid://doxu4tb5jfoqp" path="res://Models/Cyberamics/Cyber Munch.glb" id="5_byvoj"]
+[ext_resource type="PackedScene" uid="uid://bp5u5t6yu4ejy" path="res://Models/Cyberamics/Cyber Pasqually.glb" id="6_nkhpr"]
 [ext_resource type="PackedScene" uid="uid://dfw3sbg135u2h" path="res://Models/CStage/CStage.glb" id="7_1s7sj"]
 [ext_resource type="Script" uid="uid://d1p4ite8ts2wi" path="res://Scripts/LightController.gd" id="7_fp2rj"]
 
@@ -13,11 +14,15 @@ ambient_light_source = 1
 
 [node name="CStage" type="Node3D"]
 
+[node name="Munch" parent="." instance=ExtResource("5_byvoj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 3, 0)
+script = ExtResource("2_bawsr")
+
 [node name="Jasper" parent="." instance=ExtResource("1_nkhpr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 3, 0)
 script = ExtResource("2_bawsr")
 
-[node name="Chuck" parent="." instance=ExtResource("3_8cbs4")]
+[node name="Chuck" parent="." instance=ExtResource("4_nkhpr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 script = ExtResource("2_bawsr")
 
@@ -25,8 +30,8 @@ script = ExtResource("2_bawsr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 3, 0)
 script = ExtResource("2_bawsr")
 
-[node name="Munch" parent="." instance=ExtResource("5_byvoj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 3, 0)
+[node name="Pasqually" parent="." instance=ExtResource("6_nkhpr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 3, 0)
 script = ExtResource("2_bawsr")
 
 [node name="Spots" type="Node3D" parent="."]
@@ -289,7 +294,7 @@ transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 
 fov = 60.0
 
 [node name="Angle 4" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 4.75, 6)
+transform = Transform3D(1, 0, 0, 0, 0.984267, 0.17669, 0, -0.17669, 0.984267, 0, 4.75, 6.32348)
 fov = 60.0
 
 [node name="Angle 5" type="Camera3D" parent="."]

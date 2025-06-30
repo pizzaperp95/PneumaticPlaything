@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btm7ni51m76xy"
-path.s3tc="res://.godot/imported/Cyberamic Chuck_mic.png-a001658a24b06e235c5f95469e65dd38.s3tc.ctex"
-path.etc2="res://.godot/imported/Cyberamic Chuck_mic.png-a001658a24b06e235c5f95469e65dd38.etc2.ctex"
+uid="uid://dilifuiugrheh"
+path.s3tc="res://.godot/imported/Cyber Chuck_derby.png-aa4376a4e1bdf7d77a7ffa471b65b42a.s3tc.ctex"
+path.etc2="res://.godot/imported/Cyber Chuck_derby.png-aa4376a4e1bdf7d77a7ffa471b65b42a.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "0c2b737299479570c7cc39c7685d4c62"
+"md5": "b7dcfc8d03f78489056415859985c5e8"
 }
 
 [deps]
 
-source_file="res://Models/Cyberamics/Cyberamic Chuck_mic.png"
-dest_files=["res://.godot/imported/Cyberamic Chuck_mic.png-a001658a24b06e235c5f95469e65dd38.s3tc.ctex", "res://.godot/imported/Cyberamic Chuck_mic.png-a001658a24b06e235c5f95469e65dd38.etc2.ctex"]
+source_file="res://Models/Cyberamics/Cyber Chuck_derby.png"
+dest_files=["res://.godot/imported/Cyber Chuck_derby.png-aa4376a4e1bdf7d77a7ffa471b65b42a.s3tc.ctex", "res://.godot/imported/Cyber Chuck_derby.png-aa4376a4e1bdf7d77a7ffa471b65b42a.etc2.ctex"]
 
 [params]
 

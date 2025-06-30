@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chkprhvwkibuv"
-path.s3tc="res://.godot/imported/Cyberamic Chuck_blue cool chuck hat.png-0c9b85f4a4e172fa09afe2e705e32668.s3tc.ctex"
-path.etc2="res://.godot/imported/Cyberamic Chuck_blue cool chuck hat.png-0c9b85f4a4e172fa09afe2e705e32668.etc2.ctex"
+uid="uid://ch46a7ipo4jeb"
+path.s3tc="res://.godot/imported/Cyber Chuck_blue cool chuck hat.png-dd68c49476ac052741b57d787f46ce92.s3tc.ctex"
+path.etc2="res://.godot/imported/Cyber Chuck_blue cool chuck hat.png-dd68c49476ac052741b57d787f46ce92.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Models/Cyberamics/Cyberamic Chuck_blue cool chuck hat.png"
-dest_files=["res://.godot/imported/Cyberamic Chuck_blue cool chuck hat.png-0c9b85f4a4e172fa09afe2e705e32668.s3tc.ctex", "res://.godot/imported/Cyberamic Chuck_blue cool chuck hat.png-0c9b85f4a4e172fa09afe2e705e32668.etc2.ctex"]
+source_file="res://Models/Cyberamics/Cyber Chuck_blue cool chuck hat.png"
+dest_files=["res://.godot/imported/Cyber Chuck_blue cool chuck hat.png-dd68c49476ac052741b57d787f46ce92.s3tc.ctex", "res://.godot/imported/Cyber Chuck_blue cool chuck hat.png-dd68c49476ac052741b57d787f46ce92.etc2.ctex"]
 
 [params]
 

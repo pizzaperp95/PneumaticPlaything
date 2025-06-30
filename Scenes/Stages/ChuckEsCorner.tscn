@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dw3eplmapm5gc"]
 
-[ext_resource type="PackedScene" uid="uid://c2j62syov3skq" path="res://Models/Cyberamics/Cyberamic Chuck.glb" id="1_t27ru"]
+[ext_resource type="PackedScene" uid="uid://c5fgw7t45p7r6" path="res://Models/Cyberamics/Cyber Chuck.glb" id="1_t27ru"]
 [ext_resource type="Script" uid="uid://bu68w4jnh0n2b" path="res://Scripts/AnimatronicController.gd" id="2_8qvk7"]
 [ext_resource type="PackedScene" uid="uid://bv66hlbvtekho" path="res://Models/ChuckEsCorner/ChuckEsCornerStage.glb" id="3_8qvk7"]
 [ext_resource type="PackedScene" uid="uid://dmh5upwts8y11" path="res://Models/Cyberamics/Warblettes.glb" id="3_t27ru"]

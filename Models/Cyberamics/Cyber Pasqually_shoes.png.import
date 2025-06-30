@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciagmfhdft63o"
-path.s3tc="res://.godot/imported/Cyberamic Chuck_jeans.png-4f6e079af3f182dbc81c0672ce75e2a8.s3tc.ctex"
-path.etc2="res://.godot/imported/Cyberamic Chuck_jeans.png-4f6e079af3f182dbc81c0672ce75e2a8.etc2.ctex"
+uid="uid://br0mu3ccp4opc"
+path.s3tc="res://.godot/imported/Cyber Pasqually_shoes.png-1617d6656315843f76193ec1f7183923.s3tc.ctex"
+path.etc2="res://.godot/imported/Cyber Pasqually_shoes.png-1617d6656315843f76193ec1f7183923.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "e068afe1eb5127150fa05c42e1518c66"
+"md5": "ed186a9131e5d4848c699d06d08aef2e"
 }
 
 [deps]
 
-source_file="res://Models/Cyberamics/Cyberamic Chuck_jeans.png"
-dest_files=["res://.godot/imported/Cyberamic Chuck_jeans.png-4f6e079af3f182dbc81c0672ce75e2a8.s3tc.ctex", "res://.godot/imported/Cyberamic Chuck_jeans.png-4f6e079af3f182dbc81c0672ce75e2a8.etc2.ctex"]
+source_file="res://Models/Cyberamics/Cyber Pasqually_shoes.png"
+dest_files=["res://.godot/imported/Cyber Pasqually_shoes.png-1617d6656315843f76193ec1f7183923.s3tc.ctex", "res://.godot/imported/Cyber Pasqually_shoes.png-1617d6656315843f76193ec1f7183923.etc2.ctex"]
 
 [params]
 

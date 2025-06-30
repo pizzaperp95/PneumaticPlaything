@@ -103,6 +103,11 @@ cancel_button_text = "Do Not"
 initial_position = 2
 dialog_text = "The specified file does not exist."
 
+[node name="NoFileSpecified" type="AcceptDialog" parent="."]
+auto_translate_mode = 1
+initial_position = 2
+dialog_text = "No File was specified."
+
 [node name="EmptyStringDialog" type="AcceptDialog" parent="."]
 auto_translate_mode = 1
 initial_position = 2

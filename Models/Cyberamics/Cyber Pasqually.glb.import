@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c2j62syov3skq"
-path="res://.godot/imported/Cyberamic Chuck.glb-7640bcf570eaf553eddfec5de3e96502.scn"
+uid="uid://bp5u5t6yu4ejy"
+path="res://.godot/imported/Cyber Pasqually.glb-a9ce16f9387e81351437b30acb5efc0e.scn"
 
 [deps]
 
-source_file="res://Models/Cyberamics/Cyberamic Chuck.glb"
-dest_files=["res://.godot/imported/Cyberamic Chuck.glb-7640bcf570eaf553eddfec5de3e96502.scn"]
+source_file="res://Models/Cyberamics/Cyber Pasqually.glb"
+dest_files=["res://.godot/imported/Cyber Pasqually.glb-a9ce16f9387e81351437b30acb5efc0e.scn"]
 
 [params]
 

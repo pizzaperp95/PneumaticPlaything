@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2g6chunc572s"]
+[gd_scene load_steps=11 format=3 uid="uid://d2g6chunc572s"]
 
 [ext_resource type="PackedScene" uid="uid://d34xfaignny8j" path="res://Models/Cyberamics/Cyber Helen.glb" id="1_w3m2i"]
 [ext_resource type="Script" uid="uid://bu68w4jnh0n2b" path="res://Scripts/AnimatronicController.gd" id="2_t4ere"]
-[ext_resource type="PackedScene" uid="uid://c2j62syov3skq" path="res://Models/Cyberamics/Cyberamic Chuck.glb" id="3_45mf1"]
+[ext_resource type="PackedScene" uid="uid://c5fgw7t45p7r6" path="res://Models/Cyberamics/Cyber Chuck.glb" id="4_ajb2q"]
 [ext_resource type="PackedScene" uid="uid://ba7i8p8olef2s" path="res://Models/Cyberamics/Cyber Jasper.glb" id="4_t4ere"]
 [ext_resource type="PackedScene" uid="uid://c6n4otfble154" path="res://Models/Balcony/BalconyStage.glb" id="5_45mf1"]
 [ext_resource type="PackedScene" uid="uid://dmh5upwts8y11" path="res://Models/Cyberamics/Warblettes.glb" id="5_ocq6y"]
 [ext_resource type="PackedScene" uid="uid://doxu4tb5jfoqp" path="res://Models/Cyberamics/Cyber Munch.glb" id="5_vcb31"]
+[ext_resource type="PackedScene" uid="uid://bp5u5t6yu4ejy" path="res://Models/Cyberamics/Cyber Pasqually.glb" id="6_ajb2q"]
 [ext_resource type="Script" uid="uid://d1p4ite8ts2wi" path="res://Scripts/LightController.gd" id="6_j8jbd"]
 
 [sub_resource type="Environment" id="Environment_w3m2i"]
@@ -14,11 +15,15 @@ ambient_light_source = 1
 
 [node name="Balcony" type="Node3D"]
 
+[node name="Munch" parent="." instance=ExtResource("5_vcb31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 3, -0.5)
+script = ExtResource("2_t4ere")
+
 [node name="Jasper" parent="." instance=ExtResource("4_t4ere")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -2.2, 3, -0.5)
 script = ExtResource("2_t4ere")
 
-[node name="Chuck" parent="." instance=ExtResource("3_45mf1")]
+[node name="Chuck" parent="." instance=ExtResource("4_ajb2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -0.5)
 script = ExtResource("2_t4ere")
 
@@ -26,8 +31,8 @@ script = ExtResource("2_t4ere")
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 2.2, 3, -0.5)
 script = ExtResource("2_t4ere")
 
-[node name="Munch" parent="." instance=ExtResource("5_vcb31")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 3, -0.5)
+[node name="Pasqually" parent="." instance=ExtResource("6_ajb2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 3, -0.5)
 script = ExtResource("2_t4ere")
 
 [node name="Warblettes" parent="." instance=ExtResource("5_ocq6y")]

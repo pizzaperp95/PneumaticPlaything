@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpyxdwmo2mitw"
-path.s3tc="res://.godot/imported/Cyberamic Chuck_cool chuck shirt.png-52e5a2fe3b0c7d22e5cbd78c1c7500a9.s3tc.ctex"
-path.etc2="res://.godot/imported/Cyberamic Chuck_cool chuck shirt.png-52e5a2fe3b0c7d22e5cbd78c1c7500a9.etc2.ctex"
+uid="uid://d3mn511jcdcoo"
+path.s3tc="res://.godot/imported/Cyber Pasqually_eyes.png-011f6cf7241e851c250440f1f5f1f514.s3tc.ctex"
+path.etc2="res://.godot/imported/Cyber Pasqually_eyes.png-011f6cf7241e851c250440f1f5f1f514.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "47d45b1d7535be024d7328edf43a202e"
+"md5": "d352812e727b8ffa0545e5665172abf1"
 }
 
 [deps]
 
-source_file="res://Models/Cyberamics/Cyberamic Chuck_cool chuck shirt.png"
-dest_files=["res://.godot/imported/Cyberamic Chuck_cool chuck shirt.png-52e5a2fe3b0c7d22e5cbd78c1c7500a9.s3tc.ctex", "res://.godot/imported/Cyberamic Chuck_cool chuck shirt.png-52e5a2fe3b0c7d22e5cbd78c1c7500a9.etc2.ctex"]
+source_file="res://Models/Cyberamics/Cyber Pasqually_eyes.png"
+dest_files=["res://.godot/imported/Cyber Pasqually_eyes.png-011f6cf7241e851c250440f1f5f1f514.s3tc.ctex", "res://.godot/imported/Cyber Pasqually_eyes.png-011f6cf7241e851c250440f1f5f1f514.etc2.ctex"]
 
 [params]
 

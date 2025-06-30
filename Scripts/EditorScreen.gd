@@ -409,6 +409,68 @@ var ptt_default_cosmetics = {
 			"Munch/Munch/Skeleton3D/Shoes": true,
 		},
 	},
+	
+	"Pasqually Body":
+	{
+		"PTT":
+		{
+			"Pasqually/Pasqually/Skeleton3D/PTT Torso": true,
+			"Pasqually/Pasqually/Skeleton3D/PTT Arms": true,
+			"Pasqually/Pasqually/Skeleton3D/PTT Left Hand": true,
+			"Pasqually/Pasqually/Skeleton3D/PTT Right Hand": true,
+			"Pasqually/Pasqually/Skeleton3D/Modern Torso": false,
+			"Pasqually/Pasqually/Skeleton3D/Modern Arms": false,
+			"Pasqually/Pasqually/Skeleton3D/Modern Left Hand": false,
+			"Pasqually/Pasqually/Skeleton3D/Modern Right Hand": false,
+		},
+		"Modern":
+		{
+			"Munch/Munch/Skeleton3D/PTT Torso": false,
+			"Munch/Munch/Skeleton3D/PTT Arms": false,
+			"Munch/Munch/Skeleton3D/PTT Left Hand": false,
+			"Munch/Munch/Skeleton3D/PTT Right Hand": false,
+			"Munch/Munch/Skeleton3D/Modern Torso": true,
+			"Munch/Munch/Skeleton3D/Modern Arms": true,
+			"Munch/Munch/Skeleton3D/Modern Left Hand": true,
+			"Munch/Munch/Skeleton3D/Modern Right Hand": true,
+		},
+	},
+	
+	"Pasqually Legs":
+	{
+		"None":
+		{
+			"Pasqually/Pasqually/Skeleton3D/Shoes": false,
+		},
+	},
+	
+	"Pasqually Held Item":
+	{
+		"Accordion":
+		{
+			"Pasqually/Pasqually/Skeleton3D/Spoons": false,
+			"Pasqually/Pasqually/Skeleton3D/Drumsticks": false,
+			"Pasqually/Pasqually/Skeleton3D/Accordion": true,
+		},
+		"None":
+		{
+			"Pasqually/Pasqually/Skeleton3D/Spoons": false,
+			"Pasqually/Pasqually/Skeleton3D/Drumsticks": false,
+			"Pasqually/Pasqually/Skeleton3D/Accordion": false,
+		},
+		"Spoons":
+		{
+			"Pasqually/Pasqually/Skeleton3D/Spoons": true,
+			"Pasqually/Pasqually/Skeleton3D/Drumsticks": false,
+			"Pasqually/Pasqually/Skeleton3D/Accordion": false,
+		},
+		"Drumsticks":
+		{
+			"Pasqually/Pasqually/Skeleton3D/Spoons": false,
+			"Pasqually/Pasqually/Skeleton3D/Drumsticks": true,
+			"Pasqually/Pasqually/Skeleton3D/Accordion": false,
+		},
+	},
 }
 
 var stages_info = {
@@ -792,6 +854,14 @@ var stages_info = {
 			30: { "bot": "Jasper", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
 			31: { "bot": "Jasper", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
 			32: { "bot": "Jasper", "movement": "Strum", "flow_in": 2.0, "flow_out": 1.0 },
+			33: { "bot": "Pasqually", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+			34: { "bot": "Pasqually", "movement": "Head Left", "flow_in": 1.0, "flow_out": 1.0 },
+			35: { "bot": "Pasqually", "movement": "Head Right", "flow_in": 1.0, "flow_out": 1.0 },
+			36: { "bot": "Pasqually", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+			37: { "bot": "Pasqually", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+			38: { "bot": "Pasqually", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+			39: { "bot": "Pasqually", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
+			40: { "bot": "Pasqually", "movement": "Left Arm", "flow_in": 2.0, "flow_out": 1.0 },
 			41: { "bot": "Warblettes", "movement": "Mouth", "flow_in": 4.0, "flow_out": 3.0 },
 			44: { "bot": "Warblettes", "movement": "Body Rock", "flow_in": 1.0, "flow_out": 1.0 },
 			50: { "bot": "Spots", "movement": "Chuck", "flow_in": "None", "flow_out": "None" },
@@ -868,6 +938,14 @@ var stages_info = {
 			30: { "bot": "Jasper", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
 			31: { "bot": "Jasper", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
 			32: { "bot": "Jasper", "movement": "Strum", "flow_in": 2.0, "flow_out": 1.0 },
+			33: { "bot": "Pasqually", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+			34: { "bot": "Pasqually", "movement": "Head Left", "flow_in": 1.0, "flow_out": 1.0 },
+			35: { "bot": "Pasqually", "movement": "Head Right", "flow_in": 1.0, "flow_out": 1.0 },
+			36: { "bot": "Pasqually", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+			37: { "bot": "Pasqually", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+			38: { "bot": "Pasqually", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+			39: { "bot": "Pasqually", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
+			40: { "bot": "Pasqually", "movement": "Left Arm", "flow_in": 2.0, "flow_out": 1.0 },
 			50: { "bot": "Spots", "movement": "Chuck", "flow_in": "None", "flow_out": "None" },
 			51: { "bot": "Spots", "movement": "Helen", "flow_in": "None", "flow_out": "None" },
 			52: { "bot": "Spots", "movement": "Munch", "flow_in": "None", "flow_out": "None" },
@@ -1120,6 +1198,9 @@ func _on_showtape_save_out_browse_button_pressed() -> void:
 	$SaveShowtapeFileDialog.show()
 
 func _on_showtape_save_create_button_pressed() -> void:
+	if ($ShowtapeSaveScreen/DialogPanel/OutFilePath.text == ""):
+		$NoFileSpecified.show()
+		return
 	var header = "UST,2,"+show_name.replace(",", "_").replace(";", "_")+","+stages_info[current_stage]["ust_type"]+";"
 	var data_out_string = save_data()
 	var file = FileAccess.open($ShowtapeSaveScreen/DialogPanel/OutFilePath.text, FileAccess.WRITE)

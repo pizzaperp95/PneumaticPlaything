@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n8fyvmnwkd5f"
-path.s3tc="res://.godot/imported/Cyberamic Chuck_eyes.png-833864a46a4992a27ec42be8deaf2902.s3tc.ctex"
-path.etc2="res://.godot/imported/Cyberamic Chuck_eyes.png-833864a46a4992a27ec42be8deaf2902.etc2.ctex"
+uid="uid://pm7or2yiqsnl"
+path.s3tc="res://.godot/imported/Cyber Chuck_jaw.png-b72ed5871a8cb53e4437f2a131178180.s3tc.ctex"
+path.etc2="res://.godot/imported/Cyber Chuck_jaw.png-b72ed5871a8cb53e4437f2a131178180.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "8f35776d2432ce4abf4dff4fb3d16c00"
+"md5": "dce09f49a6e472d9d20fd12ae0105263"
 }
 
 [deps]
 
-source_file="res://Models/Cyberamics/Cyberamic Chuck_eyes.png"
-dest_files=["res://.godot/imported/Cyberamic Chuck_eyes.png-833864a46a4992a27ec42be8deaf2902.s3tc.ctex", "res://.godot/imported/Cyberamic Chuck_eyes.png-833864a46a4992a27ec42be8deaf2902.etc2.ctex"]
+source_file="res://Models/Cyberamics/Cyber Chuck_jaw.png"
+dest_files=["res://.godot/imported/Cyber Chuck_jaw.png-b72ed5871a8cb53e4437f2a131178180.s3tc.ctex", "res://.godot/imported/Cyber Chuck_jaw.png-b72ed5871a8cb53e4437f2a131178180.etc2.ctex"]
 
 [params]
 
