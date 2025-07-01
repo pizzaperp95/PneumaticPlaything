@@ -813,7 +813,7 @@ var stages_info = {
 	},
 	"Balcony Stage": 
 	{
-		"bits": 61, 
+		"bits": 69, 
 		"scene": "res://Scenes/Stages/Balcony.tscn", 
 		"scene_ref_base": "SubViewport/Balcony/",
 		"camera_count": 6,
@@ -897,7 +897,7 @@ var stages_info = {
 	},
 	"C-Stage": 
 	{
-		"bits": 57, 
+		"bits": 65, 
 		"scene": "res://Scenes/Stages/CStage.tscn", 
 		"scene_ref_base": "SubViewport/CStage/",
 		"camera_count": 5,
