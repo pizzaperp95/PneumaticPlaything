@@ -425,14 +425,14 @@ var ptt_default_cosmetics = {
 		},
 		"Modern":
 		{
-			"Munch/Munch/Skeleton3D/PTT Torso": false,
-			"Munch/Munch/Skeleton3D/PTT Arms": false,
-			"Munch/Munch/Skeleton3D/PTT Left Hand": false,
-			"Munch/Munch/Skeleton3D/PTT Right Hand": false,
-			"Munch/Munch/Skeleton3D/Modern Torso": true,
-			"Munch/Munch/Skeleton3D/Modern Arms": true,
-			"Munch/Munch/Skeleton3D/Modern Left Hand": true,
-			"Munch/Munch/Skeleton3D/Modern Right Hand": true,
+			"Pasqually/Pasqually/Skeleton3D/PTT Torso": false,
+			"Pasqually/Pasqually/Skeleton3D/PTT Arms": false,
+			"Pasqually/Pasqually/Skeleton3D/PTT Left Hand": false,
+			"Pasqually/Pasqually/Skeleton3D/PTT Right Hand": false,
+			"Pasqually/Pasqually/Skeleton3D/Modern Torso": true,
+			"Pasqually/Pasqually/Skeleton3D/Modern Arms": true,
+			"Pasqually/Pasqually/Skeleton3D/Modern Left Hand": true,
+			"Pasqually/Pasqually/Skeleton3D/Modern Right Hand": true,
 		},
 	},
 	
