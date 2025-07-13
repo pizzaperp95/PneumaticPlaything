@@ -247,3 +247,130 @@ var CStage = {
 	],
 	"cosmetic_defaults": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
 }
+
+var ProtoRoadStage = {
+	"bits": 41, 
+	"scene": "res://Scenes/Stages/ProtoRoadStage.tscn", 
+	"scene_ref_base": "SubViewport/ProtoRoadStage/",
+	"camera_count": 6,
+	
+	"ust_type": "Cyberamics",
+	
+	"bit_mapping":
+	{
+		1: { "bot": "Chuck", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+		2: { "bot": "Chuck", "movement": "Head Left", "flow_in": 1.5, "flow_out": 1.5 },
+		3: { "bot": "Chuck", "movement": "Head Right", "flow_in": 1.5, "flow_out": 1.5 },
+		4: { "bot": "Chuck", "movement": "Head Up", "flow_in": 2.0, "flow_out": 1.0 },
+		5: { "bot": "Chuck", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+		6: { "bot": "Chuck", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+		7: { "bot": "Chuck", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+		8: { "bot": "Chuck", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
+		9: { "bot": "Helen", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+		10: { "bot": "Helen", "movement": "Head Left", "flow_in": 1.5, "flow_out": 1.5 },
+		11: { "bot": "Helen", "movement": "Head Right", "flow_in": 1.5, "flow_out": 1.5 },
+		12: { "bot": "Helen", "movement": "Head Up", "flow_in": 2.0, "flow_out": 1.0 },
+		13: { "bot": "Helen", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+		14: { "bot": "Helen", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+		15: { "bot": "Helen", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+		16: { "bot": "Helen", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
+		17: { "bot": "Munch", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+		18: { "bot": "Munch", "movement": "Head Left", "flow_in": 1.5, "flow_out": 1.5 },
+		19: { "bot": "Munch", "movement": "Head Right", "flow_in": 1.5, "flow_out": 1.5 },
+		20: { "bot": "Munch", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+		21: { "bot": "Munch", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+		22: { "bot": "Munch", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+		23: { "bot": "Munch", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
+		24: { "bot": "Munch", "movement": "Left Arm", "flow_in": 2.0, "flow_out": 1.0 },
+		25: { "bot": "Jasper", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+		26: { "bot": "Jasper", "movement": "Head Left", "flow_in": 1.5, "flow_out": 1.5 },
+		27: { "bot": "Jasper", "movement": "Head Right", "flow_in": 1.5, "flow_out": 1.5 },
+		28: { "bot": "Jasper", "movement": "Head Up", "flow_in": 2.0, "flow_out": 1.0 },
+		29: { "bot": "Jasper", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+		30: { "bot": "Jasper", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+		31: { "bot": "Jasper", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+		32: { "bot": "Jasper", "movement": "Strum", "flow_in": 2.0, "flow_out": 1.0 },
+		33: { "bot": "Pasqually", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+		34: { "bot": "Pasqually", "movement": "Head Left", "flow_in": 1.5, "flow_out": 1.5 },
+		35: { "bot": "Pasqually", "movement": "Head Right", "flow_in": 1.5, "flow_out": 1.5 },
+		36: { "bot": "Pasqually", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+		37: { "bot": "Pasqually", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+		38: { "bot": "Pasqually", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+		39: { "bot": "Pasqually", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
+		40: { "bot": "Pasqually", "movement": "Left Arm", "flow_in": 2.0, "flow_out": 1.0 },
+		80: { "bot": "Special", "movement": "Neon Sign", "flow_in": "None", "flow_out": "None" },
+	},
+	
+	"cosmetics": 
+	[
+		Cosmetics.CyberChuck,
+		Cosmetics.CyberHelen,
+		Cosmetics.CyberMunch,
+		Cosmetics.CyberJasper,
+		Cosmetics.CyberPasqually
+	],
+	"cosmetic_defaults": [ 1, 2, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 3, 2, 0, 1, 0, 0, 0, 0, 2 ]
+}
+
+var Cyber3Stage = {
+	"bits": 40, 
+	"scene": "res://Scenes/Stages/Cyber3Stage.tscn", 
+	"scene_ref_base": "SubViewport/Cyber3Stage/",
+	"camera_count": 4,
+	
+	"ust_type": "Cyberamics",
+	
+	"bit_mapping":
+	{
+		1: { "bot": "Chuck", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+		2: { "bot": "Chuck", "movement": "Head Left", "flow_in": 1.5, "flow_out": 1.5 },
+		3: { "bot": "Chuck", "movement": "Head Right", "flow_in": 1.5, "flow_out": 1.5 },
+		4: { "bot": "Chuck", "movement": "Head Up", "flow_in": 2.0, "flow_out": 1.0 },
+		5: { "bot": "Chuck", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+		6: { "bot": "Chuck", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+		7: { "bot": "Chuck", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+		8: { "bot": "Chuck", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
+		9: { "bot": "Helen", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+		10: { "bot": "Helen", "movement": "Head Left", "flow_in": 1.5, "flow_out": 1.5 },
+		11: { "bot": "Helen", "movement": "Head Right", "flow_in": 1.5, "flow_out": 1.5 },
+		12: { "bot": "Helen", "movement": "Head Up", "flow_in": 2.0, "flow_out": 1.0 },
+		13: { "bot": "Helen", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+		14: { "bot": "Helen", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+		15: { "bot": "Helen", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+		16: { "bot": "Helen", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
+		17: { "bot": "Munch", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+		18: { "bot": "Munch", "movement": "Head Left", "flow_in": 1.5, "flow_out": 1.5 },
+		19: { "bot": "Munch", "movement": "Head Right", "flow_in": 1.5, "flow_out": 1.5 },
+		20: { "bot": "Munch", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+		21: { "bot": "Munch", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+		22: { "bot": "Munch", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+		23: { "bot": "Munch", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
+		24: { "bot": "Munch", "movement": "Left Arm", "flow_in": 2.0, "flow_out": 1.0 },
+		25: { "bot": "Jasper", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+		26: { "bot": "Jasper", "movement": "Head Left", "flow_in": 1.5, "flow_out": 1.5 },
+		27: { "bot": "Jasper", "movement": "Head Right", "flow_in": 1.5, "flow_out": 1.5 },
+		28: { "bot": "Jasper", "movement": "Head Up", "flow_in": 2.0, "flow_out": 1.0 },
+		29: { "bot": "Jasper", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+		30: { "bot": "Jasper", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+		31: { "bot": "Jasper", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+		32: { "bot": "Jasper", "movement": "Strum", "flow_in": 2.0, "flow_out": 1.0 },
+		33: { "bot": "Pasqually", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+		34: { "bot": "Pasqually", "movement": "Head Left", "flow_in": 1.5, "flow_out": 1.5 },
+		35: { "bot": "Pasqually", "movement": "Head Right", "flow_in": 1.5, "flow_out": 1.5 },
+		36: { "bot": "Pasqually", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+		37: { "bot": "Pasqually", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+		38: { "bot": "Pasqually", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+		39: { "bot": "Pasqually", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
+		40: { "bot": "Pasqually", "movement": "Left Arm", "flow_in": 2.0, "flow_out": 1.0 },
+	},
+	
+	"cosmetics": 
+	[
+		Cosmetics.CyberChuck,
+		Cosmetics.CyberHelen,
+		Cosmetics.CyberMunch,
+		Cosmetics.CyberJasper,
+		Cosmetics.CyberPasqually
+	],
+	"cosmetic_defaults": [ 4, 4, 1, 1, 1, 2, 1, 2, 2, 2, 1, 2, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 3 ]
+}

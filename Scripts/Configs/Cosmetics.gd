@@ -477,6 +477,12 @@ var CyberJasper = {
 			"Jasper/Jasper/Skeleton3D/Straw Hat Large": false,
 			"Jasper/Jasper/Skeleton3D/Cowboy Hat": true,
 		},
+		"None":
+		{
+			"Jasper/Jasper/Skeleton3D/Straw Hat Small": false,
+			"Jasper/Jasper/Skeleton3D/Straw Hat Large": false,
+			"Jasper/Jasper/Skeleton3D/Cowboy Hat": false,
+		},
 	},
 	
 	"Jasper Shirt":

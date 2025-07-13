@@ -19,6 +19,8 @@ var stages_info = {
 	"Chuck E's Corner": Stages.ChuckEsCorner,
 	"Balcony Stage": Stages.BalconyStage,
 	"C-Stage": Stages.CStage,
+	"Prototype Road Stage": Stages.ProtoRoadStage,
+	"Cyber 3-Stage": Stages.Cyber3Stage
 }
 
 signal step(amount: int)
