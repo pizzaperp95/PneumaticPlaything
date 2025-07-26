@@ -47,35 +47,35 @@ visible = false
 environment = SubResource("Environment_aswoc")
 
 [node name="Room Lights" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 2)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Room Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3.5, 2)
 light_color = Color(1, 0.960784, 0.85098, 1)
 light_energy = 0.5
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Room Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 3.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 3.5, 2)
 light_color = Color(1, 0.960784, 0.85098, 1)
 light_energy = 0.5
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Room Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 2)
 light_color = Color(1, 0.960784, 0.85098, 1)
 light_energy = 0.5
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="Room Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.5, 4)
 light_color = Color(1, 0.960784, 0.85098, 1)
 light_energy = 0.5
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="Room Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 3.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 3.5, 4)
 light_color = Color(1, 0.960784, 0.85098, 1)
 light_energy = 0.5
 
 [node name="Angle 1" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, -0.5, 2.75, 7.5)
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -0.5, 3.75, 7.5)
 current = true
 fov = 60.0
 
