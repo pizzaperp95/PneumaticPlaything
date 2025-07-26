@@ -1,0 +1,103 @@
+[gd_scene load_steps=7 format=3 uid="uid://dtkqaw5533rxy"]
+
+[ext_resource type="StyleBox" uid="uid://d17amc25o63p1" path="res://UI/Themes/MovementsPanelOverride.tres" id="1_d1xev"]
+[ext_resource type="Script" uid="uid://tn3aaldu7mm2" path="res://Scripts/MovementRow.gd" id="1_rm5t0"]
+[ext_resource type="Texture2D" uid="uid://cn5xdrxdv622h" path="res://UI/SmallX.png" id="2_e7anl"]
+[ext_resource type="Texture2D" uid="uid://d007317123e27" path="res://UI/SmallLock.png" id="3_ldhn8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rm5t0"]
+bg_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldhn8"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 0.752941, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="Row" type="Panel"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+script = ExtResource("1_rm5t0")
+
+[node name="ActiveBG" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 260.0
+offset_bottom = 36.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rm5t0")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 260.0
+offset_bottom = 36.0
+tooltip_text = "Click to bind a key to this movement"
+text = "0 - Name (Unbound)"
+alignment = 0
+text_overrun_behavior = 3
+clip_text = true
+
+[node name="ClearButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 4.0
+offset_right = 260.0
+offset_bottom = 20.0
+tooltip_text = "Clear this row"
+icon = ExtResource("2_e7anl")
+
+[node name="LockButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 20.0
+offset_right = 260.0
+offset_bottom = 36.0
+tooltip_text = "Prevent recording over"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ldhn8")
+toggle_mode = true
+icon = ExtResource("3_ldhn8")
+
+[node name="MovementsBG" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 264.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_d1xev")
+
+[node name="InvisibleMask" type="Control" parent="MovementsBG"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MovementsHandle" type="Control" parent="MovementsBG/InvisibleMask"]
+anchors_preset = 0
+offset_left = 120.0
+offset_right = 120.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ClearButton" to="." method="_on_clear_button_pressed"]

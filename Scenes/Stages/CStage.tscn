@@ -1,0 +1,302 @@
+[gd_scene load_steps=10 format=3 uid="uid://jjd2nlorrml3"]
+
+[ext_resource type="PackedScene" uid="uid://ba7i8p8olef2s" path="res://Models/Cyberamics/Cyber Jasper.glb" id="1_nkhpr"]
+[ext_resource type="PackedScene" uid="uid://c5fgw7t45p7r6" path="res://Models/Cyberamics/Cyber Chuck.glb" id="4_nkhpr"]
+[ext_resource type="PackedScene" uid="uid://d34xfaignny8j" path="res://Models/Cyberamics/Cyber Helen.glb" id="4_vmyhs"]
+[ext_resource type="Script" uid="uid://du3pqtf3jixvl" path="res://Scripts/CyberamicController.gd" id="5_bawsr"]
+[ext_resource type="PackedScene" uid="uid://doxu4tb5jfoqp" path="res://Models/Cyberamics/Cyber Munch.glb" id="5_byvoj"]
+[ext_resource type="PackedScene" uid="uid://bp5u5t6yu4ejy" path="res://Models/Cyberamics/Cyber Pasqually.glb" id="6_nkhpr"]
+[ext_resource type="PackedScene" uid="uid://dfw3sbg135u2h" path="res://Models/CStage/CStage.glb" id="7_1s7sj"]
+[ext_resource type="Script" uid="uid://d1p4ite8ts2wi" path="res://Scripts/LightController.gd" id="7_fp2rj"]
+
+[sub_resource type="Environment" id="Environment_w3m2i"]
+ambient_light_source = 1
+
+[node name="CStage" type="Node3D"]
+
+[node name="Munch" parent="." instance=ExtResource("5_byvoj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 3, 0)
+script = ExtResource("5_bawsr")
+
+[node name="Jasper" parent="." instance=ExtResource("1_nkhpr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 3, 0)
+script = ExtResource("5_bawsr")
+
+[node name="Chuck" parent="." instance=ExtResource("4_nkhpr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+script = ExtResource("5_bawsr")
+
+[node name="Helen" parent="." instance=ExtResource("4_vmyhs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 3, 0)
+script = ExtResource("5_bawsr")
+
+[node name="Pasqually" parent="." instance=ExtResource("6_nkhpr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 3, 0)
+script = ExtResource("5_bawsr")
+
+[node name="Spots" type="Node3D" parent="."]
+script = ExtResource("7_fp2rj")
+
+[node name="Chuck" type="SpotLight3D" parent="Spots"]
+transform = Transform3D(1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, 0, 5.5, 5)
+visible = false
+light_color = Color(1, 0.960784, 0.85098, 1)
+light_energy = 0.8
+spot_range = 8.0
+spot_attenuation = -1.0
+spot_angle = 7.5
+
+[node name="Helen" type="SpotLight3D" parent="Spots"]
+transform = Transform3D(1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, 2.25, 5.5, 5)
+visible = false
+light_color = Color(1, 0.960784, 0.85098, 1)
+light_energy = 0.8
+spot_range = 8.0
+spot_attenuation = -1.0
+spot_angle = 7.5
+
+[node name="Jasper" type="SpotLight3D" parent="Spots"]
+transform = Transform3D(1, -5.67102e-08, 2.31578e-07, -9.98193e-10, 0.970296, 0.241922, -2.38419e-07, -0.241922, 0.970296, -2.25, 5.5, 5)
+visible = false
+light_color = Color(1, 0.960784, 0.85098, 1)
+light_energy = 0.8
+spot_range = 8.0
+spot_attenuation = -1.0
+spot_angle = 7.5
+
+[node name="Munch" type="SpotLight3D" parent="Spots"]
+transform = Transform3D(1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, -4.5, 5.5, 5)
+visible = false
+light_color = Color(1, 0.960784, 0.85098, 1)
+light_energy = 0.8
+spot_range = 8.0
+spot_attenuation = -1.0
+spot_angle = 7.5
+
+[node name="Pasqually" type="SpotLight3D" parent="Spots"]
+transform = Transform3D(1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, 4.5, 5.5, 5)
+visible = false
+light_color = Color(1, 0.960784, 0.85098, 1)
+light_energy = 0.8
+spot_range = 8.0
+spot_attenuation = -1.0
+spot_angle = 7.5
+
+[node name="Color Spots" type="Node3D" parent="."]
+script = ExtResource("7_fp2rj")
+
+[node name="Chuck" type="SpotLight3D" parent="Color Spots"]
+transform = Transform3D(1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, 0, 5.5, 5)
+visible = false
+light_color = Color(0.734652, 0.426335, 0.999996, 1)
+light_energy = 0.8
+spot_range = 8.0
+spot_attenuation = -1.0
+spot_angle = 7.5
+
+[node name="Chuck 2" type="SpotLight3D" parent="Color Spots"]
+transform = Transform3D(1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, 0, 5.5, 5)
+visible = false
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.8
+spot_range = 8.0
+spot_attenuation = -1.0
+spot_angle = 7.5
+
+[node name="Helen" type="SpotLight3D" parent="Color Spots"]
+transform = Transform3D(1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, 2.25, 5.5, 5)
+visible = false
+light_color = Color(0.734652, 0.426335, 0.999996, 1)
+light_energy = 0.8
+spot_range = 8.0
+spot_attenuation = -1.0
+spot_angle = 7.5
+
+[node name="Jasper" type="SpotLight3D" parent="Color Spots"]
+transform = Transform3D(1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, -2.25, 5.5, 5)
+visible = false
+light_color = Color(0.734652, 0.426335, 0.999996, 1)
+light_energy = 0.8
+spot_range = 8.0
+spot_attenuation = -1.0
+spot_angle = 7.5
+
+[node name="Munch" type="SpotLight3D" parent="Color Spots"]
+transform = Transform3D(1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, -4.5, 5.5, 5)
+visible = false
+light_color = Color(0.734652, 0.426335, 0.999996, 1)
+light_energy = 0.8
+spot_range = 8.0
+spot_attenuation = -1.0
+spot_angle = 7.5
+
+[node name="Pasqually" type="SpotLight3D" parent="Color Spots"]
+transform = Transform3D(1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, 4.5, 5.5, 5)
+visible = false
+light_color = Color(0.734652, 0.426335, 0.999996, 1)
+light_energy = 0.8
+spot_range = 8.0
+spot_attenuation = -1.0
+spot_angle = 7.5
+
+[node name="Valence" type="Node3D" parent="."]
+script = ExtResource("7_fp2rj")
+
+[node name="L" type="SpotLight3D" parent="Valence"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -2.25, 5.5, 0.25)
+visible = false
+light_color = Color(1, 0, 0, 1)
+spot_attenuation = -1.0
+spot_angle = 15.0
+
+[node name="L Center" type="SpotLight3D" parent="Valence"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -1.2, 5.5, 0.5)
+visible = false
+light_color = Color(1, 0, 0, 1)
+spot_attenuation = -1.0
+spot_angle = 15.0
+
+[node name="Center" type="SpotLight3D" parent="Valence"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 5.5, 0.75)
+visible = false
+light_color = Color(1, 0, 0, 1)
+spot_attenuation = -1.0
+spot_angle = 15.0
+
+[node name="R Center" type="SpotLight3D" parent="Valence"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 1.2, 5.5, 0.5)
+visible = false
+light_color = Color(1, 0, 0, 1)
+spot_attenuation = -1.0
+spot_angle = 15.0
+
+[node name="R" type="SpotLight3D" parent="Valence"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 2.25, 5.5, 0.25)
+visible = false
+light_color = Color(1, 0, 0, 1)
+spot_attenuation = -1.0
+spot_angle = 15.0
+
+[node name="Backdrop" type="Node3D" parent="."]
+script = ExtResource("7_fp2rj")
+
+[node name="L Blue" type="SpotLight3D" parent="Backdrop"]
+transform = Transform3D(0.866025, 0.433013, 0.25, -7.18775e-09, 0.5, -0.866025, -0.5, 0.75, 0.433013, -2.5, 3, -1.1)
+visible = false
+light_color = Color(0, 0, 1, 1)
+spot_attenuation = 2.0
+spot_angle = 30.0
+spot_angle_attenuation = 0.15
+
+[node name="L Amber" type="SpotLight3D" parent="Backdrop"]
+transform = Transform3D(0.866025, 0.433013, 0.25, -7.18775e-09, 0.5, -0.866025, -0.5, 0.75, 0.433013, -2, 3, -1.1)
+visible = false
+light_color = Color(1, 0.74902, 0, 1)
+spot_attenuation = 2.0
+spot_angle = 30.0
+spot_angle_attenuation = 0.15
+
+[node name="L Red" type="SpotLight3D" parent="Backdrop"]
+transform = Transform3D(0.866025, 0.433013, 0.25, -7.18775e-09, 0.5, -0.866025, -0.5, 0.75, 0.433013, -1.5, 3, -1.1)
+visible = false
+light_color = Color(1, 0, 0, 1)
+spot_attenuation = 2.0
+spot_angle = 30.0
+spot_angle_attenuation = 0.15
+
+[node name="C Blue" type="SpotLight3D" parent="Backdrop"]
+transform = Transform3D(1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, -0.5, 3, -1.1)
+visible = false
+light_color = Color(0, 0, 1, 1)
+spot_attenuation = 2.0
+spot_angle = 30.0
+spot_angle_attenuation = 0.15
+
+[node name="C Amber" type="SpotLight3D" parent="Backdrop"]
+transform = Transform3D(1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, 0, 3, -1.1)
+visible = false
+light_color = Color(1, 0.74902, 0, 1)
+spot_attenuation = 2.0
+spot_angle = 30.0
+spot_angle_attenuation = 0.15
+
+[node name="C Red" type="SpotLight3D" parent="Backdrop"]
+transform = Transform3D(1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, 0.5, 3, -1.1)
+visible = false
+light_color = Color(1, 0, 0, 1)
+spot_attenuation = 2.0
+spot_angle = 30.0
+spot_angle_attenuation = 0.15
+
+[node name="R Blue" type="SpotLight3D" parent="Backdrop"]
+transform = Transform3D(0.866025, -0.433013, -0.25, 1.82764e-08, 0.5, -0.866025, 0.5, 0.75, 0.433013, 1.5, 3, -1.1)
+visible = false
+light_color = Color(0, 0, 1, 1)
+spot_attenuation = 2.0
+spot_angle = 30.0
+spot_angle_attenuation = 0.15
+
+[node name="R Amber" type="SpotLight3D" parent="Backdrop"]
+transform = Transform3D(0.866025, -0.433013, -0.25, 1.82764e-08, 0.5, -0.866025, 0.5, 0.75, 0.433013, 2, 3, -1.1)
+visible = false
+light_color = Color(1, 0.74902, 0, 1)
+spot_attenuation = 2.0
+spot_angle = 30.0
+spot_angle_attenuation = 0.15
+
+[node name="R Red" type="SpotLight3D" parent="Backdrop"]
+transform = Transform3D(0.866025, -0.433013, -0.25, 1.82764e-08, 0.5, -0.866025, 0.5, 0.75, 0.433013, 2.5, 3, -1.1)
+visible = false
+light_color = Color(1, 0, 0, 1)
+spot_attenuation = 2.0
+spot_angle = 30.0
+spot_angle_attenuation = 0.15
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_w3m2i")
+
+[node name="Room Lights" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4.5, 3)
+light_color = Color(1, 0.960784, 0.85098, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4.5, 3)
+light_color = Color(1, 0.960784, 0.85098, 1)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 3)
+light_color = Color(1, 0.960784, 0.85098, 1)
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.86654, 4.5, 0.906235)
+light_color = Color(1, 0.960784, 0.85098, 1)
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 4.5, 1)
+light_color = Color(1, 0.960784, 0.85098, 1)
+
+[node name="CStage" parent="." instance=ExtResource("7_1s7sj")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="Angle 1" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 4.75, 3.5)
+current = true
+fov = 60.0
+
+[node name="Angle 2" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -4.5, 4.75, 3)
+fov = 60.0
+
+[node name="Angle 3" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 4.5, 4.75, 3)
+fov = 60.0
+
+[node name="Angle 4" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.984267, 0.17669, 0, -0.17669, 0.984267, 0, 4.75, 6.32348)
+fov = 60.0
+
+[node name="Angle 5" type="Camera3D" parent="."]
+transform = Transform3D(0.965016, -0.0450779, 0.258285, 0, 0.985109, 0.171929, -0.262189, -0.165914, 0.950647, 3, 4.75, 7)
+fov = 60.0

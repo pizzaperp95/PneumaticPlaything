@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbf3x44mvo701"]
+
+[ext_resource type="Script" uid="uid://cg157l4uo7ki8" path="res://Scripts/MovementButton.gd" id="1_l718a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1pi70"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5m0fm"]
+bg_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="MovementButton" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 40.0
+script = ExtResource("1_l718a")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 40.0
+
+[node name="IndicatorPanel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 4.0
+offset_right = 252.0
+offset_bottom = 36.0
+
+[node name="Black" type="Panel" parent="Panel/IndicatorPanel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 28.0
+offset_bottom = 28.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1pi70")
+
+[node name="Green" type="Panel" parent="Panel/IndicatorPanel"]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 28.0
+offset_bottom = 28.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5m0fm")
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 216.0
+offset_bottom = 36.0
+text = "Movement"
+
+[connection signal="button_down" from="Panel/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Panel/Button" to="." method="_on_button_button_up"]
