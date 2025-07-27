@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Pneumatic Plaything"
 config/description="Animatronic Simulator"
-config/version="v0.7"
+config/version="v0.6.1"
 run/main_scene="uid://oiehbor0dlqx"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/show_image=false
