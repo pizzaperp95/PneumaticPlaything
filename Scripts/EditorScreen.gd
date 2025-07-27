@@ -170,6 +170,14 @@ func _showtape_menu_button_pressed(id: int) -> void:
 		2: #save
 			if (showtape_loaded): $ShowtapeSaveScreen.visible = true
 			else: $NoShowtapeLoadedDialog.show()
+		3: # controls
+			$ControlsScreen.visible = true
+		4: # exit menu
+			if (showtape_loaded): $ExitMenuOverwriteConfirmationDialog.show()
+			else: get_tree().change_scene_to_file("res://Scenes/GUI/MainMenu.tscn")
+		5: # exit desktop
+			if (showtape_loaded): $ExitDesktopOverwriteConfirmationDialog.show()
+			else: get_tree().quit()
 
 
 func _on_showtape_new_audio_browse_button_pressed() -> void:
@@ -496,3 +504,11 @@ func index_s_get_safe(cindex: int, data: Dictionary) -> Array[bool]:
 	var out = data.get(cindex)
 	if (out == null): return [ false ]
 	return out
+
+
+func _on_exit_menu_overwrite_confirmation_dialog_confirmed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/GUI/MainMenu.tscn")
+
+
+func _on_exit_desktop_overwrite_confirmation_dialog_2_confirmed() -> void:
+	get_tree().quit()

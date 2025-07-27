@@ -1,11 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://oiehbor0dlqx"]
+[gd_scene load_steps=26 format=3 uid="uid://oiehbor0dlqx"]
 
 [ext_resource type="Script" uid="uid://dfiwoln8mdwm8" path="res://Scripts/EditorScreen.gd" id="1_sd512"]
 [ext_resource type="Theme" uid="uid://dbgs4id7y5d1c" path="res://UI/Themes/Dark.tres" id="1_v0ton"]
 [ext_resource type="Texture2D" uid="uid://xllpr3qc064c" path="res://UI/Play.png" id="3_g6u4d"]
 [ext_resource type="Texture2D" uid="uid://dgacnkv2dc65s" path="res://UI/PlayBackwards.png" id="3_mr8sb"]
 [ext_resource type="Texture2D" uid="uid://dts4eh6hyt8p3" path="res://UI/SkipBackwards.png" id="3_r4ytj"]
-[ext_resource type="Texture2D" uid="uid://bpb3xn54kpxoe" path="res://UI/icon-32px.png" id="4_20noo"]
 [ext_resource type="Texture2D" uid="uid://bwhgy4u37jmo1" path="res://UI/Pause.png" id="4_ba3jn"]
 [ext_resource type="Texture2D" uid="uid://s3yr2wasxv03" path="res://UI/BlankCam.png" id="4_v0ton"]
 [ext_resource type="Texture2D" uid="uid://dhx2v2fd0egxd" path="res://UI/FastBackwards.png" id="4_wy7jo"]
@@ -99,6 +98,22 @@ ok_button_text = "Proceed"
 dialog_text = "You have unsaved data! Are you sure you want to proceed?"
 cancel_button_text = "Do Not"
 
+[node name="ExitMenuOverwriteConfirmationDialog" type="ConfirmationDialog" parent="."]
+auto_translate_mode = 1
+initial_position = 2
+size = Vector2i(472, 100)
+ok_button_text = "Proceed"
+dialog_text = "You have unsaved data! Are you sure you want to proceed?"
+cancel_button_text = "Do Not"
+
+[node name="ExitDesktopOverwriteConfirmationDialog2" type="ConfirmationDialog" parent="."]
+auto_translate_mode = 1
+initial_position = 2
+size = Vector2i(472, 100)
+ok_button_text = "Proceed"
+dialog_text = "You have unsaved data! Are you sure you want to proceed?"
+cancel_button_text = "Do Not"
+
 [node name="FileDoesntExistDialog" type="AcceptDialog" parent="."]
 initial_position = 2
 dialog_text = "The specified file does not exist."
@@ -149,13 +164,17 @@ offset_right = -8.0
 offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Welcome to Pneumatic Plaything Animatronic Simulator!
+text = "Welcome to the Pneumatic Plaything Editor!
 
-You can press the buttons to the side to 
-control the bots manually, adjust their flows, 
-change the camera angle, or switch their cosmetics.
+You can use the buttons on the top bar to change the
+stage, load a showtape, or exit to the menu.
 
-Open the Controls menu to see all of the keybinds."
+The buttons on the side can be used to manually
+control aspects of the show, such as flows, the
+camera, and cosmetics.
+
+Open the Controls menu (under the Menu button) to see
+all of the keybinds."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -225,12 +244,25 @@ popup/item_6/id = 6
 popup/item_7/text = "Chuck E's Corner"
 popup/item_7/id = 7
 
-[node name="MenuButton" type="MenuButton" parent="MenuBar"]
+[node name="EditingLabel" type="Label" parent="MenuBar"]
 layout_mode = 0
 offset_left = 264.0
 offset_top = 4.0
-offset_right = 392.0
+offset_right = 520.0
 offset_bottom = 36.0
+text = "No showtape loaded."
+vertical_alignment = 1
+
+[node name="ShowtapeButton" type="MenuButton" parent="MenuBar"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -264.0
+offset_top = 4.0
+offset_right = -136.0
+offset_bottom = 36.0
+grow_horizontal = 0
 text = "Showtape"
 flat = false
 item_count = 3
@@ -241,59 +273,26 @@ popup/item_1/id = 1
 popup/item_2/text = "Save"
 popup/item_2/id = 2
 
-[node name="ControlsButton" type="Button" parent="MenuBar"]
-layout_mode = 0
-offset_left = 396.0
-offset_top = 4.0
-offset_right = 524.0
-offset_bottom = 36.0
-text = "Controls"
-
-[node name="CreditsButton" type="Button" parent="MenuBar"]
-layout_mode = 0
-offset_left = 528.0
-offset_top = 4.0
-offset_right = 656.0
-offset_bottom = 36.0
-text = "Credits"
-
-[node name="Wordmark" type="Label" parent="MenuBar"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -264.0
-offset_top = -16.0
-offset_right = -40.0
-offset_bottom = 16.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Pneumatic Plaything v1.0"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="EditingLabel" type="Label" parent="MenuBar"]
-layout_mode = 0
-offset_left = 660.0
-offset_top = 4.0
-offset_right = 899.0
-offset_bottom = 36.0
-text = "No showtape loaded."
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="MenuBar"]
+[node name="MenuButton" type="MenuButton" parent="MenuBar"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -36.0
+offset_left = -132.0
 offset_top = 4.0
 offset_right = -4.0
 offset_bottom = 36.0
 grow_horizontal = 0
-texture = ExtResource("4_20noo")
+text = "Menu
+"
+flat = false
+item_count = 3
+popup/item_0/text = "Controls"
+popup/item_0/id = 3
+popup/item_1/text = "Exit to Main Menu"
+popup/item_1/id = 4
+popup/item_2/text = "Exit to Desktop"
+popup/item_2/id = 5
 
 [node name="SequencerPanel" type="Panel" parent="."]
 layout_mode = 1
@@ -1119,9 +1118,9 @@ expand_mode = 2
 [connection signal="confirmed" from="NewOverwriteConfirmationDialog" to="." method="_on_new_overwrite_confirmation_dialog_confirmed"]
 [connection signal="confirmed" from="LoadOverwriteConfirmationDialog" to="." method="_on_load_overwrite_confirmation_dialog_confirmed"]
 [connection signal="confirmed" from="StageChangeOverwriteConfirmationDialog" to="." method="_on_stage_change_overwrite_confirmation_dialog_confirmed"]
+[connection signal="confirmed" from="ExitMenuOverwriteConfirmationDialog" to="." method="_on_exit_menu_overwrite_confirmation_dialog_confirmed"]
+[connection signal="confirmed" from="ExitDesktopOverwriteConfirmationDialog2" to="." method="_on_exit_desktop_overwrite_confirmation_dialog_2_confirmed"]
 [connection signal="item_selected" from="MenuBar/StageSelector" to="." method="_on_stage_selector_item_selected"]
-[connection signal="pressed" from="MenuBar/ControlsButton" to="." method="_on_controls_button_pressed"]
-[connection signal="pressed" from="MenuBar/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="SequencerPanel/TransportControls/Centered/StepBackwardsButton" to="." method="_on_step_backwards_button_pressed"]
 [connection signal="pressed" from="SequencerPanel/TransportControls/Centered/FastBackwardsButton" to="." method="_on_fast_backwards_button_pressed"]
 [connection signal="pressed" from="SequencerPanel/TransportControls/Centered/PlayBackwardsButton" to="." method="_on_play_backwards_button_pressed"]
