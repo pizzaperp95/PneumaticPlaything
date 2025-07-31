@@ -17,6 +17,11 @@
  - 1-Stage
  - Turntable 1-Stage
  - Cyberamic 3-Stage
+ 
+ - 3-Stage
+ - CU 1-Stage
+ 
+ - Great Transformation (as a mod)
 
 ## Planned
 
@@ -28,8 +33,6 @@
 
 ### 3-Stage
 
- - 3-Stage
- - CU 1-Stage
  - Hollywood 3-Stage
 
 

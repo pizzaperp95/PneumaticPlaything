@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://oiehbor0dlqx"]
 
 [ext_resource type="Script" uid="uid://dfiwoln8mdwm8" path="res://Scripts/EditorScreen.gd" id="1_sd512"]
-[ext_resource type="Theme" uid="uid://dbgs4id7y5d1c" path="res://UI/Themes/Dark.tres" id="1_v0ton"]
+[ext_resource type="Theme" uid="uid://dbgs4id7y5d1c" path="res://UI/Themes/EditorDark.tres" id="1_v0ton"]
 [ext_resource type="Texture2D" uid="uid://xllpr3qc064c" path="res://UI/Play.png" id="3_g6u4d"]
 [ext_resource type="Texture2D" uid="uid://dgacnkv2dc65s" path="res://UI/PlayBackwards.png" id="3_mr8sb"]
 [ext_resource type="Texture2D" uid="uid://dts4eh6hyt8p3" path="res://UI/SkipBackwards.png" id="3_r4ytj"]
@@ -106,7 +106,7 @@ ok_button_text = "Proceed"
 dialog_text = "You have unsaved data! Are you sure you want to proceed?"
 cancel_button_text = "Do Not"
 
-[node name="ExitDesktopOverwriteConfirmationDialog2" type="ConfirmationDialog" parent="."]
+[node name="ExitDesktopOverwriteConfirmationDialog" type="ConfirmationDialog" parent="."]
 auto_translate_mode = 1
 initial_position = 2
 size = Vector2i(472, 100)
@@ -224,7 +224,7 @@ offset_top = 4.0
 offset_right = 260.0
 offset_bottom = 36.0
 selected = 1
-item_count = 8
+item_count = 15
 popup/item_0/text = "Official Stages"
 popup/item_0/id = 0
 popup/item_0/separator = true
@@ -232,17 +232,32 @@ popup/item_1/text = "Balcony Stage"
 popup/item_1/id = 1
 popup/item_2/text = "C-Stage"
 popup/item_2/id = 2
-popup/item_3/text = "Prototype Road Stage"
+popup/item_3/text = "Rocker Stage"
 popup/item_3/id = 3
-popup/item_4/text = "Cyber 3-Stage"
+popup/item_4/text = "3-Stage"
 popup/item_4/id = 4
-popup/item_5/text = "Custom Stages"
+popup/item_5/text = "Prototype Road Stage"
 popup/item_5/id = 5
-popup/item_5/separator = true
-popup/item_6/text = "Helen House"
+popup/item_6/text = "2-Stage"
 popup/item_6/id = 6
-popup/item_7/text = "Chuck E's Corner"
+popup/item_7/text = "1-Stage"
 popup/item_7/id = 7
+popup/item_8/text = "Turntable 1-Stage"
+popup/item_8/id = 8
+popup/item_9/text = "Cyberamic 3-Stage"
+popup/item_9/id = 9
+popup/item_10/text = "CU-1 Stage"
+popup/item_10/id = 10
+popup/item_11/text = "Custom Stages"
+popup/item_11/id = 11
+popup/item_11/separator = true
+popup/item_12/text = "Helen House"
+popup/item_12/id = 12
+popup/item_13/text = "Chuck E's Corner"
+popup/item_13/id = 13
+popup/item_14/text = "Modded"
+popup/item_14/id = 14
+popup/item_14/separator = true
 
 [node name="EditingLabel" type="Label" parent="MenuBar"]
 layout_mode = 0
@@ -252,26 +267,6 @@ offset_right = 520.0
 offset_bottom = 36.0
 text = "No showtape loaded."
 vertical_alignment = 1
-
-[node name="ShowtapeButton" type="MenuButton" parent="MenuBar"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -264.0
-offset_top = 4.0
-offset_right = -136.0
-offset_bottom = 36.0
-grow_horizontal = 0
-text = "Showtape"
-flat = false
-item_count = 3
-popup/item_0/text = "New"
-popup/item_0/id = 0
-popup/item_1/text = "Load"
-popup/item_1/id = 1
-popup/item_2/text = "Save"
-popup/item_2/id = 2
 
 [node name="MenuButton" type="MenuButton" parent="MenuBar"]
 layout_mode = 1
@@ -286,13 +281,19 @@ grow_horizontal = 0
 text = "Menu
 "
 flat = false
-item_count = 3
-popup/item_0/text = "Controls"
-popup/item_0/id = 3
-popup/item_1/text = "Exit to Main Menu"
-popup/item_1/id = 4
-popup/item_2/text = "Exit to Desktop"
-popup/item_2/id = 5
+item_count = 6
+popup/item_0/text = "New Showtape"
+popup/item_0/id = 0
+popup/item_1/text = "Load Show"
+popup/item_1/id = 1
+popup/item_2/text = "Save Show"
+popup/item_2/id = 2
+popup/item_3/text = "Controls"
+popup/item_3/id = 3
+popup/item_4/text = "Exit to Main Menu"
+popup/item_4/id = 4
+popup/item_5/text = "Exit to Desktop"
+popup/item_5/id = 5
 
 [node name="SequencerPanel" type="Panel" parent="."]
 layout_mode = 1
@@ -1119,7 +1120,7 @@ expand_mode = 2
 [connection signal="confirmed" from="LoadOverwriteConfirmationDialog" to="." method="_on_load_overwrite_confirmation_dialog_confirmed"]
 [connection signal="confirmed" from="StageChangeOverwriteConfirmationDialog" to="." method="_on_stage_change_overwrite_confirmation_dialog_confirmed"]
 [connection signal="confirmed" from="ExitMenuOverwriteConfirmationDialog" to="." method="_on_exit_menu_overwrite_confirmation_dialog_confirmed"]
-[connection signal="confirmed" from="ExitDesktopOverwriteConfirmationDialog2" to="." method="_on_exit_desktop_overwrite_confirmation_dialog_2_confirmed"]
+[connection signal="confirmed" from="ExitDesktopOverwriteConfirmationDialog" to="." method="_on_exit_desktop_overwrite_confirmation_dialog_2_confirmed"]
 [connection signal="item_selected" from="MenuBar/StageSelector" to="." method="_on_stage_selector_item_selected"]
 [connection signal="pressed" from="SequencerPanel/TransportControls/Centered/StepBackwardsButton" to="." method="_on_step_backwards_button_pressed"]
 [connection signal="pressed" from="SequencerPanel/TransportControls/Centered/FastBackwardsButton" to="." method="_on_fast_backwards_button_pressed"]
