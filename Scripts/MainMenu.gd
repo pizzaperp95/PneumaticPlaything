@@ -3,6 +3,7 @@ extends Control
 func _ready():
 	OS.request_permissions()
 	randomize()
+	$VersionLabel.text = "Pneumatic Plaything v%s" % ProjectSettings.get_setting("application/config/version")
 	$Backgrounds.get_child(randi() % $Backgrounds.get_child_count()).visible = true
 	
 	var moddir = DirAccess.open("user://Mods")

@@ -564,6 +564,23 @@ This project is not associated with CEC Entertainment LLC.
 or Creative Engineering Inc."
 horizontal_alignment = 1
 
+[node name="VersionLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -264.0
+offset_top = -40.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Pneumatic Plaything vX.X"
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [connection signal="pressed" from="Buttons/EditorButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Buttons/FreeRoamButton" to="." method="_on_free_roam_button_pressed"]
 [connection signal="pressed" from="Buttons/ModsButton" to="." method="_on_mods_button_pressed"]

@@ -162,12 +162,10 @@ func _showtape_menu_button_pressed(id: int) -> void:
 		2: #save
 			if (showtape_loaded): $ShowtapeSaveScreen.visible = true
 			else: $NoShowtapeLoadedDialog.show()
-		3: # controls
-			$ControlsScreen.visible = true
-		4: # exit menu
+		3: # exit menu
 			if (showtape_loaded): $ExitMenuOverwriteConfirmationDialog.show()
 			else: get_tree().change_scene_to_file("res://Scenes/GUI/MainMenu.tscn")
-		5: # exit desktop
+		4: # exit desktop
 			if (showtape_loaded): $ExitDesktopOverwriteConfirmationDialog.show()
 			else: get_tree().quit()
 
