@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d007317123e27"
-path="res://.godot/imported/SmallLock.png-0c9e5ce04a7421f0922124b2fb1d8696.ctex"
+uid="uid://dbh0vh85wks2l"
+path="res://.godot/imported/logo.png-51af639b546fa143c715ebb74d0509d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/SmallLock.png"
-dest_files=["res://.godot/imported/SmallLock.png-0c9e5ce04a7421f0922124b2fb1d8696.ctex"]
+source_file="res://UI/logo.png"
+dest_files=["res://.godot/imported/logo.png-51af639b546fa143c715ebb74d0509d5.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsr03w7r667fw"
-path="res://.godot/imported/FastForward.png-acbfeb2710bea5385ca8ad13fa6699e8.ctex"
+uid="uid://dyyyg85g3jwip"
+path="res://.godot/imported/ProtoRoadBG.png-14030153324591d805d6a4c6283133d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/FastForward.png"
-dest_files=["res://.godot/imported/FastForward.png-acbfeb2710bea5385ca8ad13fa6699e8.ctex"]
+source_file="res://UI/MenuBG/ProtoRoadBG.png"
+dest_files=["res://.godot/imported/ProtoRoadBG.png-14030153324591d805d6a4c6283133d9.ctex"]
 
 [params]
 

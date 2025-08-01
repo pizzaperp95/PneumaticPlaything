@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bphwtliq2ahus"
-path="res://.godot/imported/SkipForward.png-ca36b20fa5c982368f6b620245865f56.ctex"
+uid="uid://dgacnkv2dc65s"
+path="res://.godot/imported/PlayBackwards.png-fa19f96c52d7ee8953d0dc88bd9de225.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/SkipForward.png"
-dest_files=["res://.godot/imported/SkipForward.png-ca36b20fa5c982368f6b620245865f56.ctex"]
+source_file="res://UI/TransportControls/PlayBackwards.png"
+dest_files=["res://.godot/imported/PlayBackwards.png-fa19f96c52d7ee8953d0dc88bd9de225.ctex"]
 
 [params]
 

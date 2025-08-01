@@ -1,30 +1,578 @@
-[gd_scene load_steps=3 format=3 uid="uid://1ikkb4b8mw1w"]
+[gd_scene load_steps=19 format=3 uid="uid://1ikkb4b8mw1w"]
 
+[ext_resource type="Theme" uid="uid://dbgs4id7y5d1c" path="res://UI/Themes/EditorDark.tres" id="1_dkd36"]
 [ext_resource type="Script" uid="uid://b5nh5td5bdsfd" path="res://Scripts/MainMenu.gd" id="1_ocgay"]
+[ext_resource type="Texture2D" uid="uid://dbh0vh85wks2l" path="res://UI/logo.png" id="2_6d82g"]
+[ext_resource type="Texture2D" uid="uid://6mf6wucl3y6k" path="res://UI/MenuBG/BalconyBG.png" id="2_j6v32"]
+[ext_resource type="Texture2D" uid="uid://dr6ir8mgbjrs7" path="res://UI/MenuBG/CStageBG.png" id="3_vaoig"]
+[ext_resource type="Texture2D" uid="uid://dyyyg85g3jwip" path="res://UI/MenuBG/ProtoRoadBG.png" id="4_dkd36"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_6d82g"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dkd36"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ha2rd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wdeli"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wyv1s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_drn21"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pcbci"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_he4sq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rsjs4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rj3vb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pocyv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8uhic"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dkd36"]
 font_size = 48
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dkd36")
 script = ExtResource("1_ocgay")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 103.0
-offset_top = 100.0
-offset_right = 580.0
-offset_bottom = 167.0
-text = "Pneumatic Plaything"
-label_settings = SubResource("LabelSettings_6d82g")
+[node name="PleaseRestart" type="AcceptDialog" parent="."]
+auto_translate_mode = 1
+initial_position = 2
+dialog_text = "Please restart the game for any changes to apply."
 
-[node name="Button" type="Button" parent="."]
+[node name="Backgrounds" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BalconyBG" type="TextureRect" parent="Backgrounds"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_j6v32")
+expand_mode = 1
+
+[node name="CStageBG" type="TextureRect" parent="Backgrounds"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_vaoig")
+expand_mode = 1
+
+[node name="ProtoRoadBG" type="TextureRect" parent="Backgrounds"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_dkd36")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 303.0
-offset_top = 349.0
-offset_right = 579.0
-offset_bottom = 506.0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 576.0
+offset_bottom = 160.0
+texture = ExtResource("2_6d82g")
+
+[node name="Buttons" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = -380.0
+offset_right = 324.0
+offset_bottom = -64.0
+grow_vertical = 0
+
+[node name="EditorButton" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 260.0
+offset_bottom = 52.0
 text = "Editor"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="FreeRoamButton" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 56.0
+offset_right = 260.0
+offset_bottom = 104.0
+text = "Free Roam
+"
+
+[node name="ModsButton" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 108.0
+offset_right = 260.0
+offset_bottom = 156.0
+text = "Manage Mods"
+
+[node name="ControlsButton" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 160.0
+offset_right = 260.0
+offset_bottom = 208.0
+text = "Controls"
+
+[node name="CreditsButton" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 212.0
+offset_right = 260.0
+offset_bottom = 260.0
+text = "Credits"
+
+[node name="ExitButton" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 264.0
+offset_right = 260.0
+offset_bottom = 312.0
+text = "Exit to Desktop"
+
+[node name="FreeRoamChooseScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="FreeRoamChooseScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.121569, 0.121569, 0.121569, 0.501961)
+
+[node name="InputEater" type="Button" parent="FreeRoamChooseScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dkd36")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ha2rd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wdeli")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_wyv1s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_drn21")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pcbci")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_he4sq")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_rsjs4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rj3vb")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_pocyv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8uhic")
+
+[node name="DialogPanel" type="Panel" parent="FreeRoamChooseScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 64.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="FreeRoamChooseScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 112.0
+grow_horizontal = 2
+text = "Free Roam"
+label_settings = SubResource("LabelSettings_dkd36")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ModsScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ModsScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.121569, 0.121569, 0.121569, 0.501961)
+
+[node name="InputEater" type="Button" parent="ModsScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dkd36")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ha2rd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wdeli")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_wyv1s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_drn21")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pcbci")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_he4sq")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_rsjs4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rj3vb")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_pocyv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8uhic")
+
+[node name="DialogPanel" type="Panel" parent="ModsScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 64.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ModsScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 112.0
+grow_horizontal = 2
+text = "Mods"
+label_settings = SubResource("LabelSettings_dkd36")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ModList" type="ItemList" parent="ModsScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = 128.0
+offset_right = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ModNameText" type="Label" parent="ModsScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = 8.0
+offset_bottom = 40.0
+text = "Select a mod to view its information"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="ModAuthorText" type="Label" parent="ModsScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 40.0
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="ModVersionText" type="Label" parent="ModsScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 0.25
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -40.0
+offset_bottom = -8.0
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="ModDescriptionText" type="Label" parent="ModsScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 48.0
+offset_right = -8.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="OpenFolderButton" type="Button" parent="ModsScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -264.0
+offset_top = -40.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Open Mods Folder"
+
+[node name="ControlsScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ControlsScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.121569, 0.121569, 0.121569, 0.501961)
+
+[node name="InputEater" type="Button" parent="ControlsScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dkd36")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ha2rd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wdeli")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_wyv1s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_drn21")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pcbci")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_he4sq")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_rsjs4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rj3vb")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_pocyv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8uhic")
+
+[node name="DialogPanel" type="Panel" parent="ControlsScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 64.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ControlsScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 112.0
+grow_horizontal = 2
+text = "Controls"
+label_settings = SubResource("LabelSettings_dkd36")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EditorLabel" type="Label" parent="ControlsScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 128.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Global:
+Fullscreen: F11 or Alt+Enter
+
+In Editor:
+Fullscreen camera view: ESC
+Play/Pause: Space
+Play Reverse: Shift + Space
+Fast Forward: Shift + Right Arrow
+Fast Reverse: Shift + Left
+Step Forward: Right Arrow
+Step Backward: Left Arrow
+Stop: Home
+Change Camera Angle: Tab"
+
+[node name="FreeRoamLabel" type="Label" parent="ControlsScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 128.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+
+
+In Free Roam:
+Move: W, A, S, D
+Jump: Space
+Open Menu: ESC"
+
+[node name="CreditsScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CreditsScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.121569, 0.121569, 0.121569, 0.501961)
+
+[node name="InputEater" type="Button" parent="CreditsScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dkd36")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ha2rd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wdeli")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_wyv1s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_drn21")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pcbci")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_he4sq")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_rsjs4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rj3vb")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_pocyv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8uhic")
+
+[node name="DialogPanel" type="Panel" parent="CreditsScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 64.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CreditsScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 112.0
+grow_horizontal = 2
+text = "Credits"
+label_settings = SubResource("LabelSettings_dkd36")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsLabel" type="Label" parent="CreditsScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 128.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pneumatic Plaything Animatronic Simulator
+
+Project Oversight: Persephone (KawaiiZenbo)
+
+Interface Design: Persephone
+Simulator Backend: Persephone
+
+3-Stage Bot Models: Persephone
+Cyberamic Bot Models: Persephone
+C-Stage Model: Persephone
+Cyberamic Iris Textures: Avery
+Chuck E's Corner Stage: Luigigamin212
+Balcony Stage Model: ToastHQ
+
+This project is not associated with CEC Entertainment LLC. 
+or Creative Engineering Inc."
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Buttons/EditorButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Buttons/FreeRoamButton" to="." method="_on_free_roam_button_pressed"]
+[connection signal="pressed" from="Buttons/ModsButton" to="." method="_on_mods_button_pressed"]
+[connection signal="pressed" from="Buttons/ControlsButton" to="." method="_on_controls_button_pressed"]
+[connection signal="pressed" from="Buttons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Buttons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="FreeRoamChooseScreen/InputEater" to="." method="_on_input_eater_pressed"]
+[connection signal="pressed" from="ModsScreen/InputEater" to="." method="_on_input_eater_pressed"]
+[connection signal="item_selected" from="ModsScreen/DialogPanel/ModList" to="." method="_on_mod_list_item_selected"]
+[connection signal="pressed" from="ModsScreen/DialogPanel/OpenFolderButton" to="." method="_on_open_folder_button_pressed"]
+[connection signal="pressed" from="ControlsScreen/InputEater" to="." method="_on_input_eater_pressed"]
+[connection signal="pressed" from="CreditsScreen/InputEater" to="." method="_on_input_eater_pressed"]

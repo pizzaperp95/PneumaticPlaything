@@ -374,3 +374,14 @@ var Cyber3Stage = {
 	],
 	"cosmetic_defaults": [ 4, 4, 1, 1, 1, 2, 1, 2, 2, 2, 1, 2, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 3 ]
 }
+
+var stages_info = {
+	"Helen House": HelenHouse,
+	"Chuck E's Corner": ChuckEsCorner,
+	"Balcony Stage": BalconyStage,
+	"C-Stage": CStage,
+	"Prototype Road Stage": ProtoRoadStage,
+	"Cyberamic 3-Stage": Cyber3Stage,
+}
+
+var loaded_mods = { }

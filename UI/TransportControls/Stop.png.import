@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgacnkv2dc65s"
-path="res://.godot/imported/PlayBackwards.png-52f3d5b871717feab369f20308dd695c.ctex"
+uid="uid://cttgtbu1xllwq"
+path="res://.godot/imported/Stop.png-fb014661ae7c7c34a81ed967c5cf7ad4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/PlayBackwards.png"
-dest_files=["res://.godot/imported/PlayBackwards.png-52f3d5b871717feab369f20308dd695c.ctex"]
+source_file="res://UI/TransportControls/Stop.png"
+dest_files=["res://.godot/imported/Stop.png-fb014661ae7c7c34a81ed967c5cf7ad4.ctex"]
 
 [params]
 
