@@ -49,6 +49,7 @@ func _on_controls_button_pressed() -> void:
 	$ControlsScreen.visible = true
 
 func _on_free_roam_button_pressed() -> void:
+	get_tree().change_scene_to_file(FreeRoamMaps.Generic1Stage["scene"])
 	$FreeRoamChooseScreen.visible = true
 
 func _on_mods_button_pressed() -> void:

@@ -443,6 +443,7 @@ text = "Global:
 Fullscreen: F11 or Alt+Enter
 
 In Editor:
+
 Fullscreen camera view: ESC
 Play/Pause: Space
 Play Reverse: Shift + Space
@@ -468,8 +469,11 @@ text = "
 
 
 In Free Roam:
+
 Move: W, A, S, D
 Jump: Space
+Crouch: Right Control
+Run: Right Shift
 Open Menu: ESC"
 
 [node name="CreditsScreen" type="Control" parent="."]
@@ -553,12 +557,12 @@ Project Oversight: Persephone (KawaiiZenbo)
 Interface Design: Persephone
 Simulator Backend: Persephone
 
-3-Stage Bot Models: Persephone
-Cyberamic Bot Models: Persephone
-C-Stage Model: Persephone
-Cyberamic Iris Textures: Avery
-Chuck E's Corner Stage: Luigigamin212
-Balcony Stage Model: ToastHQ
+Models:
+Persephone: Helen House, Cyberamics, 1-Stage, C-Stage,
+Prototype Road Stage
+Luigigamin212: Chuck E's Corner
+ToastHQ: Balcony Stage, 3-Stage, 3-Stage Bots
+Avery: Cyberamic Iris Textures
 
 This project is not associated with CEC Entertainment LLC. 
 or Creative Engineering Inc."

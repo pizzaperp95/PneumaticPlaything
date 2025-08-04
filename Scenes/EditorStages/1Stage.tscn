@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://bl4wyf7wq84i"]
+[gd_scene load_steps=15 format=3 uid="uid://bl4wyf7wq84i"]
 
 [ext_resource type="PackedScene" uid="uid://doxu4tb5jfoqp" path="res://Models/Cyberamics/Cyber Munch.glb" id="1_3gw4q"]
+[ext_resource type="PackedScene" uid="uid://ddqduheks5ltu" path="res://Models/FreeRoam/Generic/1StageGenericRoom.glb" id="1_bg74u"]
 [ext_resource type="Script" uid="uid://du3pqtf3jixvl" path="res://Scripts/CyberamicController.gd" id="2_abugi"]
 [ext_resource type="PackedScene" uid="uid://ba7i8p8olef2s" path="res://Models/Cyberamics/Cyber Jasper.glb" id="3_sntwi"]
 [ext_resource type="PackedScene" uid="uid://c5fgw7t45p7r6" path="res://Models/Cyberamics/Cyber Chuck.glb" id="4_ryg5o"]
@@ -17,6 +18,8 @@
 ambient_light_source = 1
 
 [node name="1Stage" type="Node3D"]
+
+[node name="1StageGenericRoom" parent="." instance=ExtResource("1_bg74u")]
 
 [node name="StageModel" parent="." instance=ExtResource("8_3gw4q")]
 
