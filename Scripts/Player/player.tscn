@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdk6hwb4hi2wc"]
+[gd_scene load_steps=4 format=3 uid="uid://cdk6hwb4hi2wc"]
 
 [ext_resource type="Script" uid="uid://b0c02p6ckmpdq" path="res://Scripts/Player/player.gd" id="1_2f8j2"]
+[ext_resource type="PackedScene" uid="uid://cd67bfok34xhy" path="res://Scenes/GUI/InGameMenu.tscn" id="2_0s4r2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3rsb5"]
 radius = 0.3
@@ -17,3 +18,6 @@ debug_color = Color(0.141176, 0.427451, 0.92549, 0.784314)
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 fov = 80.0
+
+[node name="InGameMenu" parent="." instance=ExtResource("2_0s4r2")]
+visible = false

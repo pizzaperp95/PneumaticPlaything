@@ -11,6 +11,8 @@ var acceleration: float = 100 # m/s^2
 var jump_height: float = 1 # m
 var camera_sens: float = 3
 
+var interact: bool = true
+
 var jumping: bool = false
 var crouched: bool = false
 var running: bool = false
@@ -31,36 +33,54 @@ func _ready() -> void:
 	capture_mouse()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		look_dir = event.relative * 0.001
-		if mouse_captured: _rotate_camera()
+	if (interact):
+		if event is InputEventMouseMotion:
+			look_dir = event.relative * 0.001
+			if mouse_captured: _rotate_camera()
+	if event.is_action_pressed(&"fullscreen"): 
+		if (!DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN):
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		else:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	elif event.is_action_pressed(&"freeroam_open_menu"): 
+		if (!interact):
+			interact = true
+			capture_mouse()
+			$InGameMenu.visible = false
+		else:
+			interact = false
+			release_mouse()
+			$InGameMenu.visible = true
+			$InGameMenu/Buttons/ReturnButton.grab_focus()
+		pass
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed(&"freeroam_jump"): jumping = true
-	elif Input.is_action_just_pressed(&"freeroam_crouch"): 
-		$CShape.shape.height = 1.0
-		$Camera.position.y = 1.0
-		if (running): speed = SPEED_CROUCH_RUN
-		else: speed = SPEED_CROUCHED
-		crouched = true
-	elif Input.is_action_just_released(&"freeroam_crouch"): 
-		$CShape.shape.height = 1.8
-		$Camera.position.y = 1.7
-		if (running): speed = SPEED_RUNNING
-		else: speed = SPEED_BASE
-		crouched = false
-	elif Input.is_action_just_pressed(&"freeroam_run"): 
-		if (crouched): speed = SPEED_CROUCH_RUN
-		else: speed = SPEED_RUNNING
-		running = true
-	elif Input.is_action_just_released(&"freeroam_run"): 
-		if (crouched): speed = SPEED_CROUCHED
-		else: speed = SPEED_BASE
-		running = false
-		
-	if mouse_captured: _handle_joypad_camera_rotation(delta)
-	velocity = _walk(delta) + _gravity(delta) + _jump(delta)
-	move_and_slide()
+	if (interact):
+		if Input.is_action_just_pressed(&"freeroam_jump"): jumping = true
+		elif Input.is_action_just_pressed(&"freeroam_crouch"): 
+			$CShape.shape.height = 1.0
+			$Camera.position.y = 1.0
+			if (running): speed = SPEED_CROUCH_RUN
+			else: speed = SPEED_CROUCHED
+			crouched = true
+		elif Input.is_action_just_released(&"freeroam_crouch"): 
+			$CShape.shape.height = 1.8
+			$Camera.position.y = 1.7
+			if (running): speed = SPEED_RUNNING
+			else: speed = SPEED_BASE
+			crouched = false
+		elif Input.is_action_just_pressed(&"freeroam_run"): 
+			if (crouched): speed = SPEED_CROUCH_RUN
+			else: speed = SPEED_RUNNING
+			running = true
+		elif Input.is_action_just_released(&"freeroam_run"): 
+			if (crouched): speed = SPEED_CROUCHED
+			else: speed = SPEED_BASE
+			running = false
+			
+		if mouse_captured: _handle_joypad_camera_rotation(delta)
+		velocity = _walk(delta) + _gravity(delta) + _jump(delta)
+		move_and_slide()
 
 func capture_mouse() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

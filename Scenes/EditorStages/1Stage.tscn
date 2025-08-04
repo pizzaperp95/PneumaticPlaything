@@ -254,28 +254,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 3, 4)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_w3m2i")
 
-[node name="Room Lights" type="Node3D" parent="."]
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Room Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.5, 3)
-light_color = Color(1, 0.960784, 0.85098, 1)
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="Room Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.5, 3)
-light_color = Color(1, 0.960784, 0.85098, 1)
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="Room Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 3)
-light_color = Color(1, 0.960784, 0.85098, 1)
-
-[node name="OmniLight3D4" type="OmniLight3D" parent="Room Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86654, 2.5, 0.906235)
-light_color = Color(1, 0.960784, 0.85098, 1)
-
-[node name="OmniLight3D5" type="OmniLight3D" parent="Room Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2.5, 1)
-light_color = Color(1, 0.960784, 0.85098, 1)
-
 [node name="Angle 1" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 2.75, 3.5)
 current = true
@@ -296,3 +274,80 @@ fov = 60.0
 [node name="Angle 5" type="Camera3D" parent="."]
 transform = Transform3D(0.965017, -0.0450779, 0.258285, 0, 0.985109, 0.171929, -0.262189, -0.165914, 0.950647, 2, 2.75, 5)
 fov = 60.0
+
+[node name="Room Lights" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4, 3.5, 2)
+light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0
+
+[node name="OmniLight3D2" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 3.5, 2)
+light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0
+
+[node name="OmniLight3D3" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.5, 2)
+light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0
+
+[node name="OmniLight3D4" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.86654, 3.5, 1.90623)
+light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0
+
+[node name="OmniLight3D5" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7, 3.5, 2)
+light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0
+
+[node name="OmniLight3D6" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4, 3.5, 11)
+light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0
+
+[node name="OmniLight3D7" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 3.5, 11)
+light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0
+
+[node name="OmniLight3D8" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.5, 11)
+light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0
+
+[node name="OmniLight3D9" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.86654, 3.5, 10.9062)
+light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0
+
+[node name="OmniLight3D10" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7, 3.5, 11)
+light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0
+
+[node name="OmniLight3D11" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4, 3.5, 6.5)
+light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0
+
+[node name="OmniLight3D12" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 3.5, 6.5)
+light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0
+
+[node name="OmniLight3D13" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.5, 6.5)
+light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0
+
+[node name="OmniLight3D14" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.86654, 3.5, 6.5)
+light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0
+
+[node name="OmniLight3D15" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7, 3.5, 6.5)
+light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0

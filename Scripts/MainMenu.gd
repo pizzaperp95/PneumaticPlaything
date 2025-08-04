@@ -5,6 +5,7 @@ func _ready():
 	randomize()
 	$VersionLabel.text = "Pneumatic Plaything v%s" % ProjectSettings.get_setting("application/config/version")
 	$Backgrounds.get_child(randi() % $Backgrounds.get_child_count()).visible = true
+	$Buttons/EditorButton.grab_focus()
 	
 	var moddir = DirAccess.open("user://Mods")
 	if moddir == null: 

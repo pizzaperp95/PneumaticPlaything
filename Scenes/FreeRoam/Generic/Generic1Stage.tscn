@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b6rem1te85htp"]
+[gd_scene load_steps=18 format=3 uid="uid://b6rem1te85htp"]
 
 [ext_resource type="PackedScene" uid="uid://ddqduheks5ltu" path="res://Models/FreeRoam/Generic/1StageGenericRoom.glb" id="1_8m4fm"]
 [ext_resource type="PackedScene" uid="uid://bf4aq55iy3yey" path="res://Models/1Stage/1StageGeneric.glb" id="2_ncqi6"]
@@ -14,8 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://dm3wfbhs34bkd" path="res://Models/1Stage/1StageGenericOrganLightsOuter.glb" id="12_rs0sv"]
 [ext_resource type="PackedScene" uid="uid://mvv5sjk3vbtl" path="res://Scenes/Props/HelicopterLight.tscn" id="13_1oq0m"]
 [ext_resource type="PackedScene" uid="uid://cdk6hwb4hi2wc" path="res://Scripts/Player/player.tscn" id="14_ncqi6"]
-[ext_resource type="ArrayMesh" uid="uid://cxetf6uisjlwr" path="res://Models/FreeRoam/Generic/Generic1StageStageCollider.obj" id="15_fdybi"]
-[ext_resource type="ArrayMesh" uid="uid://cf4oa43hi1w5t" path="res://Models/FreeRoam/Generic/Generic1StageRoomCollider.obj" id="16_0hrbq"]
 
 [sub_resource type="Environment" id="Environment_0tsrs"]
 ambient_light_source = 1
@@ -39,92 +37,77 @@ environment = SubResource("Environment_0tsrs")
 
 [node name="OmniLight3D" type="SpotLight3D" parent="Room Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4, 3.5, 2)
-light_color = Color(0.709804, 0.67451, 0.623529, 1)
-light_energy = 2.0
+light_color = Color(1, 0.960784, 0.85098, 1)
 spot_angle = 90.0
 
 [node name="OmniLight3D2" type="SpotLight3D" parent="Room Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 3.5, 2)
-light_color = Color(0.709804, 0.67451, 0.623529, 1)
-light_energy = 2.0
+light_color = Color(1, 0.960784, 0.85098, 1)
 spot_angle = 90.0
 
 [node name="OmniLight3D3" type="SpotLight3D" parent="Room Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.5, 2)
-light_color = Color(0.709804, 0.67451, 0.623529, 1)
-light_energy = 2.0
+light_color = Color(1, 0.960784, 0.85098, 1)
 spot_angle = 90.0
 
 [node name="OmniLight3D4" type="SpotLight3D" parent="Room Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.86654, 3.5, 1.90623)
-light_color = Color(0.709804, 0.67451, 0.623529, 1)
-light_energy = 2.0
+light_color = Color(1, 0.960784, 0.85098, 1)
 spot_angle = 90.0
 
 [node name="OmniLight3D5" type="SpotLight3D" parent="Room Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7, 3.5, 2)
-light_color = Color(0.709804, 0.67451, 0.623529, 1)
-light_energy = 2.0
+light_color = Color(1, 0.960784, 0.85098, 1)
 spot_angle = 90.0
 
 [node name="OmniLight3D6" type="SpotLight3D" parent="Room Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4, 3.5, 11)
-light_color = Color(0.709804, 0.67451, 0.623529, 1)
-light_energy = 2.0
+light_color = Color(1, 0.960784, 0.85098, 1)
 spot_angle = 90.0
 
 [node name="OmniLight3D7" type="SpotLight3D" parent="Room Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 3.5, 11)
-light_color = Color(0.709804, 0.67451, 0.623529, 1)
-light_energy = 2.0
+light_color = Color(1, 0.960784, 0.85098, 1)
 spot_angle = 90.0
 
 [node name="OmniLight3D8" type="SpotLight3D" parent="Room Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.5, 11)
-light_color = Color(0.709804, 0.67451, 0.623529, 1)
-light_energy = 2.0
+light_color = Color(1, 0.960784, 0.85098, 1)
 spot_angle = 90.0
 
 [node name="OmniLight3D9" type="SpotLight3D" parent="Room Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.86654, 3.5, 10.9062)
-light_color = Color(0.709804, 0.67451, 0.623529, 1)
-light_energy = 2.0
+light_color = Color(1, 0.960784, 0.85098, 1)
 spot_angle = 90.0
 
 [node name="OmniLight3D10" type="SpotLight3D" parent="Room Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7, 3.5, 11)
-light_color = Color(0.709804, 0.67451, 0.623529, 1)
-light_energy = 2.0
+light_color = Color(1, 0.960784, 0.85098, 1)
 spot_angle = 90.0
 
 [node name="OmniLight3D11" type="SpotLight3D" parent="Room Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4, 3.5, 6.5)
-light_color = Color(0.709804, 0.67451, 0.623529, 1)
-light_energy = 2.0
+light_color = Color(1, 0.960784, 0.85098, 1)
 spot_angle = 90.0
 
 [node name="OmniLight3D12" type="SpotLight3D" parent="Room Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 3.5, 6.5)
-light_color = Color(0.709804, 0.67451, 0.623529, 1)
-light_energy = 2.0
+light_color = Color(1, 0.960784, 0.85098, 1)
 spot_angle = 90.0
 
 [node name="OmniLight3D13" type="SpotLight3D" parent="Room Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.5, 6.5)
-light_color = Color(0.709804, 0.67451, 0.623529, 1)
-light_energy = 2.0
+light_color = Color(1, 0.960784, 0.85098, 1)
 spot_angle = 90.0
 
 [node name="OmniLight3D14" type="SpotLight3D" parent="Room Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.86654, 3.5, 6.5)
-light_color = Color(0.709804, 0.67451, 0.623529, 1)
-light_energy = 2.0
+light_color = Color(1, 0.960784, 0.85098, 1)
 spot_angle = 90.0
 
 [node name="OmniLight3D15" type="SpotLight3D" parent="Room Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7, 3.5, 6.5)
-light_color = Color(0.709804, 0.67451, 0.623529, 1)
-light_energy = 2.0
+light_color = Color(1, 0.960784, 0.85098, 1)
 spot_angle = 90.0
 
 [node name="StageAssets" type="Node3D" parent="."]
@@ -362,18 +345,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
 [node name="StageCollider" type="StaticBody3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StageCollider"]
-visible = false
-mesh = ExtResource("15_fdybi")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StageCollider"]
 shape = SubResource("ConcavePolygonShape3D_5nqmm")
 
 [node name="RoomCollider" type="StaticBody3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RoomCollider"]
-visible = false
-mesh = ExtResource("16_0hrbq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomCollider"]
 shape = SubResource("ConcavePolygonShape3D_cw8uy")

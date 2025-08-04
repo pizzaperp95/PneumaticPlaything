@@ -1,0 +1,87 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd67bfok34xhy"]
+
+[ext_resource type="Script" uid="uid://pwg37gka2qr4" path="res://Scripts/InGameMenu.gd" id="1_cp535"]
+
+[node name="InGameMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cp535")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.121569, 0.121569, 0.121569, 0.501961)
+
+[node name="Buttons" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = -380.0
+offset_right = 324.0
+offset_bottom = -64.0
+grow_vertical = 0
+
+[node name="ReturnButton" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 260.0
+offset_bottom = 52.0
+text = "Return to Game"
+
+[node name="LoadShowButton" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 56.0
+offset_right = 260.0
+offset_bottom = 104.0
+text = "Load Show"
+
+[node name="CosmeticsButton" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 108.0
+offset_right = 260.0
+offset_bottom = 156.0
+text = "Cosmetics"
+
+[node name="FlowControlsButton" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 160.0
+offset_right = 260.0
+offset_bottom = 208.0
+text = "Flow Controls"
+
+[node name="ExitMenuButton" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 212.0
+offset_right = 260.0
+offset_bottom = 260.0
+text = "Exit to Menu"
+
+[node name="ExitButton" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 264.0
+offset_right = 260.0
+offset_bottom = 312.0
+text = "Exit to Desktop"
+
+[connection signal="pressed" from="Buttons/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="Buttons/LoadShowButton" to="." method="_on_load_show_button_pressed"]
+[connection signal="pressed" from="Buttons/CosmeticsButton" to="." method="_on_cosmetics_button_pressed"]
+[connection signal="pressed" from="Buttons/FlowControlsButton" to="." method="_on_flow_controls_button_pressed"]
+[connection signal="pressed" from="Buttons/ExitMenuButton" to="." method="_on_exit_menu_button_pressed"]
+[connection signal="pressed" from="Buttons/ExitButton" to="." method="_on_exit_button_pressed"]
