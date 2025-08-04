@@ -15,7 +15,7 @@ func _ready():
 	moddir.list_dir_begin()
 	for file: String in moddir.get_files():
 		if (!file.ends_with(".pck")): return
-		ProjectSettings.load_resource_pack("user://Mods/%s" % file, false)
+		ProjectSettings.load_resource_pack("user://Mods/%s" % file, true)
 	
 	var dir = DirAccess.open("res://LoadedModContent/ModManifest")
 	if dir == null: 

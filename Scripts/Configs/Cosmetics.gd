@@ -632,6 +632,30 @@ var CyberPasqually = {
 	},
 }
 
+var Valence = {
+	"Stage Valence":
+	{
+		"Blue":
+		{
+			"StageModel/BlueValence": true,
+			"StageModel/BlackValence": false,
+			"StageModel/GreenValence": false,
+		},
+		"Black":
+		{
+			"StageModel/BlueValence": false,
+			"StageModel/BlackValence": true,
+			"StageModel/GreenValence": false,
+		},
+		"Green":
+		{
+			"StageModel/BlueValence": false,
+			"StageModel/BlackValence": false,
+			"StageModel/GreenValence": true,
+		},
+	}
+}
+
 var HelenHouseHelen = {
 	"Helen Hair":
 	{

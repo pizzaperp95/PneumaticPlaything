@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://btre5j66mpchy"]
+
+[ext_resource type="PackedScene" uid="uid://f0fkcs7erhop" path="res://Models/3-StageBots/3stHelen.glb" id="1_s1mol"]
+[ext_resource type="Script" uid="uid://bu68w4jnh0n2b" path="res://Scripts/AnimatronicController.gd" id="2_odcb6"]
+[ext_resource type="PackedScene" uid="uid://bhoeqcsdb0fx2" path="res://Models/HelenHouse/HelenHouse-Room.glb" id="3_e7oou"]
+[ext_resource type="PackedScene" uid="uid://btvomf1ayoypu" path="res://Models/HelenHouse/HelenHouse-Stage.glb" id="4_e2vvs"]
+[ext_resource type="Script" uid="uid://d1p4ite8ts2wi" path="res://Scripts/LightController.gd" id="5_odcb6"]
+
+[sub_resource type="Environment" id="Environment_axk5g"]
+ambient_light_source = 1
+
+[node name="HelenHouse" type="Node3D"]
+
+[node name="Helen" parent="." instance=ExtResource("1_s1mol")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.25, 0)
+script = ExtResource("2_odcb6")
+
+[node name="Spots" type="Node3D" parent="."]
+script = ExtResource("5_odcb6")
+
+[node name="Helen" type="SpotLight3D" parent="Spots"]
+transform = Transform3D(-1, 3.69465e-08, -7.92319e-08, 0, 0.906308, 0.422618, 8.74228e-08, 0.422618, -0.906308, 0, 2.5, -2)
+visible = false
+light_color = Color(1, 0.9625, 0.85, 1)
+light_energy = 5.0
+spot_attenuation = 2.0
+spot_angle = 10.0
+spot_angle_attenuation = 0.15
+
+[node name="Room" parent="." instance=ExtResource("3_e7oou")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="Stage" parent="." instance=ExtResource("4_e2vvs")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="Angle 1" type="Camera3D" parent="."]
+transform = Transform3D(-1, 1.31602e-08, -1.50421e-07, 0, 0.996195, 0.0871557, 1.50996e-07, 0.0871557, -0.996195, 0, 1.5, -3)
+current = true
+fov = 60.0
+
+[node name="Angle 2" type="Camera3D" parent="."]
+transform = Transform3D(-1, 1.31602e-08, -1.50421e-07, 0, 0.996195, 0.0871557, 1.50996e-07, 0.0871557, -0.996195, 0, 1.5, -1)
+fov = 60.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_axk5g")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.5, -3)
+light_color = Color(1, 0.960784, 0.85098, 1)
+light_energy = 0.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.5, -3)
+light_color = Color(1, 0.960784, 0.85098, 1)
+light_energy = 0.5

@@ -2,7 +2,7 @@ extends Node
 
 var HelenHouse = {
 	"bits": 20, 
-	"scene": "res://Scenes/Stages/HelenHouse.tscn", 
+	"scene": "res://Scenes/EditorStages/HelenHouse.tscn", 
 	"scene_ref_base": "SubViewport/HelenHouse/",
 	"camera_count": 2,
 	
@@ -38,7 +38,7 @@ var HelenHouse = {
 
 var ChuckEsCorner = {
 	"bits": 16, 
-	"scene": "res://Scenes/Stages/ChuckEsCorner.tscn", 
+	"scene": "res://Scenes/EditorStages/ChuckEsCorner.tscn", 
 	"scene_ref_base": "SubViewport/ChuckEsCorner/",
 	"camera_count": 3,
 	
@@ -70,7 +70,7 @@ var ChuckEsCorner = {
 
 var BalconyStage = {
 	"bits": 69, 
-	"scene": "res://Scenes/Stages/Balcony.tscn", 
+	"scene": "res://Scenes/EditorStages/Balcony.tscn", 
 	"scene_ref_base": "SubViewport/Balcony/",
 	"camera_count": 6,
 	
@@ -162,7 +162,7 @@ var BalconyStage = {
 
 var CStage = {
 	"bits": 65, 
-	"scene": "res://Scenes/Stages/CStage.tscn", 
+	"scene": "res://Scenes/EditorStages/CStage.tscn", 
 	"scene_ref_base": "SubViewport/CStage/",
 	"camera_count": 5,
 	
@@ -250,7 +250,7 @@ var CStage = {
 
 var ProtoRoadStage = {
 	"bits": 41, 
-	"scene": "res://Scenes/Stages/ProtoRoadStage.tscn", 
+	"scene": "res://Scenes/EditorStages/ProtoRoadStage.tscn", 
 	"scene_ref_base": "SubViewport/ProtoRoadStage/",
 	"camera_count": 6,
 	
@@ -314,7 +314,7 @@ var ProtoRoadStage = {
 
 var Cyber3Stage = {
 	"bits": 40, 
-	"scene": "res://Scenes/Stages/Cyber3Stage.tscn", 
+	"scene": "res://Scenes/EditorStages/Cyber3Stage.tscn", 
 	"scene_ref_base": "SubViewport/Cyber3Stage/",
 	"camera_count": 4,
 	
@@ -375,12 +375,98 @@ var Cyber3Stage = {
 	"cosmetic_defaults": [ 4, 4, 1, 1, 1, 2, 1, 2, 2, 2, 1, 2, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 3 ]
 }
 
+var Cyber1Stage = {
+	"bits": 60, 
+	"scene": "res://Scenes/EditorStages/1Stage.tscn", 
+	"scene_ref_base": "SubViewport/1Stage/",
+	"camera_count": 5,
+	
+	"ust_type": "Cyberamics",
+	
+	"bit_mapping":
+	{
+		1: { "bot": "Chuck", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+		2: { "bot": "Chuck", "movement": "Head Left", "flow_in": 1.5, "flow_out": 1.5 },
+		3: { "bot": "Chuck", "movement": "Head Right", "flow_in": 1.5, "flow_out": 1.5 },
+		4: { "bot": "Chuck", "movement": "Head Up", "flow_in": 2.0, "flow_out": 1.0 },
+		5: { "bot": "Chuck", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+		6: { "bot": "Chuck", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+		7: { "bot": "Chuck", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+		8: { "bot": "Chuck", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
+		9: { "bot": "Helen", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+		10: { "bot": "Helen", "movement": "Head Left", "flow_in": 1.5, "flow_out": 1.5 },
+		11: { "bot": "Helen", "movement": "Head Right", "flow_in": 1.5, "flow_out": 1.5 },
+		12: { "bot": "Helen", "movement": "Head Up", "flow_in": 2.0, "flow_out": 1.0 },
+		13: { "bot": "Helen", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+		14: { "bot": "Helen", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+		15: { "bot": "Helen", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+		16: { "bot": "Helen", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
+		17: { "bot": "Munch", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+		18: { "bot": "Munch", "movement": "Head Left", "flow_in": 1.5, "flow_out": 1.5 },
+		19: { "bot": "Munch", "movement": "Head Right", "flow_in": 1.5, "flow_out": 1.5 },
+		20: { "bot": "Munch", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+		21: { "bot": "Munch", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+		22: { "bot": "Munch", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+		23: { "bot": "Munch", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
+		24: { "bot": "Munch", "movement": "Left Arm", "flow_in": 2.0, "flow_out": 1.0 },
+		25: { "bot": "Jasper", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+		26: { "bot": "Jasper", "movement": "Head Left", "flow_in": 1.5, "flow_out": 1.5 },
+		27: { "bot": "Jasper", "movement": "Head Right", "flow_in": 1.5, "flow_out": 1.5 },
+		28: { "bot": "Jasper", "movement": "Head Up", "flow_in": 2.0, "flow_out": 1.0 },
+		29: { "bot": "Jasper", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+		30: { "bot": "Jasper", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+		31: { "bot": "Jasper", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+		32: { "bot": "Jasper", "movement": "Strum", "flow_in": 2.0, "flow_out": 1.0 },
+		33: { "bot": "Pasqually", "movement": "Mouth", "flow_in": 7.5, "flow_out": 6.0 },
+		34: { "bot": "Pasqually", "movement": "Head Left", "flow_in": 1.5, "flow_out": 1.5 },
+		35: { "bot": "Pasqually", "movement": "Head Right", "flow_in": 1.5, "flow_out": 1.5 },
+		36: { "bot": "Pasqually", "movement": "Eyes Left", "flow_in": 4.0, "flow_out": 3.0 },
+		37: { "bot": "Pasqually", "movement": "Eyes Right", "flow_in": 4.0, "flow_out": 3.0 },
+		38: { "bot": "Pasqually", "movement": "Eyelids", "flow_in": 7.5, "flow_out": 5.0 },
+		39: { "bot": "Pasqually", "movement": "Right Arm", "flow_in": 2.0, "flow_out": 1.0 },
+		40: { "bot": "Pasqually", "movement": "Left Arm", "flow_in": 2.0, "flow_out": 1.0 },
+		50: { "bot": "Spots", "movement": "Chuck", "flow_in": "None", "flow_out": "None" },
+		51: { "bot": "Spots", "movement": "Helen", "flow_in": "None", "flow_out": "None" },
+		52: { "bot": "Spots", "movement": "Munch", "flow_in": "None", "flow_out": "None" },
+		53: { "bot": "Spots", "movement": "Jasper", "flow_in": "None", "flow_out": "None" },
+		54: { "bot": "Spots", "movement": "Pasqually", "flow_in": "None", "flow_out": "None" },
+		65: { "bot": "Floods", "movement": "CEC Red", "flow_in": "None", "flow_out": "None" },
+		66: { "bot": "Floods", "movement": "CEC Amber", "flow_in": "None", "flow_out": "None" },
+		67: { "bot": "Floods", "movement": "CEC Blue", "flow_in": "None", "flow_out": "None" },
+		68: { "bot": "Floods", "movement": "Main Red", "flow_in": "None", "flow_out": "None" },
+		69: { "bot": "Floods", "movement": "Main Amber", "flow_in": "None", "flow_out": "None" },
+		70: { "bot": "Floods", "movement": "Main Blue", "flow_in": "None", "flow_out": "None" },
+		71: { "bot": "Backdrop", "movement": "Red", "flow_in": "None", "flow_out": "None" },
+		72: { "bot": "Backdrop", "movement": "Amber", "flow_in": "None", "flow_out": "None" },
+		73: { "bot": "Backdrop", "movement": "Blue", "flow_in": "None", "flow_out": "None" },
+		74: { "bot": "Organ", "movement": "Face Amber", "flow_in": "None", "flow_out": "None" },
+		75: { "bot": "Organ", "movement": "Face Blue", "flow_in": "None", "flow_out": "None" },
+		76: { "bot": "Organ", "movement": "Outer", "flow_in": "None", "flow_out": "None" },
+		77: { "bot": "Organ", "movement": "Middle", "flow_in": "None", "flow_out": "None" },
+		78: { "bot": "Organ", "movement": "Inner", "flow_in": "None", "flow_out": "None" },
+		84: { "bot": "Special", "movement": "Kick Drum", "flow_in": "None", "flow_out": "None" },
+		86: { "bot": "Special Helicopter", "movement": "Light", "flow_in": 15.0, "flow_out": 6.0 },
+	},
+	
+	"cosmetics": 
+	[
+		Cosmetics.CyberChuck,
+		Cosmetics.CyberHelen,
+		Cosmetics.CyberMunch,
+		Cosmetics.CyberJasper,
+		Cosmetics.CyberPasqually,
+		Cosmetics.Valence
+	],
+	"cosmetic_defaults": [ 1, 2, 1, 1, 1, 0, 1, 2, 2, 2, 1, 2, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 3, 0 ]
+}
+
 var stages_info = {
 	"Helen House": HelenHouse,
 	"Chuck E's Corner": ChuckEsCorner,
 	"Balcony Stage": BalconyStage,
 	"C-Stage": CStage,
 	"Prototype Road Stage": ProtoRoadStage,
+	"1-Stage": Cyber1Stage,
 	"Cyberamic 3-Stage": Cyber3Stage,
 }
 

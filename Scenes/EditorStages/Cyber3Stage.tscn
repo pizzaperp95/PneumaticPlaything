@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=3 uid="uid://bty3dn0uskrfi"]
+
+[ext_resource type="PackedScene" uid="uid://c5fgw7t45p7r6" path="res://Models/Cyberamics/Cyber Chuck.glb" id="1_cw6ma"]
+[ext_resource type="Script" uid="uid://du3pqtf3jixvl" path="res://Scripts/CyberamicController.gd" id="2_4l10n"]
+[ext_resource type="PackedScene" uid="uid://d34xfaignny8j" path="res://Models/Cyberamics/Cyber Helen.glb" id="3_87eu1"]
+[ext_resource type="PackedScene" uid="uid://doxu4tb5jfoqp" path="res://Models/Cyberamics/Cyber Munch.glb" id="4_68u23"]
+[ext_resource type="PackedScene" uid="uid://ba7i8p8olef2s" path="res://Models/Cyberamics/Cyber Jasper.glb" id="5_lioge"]
+[ext_resource type="PackedScene" uid="uid://bp5u5t6yu4ejy" path="res://Models/Cyberamics/Cyber Pasqually.glb" id="6_81y3d"]
+[ext_resource type="PackedScene" uid="uid://b77ebnic6ktql" path="res://Models/3-Stage/3Stage.glb" id="7_cr5od"]
+
+[sub_resource type="Environment" id="Environment_aswoc"]
+ambient_light_source = 1
+
+[node name="Cyber3Stage" type="Node3D"]
+
+[node name="Chuck" parent="." instance=ExtResource("1_cw6ma")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -8.5, 2.6, 2.3)
+script = ExtResource("2_4l10n")
+
+[node name="Helen" parent="." instance=ExtResource("3_87eu1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 2.6, -1)
+script = ExtResource("2_4l10n")
+
+[node name="Munch" parent="." instance=ExtResource("4_68u23")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6, -1)
+script = ExtResource("2_4l10n")
+
+[node name="Jasper" parent="." instance=ExtResource("5_lioge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6, 2.4, -1)
+script = ExtResource("2_4l10n")
+
+[node name="Pasqually" parent="." instance=ExtResource("6_81y3d")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 8.5, 2.4, 1)
+script = ExtResource("2_4l10n")
+
+[node name="3Stage" parent="." instance=ExtResource("7_cr5od")]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_aswoc")
+
+[node name="Room Lights" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.5, 1)
+light_color = Color(1, 0.960784, 0.85098, 1)
+light_energy = 0.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.5, 1)
+light_color = Color(1, 0.960784, 0.85098, 1)
+light_energy = 0.5
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 1)
+light_color = Color(1, 0.960784, 0.85098, 1)
+light_energy = 0.5
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.5, 4)
+light_color = Color(1, 0.960784, 0.85098, 1)
+light_energy = 0.5
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 3.5, 4)
+light_color = Color(1, 0.960784, 0.85098, 1)
+light_energy = 0.5
+
+[node name="Angle 1" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, -0.5, 3.75, 12.5)
+current = true
+fov = 60.0
+
+[node name="Angle 2" type="Camera3D" parent="."]
+transform = Transform3D(0.683013, -0.258819, 0.683013, -0.006236, 0.933013, 0.359789, -0.73038, -0.25, 0.635646, -4.5, 4.75, 4.5)
+fov = 60.0
+
+[node name="Angle 3" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 4.75, 5.5)
+fov = 60.0
+
+[node name="Angle 4" type="Camera3D" parent="."]
+transform = Transform3D(0.73038, 0.25, -0.635646, -0.006236, 0.933013, 0.359789, 0.683013, -0.258819, 0.683013, 4.5, 4.75, 4.5)
+fov = 60.0
