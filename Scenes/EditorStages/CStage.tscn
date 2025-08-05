@@ -257,25 +257,30 @@ environment = SubResource("Environment_w3m2i")
 
 [node name="Room Lights" type="Node3D" parent="."]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Room Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4.5, 3)
+[node name="OmniLight3D" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 4, 5.99515, 1.99936)
 light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Room Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4.5, 3)
+[node name="OmniLight3D2" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, -4, 5.99515, 1.99936)
 light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="Room Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 3)
+[node name="OmniLight3D3" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 5.99515, 1.99936)
 light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="Room Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.86654, 4.5, 0.906235)
+[node name="OmniLight3D4" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 6.86654, 6.01942, 1.90879)
 light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="Room Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 4.5, 1)
+[node name="OmniLight3D5" type="SpotLight3D" parent="Room Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, -7, 5.99515, 1.99936)
 light_color = Color(1, 0.960784, 0.85098, 1)
+spot_angle = 90.0
 
 [node name="CStage" parent="." instance=ExtResource("7_1s7sj")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
