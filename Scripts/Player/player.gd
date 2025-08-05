@@ -79,6 +79,8 @@ func _physics_process(delta: float) -> void:
 			if (crouched): speed = SPEED_CROUCHED
 			else: speed = SPEED_BASE
 			running = false
+		elif Input.is_action_just_pressed(&"freeroam_toggle_flashlight"): 
+			$Camera/Flashlight.visible = !$Camera/Flashlight.visible
 			
 		if mouse_captured: _handle_joypad_camera_rotation(delta)
 		velocity = _walk(delta) + _gravity(delta) + _jump(delta)
