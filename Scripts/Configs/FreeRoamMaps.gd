@@ -8,5 +8,5 @@ var Generic1Stage = {
 }
 
 var MapIndex = {
-	"Generic 1 Stage": Generic1Stage
+	"Generic 1-Stage": Generic1Stage
 }
