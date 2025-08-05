@@ -231,6 +231,64 @@ label_settings = SubResource("LabelSettings_dkd36")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label2" type="Label" parent="FreeRoamChooseScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -96.0
+offset_right = 128.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Map to load"
+vertical_alignment = 1
+
+[node name="MapSelector" type="OptionButton" parent="FreeRoamChooseScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -56.0
+offset_right = 128.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+selected = 1
+item_count = 4
+popup/item_0/text = "Generic Showrooms"
+popup/item_0/id = 0
+popup/item_0/separator = true
+popup/item_1/text = "Generic 1-Stage"
+popup/item_1/id = 1
+popup/item_2/text = "Locations"
+popup/item_2/id = 2
+popup/item_2/separator = true
+popup/item_3/text = "Modded Maps"
+popup/item_3/id = 3
+popup/item_3/separator = true
+
+[node name="LoadMapButton" type="Button" parent="FreeRoamChooseScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -16.0
+offset_right = 128.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Load Map"
+
 [node name="ModsScreen" type="Control" parent="."]
 visible = false
 layout_mode = 1
@@ -605,6 +663,7 @@ vertical_alignment = 1
 [connection signal="pressed" from="Buttons/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Buttons/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="FreeRoamChooseScreen/InputEater" to="." method="_on_input_eater_pressed"]
+[connection signal="pressed" from="FreeRoamChooseScreen/DialogPanel/LoadMapButton" to="." method="_on_load_map_button_pressed"]
 [connection signal="pressed" from="ModsScreen/InputEater" to="." method="_on_input_eater_pressed"]
 [connection signal="item_selected" from="ModsScreen/DialogPanel/ModList" to="." method="_on_mod_list_item_selected"]
 [connection signal="pressed" from="ModsScreen/DialogPanel/OpenFolderButton" to="." method="_on_open_folder_button_pressed"]

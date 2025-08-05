@@ -50,7 +50,6 @@ func _on_controls_button_pressed() -> void:
 	$ControlsScreen.visible = true
 
 func _on_free_roam_button_pressed() -> void:
-	get_tree().change_scene_to_file(FreeRoamMaps.Generic1Stage["scene"])
 	$FreeRoamChooseScreen.visible = true
 
 func _on_mods_button_pressed() -> void:
@@ -80,3 +79,7 @@ func _on_mod_list_item_selected(index: int) -> void:
 func _on_open_folder_button_pressed() -> void:
 	OS.shell_open(ProjectSettings.globalize_path("user://Mods"))
 	$PleaseRestart.show()
+
+
+func _on_load_map_button_pressed() -> void:
+	get_tree().change_scene_to_file(FreeRoamMaps.MapIndex[$FreeRoamChooseScreen/DialogPanel/MapSelector.get_item_text($FreeRoamChooseScreen/DialogPanel/MapSelector.selected)]["scene"])
