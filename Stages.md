@@ -14,7 +14,9 @@
  - Prototype Road Stage
  - Road Stage
  - 2-Stage
+ - Mini-Unit 1-Stage
  - 1-Stage
+ - 1-Stage w/ 2-Stage props
  - Turntable 1-Stage
  - Cyberamic 3-Stage
  
