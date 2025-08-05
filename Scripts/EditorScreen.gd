@@ -23,6 +23,7 @@ func reload_stage() -> void:
 	$SequencerPanel/TimelinePanel/VScrollBar.value = 0
 	$FlyoutPanel/Movements/VScrollBar.value = 0
 	$FlyoutPanel/FlowControls/VScrollBar.value = 0
+	$FlyoutPanel/Cosmetics/VScrollBar.value = 0
 	$CameraPreview.visible = false
 	for row in $SequencerPanel/TimelinePanel/InvisibleMask/MovementRowsContainer.get_children():
 		row.queue_free()
@@ -60,6 +61,7 @@ func reload_stage() -> void:
 			cosmetic_adjustment.scene_handle = "../../../../../" + Stages.stages_info[current_stage]["scene_ref_base"]
 			cosmetic_adjustment.drop_index = Stages.stages_info[current_stage]["cosmetic_defaults"][cosmetics_count]
 			cosmetic_adjustment.position.y = cosmetics_offset
+			cosmetic_adjustment.anchor_right = 1.0
 			cosmetics_offset += 44
 			cosmetics_count += 1
 			$FlyoutPanel/Cosmetics/InvisibleMask/CosmeticsHandle.add_child(cosmetic_adjustment)

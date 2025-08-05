@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://cd67bfok34xhy"]
+[gd_scene load_steps=14 format=3 uid="uid://cd67bfok34xhy"]
 
 [ext_resource type="Script" uid="uid://pwg37gka2qr4" path="res://Scripts/InGameMenu.gd" id="1_cp535"]
+[ext_resource type="Theme" uid="uid://dbgs4id7y5d1c" path="res://UI/Themes/Dark.tres" id="1_fxnf3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cp535"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxnf3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_esrnp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okjcw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5t5ap"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5gkc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4hvdi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_76ga2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ausu3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b5eqy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x8byx"]
 
 [node name="InGameMenu" type="Control"]
 layout_mode = 3
@@ -9,9 +32,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_fxnf3")
 script = ExtResource("1_cp535")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="BG" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,9 +103,184 @@ offset_right = 260.0
 offset_bottom = 312.0
 text = "Exit to Desktop"
 
+[node name="ShowLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -264.0
+offset_top = -40.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "No Show Loaded"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="FlowControlsScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="FlowControlsScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.121569, 0.121569, 0.121569, 0.501961)
+
+[node name="InputEater" type="Button" parent="FlowControlsScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cp535")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_fxnf3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_esrnp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_okjcw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5t5ap")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_j5gkc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4hvdi")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_76ga2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ausu3")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_b5eqy")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x8byx")
+
+[node name="DialogPanel" type="Panel" parent="FlowControlsScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 64.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InvisibleMask" type="Control" parent="FlowControlsScreen/DialogPanel"]
+clip_contents = true
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -16.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FlowHandle" type="Control" parent="FlowControlsScreen/DialogPanel/InvisibleMask"]
+anchors_preset = 0
+
+[node name="VScrollBar" type="VScrollBar" parent="FlowControlsScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+max_value = 0.0
+step = 1.0
+
+[node name="CosmeticsScreen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CosmeticsScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.121569, 0.121569, 0.121569, 0.501961)
+
+[node name="InputEater" type="Button" parent="CosmeticsScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cp535")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_fxnf3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_esrnp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_okjcw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5t5ap")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_j5gkc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4hvdi")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_76ga2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ausu3")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_b5eqy")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x8byx")
+
+[node name="DialogPanel" type="Panel" parent="CosmeticsScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 64.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InvisibleMask" type="Control" parent="CosmeticsScreen/DialogPanel"]
+clip_contents = true
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -16.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CosmeticsHandle" type="Control" parent="CosmeticsScreen/DialogPanel/InvisibleMask"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="VScrollBar" type="VScrollBar" parent="CosmeticsScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+max_value = 0.0
+step = 1.0
+
 [connection signal="pressed" from="Buttons/ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="pressed" from="Buttons/LoadShowButton" to="." method="_on_load_show_button_pressed"]
 [connection signal="pressed" from="Buttons/CosmeticsButton" to="." method="_on_cosmetics_button_pressed"]
 [connection signal="pressed" from="Buttons/FlowControlsButton" to="." method="_on_flow_controls_button_pressed"]
 [connection signal="pressed" from="Buttons/ExitMenuButton" to="." method="_on_exit_menu_button_pressed"]
 [connection signal="pressed" from="Buttons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="FlowControlsScreen/InputEater" to="." method="_on_input_eater_pressed"]
+[connection signal="pressed" from="CosmeticsScreen/InputEater" to="." method="_on_input_eater_pressed"]

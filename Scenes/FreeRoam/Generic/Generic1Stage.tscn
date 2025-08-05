@@ -110,236 +110,6 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7, 3.
 light_color = Color(1, 0.960784, 0.85098, 1)
 spot_angle = 90.0
 
-[node name="StageAssets" type="Node3D" parent="."]
-
-[node name="Chuck" parent="StageAssets" instance=ExtResource("3_r26gl")]
-transform = Transform3D(0.579556, 0, 0.155291, 0, 0.6, 0, -0.155291, 0, 0.579556, -2.6, 1.52, -0.6)
-script = ExtResource("4_fdybi")
-
-[node name="Helen" parent="StageAssets" instance=ExtResource("5_0hrbq")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.2, 1.52, -0.7)
-script = ExtResource("4_fdybi")
-
-[node name="Munch" parent="StageAssets" instance=ExtResource("6_5nqmm")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 1.52, -0.7)
-script = ExtResource("4_fdybi")
-
-[node name="Jasper" parent="StageAssets" instance=ExtResource("7_cw8uy")]
-transform = Transform3D(0.579556, 0, -0.155291, 0, 0.6, 0, 0.155291, 0, 0.579556, 1.5, 1.4, -0.8)
-script = ExtResource("4_fdybi")
-
-[node name="Pasqually" parent="StageAssets" instance=ExtResource("8_qaqoe")]
-transform = Transform3D(0.519615, 0, -0.3, 0, 0.6, 0, 0.3, 0, 0.519615, 3, 1.4, -0.8)
-script = ExtResource("4_fdybi")
-
-[node name="Spots" type="Node3D" parent="StageAssets"]
-script = ExtResource("9_yvbl1")
-
-[node name="Chuck" type="SpotLight3D" parent="StageAssets/Spots"]
-transform = Transform3D(1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, -2.6, 3.7, 5)
-visible = false
-light_color = Color(1, 0.960784, 0.85098, 1)
-light_energy = 0.8
-spot_range = 8.0
-spot_attenuation = -1.0
-spot_angle = 5.0
-
-[node name="Helen" type="SpotLight3D" parent="StageAssets/Spots"]
-transform = Transform3D(1, -5.67102e-08, 2.31578e-07, -9.98193e-10, 0.970296, 0.241922, -2.38419e-07, -0.241922, 0.970296, -1.2, 3.7, 5)
-visible = false
-light_color = Color(1, 0.960784, 0.85098, 1)
-light_energy = 0.8
-spot_range = 8.0
-spot_attenuation = -1.0
-spot_angle = 5.0
-
-[node name="Munch" type="SpotLight3D" parent="StageAssets/Spots"]
-transform = Transform3D(1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, 0, 3.7, 5)
-visible = false
-light_color = Color(1, 0.960784, 0.85098, 1)
-light_energy = 0.8
-spot_range = 8.0
-spot_attenuation = -1.0
-spot_angle = 5.0
-
-[node name="Jasper" type="SpotLight3D" parent="StageAssets/Spots"]
-transform = Transform3D(1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, 1.5, 3.6, 5)
-visible = false
-light_color = Color(1, 0.960784, 0.85098, 1)
-light_energy = 0.8
-spot_range = 8.0
-spot_attenuation = -1.0
-spot_angle = 5.0
-
-[node name="Pasqually" type="SpotLight3D" parent="StageAssets/Spots"]
-transform = Transform3D(1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, 3, 3.6, 5)
-visible = false
-light_color = Color(1, 0.960784, 0.85098, 1)
-light_energy = 0.8
-spot_range = 8.0
-spot_attenuation = -1.0
-spot_angle = 5.0
-
-[node name="Organ" type="Node3D" parent="StageAssets"]
-script = ExtResource("9_yvbl1")
-
-[node name="Inner" parent="StageAssets/Organ" instance=ExtResource("10_shuix")]
-visible = false
-
-[node name="Middle" parent="StageAssets/Organ" instance=ExtResource("11_4t0m2")]
-visible = false
-
-[node name="Outer" parent="StageAssets/Organ" instance=ExtResource("12_rs0sv")]
-visible = false
-
-[node name="Face Amber" type="OmniLight3D" parent="StageAssets/Organ"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0.1)
-visible = false
-light_color = Color(1, 0.501961, 0, 1)
-light_energy = 0.1
-
-[node name="Face Blue" type="Node3D" parent="StageAssets/Organ"]
-visible = false
-
-[node name="FB1" type="OmniLight3D" parent="StageAssets/Organ/Face Blue"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 1.7, 0.1)
-light_color = Color(0, 0.501961, 1, 1)
-light_energy = 0.1
-
-[node name="FB2" type="OmniLight3D" parent="StageAssets/Organ/Face Blue"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 1.7, 0.1)
-light_color = Color(0, 0.501961, 1, 1)
-light_energy = 0.1
-
-[node name="Floods" type="Node3D" parent="StageAssets"]
-script = ExtResource("9_yvbl1")
-
-[node name="CEC Red" type="SpotLight3D" parent="StageAssets/Floods"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -2.9, 3.5, 0)
-visible = false
-light_color = Color(1, 0, 0, 1)
-light_energy = 2.0
-
-[node name="CEC Amber" type="SpotLight3D" parent="StageAssets/Floods"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -2.6, 3.5, 0)
-visible = false
-light_color = Color(1, 0.498039, 0, 1)
-light_energy = 2.0
-
-[node name="CEC Blue" type="SpotLight3D" parent="StageAssets/Floods"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -2.3, 3.5, 0)
-visible = false
-light_color = Color(0, 0.498039, 1, 1)
-light_energy = 2.0
-
-[node name="Main Red" type="Node3D" parent="StageAssets/Floods"]
-visible = false
-
-[node name="MR1" type="SpotLight3D" parent="StageAssets/Floods/Main Red"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -1.5, 3.5, 0)
-light_color = Color(1, 0, 0, 1)
-light_energy = 2.0
-
-[node name="MR2" type="SpotLight3D" parent="StageAssets/Floods/Main Red"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.25, 3.5, 0)
-light_color = Color(1, 0, 0, 1)
-light_energy = 2.0
-
-[node name="MR3" type="SpotLight3D" parent="StageAssets/Floods/Main Red"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 2, 3.5, 0)
-light_color = Color(1, 0, 0, 1)
-light_energy = 2.0
-
-[node name="Main Amber" type="Node3D" parent="StageAssets/Floods"]
-visible = false
-
-[node name="MA1" type="SpotLight3D" parent="StageAssets/Floods/Main Amber"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -1, 3.5, 0)
-light_color = Color(1, 0.498039, 0, 1)
-light_energy = 2.0
-
-[node name="MA2" type="SpotLight3D" parent="StageAssets/Floods/Main Amber"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.75, 3.5, 0)
-light_color = Color(1, 0.498039, 0, 1)
-light_energy = 2.0
-
-[node name="MA3" type="SpotLight3D" parent="StageAssets/Floods/Main Amber"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 2.5, 3.5, 0)
-light_color = Color(1, 0.498039, 0, 1)
-light_energy = 2.0
-
-[node name="Main Blue" type="Node3D" parent="StageAssets/Floods"]
-visible = false
-
-[node name="MB1" type="SpotLight3D" parent="StageAssets/Floods/Main Blue"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -0.5, 3.5, 0)
-light_color = Color(0, 0.498039, 1, 1)
-light_energy = 2.0
-
-[node name="MB2" type="SpotLight3D" parent="StageAssets/Floods/Main Blue"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 1.25, 3.5, 0)
-light_color = Color(0, 0.498039, 1, 1)
-light_energy = 2.0
-
-[node name="MB3" type="SpotLight3D" parent="StageAssets/Floods/Main Blue"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 3, 3.5, 0)
-light_color = Color(0, 0.498039, 1, 1)
-light_energy = 2.0
-
-[node name="Backdrop" type="Node3D" parent="StageAssets"]
-script = ExtResource("9_yvbl1")
-
-[node name="Red" type="Node3D" parent="StageAssets/Backdrop"]
-visible = false
-
-[node name="MR1" type="SpotLight3D" parent="StageAssets/Backdrop/Red"]
-transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, -1.5, 1, -1.25)
-light_color = Color(1, 0, 0, 1)
-light_energy = 2.0
-
-[node name="MR2" type="SpotLight3D" parent="StageAssets/Backdrop/Red"]
-transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, 0.5, 1, -1.25)
-light_color = Color(1, 0, 0, 1)
-light_energy = 2.0
-
-[node name="Amber" type="Node3D" parent="StageAssets/Backdrop"]
-visible = false
-
-[node name="MA1" type="SpotLight3D" parent="StageAssets/Backdrop/Amber"]
-transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, -1, 1, -1.25)
-light_color = Color(1, 0.498039, 0, 1)
-light_energy = 2.0
-
-[node name="MA2" type="SpotLight3D" parent="StageAssets/Backdrop/Amber"]
-transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, 1, 1, -1.25)
-light_color = Color(1, 0.498039, 0, 1)
-light_energy = 2.0
-
-[node name="Blue" type="Node3D" parent="StageAssets/Backdrop"]
-visible = false
-
-[node name="MB1" type="SpotLight3D" parent="StageAssets/Backdrop/Blue"]
-transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, -0.5, 1, -1.25)
-light_color = Color(0, 0.498039, 1, 1)
-light_energy = 2.0
-
-[node name="MB2" type="SpotLight3D" parent="StageAssets/Backdrop/Blue"]
-transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, 1.5, 1, -1.25)
-light_color = Color(0, 0.498039, 1, 1)
-light_energy = 2.0
-
-[node name="Special" type="Node3D" parent="StageAssets"]
-script = ExtResource("9_yvbl1")
-
-[node name="Kick Drum" type="OmniLight3D" parent="StageAssets/Special"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.2, 0)
-visible = false
-light_color = Color(1, 0, 0, 1)
-light_energy = 0.25
-
-[node name="Special Helicopter" parent="StageAssets" instance=ExtResource("13_1oq0m")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 3, 4)
-
 [node name="Player" parent="." instance=ExtResource("14_ncqi6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 current_map = "Generic 1-Stage"
@@ -353,3 +123,231 @@ shape = SubResource("ConcavePolygonShape3D_5nqmm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomCollider"]
 shape = SubResource("ConcavePolygonShape3D_cw8uy")
+
+[node name="Chuck" parent="." instance=ExtResource("3_r26gl")]
+transform = Transform3D(0.579556, 0, 0.155291, 0, 0.6, 0, -0.155291, 0, 0.579556, -2.6, 1.52, -0.6)
+script = ExtResource("4_fdybi")
+
+[node name="Helen" parent="." instance=ExtResource("5_0hrbq")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.2, 1.52, -0.7)
+script = ExtResource("4_fdybi")
+
+[node name="Munch" parent="." instance=ExtResource("6_5nqmm")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 1.52, -0.7)
+script = ExtResource("4_fdybi")
+
+[node name="Jasper" parent="." instance=ExtResource("7_cw8uy")]
+transform = Transform3D(0.579556, 0, -0.155291, 0, 0.6, 0, 0.155291, 0, 0.579556, 1.5, 1.4, -0.8)
+script = ExtResource("4_fdybi")
+
+[node name="Pasqually" parent="." instance=ExtResource("8_qaqoe")]
+transform = Transform3D(0.519615, 0, -0.3, 0, 0.6, 0, 0.3, 0, 0.519615, 3, 1.4, -0.8)
+script = ExtResource("4_fdybi")
+
+[node name="Spots" type="Node3D" parent="."]
+script = ExtResource("9_yvbl1")
+
+[node name="Chuck" type="SpotLight3D" parent="Spots"]
+transform = Transform3D(1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, -2.6, 3.7, 5)
+visible = false
+light_color = Color(1, 0.960784, 0.85098, 1)
+light_energy = 0.8
+spot_range = 8.0
+spot_attenuation = -1.0
+spot_angle = 5.0
+
+[node name="Helen" type="SpotLight3D" parent="Spots"]
+transform = Transform3D(1, -5.67102e-08, 2.31578e-07, -9.98193e-10, 0.970296, 0.241922, -2.38419e-07, -0.241922, 0.970296, -1.2, 3.7, 5)
+visible = false
+light_color = Color(1, 0.960784, 0.85098, 1)
+light_energy = 0.8
+spot_range = 8.0
+spot_attenuation = -1.0
+spot_angle = 5.0
+
+[node name="Munch" type="SpotLight3D" parent="Spots"]
+transform = Transform3D(1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, 0, 3.7, 5)
+visible = false
+light_color = Color(1, 0.960784, 0.85098, 1)
+light_energy = 0.8
+spot_range = 8.0
+spot_attenuation = -1.0
+spot_angle = 5.0
+
+[node name="Jasper" type="SpotLight3D" parent="Spots"]
+transform = Transform3D(1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, 1.5, 3.6, 5)
+visible = false
+light_color = Color(1, 0.960784, 0.85098, 1)
+light_energy = 0.8
+spot_range = 8.0
+spot_attenuation = -1.0
+spot_angle = 5.0
+
+[node name="Pasqually" type="SpotLight3D" parent="Spots"]
+transform = Transform3D(1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, 3, 3.6, 5)
+visible = false
+light_color = Color(1, 0.960784, 0.85098, 1)
+light_energy = 0.8
+spot_range = 8.0
+spot_attenuation = -1.0
+spot_angle = 5.0
+
+[node name="Organ" type="Node3D" parent="."]
+script = ExtResource("9_yvbl1")
+
+[node name="Inner" parent="Organ" instance=ExtResource("10_shuix")]
+visible = false
+
+[node name="Middle" parent="Organ" instance=ExtResource("11_4t0m2")]
+visible = false
+
+[node name="Outer" parent="Organ" instance=ExtResource("12_rs0sv")]
+visible = false
+
+[node name="Face Amber" type="OmniLight3D" parent="Organ"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0.1)
+visible = false
+light_color = Color(1, 0.501961, 0, 1)
+light_energy = 0.1
+
+[node name="Face Blue" type="Node3D" parent="Organ"]
+visible = false
+
+[node name="FB1" type="OmniLight3D" parent="Organ/Face Blue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 1.7, 0.1)
+light_color = Color(0, 0.501961, 1, 1)
+light_energy = 0.1
+
+[node name="FB2" type="OmniLight3D" parent="Organ/Face Blue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 1.7, 0.1)
+light_color = Color(0, 0.501961, 1, 1)
+light_energy = 0.1
+
+[node name="Floods" type="Node3D" parent="."]
+script = ExtResource("9_yvbl1")
+
+[node name="CEC Red" type="SpotLight3D" parent="Floods"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -2.9, 3.5, 0)
+visible = false
+light_color = Color(1, 0, 0, 1)
+light_energy = 2.0
+
+[node name="CEC Amber" type="SpotLight3D" parent="Floods"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -2.6, 3.5, 0)
+visible = false
+light_color = Color(1, 0.498039, 0, 1)
+light_energy = 2.0
+
+[node name="CEC Blue" type="SpotLight3D" parent="Floods"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -2.3, 3.5, 0)
+visible = false
+light_color = Color(0, 0.498039, 1, 1)
+light_energy = 2.0
+
+[node name="Main Red" type="Node3D" parent="Floods"]
+visible = false
+
+[node name="MR1" type="SpotLight3D" parent="Floods/Main Red"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -1.5, 3.5, 0)
+light_color = Color(1, 0, 0, 1)
+light_energy = 2.0
+
+[node name="MR2" type="SpotLight3D" parent="Floods/Main Red"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.25, 3.5, 0)
+light_color = Color(1, 0, 0, 1)
+light_energy = 2.0
+
+[node name="MR3" type="SpotLight3D" parent="Floods/Main Red"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 2, 3.5, 0)
+light_color = Color(1, 0, 0, 1)
+light_energy = 2.0
+
+[node name="Main Amber" type="Node3D" parent="Floods"]
+visible = false
+
+[node name="MA1" type="SpotLight3D" parent="Floods/Main Amber"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -1, 3.5, 0)
+light_color = Color(1, 0.498039, 0, 1)
+light_energy = 2.0
+
+[node name="MA2" type="SpotLight3D" parent="Floods/Main Amber"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.75, 3.5, 0)
+light_color = Color(1, 0.498039, 0, 1)
+light_energy = 2.0
+
+[node name="MA3" type="SpotLight3D" parent="Floods/Main Amber"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 2.5, 3.5, 0)
+light_color = Color(1, 0.498039, 0, 1)
+light_energy = 2.0
+
+[node name="Main Blue" type="Node3D" parent="Floods"]
+visible = false
+
+[node name="MB1" type="SpotLight3D" parent="Floods/Main Blue"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -0.5, 3.5, 0)
+light_color = Color(0, 0.498039, 1, 1)
+light_energy = 2.0
+
+[node name="MB2" type="SpotLight3D" parent="Floods/Main Blue"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 1.25, 3.5, 0)
+light_color = Color(0, 0.498039, 1, 1)
+light_energy = 2.0
+
+[node name="MB3" type="SpotLight3D" parent="Floods/Main Blue"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 3, 3.5, 0)
+light_color = Color(0, 0.498039, 1, 1)
+light_energy = 2.0
+
+[node name="Backdrop" type="Node3D" parent="."]
+script = ExtResource("9_yvbl1")
+
+[node name="Red" type="Node3D" parent="Backdrop"]
+visible = false
+
+[node name="MR1" type="SpotLight3D" parent="Backdrop/Red"]
+transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, -1.5, 1, -1.25)
+light_color = Color(1, 0, 0, 1)
+light_energy = 2.0
+
+[node name="MR2" type="SpotLight3D" parent="Backdrop/Red"]
+transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, 0.5, 1, -1.25)
+light_color = Color(1, 0, 0, 1)
+light_energy = 2.0
+
+[node name="Amber" type="Node3D" parent="Backdrop"]
+visible = false
+
+[node name="MA1" type="SpotLight3D" parent="Backdrop/Amber"]
+transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, -1, 1, -1.25)
+light_color = Color(1, 0.498039, 0, 1)
+light_energy = 2.0
+
+[node name="MA2" type="SpotLight3D" parent="Backdrop/Amber"]
+transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, 1, 1, -1.25)
+light_color = Color(1, 0.498039, 0, 1)
+light_energy = 2.0
+
+[node name="Blue" type="Node3D" parent="Backdrop"]
+visible = false
+
+[node name="MB1" type="SpotLight3D" parent="Backdrop/Blue"]
+transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, -0.5, 1, -1.25)
+light_color = Color(0, 0.498039, 1, 1)
+light_energy = 2.0
+
+[node name="MB2" type="SpotLight3D" parent="Backdrop/Blue"]
+transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, 1.5, 1, -1.25)
+light_color = Color(0, 0.498039, 1, 1)
+light_energy = 2.0
+
+[node name="Special" type="Node3D" parent="."]
+script = ExtResource("9_yvbl1")
+
+[node name="Kick Drum" type="OmniLight3D" parent="Special"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.2, 0)
+visible = false
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.25
+
+[node name="Special Helicopter" parent="." instance=ExtResource("13_1oq0m")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 3, 4)

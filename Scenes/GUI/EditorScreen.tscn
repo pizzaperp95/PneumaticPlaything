@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://oiehbor0dlqx"]
 
 [ext_resource type="Script" uid="uid://dfiwoln8mdwm8" path="res://Scripts/EditorScreen.gd" id="1_sd512"]
-[ext_resource type="Theme" uid="uid://dbgs4id7y5d1c" path="res://UI/Themes/EditorDark.tres" id="1_v0ton"]
+[ext_resource type="Theme" uid="uid://dbgs4id7y5d1c" path="res://UI/Themes/Dark.tres" id="1_v0ton"]
 [ext_resource type="Texture2D" uid="uid://xllpr3qc064c" path="res://UI/TransportControls/Play.png" id="3_g6u4d"]
 [ext_resource type="Texture2D" uid="uid://dgacnkv2dc65s" path="res://UI/TransportControls/PlayBackwards.png" id="3_mr8sb"]
 [ext_resource type="Texture2D" uid="uid://dts4eh6hyt8p3" path="res://UI/TransportControls/SkipBackwards.png" id="3_r4ytj"]
@@ -629,6 +629,7 @@ offset_bottom = 388.0
 
 [node name="CosmeticsHandle" type="Control" parent="FlyoutPanel/Cosmetics/InvisibleMask"]
 anchors_preset = 0
+offset_right = 384.0
 
 [node name="VScrollBar" type="VScrollBar" parent="FlyoutPanel/Cosmetics"]
 layout_mode = 0
