@@ -218,16 +218,19 @@ func _on_showtape_load_open_button_pressed() -> void:
 	if (!FileAccess.file_exists($ShowtapeLoadScreen/DialogPanel/InFilePath.text.strip_edges())):
 		$FileDoesntExistDialog.show()
 		return
+	$ShowtapeLoadScreen/DialogPanel/PleaseWaitText.visible = true
 	var file = FileAccess.open($ShowtapeLoadScreen/DialogPanel/InFilePath.text.strip_edges(), FileAccess.READ)
 	var content = file.get_as_text()
 	var header = content.split(";")[0].split(",")
 	if (header[1] != "2"):
 		$IncorrectShowtapeDialog.dialog_text = "This showtape is not the correct version!"
 		$IncorrectShowtapeDialog.show()
+		$ShowtapeLoadScreen/DialogPanel/PleaseWaitText.visible = false
 		return
 	if (header[3] != Stages.stages_info[current_stage]["ust_type"]):
 		$IncorrectShowtapeDialog.dialog_text = "This showtape is not compatible with the currently selected stage.\nShowtape stage type: %s\n Current stage type: %s" % [ header[3], Stages.stages_info[current_stage]["ust_type"] ]
 		$IncorrectShowtapeDialog.show()
+		$ShowtapeLoadScreen/DialogPanel/PleaseWaitText.visible = false
 		return
 	show_name = header[2]
 	plot_data(content.split(";")[1])
@@ -237,6 +240,7 @@ func _on_showtape_load_open_button_pressed() -> void:
 	$MenuBar/EditingLabel.text = "Editing: " + show_name
 	$ShowtapeLoadScreen/DialogPanel/InFilePath.text = ""
 	$ShowtapeLoadScreen.visible = false
+	$ShowtapeLoadScreen/DialogPanel/PleaseWaitText.visible = false
 
 func _on_load_overwrite_confirmation_dialog_confirmed() -> void:
 	erase_all.emit()

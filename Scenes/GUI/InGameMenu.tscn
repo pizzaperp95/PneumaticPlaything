@@ -1,7 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://cd67bfok34xhy"]
+[gd_scene load_steps=17 format=3 uid="uid://cd67bfok34xhy"]
 
 [ext_resource type="Script" uid="uid://pwg37gka2qr4" path="res://Scripts/InGameMenu.gd" id="1_cp535"]
 [ext_resource type="Theme" uid="uid://dbgs4id7y5d1c" path="res://UI/Themes/Dark.tres" id="1_fxnf3"]
+[ext_resource type="Texture2D" uid="uid://cttgtbu1xllwq" path="res://UI/TransportControls/Stop.png" id="3_5t5ap"]
+[ext_resource type="Texture2D" uid="uid://bwhgy4u37jmo1" path="res://UI/TransportControls/Pause.png" id="4_j5gkc"]
+[ext_resource type="Texture2D" uid="uid://xllpr3qc064c" path="res://UI/TransportControls/Play.png" id="5_4hvdi"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cp535"]
 
@@ -103,24 +106,68 @@ offset_right = 260.0
 offset_bottom = 312.0
 text = "Exit to Desktop"
 
-[node name="ShowLabel" type="Label" parent="."]
+[node name="TransportControls" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -264.0
-offset_top = -40.0
-offset_right = -8.0
-offset_bottom = -8.0
-grow_horizontal = 0
+offset_left = 60.0
+offset_top = -476.0
+offset_right = 324.0
+offset_bottom = -388.0
 grow_vertical = 0
+
+[node name="ShowLabel" type="Label" parent="TransportControls"]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 256.0
+offset_bottom = 40.0
 text = "No Show Loaded"
-horizontal_alignment = 2
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="TimeLabel" type="Label" parent="TransportControls"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 48.0
+offset_right = 104.0
+offset_bottom = 80.0
+text = "0:00:00:00"
 vertical_alignment = 1
 
+[node name="StopButton" type="Button" parent="TransportControls"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 44.0
+offset_right = 172.0
+offset_bottom = 84.0
+tooltip_text = "Stop playback and return to frame 0"
+disabled = true
+icon = ExtResource("3_5t5ap")
+
+[node name="PauseButton" type="Button" parent="TransportControls"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 44.0
+offset_right = 216.0
+offset_bottom = 84.0
+tooltip_text = "Pause"
+disabled = true
+icon = ExtResource("4_j5gkc")
+
+[node name="PlayButton" type="Button" parent="TransportControls"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 44.0
+offset_right = 260.0
+offset_bottom = 84.0
+tooltip_text = "Play"
+disabled = true
+icon = ExtResource("5_4hvdi")
+
 [node name="FlowControlsScreen" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -279,13 +326,191 @@ offset_bottom = -4.0
 max_value = 0.0
 step = 1.0
 
+[node name="LoadShowScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="LoadShowScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.121569, 0.121569, 0.121569, 0.501961)
+
+[node name="InputEater" type="Button" parent="LoadShowScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cp535")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_fxnf3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_esrnp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_okjcw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5t5ap")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_j5gkc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4hvdi")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_76ga2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ausu3")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_b5eqy")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x8byx")
+
+[node name="DialogPanel" type="Panel" parent="LoadShowScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -128.0
+offset_right = 256.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogLabel" type="Label" parent="LoadShowScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 36.0
+grow_horizontal = 2
+text = "Load Showtape"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InFileLabel" type="Label" parent="LoadShowScreen/DialogPanel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 73.0
+offset_right = 264.0
+offset_bottom = 105.0
+text = "File to load"
+vertical_alignment = 1
+
+[node name="InFilePath" type="TextEdit" parent="LoadShowScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 109.0
+offset_right = -104.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "File Path"
+
+[node name="InBrowseButton" type="Button" parent="LoadShowScreen/DialogPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_top = 109.0
+offset_right = -4.0
+offset_bottom = 145.0
+tooltip_text = "Browse for a file."
+text = "Browse"
+
+[node name="CancelButton" type="Button" parent="LoadShowScreen/DialogPanel"]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 216.0
+offset_right = 405.0
+offset_bottom = 248.0
+text = "Cancel
+"
+
+[node name="OpenButton" type="Button" parent="LoadShowScreen/DialogPanel"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 216.0
+offset_right = 504.0
+offset_bottom = 248.0
+text = "Open"
+
+[node name="PleaseWaitText" type="Label" parent="LoadShowScreen/DialogPanel"]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 156.0
+offset_right = 430.0
+offset_bottom = 205.0
+text = "Please wait! Showtape is loading
+The program may stop responding, but it is still loading"
+
+[node name="ExitMenuOverwriteConfirmationDialog" type="ConfirmationDialog" parent="."]
+auto_translate_mode = 1
+initial_position = 2
+size = Vector2i(472, 100)
+ok_button_text = "Proceed"
+dialog_text = "Are you sure you want to exit?"
+cancel_button_text = "Do Not"
+
+[node name="ExitDesktopOverwriteConfirmationDialog" type="ConfirmationDialog" parent="."]
+auto_translate_mode = 1
+initial_position = 2
+size = Vector2i(472, 100)
+ok_button_text = "Proceed"
+dialog_text = "Are you sure you want to exit?"
+cancel_button_text = "Do Not"
+
+[node name="FileDoesntExistDialog" type="AcceptDialog" parent="."]
+auto_translate_mode = 1
+initial_position = 2
+dialog_text = "The specified file does not exist."
+
+[node name="NoFileSpecified" type="AcceptDialog" parent="."]
+auto_translate_mode = 1
+initial_position = 2
+dialog_text = "No File was specified."
+
+[node name="IncorrectShowtapeDialog" type="AcceptDialog" parent="."]
+auto_translate_mode = 1
+initial_position = 2
+dialog_text = "This showtape is not compatible with the current stage."
+
+[node name="OpenShowtapeFileDialog" type="FileDialog" parent="."]
+auto_translate_mode = 1
+title = "Open a File"
+initial_position = 2
+ok_button_text = "Open"
+dialog_hide_on_ok = true
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.ust")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="Buttons/ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="pressed" from="Buttons/LoadShowButton" to="." method="_on_load_show_button_pressed"]
 [connection signal="pressed" from="Buttons/CosmeticsButton" to="." method="_on_cosmetics_button_pressed"]
 [connection signal="pressed" from="Buttons/FlowControlsButton" to="." method="_on_flow_controls_button_pressed"]
 [connection signal="pressed" from="Buttons/ExitMenuButton" to="." method="_on_exit_menu_button_pressed"]
 [connection signal="pressed" from="Buttons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="TransportControls/StopButton" to="." method="_on_stop_button_pressed"]
+[connection signal="pressed" from="TransportControls/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="TransportControls/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="FlowControlsScreen/InputEater" to="." method="_on_input_eater_pressed"]
 [connection signal="value_changed" from="FlowControlsScreen/DialogPanel/VScrollBar" to="." method="_on_flow_v_scroll_bar_value_changed"]
 [connection signal="pressed" from="CosmeticsScreen/InputEater" to="." method="_on_input_eater_pressed"]
 [connection signal="value_changed" from="CosmeticsScreen/DialogPanel/VScrollBar" to="." method="_on_cosmetics_v_scroll_bar_value_changed"]
+[connection signal="pressed" from="LoadShowScreen/InputEater" to="." method="_on_input_eater_pressed"]
+[connection signal="pressed" from="LoadShowScreen/DialogPanel/InBrowseButton" to="." method="_on_in_browse_button_pressed"]
+[connection signal="pressed" from="LoadShowScreen/DialogPanel/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="LoadShowScreen/DialogPanel/OpenButton" to="." method="_on_open_button_pressed"]
+[connection signal="confirmed" from="ExitMenuOverwriteConfirmationDialog" to="." method="_on_exit_menu_overwrite_confirmation_dialog_confirmed"]
+[connection signal="confirmed" from="ExitDesktopOverwriteConfirmationDialog" to="." method="_on_exit_desktop_overwrite_confirmation_dialog_confirmed"]
+[connection signal="file_selected" from="OpenShowtapeFileDialog" to="." method="_on_open_showtape_file_dialog_file_selected"]

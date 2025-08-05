@@ -876,6 +876,15 @@ offset_right = 504.0
 offset_bottom = 248.0
 text = "Open"
 
+[node name="PleaseWaitText" type="Label" parent="ShowtapeLoadScreen/DialogPanel"]
+visible = false
+offset_left = 4.0
+offset_top = 156.0
+offset_right = 430.0
+offset_bottom = 205.0
+text = "Please wait! Showtape is loading
+The program may stop responding, but it is still loading"
+
 [node name="ShowtapeSaveScreen" type="Control" parent="."]
 visible = false
 layout_mode = 1

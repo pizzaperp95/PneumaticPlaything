@@ -101,10 +101,10 @@ func update_text() -> void:
 	if (animatronic == "None"): $Button.text = "%d - Unused (%s)" % [movement_bit, key_binding.as_text() if key_binding.keycode != 0 else "Unbound"]
 	else: $Button.text = "%d - %s %s (%s)" % [movement_bit, animatronic, movement_name, key_binding.as_text() if key_binding.keycode != 0 else "Unbound"]
 
-func _update_in_flow(new_value: float) -> void:
+func _update_in_flow(new_value: float, _internalid: int) -> void:
 	in_flow = new_value
 
-func _update_out_flow(new_value: float) -> void:
+func _update_out_flow(new_value: float, _internalid: int) -> void:
 	out_flow = new_value
 
 func _ready() -> void:
