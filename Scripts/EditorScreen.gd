@@ -83,6 +83,7 @@ func reload_stage() -> void:
 			flow_control.vis_name = bot + " " + movement
 			flow_control.in_value = in_flow
 			flow_control.out_value = out_flow
+			flow_control.anchor_right = 1.0
 			$FlyoutPanel/FlowControls/InvisibleMask/FlowHandle.add_child(flow_control)
 			flows_offset += 44
 			flow_count += 1

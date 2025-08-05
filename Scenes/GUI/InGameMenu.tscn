@@ -121,7 +121,6 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="FlowControlsScreen" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -182,7 +181,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="FlowHandle" type="Control" parent="FlowControlsScreen/DialogPanel/InvisibleMask"]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
 
 [node name="VScrollBar" type="VScrollBar" parent="FlowControlsScreen/DialogPanel"]
 layout_mode = 1
@@ -198,6 +200,7 @@ max_value = 0.0
 step = 1.0
 
 [node name="CosmeticsScreen" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -283,4 +286,6 @@ step = 1.0
 [connection signal="pressed" from="Buttons/ExitMenuButton" to="." method="_on_exit_menu_button_pressed"]
 [connection signal="pressed" from="Buttons/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="FlowControlsScreen/InputEater" to="." method="_on_input_eater_pressed"]
+[connection signal="value_changed" from="FlowControlsScreen/DialogPanel/VScrollBar" to="." method="_on_flow_v_scroll_bar_value_changed"]
 [connection signal="pressed" from="CosmeticsScreen/InputEater" to="." method="_on_input_eater_pressed"]
+[connection signal="value_changed" from="CosmeticsScreen/DialogPanel/VScrollBar" to="." method="_on_cosmetics_v_scroll_bar_value_changed"]
