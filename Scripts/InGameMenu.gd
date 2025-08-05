@@ -220,6 +220,7 @@ func _physics_process(_delta: float) -> void:
 				prev_frame_held[j] = false
 			j+=1
 		index += 1
+		if (index % 60 == 0): index = int($AudioStreamPlayer.get_playback_position() * 60)
 		if (index <= 0): _on_stop_button_pressed()
 		update_time_label()
 
