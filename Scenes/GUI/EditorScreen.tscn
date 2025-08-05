@@ -878,6 +878,7 @@ text = "Open"
 
 [node name="PleaseWaitText" type="Label" parent="ShowtapeLoadScreen/DialogPanel"]
 visible = false
+layout_mode = 0
 offset_left = 4.0
 offset_top = 156.0
 offset_right = 430.0

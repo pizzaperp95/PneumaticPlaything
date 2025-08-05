@@ -132,6 +132,7 @@ func _on_open_button_pressed() -> void:
 		$LoadShowScreen/DialogPanel/PleaseWaitText.visible = false
 		return
 	show_name = header[2]
+	loaded_frames = []
 	load_data(content.split(";")[1])
 	$AudioStreamPlayer.stream = load_audio_from_buffer(Marshalls.base64_to_raw(content.split(";")[2]))
 	set_transport_enabled(true)
