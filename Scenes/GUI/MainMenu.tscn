@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://1ikkb4b8mw1w"]
+[gd_scene load_steps=20 format=3 uid="uid://1ikkb4b8mw1w"]
 
 [ext_resource type="Theme" uid="uid://dbgs4id7y5d1c" path="res://UI/Themes/Dark.tres" id="1_dkd36"]
 [ext_resource type="Script" uid="uid://b5nh5td5bdsfd" path="res://Scripts/MainMenu.gd" id="1_ocgay"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://6mf6wucl3y6k" path="res://UI/MenuBG/BalconyBG.png" id="2_j6v32"]
 [ext_resource type="Texture2D" uid="uid://dr6ir8mgbjrs7" path="res://UI/MenuBG/CStageBG.png" id="3_vaoig"]
 [ext_resource type="Texture2D" uid="uid://dyyyg85g3jwip" path="res://UI/MenuBG/ProtoRoadBG.png" id="4_dkd36"]
+[ext_resource type="Texture2D" uid="uid://cdp1csnrbd46w" path="res://UI/MenuBG/1StageBG.png" id="6_ha2rd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dkd36"]
 
@@ -86,6 +87,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_dkd36")
+expand_mode = 1
+
+[node name="1StageBG" type="TextureRect" parent="Backgrounds"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_ha2rd")
 expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
