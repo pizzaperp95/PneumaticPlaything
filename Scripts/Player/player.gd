@@ -7,10 +7,15 @@ var SPEED_CROUCHED: float = 1
 var SPEED_RUNNING: float = 4
 var SPEED_CROUCH_RUN: float = 2
 
+var JUMP_HEIGHT_BASE: float = 0.6
+var JUMP_HEIGHT_CROUCHED: float = 0.2
+var JUMP_HEIGHT_RUNNING: float = 0.8
+var JUMP_HEIGHT_CROUCH_RUN: float = 0.4
+
 var speed: float = SPEED_BASE # m/s
 var acceleration: float = 100 # m/s^2
 
-var jump_height: float = 1 # m
+var jump_height: float = JUMP_HEIGHT_BASE # m
 var camera_sens: float = 3
 
 var interact: bool = true
@@ -64,22 +69,38 @@ func _physics_process(delta: float) -> void:
 		elif Input.is_action_just_pressed(&"freeroam_crouch"): 
 			$CShape.shape.height = 1.0
 			$Camera.position.y = 1.0
-			if (running): speed = SPEED_CROUCH_RUN
-			else: speed = SPEED_CROUCHED
+			if (running): 
+				speed = SPEED_CROUCH_RUN
+				jump_height = JUMP_HEIGHT_CROUCH_RUN
+			else: 
+				speed = SPEED_CROUCHED
+				jump_height = JUMP_HEIGHT_CROUCHED
 			crouched = true
 		elif Input.is_action_just_released(&"freeroam_crouch"): 
 			$CShape.shape.height = 1.8
 			$Camera.position.y = 1.7
-			if (running): speed = SPEED_RUNNING
-			else: speed = SPEED_BASE
+			if (running): 
+				speed = SPEED_RUNNING
+				jump_height = JUMP_HEIGHT_RUNNING
+			else: 
+				speed = SPEED_BASE
+				jump_height = JUMP_HEIGHT_BASE
 			crouched = false
 		elif Input.is_action_just_pressed(&"freeroam_run"): 
-			if (crouched): speed = SPEED_CROUCH_RUN
-			else: speed = SPEED_RUNNING
+			if (crouched): 
+				speed = SPEED_CROUCH_RUN
+				jump_height = JUMP_HEIGHT_CROUCH_RUN
+			else: 
+				speed = SPEED_RUNNING
+				jump_height = JUMP_HEIGHT_RUNNING
 			running = true
 		elif Input.is_action_just_released(&"freeroam_run"): 
-			if (crouched): speed = SPEED_CROUCHED
-			else: speed = SPEED_BASE
+			if (crouched): 
+				speed = SPEED_CROUCHED
+				jump_height = JUMP_HEIGHT_CROUCHED
+			else: 
+				speed = SPEED_BASE
+				jump_height = JUMP_HEIGHT_BASE
 			running = false
 		elif Input.is_action_just_pressed(&"freeroam_toggle_flashlight"): 
 			$Camera/Flashlight.visible = !$Camera/Flashlight.visible
