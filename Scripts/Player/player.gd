@@ -2,10 +2,10 @@ class_name Player extends CharacterBody3D
 
 @export var current_map: String
 
-var SPEED_BASE: float = 4
-var SPEED_CROUCHED: float = 2
-var SPEED_RUNNING: float = 7
-var SPEED_CROUCH_RUN: float = 3
+var SPEED_BASE: float = 2
+var SPEED_CROUCHED: float = 1
+var SPEED_RUNNING: float = 4
+var SPEED_CROUCH_RUN: float = 2
 
 var speed: float = SPEED_BASE # m/s
 var acceleration: float = 100 # m/s^2
