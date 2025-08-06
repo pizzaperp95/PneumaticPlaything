@@ -55,6 +55,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			$InGameMenu.visible = true
 			$InGameMenu/Buttons/ReturnButton.grab_focus()
 		pass
+	elif event.is_action_pressed(&"freeroam_debug_menu"):
+		$DebugMenu.visible = !$DebugMenu.visible
 
 func _physics_process(delta: float) -> void:
 	if (interact):

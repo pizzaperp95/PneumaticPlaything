@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://fjveglbs1vfv"]
+
+[ext_resource type="Script" uid="uid://724u7h4bui7r" path="res://Scripts/DebugMenu.gd" id="1_gqrkn"]
+
+[node name="DebugMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gqrkn")
+
+[node name="FPSLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 53.0
+offset_bottom = 40.0
+text = "FPS: 0"
+vertical_alignment = 1
+
+[node name="PositionLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 44.0
+offset_right = 175.0
+offset_bottom = 76.0
+text = "X: 0.00, Y: 0.00, Z: 0.00"
+vertical_alignment = 1
+
+[node name="AngleLabel" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 80.0
+offset_right = 175.0
+offset_bottom = 112.0
+text = "Pitch: 0.00, Yaw: 0.00"
+vertical_alignment = 1
+
+[node name="VersionLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -203.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 40.0
+grow_horizontal = 0
+text = "Pneumatic Plaything v0.0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PlatformLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -203.0
+offset_top = 44.0
+offset_right = -8.0
+offset_bottom = 76.0
+grow_horizontal = 0
+text = "this is placeholder text!!!!!!!"
+horizontal_alignment = 2
+vertical_alignment = 1
