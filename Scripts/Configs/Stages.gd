@@ -376,7 +376,7 @@ var Cyber3Stage = {
 }
 
 var Cyber1Stage = {
-	"bits": 60, 
+	"bits": 69, 
 	"scene": "res://Scenes/EditorStages/1Stage.tscn", 
 	"scene_ref_base": "SubViewport/1Stage/",
 	"camera_count": 5,
@@ -430,6 +430,7 @@ var Cyber1Stage = {
 		52: { "bot": "Spots", "movement": "Munch", "flow_in": "None", "flow_out": "None" },
 		53: { "bot": "Spots", "movement": "Jasper", "flow_in": "None", "flow_out": "None" },
 		54: { "bot": "Spots", "movement": "Pasqually", "flow_in": "None", "flow_out": "None" },
+		55: { "bot": "Spots", "movement": "Wink", "flow_in": "None", "flow_out": "None" },
 		61: { "bot": "Curtain", "movement": "Up", "flow_in": 0.2, "flow_out": 0.2 },
 		62: { "bot": "Curtain", "movement": "Down", "flow_in": 0.2, "flow_out": 0.2 },
 		65: { "bot": "Floods", "movement": "CEC Red", "flow_in": "None", "flow_out": "None" },
@@ -443,10 +444,15 @@ var Cyber1Stage = {
 		73: { "bot": "Backdrop", "movement": "Blue", "flow_in": "None", "flow_out": "None" },
 		74: { "bot": "Organ", "movement": "Face Amber", "flow_in": "None", "flow_out": "None" },
 		75: { "bot": "Organ", "movement": "Face Blue", "flow_in": "None", "flow_out": "None" },
-		76: { "bot": "Organ", "movement": "Outer", "flow_in": "None", "flow_out": "None" },
-		77: { "bot": "Organ", "movement": "Middle", "flow_in": "None", "flow_out": "None" },
-		78: { "bot": "Organ", "movement": "Inner", "flow_in": "None", "flow_out": "None" },
-		84: { "bot": "Special", "movement": "Kick Drum", "flow_in": "None", "flow_out": "None" },
+		76: { "bot": "Organ", "movement": "Legs Outer", "flow_in": "None", "flow_out": "None" },
+		77: { "bot": "Organ", "movement": "Legs Middle", "flow_in": "None", "flow_out": "None" },
+		78: { "bot": "Organ", "movement": "Legs Inner", "flow_in": "None", "flow_out": "None" },
+		79: { "bot": "Special", "movement": "CEC Sign", "flow_in": "None", "flow_out": "None" },
+		80: { "bot": "Special", "movement": "CEC Rope Light", "flow_in": "None", "flow_out": "None" },
+		82: { "bot": "Special", "movement": "Fiber Curtain", "flow_in": "None", "flow_out": "None" },
+		83: { "bot": "Special", "movement": "Band Sign", "flow_in": "None", "flow_out": "None" },
+		84: { "bot": "Special", "movement": "Drum Light", "flow_in": "None", "flow_out": "None" },
+		85: { "bot": "Special", "movement": "Gobo Light", "flow_in": "None", "flow_out": "None" },
 		86: { "bot": "Special Helicopter", "movement": "Light", "flow_in": 15.0, "flow_out": 6.0 },
 	},
 	
@@ -457,9 +463,10 @@ var Cyber1Stage = {
 		Cosmetics.CyberMunch,
 		Cosmetics.CyberJasper,
 		Cosmetics.CyberPasqually,
-		Cosmetics.Valence
+		Cosmetics.Valence,
+		Cosmetics.Cyber1StageSpecial
 	],
-	"cosmetic_defaults": [ 1, 2, 1, 1, 1, 0, 1, 2, 2, 2, 1, 2, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 3, 0 ]
+	"cosmetic_defaults": [ 1, 2, 1, 1, 1, 0, 1, 2, 2, 2, 1, 2, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 3, 0, 0, 0 ]
 }
 
 var stages_info = {

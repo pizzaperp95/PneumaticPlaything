@@ -656,6 +656,37 @@ var Valence = {
 	}
 }
 
+var Cyber1StageSpecial = {
+	"Curtains":
+	{
+		"On":
+		{
+			"Curtain": true,
+		},
+		"Off":
+		{
+			"Curtain": false,
+		},
+	},
+	"Band Sign":
+	{
+		"Right":
+		{
+			"Special/Band Sign/BandSignCenter": false,
+			"Special/Band Sign/BandSignRight": true,
+			"StageModel/BandSignCenter": false,
+			"StageModel/BandSignRight": true,
+		},
+		"Center":
+		{
+			"Special/Band Sign/BandSignCenter": true,
+			"Special/Band Sign/BandSignRight": false,
+			"StageModel/BandSignCenter": true,
+			"StageModel/BandSignRight": false,
+		},
+	},
+}
+
 var HelenHouseHelen = {
 	"Helen Hair":
 	{
