@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b6rem1te85htp"]
+[gd_scene load_steps=20 format=3 uid="uid://b6rem1te85htp"]
 
 [ext_resource type="PackedScene" uid="uid://ddqduheks5ltu" path="res://Models/FreeRoam/Generic/1StageGenericRoom.glb" id="1_8m4fm"]
 [ext_resource type="PackedScene" uid="uid://bf4aq55iy3yey" path="res://Models/1Stage/1StageGeneric.glb" id="2_ncqi6"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://dm3wfbhs34bkd" path="res://Models/1Stage/1StageGenericOrganLightsOuter.glb" id="12_rs0sv"]
 [ext_resource type="PackedScene" uid="uid://mvv5sjk3vbtl" path="res://Scenes/Props/HelicopterLight.tscn" id="13_1oq0m"]
 [ext_resource type="PackedScene" uid="uid://cdk6hwb4hi2wc" path="res://Scripts/Player/player.tscn" id="14_ncqi6"]
+[ext_resource type="PackedScene" uid="uid://cky4dxfbw52gb" path="res://Models/1Stage/1StageCurtains.glb" id="15_r26gl"]
+[ext_resource type="Script" uid="uid://csyks2ufy3o3x" path="res://Scripts/OneWayController.gd" id="16_fdybi"]
 
 [sub_resource type="Environment" id="Environment_0tsrs"]
 ambient_light_source = 1
@@ -351,3 +353,7 @@ light_energy = 0.25
 
 [node name="Special Helicopter" parent="." instance=ExtResource("13_1oq0m")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 3, 4)
+
+[node name="Curtain" parent="." instance=ExtResource("15_r26gl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0.25)
+script = ExtResource("16_fdybi")

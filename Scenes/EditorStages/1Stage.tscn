@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bl4wyf7wq84i"]
+[gd_scene load_steps=17 format=3 uid="uid://bl4wyf7wq84i"]
 
 [ext_resource type="PackedScene" uid="uid://doxu4tb5jfoqp" path="res://Models/Cyberamics/Cyber Munch.glb" id="1_3gw4q"]
 [ext_resource type="PackedScene" uid="uid://ddqduheks5ltu" path="res://Models/FreeRoam/Generic/1StageGenericRoom.glb" id="1_bg74u"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dxejch2vv4k20" path="res://Models/1Stage/1StageGenericOrganLightsMiddle.glb" id="9_lou7w"]
 [ext_resource type="PackedScene" uid="uid://dm3wfbhs34bkd" path="res://Models/1Stage/1StageGenericOrganLightsOuter.glb" id="10_bg74u"]
 [ext_resource type="PackedScene" uid="uid://mvv5sjk3vbtl" path="res://Scenes/Props/HelicopterLight.tscn" id="12_lou7w"]
+[ext_resource type="PackedScene" uid="uid://cky4dxfbw52gb" path="res://Models/1Stage/1StageCurtains.glb" id="14_llmth"]
+[ext_resource type="Script" uid="uid://csyks2ufy3o3x" path="res://Scripts/OneWayController.gd" id="15_spjag"]
 
 [sub_resource type="Environment" id="Environment_w3m2i"]
 ambient_light_source = 1
@@ -250,6 +252,10 @@ light_energy = 0.25
 
 [node name="Special Helicopter" parent="." instance=ExtResource("12_lou7w")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 3, 4)
+
+[node name="Curtain" parent="." instance=ExtResource("14_llmth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0.25)
+script = ExtResource("15_spjag")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_w3m2i")

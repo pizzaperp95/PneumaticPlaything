@@ -430,6 +430,8 @@ var Cyber1Stage = {
 		52: { "bot": "Spots", "movement": "Munch", "flow_in": "None", "flow_out": "None" },
 		53: { "bot": "Spots", "movement": "Jasper", "flow_in": "None", "flow_out": "None" },
 		54: { "bot": "Spots", "movement": "Pasqually", "flow_in": "None", "flow_out": "None" },
+		61: { "bot": "Curtain", "movement": "Up", "flow_in": 0.2, "flow_out": 0.2 },
+		62: { "bot": "Curtain", "movement": "Down", "flow_in": 0.2, "flow_out": 0.2 },
 		65: { "bot": "Floods", "movement": "CEC Red", "flow_in": "None", "flow_out": "None" },
 		66: { "bot": "Floods", "movement": "CEC Amber", "flow_in": "None", "flow_out": "None" },
 		67: { "bot": "Floods", "movement": "CEC Blue", "flow_in": "None", "flow_out": "None" },

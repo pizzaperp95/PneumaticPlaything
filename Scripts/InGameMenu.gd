@@ -225,9 +225,14 @@ func _physics_process(_delta: float) -> void:
 		update_time_label()
 
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("freeroam_open_curtains"):
+		for curtain in FreeRoamMaps.MapIndex[get_node("../").current_map]["curtains"]:
+			get_node("../../" + curtain + "/AnimationPlayer").speed_scale = 0.2
+			get_node("../../" + curtain + "/AnimationPlayer").play("Up")
 	if (transport_enabled):
 		if event.is_action_pressed("freeroam_transport_play_pause"):
 			if (playing): _on_pause_button_pressed()
 			else: _on_play_button_pressed()
 		elif event.is_action_pressed("freeroam_transport_stop"):
 			_on_stop_button_pressed()
+		
