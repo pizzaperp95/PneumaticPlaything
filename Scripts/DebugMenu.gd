@@ -10,4 +10,8 @@ func _process(_delta: float) -> void:
 		var pos = get_node("../").position
 		var angle = get_node("../Camera").rotation_degrees
 		$PositionLabel.text = "X: %.2f, Y: %.2f, Z: %.2f" % [ pos.x, pos.y, pos.z ]
-		$AngleLabel.text = "Pitch: %.2f, Yaw: %.2f" % [ angle.x, angle.y ]
+		var outy = fmod(angle.y, 360)
+		if (outy < 0): outy += 360
+		var outx = fmod(angle.x, 360)
+		if (outx < 0): outx += 360
+		$AngleLabel.text = "Pitch: %.2f, Yaw: %.2f" % [ outx, outy ]
