@@ -545,6 +545,8 @@ Jump: Space
 Crouch: Right Control
 Run: Right Shift
 Toggle Flashlight: E
+Open Curtains: C
+Debug Info: F3
 Open Menu: ESC"
 
 [node name="CreditsScreen" type="Control" parent="."]
