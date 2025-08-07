@@ -208,8 +208,8 @@ func _on_play_button_pressed() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if (playing):
-		if (index > loaded_frames.size()): 
-			_on_stop_button_pressed()
+		if (index >= loaded_frames.size()): 
+			_on_stop_button_pressed() 
 			return
 		var j = 0
 		for i in stage["bit_mapping"]:
