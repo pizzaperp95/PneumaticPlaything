@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cf4oa43hi1w5t"
+path="res://.godot/imported/Generic1StageRoomCollider.obj-c3fe5915e79ec4c76b2b12d6964193de.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Generic1StageRoomCollider.obj-c3fe5915e79ec4c76b2b12d6964193de.mesh"]
+
+source_file="res://Models/GenericRooms/1-Stage/Generic1StageRoomCollider.obj"
+dest_files=["res://.godot/imported/Generic1StageRoomCollider.obj-c3fe5915e79ec4c76b2b12d6964193de.mesh", "res://.godot/imported/Generic1StageRoomCollider.obj-c3fe5915e79ec4c76b2b12d6964193de.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

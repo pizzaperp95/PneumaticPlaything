@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://btre5j66mpchy"]
 
-[ext_resource type="PackedScene" uid="uid://f0fkcs7erhop" path="res://Models/3-StageBots/3stHelen.glb" id="1_s1mol"]
+[ext_resource type="PackedScene" uid="uid://f0fkcs7erhop" path="res://Models/Animatronics/3-Stage/3stHelen.glb" id="1_s1mol"]
 [ext_resource type="Script" uid="uid://bu68w4jnh0n2b" path="res://Scripts/AnimatronicController.gd" id="2_odcb6"]
-[ext_resource type="PackedScene" uid="uid://bhoeqcsdb0fx2" path="res://Models/HelenHouse/HelenHouse-Room.glb" id="3_e7oou"]
-[ext_resource type="PackedScene" uid="uid://btvomf1ayoypu" path="res://Models/HelenHouse/HelenHouse-Stage.glb" id="4_e2vvs"]
+[ext_resource type="PackedScene" uid="uid://bhoeqcsdb0fx2" path="res://Models/Stages/FanMade/HelenHouse/HelenHouse-Room.glb" id="3_e7oou"]
+[ext_resource type="PackedScene" uid="uid://btvomf1ayoypu" path="res://Models/Stages/FanMade/HelenHouse/HelenHouse-Stage.glb" id="4_e2vvs"]
 [ext_resource type="Script" uid="uid://d1p4ite8ts2wi" path="res://Scripts/LightController.gd" id="5_odcb6"]
 
 [sub_resource type="Environment" id="Environment_axk5g"]

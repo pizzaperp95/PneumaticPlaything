@@ -1,14 +1,14 @@
 [gd_scene load_steps=11 format=3 uid="uid://0p6p1owvvesv"]
 
-[ext_resource type="PackedScene" uid="uid://c5fgw7t45p7r6" path="res://Models/Cyberamics/Cyber Chuck.glb" id="1_pj7jr"]
+[ext_resource type="PackedScene" uid="uid://c5fgw7t45p7r6" path="res://Models/Animatronics/Cyberamics/Cyber Chuck.glb" id="1_pj7jr"]
 [ext_resource type="Script" uid="uid://du3pqtf3jixvl" path="res://Scripts/CyberamicController.gd" id="2_6jho3"]
-[ext_resource type="PackedScene" uid="uid://d34xfaignny8j" path="res://Models/Cyberamics/Cyber Helen.glb" id="3_11jlu"]
-[ext_resource type="PackedScene" uid="uid://doxu4tb5jfoqp" path="res://Models/Cyberamics/Cyber Munch.glb" id="4_qr1e5"]
-[ext_resource type="PackedScene" uid="uid://ba7i8p8olef2s" path="res://Models/Cyberamics/Cyber Jasper.glb" id="5_k7q7t"]
-[ext_resource type="PackedScene" uid="uid://bp5u5t6yu4ejy" path="res://Models/Cyberamics/Cyber Pasqually.glb" id="6_08e8o"]
+[ext_resource type="PackedScene" uid="uid://d34xfaignny8j" path="res://Models/Animatronics/Cyberamics/Cyber Helen.glb" id="3_11jlu"]
+[ext_resource type="PackedScene" uid="uid://doxu4tb5jfoqp" path="res://Models/Animatronics/Cyberamics/Cyber Munch.glb" id="4_qr1e5"]
+[ext_resource type="PackedScene" uid="uid://ba7i8p8olef2s" path="res://Models/Animatronics/Cyberamics/Cyber Jasper.glb" id="5_k7q7t"]
+[ext_resource type="PackedScene" uid="uid://bp5u5t6yu4ejy" path="res://Models/Animatronics/Cyberamics/Cyber Pasqually.glb" id="6_08e8o"]
 [ext_resource type="Script" uid="uid://d1p4ite8ts2wi" path="res://Scripts/LightController.gd" id="7_r2dgu"]
-[ext_resource type="PackedScene" uid="uid://dq1fvhg4rb6ro" path="res://Models/RoadStage/RoadStageNeon.glb" id="8_basbq"]
-[ext_resource type="PackedScene" uid="uid://bxjnp7g3w2wc8" path="res://Models/RoadStage/RoadStage.glb" id="9_hijvq"]
+[ext_resource type="PackedScene" uid="uid://dq1fvhg4rb6ro" path="res://Models/Stages/ProtoRoadStage/RoadStageNeon.glb" id="8_basbq"]
+[ext_resource type="PackedScene" uid="uid://bxjnp7g3w2wc8" path="res://Models/Stages/ProtoRoadStage/RoadStage.glb" id="9_hijvq"]
 
 [sub_resource type="Environment" id="Environment_aswoc"]
 ambient_light_source = 1

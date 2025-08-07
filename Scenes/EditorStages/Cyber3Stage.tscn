@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://bty3dn0uskrfi"]
 
-[ext_resource type="PackedScene" uid="uid://c5fgw7t45p7r6" path="res://Models/Cyberamics/Cyber Chuck.glb" id="1_cw6ma"]
+[ext_resource type="PackedScene" uid="uid://c5fgw7t45p7r6" path="res://Models/Animatronics/Cyberamics/Cyber Chuck.glb" id="1_cw6ma"]
 [ext_resource type="Script" uid="uid://du3pqtf3jixvl" path="res://Scripts/CyberamicController.gd" id="2_4l10n"]
-[ext_resource type="PackedScene" uid="uid://d34xfaignny8j" path="res://Models/Cyberamics/Cyber Helen.glb" id="3_87eu1"]
-[ext_resource type="PackedScene" uid="uid://doxu4tb5jfoqp" path="res://Models/Cyberamics/Cyber Munch.glb" id="4_68u23"]
-[ext_resource type="PackedScene" uid="uid://ba7i8p8olef2s" path="res://Models/Cyberamics/Cyber Jasper.glb" id="5_lioge"]
-[ext_resource type="PackedScene" uid="uid://bp5u5t6yu4ejy" path="res://Models/Cyberamics/Cyber Pasqually.glb" id="6_81y3d"]
-[ext_resource type="PackedScene" uid="uid://b77ebnic6ktql" path="res://Models/3-Stage/3Stage.glb" id="7_cr5od"]
+[ext_resource type="PackedScene" uid="uid://d34xfaignny8j" path="res://Models/Animatronics/Cyberamics/Cyber Helen.glb" id="3_87eu1"]
+[ext_resource type="PackedScene" uid="uid://doxu4tb5jfoqp" path="res://Models/Animatronics/Cyberamics/Cyber Munch.glb" id="4_68u23"]
+[ext_resource type="PackedScene" uid="uid://ba7i8p8olef2s" path="res://Models/Animatronics/Cyberamics/Cyber Jasper.glb" id="5_lioge"]
+[ext_resource type="PackedScene" uid="uid://bp5u5t6yu4ejy" path="res://Models/Animatronics/Cyberamics/Cyber Pasqually.glb" id="6_81y3d"]
+[ext_resource type="PackedScene" uid="uid://b77ebnic6ktql" path="res://Models/Stages/3-Stage/3Stage.glb" id="7_cr5od"]
 
 [sub_resource type="Environment" id="Environment_aswoc"]
 ambient_light_source = 1
