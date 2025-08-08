@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cd67bfok34xhy" path="res://Scenes/GUI/InGameMenu.tscn" id="2_0s4r2"]
 [ext_resource type="PackedScene" uid="uid://fjveglbs1vfv" path="res://Scenes/GUI/DebugMenu.tscn" id="3_ejydr"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3rsb5"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ejydr"]
 radius = 0.3
 height = 1.8
 
@@ -13,7 +13,7 @@ script = ExtResource("1_2f8j2")
 
 [node name="CShape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
-shape = SubResource("CapsuleShape3D_3rsb5")
+shape = SubResource("CapsuleShape3D_ejydr")
 debug_color = Color(0.141176, 0.427451, 0.92549, 0.784314)
 
 [node name="Camera" type="Camera3D" parent="."]
@@ -24,6 +24,7 @@ fov = 80.0
 visible = false
 light_color = Color(1, 0.960784, 0.85098, 1)
 light_energy = 5.0
+shadow_enabled = true
 spot_range = 1000.0
 spot_angle = 30.0
 spot_angle_attenuation = 0.25
