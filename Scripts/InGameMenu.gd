@@ -137,7 +137,7 @@ func _on_open_button_pressed() -> void:
 	$AudioStreamPlayer.stream = load_audio_from_buffer(Marshalls.base64_to_raw(content.split(";")[2]))
 	set_transport_enabled(true)
 	show_is_loaded = true
-	$TransportControls/ShowLabel.text = "Editing: " + show_name
+	$TransportControls/ShowLabel.text = "Playing: " + show_name
 	$LoadShowScreen/DialogPanel/InFilePath.text = ""
 	$LoadShowScreen/DialogPanel/PleaseWaitText.visible = false
 	$LoadShowScreen.visible = false
