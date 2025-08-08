@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bl4wyf7wq84i"]
+[gd_scene load_steps=26 format=3 uid="uid://bl4wyf7wq84i"]
 
 [ext_resource type="PackedScene" uid="uid://doxu4tb5jfoqp" path="res://Models/Animatronics/Cyberamics/Cyber Munch.glb" id="1_3gw4q"]
 [ext_resource type="PackedScene" uid="uid://ddqduheks5ltu" path="res://Models/GenericRooms/1-Stage/1StageGenericRoom.glb" id="1_bg74u"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://dsh7xdswaqkm3" path="res://Models/Stages/1-Stage/Illum/1StageIllum-DrumHead.glb" id="21_uoo35"]
 [ext_resource type="PackedScene" uid="uid://75qn68fu5a7l" path="res://Models/Stages/1-Stage/Illum/1StageIllum-FiberCurtain.glb" id="22_uofta"]
 [ext_resource type="PackedScene" uid="uid://chhs7d280p7k7" path="res://Models/Stages/1-Stage/Illum/1StageIllum-RopeLights.glb" id="23_2helq"]
+[ext_resource type="Texture2D" uid="uid://c3orc2ig7n2rc" path="res://Models/Props/CECGOBO.png" id="24_fsllk"]
 
 [sub_resource type="Environment" id="Environment_w3m2i"]
 ambient_light_source = 1
@@ -335,9 +336,11 @@ visible = false
 visible = false
 
 [node name="Gobo Light" type="SpotLight3D" parent="Special"]
-transform = Transform3D(1, 0, 0, 0, 0.948324, 0.317305, 0, -0.317305, 0.948324, 0, 3.7, 5)
+transform = Transform3D(1, 0, 0, 0, 0.93029, 0.366826, 0, -0.366826, 0.93029, 0, 3.7, 4)
 visible = false
 light_color = Color(1, 0.960784, 0.85098, 1)
+light_projector = ExtResource("24_fsllk")
+shadow_enabled = true
 spot_range = 6.0
 spot_attenuation = -1.0
 spot_angle = 10.0
