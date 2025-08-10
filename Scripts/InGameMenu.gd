@@ -231,8 +231,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("freeroam_open_curtains"):
 		for curtain in FreeRoamMaps.MapIndex[get_node("../").current_map]["curtains"]:
 			for curtain_movement in FreeRoamMaps.MapIndex[get_node("../").current_map]["curtains"][curtain]:
-				get_node("../../" + curtain + "/AnimationPlayer").speed_scale = 0.2
-				get_node("../../" + curtain + "/AnimationPlayer").play(curtain_movement)
+				get_node("../../" + curtain)._movement_in(curtain_movement + " Up", 0.2)
 	if (transport_enabled):
 		if event.is_action_pressed("freeroam_transport_play_pause"):
 			if (playing): _on_pause_button_pressed()

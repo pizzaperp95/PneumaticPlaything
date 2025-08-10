@@ -5,7 +5,7 @@ var Generic1Stage = {
 	"scene": "res://Scenes/FreeRoam/Generic/Generic1Stage.tscn",
 	"stage": Stages.Cyber1Stage,
 	"curtains": {
-		"Curtain": [ "Up" ]
+		"Curtain": [ "1-Stage" ]
 	}
 }
 
@@ -14,7 +14,7 @@ var Generic2Stage = {
 	"scene": "res://Scenes/FreeRoam/Generic/Generic2Stage.tscn",
 	"stage": Stages.Cyber2Stage,
 	"curtains": {
-		"Curtains": [ "CEC Up", "Main Up" ]
+		"Curtains": [ "CEC", "Main" ]
 	}
 }
 
