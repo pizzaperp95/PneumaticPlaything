@@ -460,7 +460,7 @@ func save_data() -> String:
 				total_frame_index += 1
 			fstring = ("%01X" % f_quartet) + fstring
 		write_out += fstring + ","
-	return write_out
+	return write_out.trim_suffix(",")
 
 func plot_data(data: String):
 	start_recording.emit()
