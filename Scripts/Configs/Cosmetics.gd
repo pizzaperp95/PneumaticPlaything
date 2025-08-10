@@ -687,6 +687,20 @@ var Cyber1StageSpecial = {
 	},
 }
 
+var Cyber2StageSpecial = {
+	"Curtains":
+	{
+		"On":
+		{
+			"Curtains": true,
+		},
+		"Off":
+		{
+			"Curtains": false,
+		},
+	},
+}
+
 var HelenHouseHelen = {
 	"Helen Hair":
 	{
