@@ -258,11 +258,11 @@ current = true
 fov = 60.0
 
 [node name="Angle 2" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -2.6, 2.5, 1)
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -3, 2.5, 1)
 fov = 60.0
 
 [node name="Angle 3" type="Camera3D" parent="."]
-transform = Transform3D(1, 4.52534e-08, -1.68888e-07, -4.02637e-15, 0.965926, 0.258819, 1.74846e-07, -0.258819, 0.965926, 0, 2.5, 1)
+transform = Transform3D(1, 4.52534e-08, -1.68888e-07, -4.02637e-15, 0.965926, 0.258819, 1.74846e-07, -0.258819, 0.965926, 0.8, 2.5, 1)
 fov = 60.0
 
 [node name="Angle 4" type="Camera3D" parent="."]
