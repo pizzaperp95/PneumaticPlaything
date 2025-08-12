@@ -1,6 +1,5 @@
 [gd_scene load_steps=25 format=3 uid="uid://bsdj108ha8a5c"]
 
-[ext_resource type="PackedScene" uid="uid://cskr7dchr5uu2" path="res://Models/GenericRooms/2-Stage/2StageGenericRoom.glb" id="1_lxqxd"]
 [ext_resource type="PackedScene" uid="uid://d2op7m5kcf0o4" path="res://Models/Stages/2-Stage/2StageGeneric.glb" id="2_8qxcb"]
 [ext_resource type="PackedScene" uid="uid://c5fgw7t45p7r6" path="res://Models/Animatronics/Cyberamics/Cyber Chuck.glb" id="3_fmn8a"]
 [ext_resource type="Script" uid="uid://du3pqtf3jixvl" path="res://Scripts/CyberamicController.gd" id="4_1qbln"]
@@ -22,14 +21,13 @@
 [ext_resource type="PackedScene" uid="uid://d1noqem71b260" path="res://Models/Stages/2-Stage/Illum/2StageGeneric-CECStarLight.glb" id="20_e2ou4"]
 [ext_resource type="PackedScene" uid="uid://cjctqykx0ara2" path="res://Models/Stages/2-Stage/Illum/2StageGeneric-DrumLight.glb" id="21_5spu2"]
 [ext_resource type="PackedScene" uid="uid://u3v6pjj2gavj" path="res://Models/Stages/2-Stage/Illum/2StageGeneric-FiberCurtain.glb" id="22_dtnir"]
+[ext_resource type="PackedScene" uid="uid://ddqduheks5ltu" path="res://Models/GenericRooms/1-Stage/1StageGenericRoom.glb" id="23_lxqxd"]
 [ext_resource type="Texture2D" uid="uid://c3orc2ig7n2rc" path="res://Models/Props/CECGOBO.png" id="24_hbd3d"]
 
 [sub_resource type="Environment" id="Environment_w3m2i"]
 ambient_light_source = 1
 
 [node name="2Stage" type="Node3D"]
-
-[node name="2StageGenericRoom" parent="." instance=ExtResource("1_lxqxd")]
 
 [node name="StageModel" parent="." instance=ExtResource("2_8qxcb")]
 
@@ -355,3 +353,5 @@ visible = false
 
 [node name="Fiber Curtain" parent="Special" instance=ExtResource("22_dtnir")]
 visible = false
+
+[node name="GenericRoom" parent="." instance=ExtResource("23_lxqxd")]
