@@ -7,6 +7,13 @@ func _ready():
 	$Backgrounds.get_child(randi() % $Backgrounds.get_child_count()).visible = true
 	$Buttons/EditorButton.grab_focus()
 	
+	Globalvariables.loadConfig()
+	print(Globalvariables.FOV)
+	print(Globalvariables.msaa)
+	$SettingsScreen/DialogPanel/GraphicsPanel/HBoxContainer/settings/fov_slider.value = Globalvariables.FOV
+	$SettingsScreen/DialogPanel/GraphicsPanel/HBoxContainer/settings/option_aa_msaa.selected = Globalvariables.msaa
+	$SettingsScreen/DialogPanel/GraphicsPanel/HBoxContainer/settings/option_aa_ss.selected = Globalvariables.ssaa
+	
 	var moddir = DirAccess.open("user://Mods")
 	if moddir == null: 
 		print("Mod folder was not found. Creating.")
@@ -41,6 +48,7 @@ func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/GUI/EditorScreen.tscn")
 
 func _on_exit_button_pressed() -> void:
+	Globalvariables.updateConfig()
 	get_tree().quit()
 
 func _on_credits_button_pressed() -> void:
@@ -55,11 +63,16 @@ func _on_free_roam_button_pressed() -> void:
 func _on_mods_button_pressed() -> void:
 	$ModsScreen.visible = true
 
+func _on_settings_button_pressed() -> void:
+	$SettingsScreen.visible = true
+
 func _on_input_eater_pressed() -> void:
+	Globalvariables.updateConfig()
 	$CreditsScreen.visible = false
 	$ControlsScreen.visible = false
 	$FreeRoamChooseScreen.visible = false
 	$ModsScreen.visible = false
+	$SettingsScreen.visible = false
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("fullscreen"):

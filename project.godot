@@ -25,6 +25,7 @@ config/windows_native_icon="res://UI/icon.ico"
 Cosmetics="*res://Scripts/Configs/Cosmetics.gd"
 Stages="*res://Scripts/Configs/Stages.gd"
 FreeRoamMaps="*res://Scripts/Configs/FreeRoamMaps.gd"
+Globalvariables="*res://Scripts/globalvariables.gd"
 
 [display]
 

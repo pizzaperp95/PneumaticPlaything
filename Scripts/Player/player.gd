@@ -63,6 +63,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed(&"freeroam_debug_menu"):
 		$DebugMenu.visible = !$DebugMenu.visible
 
+func _process(delta: float) -> void:
+	if ($Camera.fov != Globalvariables.FOV):
+		$Camera.fov = Globalvariables.FOV
+
 func _physics_process(delta: float) -> void:
 	if (interact):
 		if Input.is_action_just_pressed(&"freeroam_jump"): jumping = true
